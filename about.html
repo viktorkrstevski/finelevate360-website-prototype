@@ -1,0 +1,184 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>About Finelevate360</title>
+<meta name="description" content="Finelevate360 brings together exceptional experts and ambitious market leaders to move digital finance forward.">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=Noto+Serif+Display:ital,wght@0,300..600;1,300..600&family=Onest:wght@300..700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/site.css">
+<style>
+.ledger{border-top:1px solid var(--line-strong)}
+.lrow{display:grid;grid-template-columns:80px 1.2fr 1.6fr .9fr;gap:24px;padding:26px 0;border-bottom:1px solid var(--line);align-items:baseline}
+.lrow .n{font:500 13px var(--mono);color:var(--muted)}
+.lrow:not(:has(.n)){grid-template-columns:1.1fr 1.7fr .8fr}
+@media (max-width:600px){.lrow[style*="1fr auto"]{grid-template-columns:1fr!important;gap:6px}.lrow[style*="1fr auto"] .f{grid-column:1;text-align:left}}
+.lrow h3{font-family:var(--display);font-size:clamp(22px,2.2vw,30px);line-height:1.15;letter-spacing:-.01em}
+.lrow p{color:#33424A;font-size:15.5px}
+.lrow .f{font:500 12px var(--mono);letter-spacing:.05em;text-transform:uppercase;color:var(--azure-ink);text-align:right;text-decoration:none}
+@media (max-width:860px){.lrow{grid-template-columns:44px 1fr}.lrow p,.lrow .f{grid-column:2;text-align:left}}
+@media (max-width:860px){.lrow:not(:has(.n)){grid-template-columns:1fr}.lrow:not(:has(.n)) p,.lrow:not(:has(.n)) .f{grid-column:1}}
+.on-dark .ledger{border-top-color:rgba(255,255,255,.7)}.on-dark .lrow{border-bottom-color:var(--line-dark)}.on-dark .lrow p{color:rgba(255,255,255,.78)}.on-dark .lrow .n{color:rgba(255,255,255,.55)}
+.photo-hero{position:relative;margin:0}.photo-hero img{width:100%;aspect-ratio:4/5;object-fit:cover}
+.srcs{font:500 11px var(--mono);letter-spacing:.04em;color:var(--muted);margin-top:22px;line-height:1.6}
+.role-grid{display:grid;grid-template-columns:repeat(4,1fr);border-top:1px solid var(--line-strong)}
+.role{padding:24px 20px 26px 0;border-bottom:1px solid var(--line)}.role:not(:nth-child(4n+1)){padding-left:20px;border-left:1px solid var(--line)}
+.role .ini{width:52px;height:52px;background:var(--bone);display:grid;place-items:center;font-family:var(--display);font-size:20px;margin-bottom:14px}
+.role h4{font-size:16px;font-weight:600;line-height:1.3}.role p{font-size:14px;color:var(--muted);margin-top:6px}
+@media (max-width:900px){.role-grid{grid-template-columns:1fr 1fr}.role:not(:nth-child(4n+1)){padding-left:0;border-left:none}}
+.chips{display:flex;gap:10px;flex-wrap:wrap}
+.chip{border:1px solid var(--line-strong);background:transparent;padding:10px 14px;font:500 13px var(--mono);letter-spacing:.04em;text-transform:uppercase;cursor:pointer;color:inherit}
+.chip[aria-pressed="true"]{background:var(--ink);color:#fff;border-color:var(--ink)}
+.on-dark .chip{border-color:rgba(255,255,255,.45)}.on-dark .chip[aria-pressed="true"]{background:#fff;color:var(--ink);border-color:#fff}
+.inline-form{display:flex;gap:0;margin-top:18px;max-width:560px}
+.inline-form input{flex:1;border:none;border-bottom:1px solid var(--line-strong);background:transparent;padding:12px 0;font:400 17px var(--sans);color:inherit;border-radius:0}
+.on-dark .inline-form input{border-bottom-color:rgba(255,255,255,.45)}
+.inline-form input:focus{outline:none;border-bottom-color:var(--azure-ink)}
+.consent-line{display:flex;gap:10px;font-size:14px;margin-top:14px;color:var(--muted)}.on-dark .consent-line{color:rgba(255,255,255,.7)}
+</style>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<button class="pm-toggle" type="button">Show PM notes</button>
+<!-- FLAGSHIP STRIP -->
+<div class="flag" role="region" aria-label="Finelevate Digital Summit">
+  <div class="wrap">
+    <div class="left"><img src="assets/brand/fds-compact-finelevate360.svg" alt=""><span><a href="summit/index.html">Finelevate Digital Summit 2026 — relive the story <span aria-hidden="true">↗</span></a><span class="sep">/</span><a href="summit/index.html#2027">2027 · Save the date</a></span></div>
+    <button class="x" type="button" aria-label="Close">×</button>
+  </div>
+</div>
+
+<!-- HEADER + MEGA MENU -->
+<header class="hdr">
+  <div class="wrap">
+    <a class="logo" href="index.html" aria-label="Finelevate360 — home"><img src="assets/brand/finelevate-logo.svg" alt="Finelevate360"><svg class="ring" viewBox="0 0 22 22" aria-hidden="true"><circle class="bg" cx="11" cy="11" r="9"/><circle class="fg" cx="11" cy="11" r="9"/></svg></a>
+    <ul class="nav" role="list">
+      <li><button type="button" aria-haspopup="true">Consulting <span class="caret">▾</span></button>
+        <div class="mega"><div class="wrap">
+          <div><h6>Services</h6><a href="services.html#strategy">Strategy &amp; Transformation</a><a href="service-ai-data.html">AI &amp; Data</a><a href="services.html#digital">Digital Products &amp; CX</a><a href="services.html#compliance">Compliance &amp; Governance</a><a href="services.html#architecture">Architecture &amp; Engineering</a><a href="services.html#microsoft">Microsoft Solutions &amp; Automation</a><a href="services.html#delivery">Project &amp; Program Delivery</a></div>
+          <div><h6>Industries</h6><a href="industry-banking.html">Banking</a><a href="services.html#industries">Insurance</a><a href="services.html#industries">Payments &amp; Fintech</a><a href="services.html#industries">Public sector</a></div>
+          <div><h6>How we work</h6><a href="services.html#approach">Our approach</a><a href="services.html#start">Ways to start</a><a href="about.html#experts">Our experts</a><a href="index.html#contact">Talk to us</a></div>
+          <div class="feat"><h6>Free tool</h6><p class="h4" style="margin:0">AI readiness assessment</p><p>Ten minutes. Your level, strengths and next steps — on screen, immediately.</p><a class="tl" href="assessment.html">Start the assessment <span class="ar">→</span></a></div>
+        </div></div></li>
+      <li><button type="button" aria-haspopup="true">Insights <span class="caret">▾</span></button>
+        <div class="mega"><div class="wrap">
+          <div><h6>Read</h6><a href="insights.html">All insights</a><a href="insights.html#articles">Articles</a><a href="insights.html#reports">Reports</a><a href="about.html#news">News</a></div>
+          <div><h6>Digital Maps</h6><a href="insights.html#maps">Banking Digital Map</a><a href="insights.html#maps">Insurance Digital Map</a><a href="insights.html#maps">Fintech Digital Map</a></div>
+          <div><h6>Coming in December</h6><a href="insights.html#reports">State of AI Readiness 2026</a></div>
+          <div class="feat"><h6>Summit recap</h6><p class="h4" style="margin:0">The 2026 Rewind</p><p>What we heard in Skopje — the ideas, the people and the next steps.</p><a class="tl" href="insights.html#articles">Read the recap <span class="ar">→</span></a></div>
+        </div></div></li>
+      <li><a href="summit/index.html" class="flagship"><img src="assets/brand/fds-compact-finelevate360.svg" alt="">Summit</a></li>
+      <li><button type="button" aria-haspopup="true">About <span class="caret">▾</span></button>
+        <div class="mega"><div class="wrap">
+          <div><h6>Finelevate360</h6><a href="about.html">Who we are</a><a href="about.html#experts">Our experts</a><a href="about.html#board">Advisory Board</a></div>
+          <div><h6>Ecosystem</h6><a href="about.html#partners">Partners &amp; ecosystem enablers</a><a href="summit/index.html#awards">Awards 2026</a><a href="about.html#news">News</a></div>
+          <div><h6>Languages</h6><a href="#">English</a><a href="#">Македонски</a><a href="#">Srpski · Hrvatski · Crnogorski · Slovenščina</a></div>
+          <div class="feat"><h6>Contact</h6><p class="h4" style="margin:0">Skopje, North Macedonia</p><p>We reply within one working day.</p><a class="tl" href="index.html#contact">Talk to us <span class="ar">→</span></a></div>
+        </div></div></li>
+    </ul>
+    <div class="hdr-cta"><span class="langsw" role="group" aria-label="Language"><a href="#" aria-current="true" lang="en">EN</a><a href="#" lang="mk">МК</a></span><a class="btn" href="#contact">Talk to us <span class="ar">→</span></a><button class="burger" type="button">Menu</button></div>
+  </div>
+</header>
+<main id="main">
+
+<section class="hero">
+  <div class="wrap g12">
+    <div class="c-7">
+      <div class="idx rv"><b>About</b> Finelevate360</div>
+      <h1 class="d1" style="font-size:clamp(42px,6vw,92px)"><span class="line-mask"><span>Experts and market</span></span><span class="line-mask"><span>leaders, acting</span></span><span class="line-mask"><span><em>early.</em></span></span></h1>
+      <p class="lede rv">Finelevate brings together exceptional experts and ambitious market leaders to anticipate change, design distinctive strategies, and execute early, precisely, and ahead of everyone else.</p>
+    </div>
+    <div class="c-4 s-9"><figure class="photo-hero clip"><img src="https://res.cloudinary.com/dneuiole5/image/upload/w_900,h_1125,c_fill,q_auto,f_auto/fds/ainapl6khy8dhew7efim" alt="The Finelevate360 team on stage at the 2026 summit"></figure><p class="cap">Fig. 01 — The Finelevate360 team, Skopje 2026</p></div>
+  </div>
+</section>
+
+<section class="sec bone" id="platform">
+  <div class="wrap">
+    <div class="head g12"><div class="c-12"><div class="idx rv">The platform</div></div><div class="c-7"><h2 class="d2 rv">Five ways we move the industry forward.</h2></div></div>
+    <div class="ledger">
+      <div class="lrow rv"><h3>Experts team on demand</h3><p>Subject-matter experts across Digital Experience, Data Modernization, AI, Technology, Cyber Security, Compliance, Remote KYC and Electronic Contracting.</p><a class="f" href="services.html">Consulting →</a></div>
+      <div class="lrow rv"><h3>Digital Maps</h3><p>The single source of truth for digital capability availability across digital channels within financial institutions.</p><a class="f" href="insights.html#maps">Explore →</a></div>
+      <div class="lrow rv"><h3>Partners &amp; ecosystem enablers</h3><p>Organisations that support our mission to accelerate impactful digital transformation in the financial industry.</p><a class="f" href="#partners">Partners →</a></div>
+      <div class="lrow rv"><h3>Advisory Board</h3><p>Strengthens methodological rigour, credibility and relevance — connecting industry, academia and other relevant domains.</p><a class="f" href="#board">Board →</a></div>
+      <div class="lrow rv"><h3>Finelevate Digital Summit</h3><p>The annual gathering of leaders shaping digital transformation in banking, insurance, fintech and the wider financial ecosystem.</p><a class="f" href="summit/index.html">Summit →</a></div>
+    </div>
+    <p class="pm"><b>Content kept:</b> pillar texts from the live home page, now as one ruled list instead of separate blocks.</p>
+  </div>
+</section>
+
+<section class="sec" id="leadership">
+  <div class="wrap g12" style="align-items:center">
+    <div class="c-4"><div style="aspect-ratio:4/5;background:var(--ink);display:grid;place-items:center;color:#fff;font-family:var(--display);font-size:88px" class="rv">VK</div><span class="ph-note">Add Viktor’s portrait</span></div>
+    <div class="c-7 s-6"><div class="idx rv">Leadership</div><h2 class="d2 rv" style="margin-top:22px">Viktor Krstevski</h2><p class="mono rv" style="margin-top:12px;color:var(--azure-ink)">Founder &amp; CEO, Finelevate360</p><p class="lede rv" style="margin-top:22px">Viktor founded Finelevate360 to connect the region’s financial institutions with the experts and partners who help them move first — and convenes them every year at the Finelevate Digital Summit.</p><span class="ph-note">Confirm biography wording with Viktor</span></div>
+  </div>
+</section>
+
+<section class="sec bone" id="experts">
+  <div class="wrap">
+    <div class="head g12"><div class="c-12"><div class="idx rv">Our experts</div></div><div class="c-7"><h2 class="d2 rv">Senior specialists, on demand.</h2></div></div>
+    <div class="role-grid"><div class="role rv"><span class="ini">SC</span><h4>Senior Compliance &amp; Regulatory Expert</h4><p>Regulatory analysis, controls and evidence.</p></div><div class="role rv"><span class="ini">AI</span><h4>AI Strategy &amp; Transformation Expert</h4><p>AI strategy, operating model and responsible AI.</p></div><div class="role rv"><span class="ini">DS</span><h4>Senior Data Scientist / AI Engineer</h4><p>ML, NLP and generative AI, validated.</p></div><div class="role rv"><span class="ini">DA</span><h4>Data Architect</h4><p>Data models, integration and governance.</p></div><div class="role rv"><span class="ini">EA</span><h4>Enterprise Application Architect</h4><p>Application architecture and integration.</p></div><div class="role rv"><span class="ini">SE</span><h4>Solution Expert — Digital</h4><p>Mobile, web, eKYC and e-signatures.</p></div><div class="role rv"><span class="ini">PP</span><h4>Power Platform Solution Architect</h4><p>Power Apps, Automate, BI, Copilot Studio.</p></div><div class="role rv"><span class="ini">PM</span><h4>Senior Project / Program Manager</h4><p>Planning, governance and delivery control.</p></div></div>
+    <span class="ph-note">Named portraits once each expert has consented</span>
+  </div>
+</section>
+
+<section class="sec" id="board">
+  <div class="wrap g12">
+    <div class="c-5"><div class="idx rv">Advisory Board</div><h2 class="d2 rv" style="margin-top:22px">Rigour, credibility, relevance.</h2></div>
+    <div class="c-6 s-7"><p class="lede rv">Our Advisory Board strengthens methodological rigour, credibility and relevance — connecting industry, academia and other relevant domains.</p><div style="margin-top:28px" class="rv"><a class="btn ghost" href="https://finelevate360.com/advisory-board/">Meet the Advisory Board <span class="ar">→</span></a></div><span class="ph-note">Migrate board members (existing post type) with duotone portraits</span></div>
+  </div>
+</section>
+
+<section class="sec dark on-dark grain" id="partners">
+  <div class="wrap">
+    <div class="head g12"><div class="c-12"><div class="idx rv">Partners &amp; ecosystem enablers</div></div><div class="c-7"><h2 class="d2 rv">Better when we build together.</h2></div></div>
+    <div class="ledger">
+      <div class="lrow rv"><h3>CaSys</h3><p>Payments infrastructure, electronic payments and card services.</p><span class="f" style="color:var(--green-l)">Gold Sponsor</span></div>
+      <div class="lrow rv"><h3>Mastercard</h3><p>Global payments network.</p><span class="f" style="color:var(--azure-l)">Partner</span></div>
+      <div class="lrow rv"><h3>InTec System</h3><p>Technology and implementation partner.</p><span class="f" style="color:var(--azure-l)">Partner</span></div>
+      <div class="lrow rv"><h3>Avenga · Tessa Group · InterCert · Nextsense · FEIT</h3><p>Technology, security, certification and academic partners of the ecosystem.</p><span class="f" style="color:var(--azure-l)">Partners</span></div>
+      <div class="lrow rv"><h3>Macedonia2025</h3><p>Memorandum of Cooperation to support digital transformation, innovation and the development of the Macedonian economy.</p><span class="f" style="color:var(--azure-l)">Memorandum</span></div>
+    </div>
+    <p class="pm"><b>WordPress:</b> the existing partner post type feeds this ledger; logos can be shown on hover. Partner descriptions marked generic should be confirmed with each partner.</p>
+  </div>
+</section>
+
+<section class="sec" id="news">
+  <div class="wrap">
+    <div class="head g12"><div class="c-12"><div class="idx rv">News</div></div><div class="c-7"><h2 class="d2 rv">Latest from Finelevate360.</h2></div></div>
+    <div class="ledger">
+      <div class="lrow rv"><h3>CaSys International becomes a Gold Sponsor of the Finelevate programme</h3><p>CaSys joins a select group of leading partners supporting the digital transformation of the financial sector.</p><a class="f" href="https://finelevate360.com/news/">Read →</a></div>
+      <div class="lrow rv"><h3>Finelevate announces Finelevate Digital Summit 2026</h3><p>A regional conference on digital finance, AI and technology-driven transformation, 16 September 2026, Skopje Marriott Hotel.</p><a class="f" href="https://finelevate360.com/news/">Read →</a></div>
+      <div class="lrow rv"><h3>Finelevate and Macedonia2025 sign a Memorandum of Cooperation</h3><p>Signed by Viktor Krstevski and Prof. Dr. Nikica Mojsoska-Blazevski, CEO of Macedonia2025.</p><a class="f" href="https://finelevate360.com/news/">Read →</a></div>
+    </div>
+  </div>
+</section>
+
+<section class="sec dark on-dark grain" id="contact">
+  <div class="wrap g12" style="align-items:end">
+    <div class="c-7"><div class="idx">Contact</div><h2 class="d2" style="margin-top:22px">Let’s build what comes next — together.</h2></div>
+    <div class="c-4 s-9"><p class="lede">Thirty minutes with a senior advisor who knows regulated finance. We reply within one working day.</p>
+      <div style="display:flex;gap:12px;flex-wrap:wrap;margin-top:28px"><a class="btn" href="index.html#contact">Talk to us <span class="ar">→</span></a><a class="btn ghost" href="assessment.html">AI readiness check</a></div></div>
+  </div>
+</section>
+</main>
+<footer class="foot">
+  <div class="wrap">
+    <p class="big">Advice that moves finance <em style="font-style:italic;color:var(--azure-l)">forward.</em></p>
+    <div class="cols">
+      <div><h6>Consulting</h6><a href="services.html">All services</a><a href="service-ai-data.html">AI &amp; Data</a><a href="services.html#approach">Approach</a><a href="services.html#start">Ways to start</a><a href="assessment.html">AI readiness assessment</a></div>
+      <div><h6>Industries</h6><a href="industry-banking.html">Banking</a><a href="services.html#industries">Insurance</a><a href="services.html#industries">Payments &amp; Fintech</a><a href="services.html#industries">Public sector</a></div>
+      <div><h6>Insights</h6><a href="insights.html">Articles &amp; reports</a><a href="insights.html#maps">Banking Digital Map</a><a href="insights.html#maps">Insurance Digital Map</a><a href="insights.html#maps">Fintech Digital Map</a></div>
+      <div><h6>Summit</h6><a href="summit/index.html">The 2026 story</a><a href="summit/index.html#speakers">Speakers</a><a href="summit/index.html#awards">Awards 2026</a><a href="summit/index.html#2027">2027 edition</a></div>
+      <div><h6>About</h6><a href="about.html">Who we are</a><a href="about.html#board">Advisory Board</a><a href="about.html#partners">Partners</a><a href="about.html#news">News</a><a href="index.html#contact">Contact</a></div>
+    </div>
+    <div class="legal"><span>© 2026 Finelevate360 · Skopje, North Macedonia</span><span>Privacy · Cookies · EN · MK · SR · HR · ME · SL</span></div>
+  </div>
+</footer>
+<script src="assets/site.js"></script>
+<script>
+document.querySelectorAll('[data-chips]').forEach(function(g){var single=g.hasAttribute('data-single');g.querySelectorAll('.chip').forEach(function(c){c.addEventListener('click',function(){if(single)g.querySelectorAll('.chip').forEach(function(x){x.setAttribute('aria-pressed','false')});c.setAttribute('aria-pressed',single?'true':String(c.getAttribute('aria-pressed')!=='true'))})})});
+document.querySelectorAll('form[data-proto]').forEach(function(f){f.addEventListener('submit',function(e){e.preventDefault();var ok=f.querySelector('.ok');if(ok)ok.hidden=false})});
+</script>
+</body>
+</html>
