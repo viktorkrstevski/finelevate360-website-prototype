@@ -3,11 +3,53 @@
    speaker reel drag, gentle parallax on the flagship band. Everything is disabled under prefers-reduced-motion. */
 (function () {
   "use strict";
+  document.documentElement.classList.add("js");
   var shot = /[?&]shot/.test(location.search); // ?shot = static final state for screenshots and print
   if (shot) document.documentElement.classList.add("shot");
   var reduce = (window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches) || shot;
   var $ = function (s, r) { return (r || document).querySelector(s); };
   var $$ = function (s, r) { return [].slice.call((r || document).querySelectorAll(s)); };
+
+  /* Mobile disclosure navigation: native links remain usable without JavaScript. */
+  var burger = $(".burger"), mobile = $("#mobile-nav");
+  function closeMenu(focus) {
+    if (!mobile || !burger) return;
+    mobile.hidden = true; burger.setAttribute("aria-expanded", "false");
+    if (focus) burger.focus();
+  }
+  if (burger && mobile) {
+    burger.addEventListener("click", function () {
+      var open = burger.getAttribute("aria-expanded") !== "true";
+      burger.setAttribute("aria-expanded", String(open)); mobile.hidden = !open;
+    });
+    mobile.addEventListener("click", function (e) { if (e.target.closest("a")) closeMenu(false); });
+    document.addEventListener("keydown", function (e) { if (e.key === "Escape" && !mobile.hidden) closeMenu(true); });
+    document.addEventListener("click", function (e) { if (!e.target.closest(".hdr") && !mobile.hidden) closeMenu(false); });
+    window.addEventListener("resize", function () { if (window.innerWidth > 1100) closeMenu(false); });
+  }
+  $$(".nav > li > button").forEach(function (button) {
+    var item = button.parentElement, panel = $(".mega", item); if (!panel) return;
+    item.addEventListener("pointerenter", function () { item.classList.remove("menu-dismissed"); });
+    button.addEventListener("focus", function () { item.classList.remove("menu-dismissed"); });
+    button.setAttribute("aria-expanded", "false");
+    button.addEventListener("click", function () {
+      var open = !item.classList.contains("menu-open");
+      item.classList.remove("menu-dismissed");
+      $$(".nav > li.menu-open").forEach(function (li) { li.classList.remove("menu-open"); $("button", li).setAttribute("aria-expanded", "false"); });
+      item.classList.toggle("menu-open", open); button.setAttribute("aria-expanded", String(open));
+    });
+    item.addEventListener("keydown", function (e) { if (e.key === "Escape") { button.focus(); item.classList.remove("menu-open"); item.classList.add("menu-dismissed"); button.setAttribute("aria-expanded", "false"); } });
+    item.addEventListener("focusout", function (e) { if (!item.contains(e.relatedTarget)) { item.classList.remove("menu-open"); button.setAttribute("aria-expanded", "false"); } });
+  });
+
+  /* Form preference controls share the same behaviour on every page. */
+  $$("[data-chips]").forEach(function (group) {
+    $$(".chip", group).forEach(function (chip) { chip.addEventListener("click", function () {
+      var selected = chip.getAttribute("aria-pressed") === "true";
+      if (group.hasAttribute("data-single")) $$(".chip", group).forEach(function (c) { c.setAttribute("aria-pressed", "false"); });
+      chip.setAttribute("aria-pressed", String(group.hasAttribute("data-single") || !selected));
+    }); });
+  });
 
   /* reveal on view */
   // Clip-masked elements report zero visible area to IntersectionObserver, so observe their parent instead.
@@ -105,6 +147,7 @@
 
   /* PM notes */
   var pt = $(".pm-toggle");
+  if (pt && !/[?&]review(?:[=&]|$)/.test(location.search) && location.hash !== "#notes") pt.hidden = true;
   if (pt) { pt.addEventListener("click", function () { var on = document.body.classList.toggle("notes"); pt.textContent = on ? "Hide PM notes" : "Show PM notes"; }); if (location.hash === "#notes") pt.click(); }
 
   /* demo: open first capability */

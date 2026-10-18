@@ -77,8 +77,20 @@
           <div class="feat"><h6>Contact</h6><p class="h4" style="margin:0">Skopje, North Macedonia</p><p>We reply within one working day.</p><a class="tl" href="index.html#contact">Talk to us <span class="ar">→</span></a></div>
         </div></div></li>
     </ul>
-    <div class="hdr-cta"><span class="langsw" role="group" aria-label="Language"><a href="#" aria-current="true" lang="en">EN</a><a href="#" lang="mk">МК</a></span><a class="btn" href="#contact">Talk to us <span class="ar">→</span></a><button class="burger" type="button">Menu</button></div>
+    <div class="hdr-cta"><span class="langsw" role="group" aria-label="Language"><a href="#" aria-current="true" lang="en">EN</a><a href="#" lang="mk">МК</a></span><a class="btn" href="#contact">Talk to us <span class="ar">→</span></a><button class="burger" type="button" aria-controls="mobile-nav" aria-expanded="false">Menu</button></div>
   </div>
+
+<nav id="mobile-nav" class="mobile-nav" aria-label="Mobile navigation" hidden>
+  <a href="index.html">Home</a>
+  <a href="services.html">Consulting</a>
+  <a href="service-ai-data.html">AI &amp; Data</a>
+  <a href="industry-banking.html">Banking</a>
+  <a href="assessment.html">AI readiness assessment</a>
+  <a href="insights.html">Insights</a>
+  <a href="about.html">About</a>
+  <a href="summit/index.html">Digital Summit</a>
+  <a href="index.html#contact">Contact</a>
+</nav>
 </header>
 <main id="main">
 
@@ -177,7 +189,6 @@
 </footer>
 <script src="assets/site.js"></script>
 <script>
-document.querySelectorAll('[data-chips]').forEach(function(g){var single=g.hasAttribute('data-single');g.querySelectorAll('.chip').forEach(function(c){c.addEventListener('click',function(){if(single)g.querySelectorAll('.chip').forEach(function(x){x.setAttribute('aria-pressed','false')});c.setAttribute('aria-pressed',single?'true':String(c.getAttribute('aria-pressed')!=='true'))})})});
 document.querySelectorAll('form[data-proto]').forEach(function(f){f.addEventListener('submit',function(e){e.preventDefault();var ok=f.querySelector('.ok');if(ok)ok.hidden=false})});
 </script>
 </body>

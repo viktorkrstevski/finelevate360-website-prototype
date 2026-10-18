@@ -271,11 +271,11 @@ body.notes .pm{display:block}
 .pm-toggle{position:fixed;left:16px;bottom:16px;z-index:150;background:var(--ink);color:#fff;border:none;padding:11px 14px;font:500 12px var(--mono);letter-spacing:.06em;text-transform:uppercase;cursor:pointer}
 
 /* ---------- motion helpers (JS adds .in when visible) ---------- */
-.rv{opacity:0;transform:translateY(22px);transition:opacity .9s var(--ease),transform .9s var(--ease)}
+.js .rv{opacity:0;transform:translateY(22px);transition:opacity .9s var(--ease),transform .9s var(--ease)}
 .rv.in{opacity:1;transform:none}
-.clip{clip-path:inset(0 0 100% 0);transition:clip-path 1.3s var(--ease)}
+.js .clip{clip-path:inset(0 0 100% 0);transition:clip-path 1.3s var(--ease)}
 .clip.in{clip-path:inset(0 0 0 0)}
-.line-mask{display:block;overflow:hidden}.line-mask>span{display:block;transform:translateY(105%);transition:transform 1s var(--ease)}
+.line-mask{display:block;overflow:hidden}.line-mask>span{display:block}.js .line-mask>span{transform:translateY(105%);transition:transform 1s var(--ease)}
 .in .line-mask>span,.line-mask.in>span{transform:none}
 .line-mask:nth-child(2)>span{transition-delay:.08s}.line-mask:nth-child(3)>span{transition-delay:.16s}.line-mask:nth-child(4)>span{transition-delay:.24s}
 
@@ -292,3 +292,26 @@ body.notes .pm{display:block}
 
 /* separate dark closing sections from the dark footer */
 .foot{border-top:1px solid rgba(255,255,255,.1)}
+
+/* Accessible navigation and static-host fallbacks. */
+[hidden]{display:none!important}
+.js .rv.in{opacity:1;transform:none}
+.js .clip.in{clip-path:inset(0 0 0 0)}
+.js .in .line-mask>span,.js .line-mask.in>span{transform:none}
+.nav>li.menu-open .mega{opacity:1;visibility:visible;transform:none}
+.nav>li.menu-dismissed .mega{opacity:0;visibility:hidden}
+.mobile-nav{display:none}
+@media(max-width:1100px){
+  .mobile-nav{display:grid;grid-template-columns:1fr 1fr;max-height:65vh;overflow:auto;padding:12px var(--g) 22px;border-top:1px solid var(--line);background:var(--white);gap:0 22px}
+  .mobile-nav a{display:block;padding:13px 0;text-decoration:none;border-bottom:1px solid var(--line);font-size:16px}
+  html:not(.js) .mobile-nav[hidden]{display:grid!important}
+}
+@media(max-width:600px){
+  .hdr .wrap{gap:12px;height:72px}
+  .logo{gap:6px;min-width:0}.logo img{width:clamp(130px,40vw,190px);height:auto}.logo .ring{display:none}
+  .hdr-cta{gap:8px;margin-left:auto}.langsw a{padding:8px 7px}.burger{padding:9px 8px}
+  .mobile-nav{grid-template-columns:1fr}
+}
+@media(prefers-reduced-motion:reduce){
+  .js .rv{opacity:1;transform:none}.js .clip{clip-path:none}.js .line-mask>span{transform:none}
+}

@@ -1,3 +1,9 @@
 screens/
 *.original
 Thumbs.db
+node_modules/
+dist/
+.env*
+!.env.example
+test-results/
+artifacts/
