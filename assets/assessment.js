@@ -72,6 +72,8 @@
   var ROLE = ["Board or executive", "Risk, compliance or audit", "IT, data or digital", "Business or operations", "Other"];
 
   var root = document.getElementById("assess");
+  if (!root) return;
+  var answerTimer = null;
   var st = load() || { step: "intro", profile: {}, answers: {}, i: 0, lead: {} };
   // Demo states for reviews and screenshots: #demo-profile, #demo-question, #demo-result, #demo-report, #demo-thanks
   var demo = (location.hash.match(/^#demo-(\w+)/) || [])[1];
@@ -84,8 +86,25 @@
     save = function () {}; // never overwrite a real visitor's saved progress with demo data
   }
 
-  function save() { try { localStorage.setItem(KEY, JSON.stringify(st)); } catch (e) {} }
-  function load() { try { return JSON.parse(localStorage.getItem(KEY)); } catch (e) { return null; } }
+  function save() {
+    // Contact details entered in the report preview never persist on a shared device.
+    try { localStorage.setItem(KEY, JSON.stringify({ step: st.step === "thanks" ? "result" : st.step, profile: st.profile, answers: st.answers, i: st.i })); } catch (e) {}
+  }
+  function load() {
+    try {
+      var value = JSON.parse(localStorage.getItem(KEY));
+      if (!value || typeof value !== "object" || !value.profile || !value.answers || Array.isArray(value.answers)) return null;
+      var org = ORG.filter(function (o) { return o.v === value.profile.org; })[0];
+      if (!org || SIZE.indexOf(value.profile.size) < 0 || COUNTRY.indexOf(value.profile.country) < 0 || ROLE.indexOf(value.profile.role) < 0) return null;
+      var qs = Q.filter(function (q) { return org.fi ? !q.co : !q.fi; }), answers = {};
+      qs.forEach(function (q, i) { var a = value.answers[i]; if (a === "ns" || (Number.isInteger(a) && a >= 0 && a <= 3)) answers[i] = a; });
+      var step = ["intro", "profile", "q", "result", "report"].indexOf(value.step) >= 0 ? value.step : "intro";
+      var missing = qs.findIndex(function (q, i) { return answers[i] === undefined; });
+      var i = Number.isInteger(value.i) ? Math.max(0, Math.min(value.i, qs.length - 1)) : 0;
+      if (missing >= 0 && (step === "result" || step === "report")) { step = "q"; i = missing; }
+      return { step: step, profile: { org: org.v, size: value.profile.size, country: value.profile.country, role: value.profile.role }, answers: answers, i: i, lead: {} };
+    } catch (e) { return null; }
+  }
   function esc(s) { return String(s).replace(/[&<>"]/g, function (c) { return { "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]; }); }
   function isFI() { var o = ORG.filter(function (x) { return x.v === st.profile.org; })[0]; return o ? o.fi : true; }
   function questions() { var fi = isFI(); return Q.filter(function (q) { return fi ? !q.co : !q.fi; }); }
@@ -94,9 +113,9 @@
     var qs = questions(), per = {}, notSure = 0;
     DIMS.forEach(function (d) { per[d.id] = { pts: 0, max: 0 }; });
     qs.forEach(function (q, i) {
-      var a = st.answers[i]; if (a === undefined) return;
+      var a = st.answers[i];
       per[q.d].max += 3;
-      if (a === "ns") notSure++; else per[q.d].pts += a;
+      if (a === "ns") notSure++; else if (Number.isInteger(a) && a >= 0 && a <= 3) per[q.d].pts += a;
     });
     var dims = DIMS.map(function (d) { var p = per[d.id]; return { id: d.id, name: d.name, pct: p.max ? Math.round(p.pts / p.max * 100) : 0 }; });
     var pct = Math.round(dims.reduce(function (s, d) { return s + d.pct; }, 0) / dims.length);
@@ -159,26 +178,36 @@
 
   function vResult() {
     var s = score(), w = s.weakest;
+    var balanced = s.dims.every(function (d) { return d.pct === s.dims[0].pct; });
+    function action(d, k) {
+      if (d.pct >= 85) return [
+        "Review the evidence supporting your " + d.name.toLowerCase() + " score and confirm it is current.",
+        "Stress-test your " + d.name.toLowerCase() + " practices as AI use grows.",
+        "Track outcomes and refresh your " + d.name.toLowerCase() + " standards as needs change."
+      ][k];
+      if (d.pct >= 45) return [ACTIONS[d.id][1], ACTIONS[d.id][2], "Review measurable improvements in " + d.name.toLowerCase() + " and agree the next priorities."][k];
+      return ACTIONS[d.id][k];
+    }
     var bars = s.dims.map(function (d) { return '<div class="bar"><div class="row"><b>' + esc(d.name) + "</b><span>" + d.pct + '%</span></div><div class="t"><div class="f" style="width:' + d.pct + '%"></div></div></div>'; }).join("");
     var plan = ["This week", "This quarter", "This year"].map(function (when, k) {
-      return '<div class="a-plan-col"><span class="eyebrow">' + when + "</span><ul>" + w.map(function (d) { return "<li>" + esc(ACTIONS[d.id][k]) + "</li>"; }).join("") + "</ul></div>";
+      return '<div class="a-plan-col"><span class="eyebrow">' + when + "</span><ul>" + w.map(function (d) { return "<li>" + esc(action(d, k)) + "</li>"; }).join("") + "</ul></div>";
     }).join("");
     var ns = s.notSure ? '<p class="a-flag"><b>' + s.notSure + " “Not sure” answer" + (s.notSure > 1 ? "s" : "") + ".</b> Uncertainty is itself a finding — it usually means ownership is unclear. We count these as “not started”.</p>" : "";
     return shell(
       '<span class="a-step">Step 3 of 3 · Your result</span>' +
       '<div class="a-res-top">' + ring(s.pct) + '<div><span class="band">Level ' + s.level.n + " · " + s.level.name + '</span><h2 class="a-q" style="margin-top:12px">' + s.level.head + '</h2><p class="lede" style="font-size:17px;margin-top:8px">' + s.level.lead + "</p>" +
-      '<p style="margin-top:12px;font-size:15px">Strongest in <b>' + esc(s.strongest.name) + "</b>. Start with <b>" + esc(w[0].name) + "</b> and <b>" + esc(w[1].name) + "</b>.</p></div></div>" +
+      '<p style="margin-top:12px;font-size:15px">' + (balanced ? 'Your dimensions are evenly balanced. Review the evidence behind each score and use the priorities below to keep improving.' : 'Strongest in <b>' + esc(s.strongest.name) + '</b>. Focus on <b>' + esc(w[0].name) + '</b> and <b>' + esc(w[1].name) + '</b>.') + '</p></div></div>' +
       '<div class="bars" style="margin-top:28px">' + bars + "</div>" + ns +
       '<div class="a-plan"><h3 class="h3">Your next steps</h3><div class="a-plan-grid">' + plan + "</div></div>" +
       '<div class="a-peer"><b>Compare with your peers — from December.</b> When at least five organisations of your type have taken part, we will show how you compare. Ask for the detailed report and you will receive it first.</div>' +
-      '<div class="a-cta-row"><button class="btn" data-act="report">Email me the detailed report <span class="arr">→</span></button><a class="btn ghost" href="index.html#contact">Talk to an advisor</a><button class="a-link" data-act="restart">Start again</button></div>',
+      '<div class="a-cta-row"><button class="btn" data-act="report">Preview the report request <span class="arr">→</span></button><a class="btn ghost" href="index.html#contact">Talk to an advisor</a><button class="a-link" data-act="restart">Start again</button></div>',
       { progress: 100 });
   }
 
   function vReport() {
     var l = st.lead;
     return shell('<span class="a-step">Detailed report</span><h2 class="a-q">Where should we send your report?</h2>' +
-      '<p class="muted" style="margin-top:6px">A PDF with your full breakdown, the actions for each dimension, and how your answers compare once peer data is available.</p>' +
+      '<p class="muted" style="margin-top:6px">Test the report request. This preview does not send email or submit your details to a server.</p>' +
       '<form class="a-form" data-form="report">' +
       '<label class="a-field"><span>Name</span><input name="name" required autocomplete="name" value="' + esc(l.name || "") + '"></label>' +
       '<label class="a-field"><span>Work email</span><input name="email" type="email" required autocomplete="email" value="' + esc(l.email || "") + '"></label>' +
@@ -188,13 +217,13 @@
       '<label><input type="checkbox" name="c_report" checked required> Send me my detailed report <small>(required to send it)</small></label>' +
       '<label><input type="checkbox" name="c_contact"> An advisor may contact me about my result</label>' +
       '<label><input type="checkbox" name="c_bench"> Send me the State of AI Readiness 2026 report in December</label></fieldset>' +
-      '<p class="a-privacy" style="margin-top:0">We never share your answers with third parties. Read our <a href="#">privacy notice</a>.</p>' +
-      '<div class="a-nav"><button type="button" class="a-link" data-act="result">← Back to my result</button><button class="btn" type="submit">Send my report</button></div></form>');
+      '<p class="a-privacy" style="margin-top:0">Your contact details stay in this tab and are not saved to browser storage. Read our <a href="https://finelevate360.com/privacy-policy/">privacy notice</a>.</p>' +
+      '<div class="a-nav"><button type="button" class="a-link" data-act="result">← Back to my result</button><button class="btn" type="submit">Preview request</button></div></form>');
   }
 
   function vThanks() {
     var s = score();
-    return shell('<div class="a-thanks"><span class="a-tick">✓</span><h2 class="a-q">Your report is on its way.</h2><p class="lede" style="font-size:17px;margin-top:10px">We have sent it to <b>' + esc(st.lead.email) + "</b>. Your level: <b>" + s.level.n + " · " + s.level.name + " (" + s.pct + "%)</b>.</p>" +
+    return shell('<div class="a-thanks"><span class="a-tick">✓</span><h2 class="a-q">Report request preview.</h2><p class="lede" style="font-size:17px;margin-top:10px">No email has been sent. Your result: <b>' + s.level.n + " · " + s.level.name + " (" + s.pct + "%)</b>.</p>" +
       '<div class="a-advisor"><span class="a-av">AI</span><div><b>Finelevate360 AI Advisory</b><span class="muted">Thirty minutes, free and without obligation — we walk through your result and agree one practical next step.</span></div><a class="btn" href="index.html#contact">Book a conversation</a></div>' +
       '<p class="a-proto">Prototype: nothing was sent. In production the WordPress plugin stores the response and Brevo sends the results email.</p>' +
       '<button class="a-link" data-act="restart">Take it again</button></div>');
@@ -211,14 +240,26 @@
   }
 
   function answer(v) {
-    st.answers[st.i] = v === "ns" ? "ns" : parseInt(v, 10);
+    if (st.step !== "q" || answerTimer !== null || ["0", "1", "2", "3", "ns"].indexOf(String(v)) < 0) return;
+    var index = st.i;
+    st.answers[index] = v === "ns" ? "ns" : Number(v);
     save();
-    setTimeout(function () { if (st.i < questions().length - 1) { st.i++; } else { st.step = "result"; } render(); }, 160);
+    answerTimer = setTimeout(function () {
+      answerTimer = null;
+      if (st.step !== "q" || st.i !== index) return;
+      if (index < questions().length - 1) st.i = index + 1;
+      else {
+        var missing = questions().findIndex(function (q, i) { return st.answers[i] === undefined; });
+        if (missing >= 0) st.i = missing; else st.step = "result";
+      }
+      render();
+    }, 160);
   }
 
   root.addEventListener("click", function (e) {
     var o = e.target.closest("[data-ans]"); if (o) { answer(o.getAttribute("data-ans")); return; }
     var a = e.target.closest("[data-act]"); if (!a) return;
+    if (answerTimer !== null) { clearTimeout(answerTimer); answerTimer = null; }
     var act = a.getAttribute("data-act");
     if (act === "start") { st.step = "profile"; }
     else if (act === "resume") { st.step = st.profile.org ? "q" : "profile"; }
@@ -232,6 +273,7 @@
   root.addEventListener("submit", function (e) {
     e.preventDefault();
     var f = e.target, fd = new FormData(f);
+    if (!f.checkValidity()) { f.reportValidity(); return; }
     if (f.dataset.form === "profile") {
       var prevFI = isFI();
       ["org", "size", "country", "role"].forEach(function (k) { st.profile[k] = fd.get(k); });
@@ -247,7 +289,7 @@
   });
   document.addEventListener("keydown", function (e) {
     var t = e.target;
-    if (st.step !== "q" || e.altKey || e.ctrlKey || e.metaKey) return;
+    if (st.step !== "q" || e.repeat || e.altKey || e.ctrlKey || e.metaKey) return;
     if (t && t.matches && t.matches("input,select,textarea")) return;
     var k = parseInt(e.key, 10); if (k >= 1 && k <= 5) { answer(k === 5 ? "ns" : SCALE[k - 1].v); }
   });
