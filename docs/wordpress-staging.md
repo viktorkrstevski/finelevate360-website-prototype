@@ -136,3 +136,14 @@ WPVibe 1.16.5: its read-only wp-content operation explicitly requires a plugin
 update. No production update was attempted. Actual directory integration and
 locale-specific staging content remain unfinished; no speculative records,
 ratings or official bank URLs are bundled.
+
+The owner-approved preflight at commit `87628d4d` reached verified TLS but failed
+at login with `530 Login incorrect`; no target read or write ran. hPanel then
+confirmed that the FTP service address is **82.198.228.17**, distinct from the
+file-manager hostname's current DNS address. A credential-free AUTH TLS handshake
+to that exact IP validated the certificate against `srv2071-files.hstgr.io` using
+the default trust store and hostname checks. The script now connects only to
+that hPanel IP and uses the pinned Hostinger name for TLS identity/SNI. It never
+disables certificate validation, changes credentials, or broadens the account.
+Any endpoint migration requires an explicit reviewed code change. The corrected
+preflight requires a new owner review and is not proof of successful login yet.

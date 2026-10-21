@@ -17,6 +17,9 @@ from staging_package import HOST, SLUG, ALLOWED, REQUIRED, FORBIDDEN
 
 SENTINEL = ".finelevate-staging-target"
 FTPS_HOST = "srv2071-files.hstgr.io"
+# hPanel's FTP endpoint differs from the file-manager hostname's DNS address.
+# Pin the provider-confirmed address while retaining verified TLS identity/SNI.
+FTPS_ADDRESS = "82.198.228.17"
 BACKUP = re.compile(r"\.finelevate-rollback-[0-9]{20}-[a-f0-9]{12}")
 
 
@@ -157,7 +160,8 @@ def main():
     files = None if args.check_access or args.rollback_directory else archive_files(args.artifact, args.commit)
     context = ssl.create_default_context()
     with FTP_TLS(context=context, timeout=60) as ftp:
-        ftp.connect(os.environ["STAGING_FTPS_HOST"], 21)
+        ftp.connect(FTPS_ADDRESS, 21)
+        ftp.host = FTPS_HOST  # FTP_TLS.login verifies this name during AUTH TLS.
         ftp.login(os.environ["STAGING_FTPS_USER"], os.environ["STAGING_FTPS_PASSWORD"])
         ftp.prot_p()  # Encrypt data as well as control; never fall back to plain FTP.
         verify_target(ftp)
