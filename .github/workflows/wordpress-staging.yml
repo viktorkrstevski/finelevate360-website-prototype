@@ -1,0 +1,99 @@
+name: WordPress staging
+
+on:
+  push:
+    branches: [codex/advisory-clarity-staging]
+  pull_request:
+    paths: ["wordpress/**", "ci/**", ".github/workflows/wordpress-staging.yml"]
+  workflow_dispatch:
+    inputs:
+      rollback_directory:
+        description: "Optional exact .finelevate-rollback-* directory from a prior deployment"
+        type: string
+        required: false
+      rollback_commit:
+        description: "Full commit SHA of that rollback release (required for rollback)"
+        type: string
+        required: false
+
+permissions:
+  contents: read
+
+concurrency:
+  group: wordpress-staging-${{ github.ref }}
+  cancel-in-progress: false
+
+jobs:
+  validate-package:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065 # v5
+        with:
+          python-version: "3.12"
+      - name: Lint PHP templates
+        run: find wordpress/themes/finelevate-advisory -name '*.php' -print0 | xargs -0 -n1 php -l
+      - name: Check browser JavaScript
+        run: node --check wordpress/themes/finelevate-advisory/assets/site.js
+      - name: Test artifact integrity, staging scope and rollback
+        run: python -m unittest discover -s ci -p 'test_*.py' -v
+      - name: Package theme from this exact commit
+        run: python ci/staging_package.py --commit "$GITHUB_SHA"
+      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4
+        with:
+          name: finelevate-advisory-${{ github.sha }}
+          path: artifacts/finelevate-advisory.zip*
+          if-no-files-found: error
+          retention-days: 90
+
+  deploy-staging:
+    # Repository opt-in stays unset until the owner approves a dedicated staging
+    # FTPS credential and the actual WordPress runtime/SSL/noindex checks pass.
+    if: >-
+      github.ref == 'refs/heads/codex/advisory-clarity-staging' &&
+      github.event_name != 'pull_request' &&
+      vars.STAGING_DEPLOY_ENABLED == 'true'
+    needs: validate-package
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    environment:
+      name: staging
+      url: https://stg.finelevate360.com
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065 # v5
+        with:
+          python-version: "3.12"
+      - uses: actions/download-artifact@d3f86a106a0bac45b974a628896c90dbdf5c8093 # v4
+        with:
+          name: finelevate-advisory-${{ github.sha }}
+          path: artifacts
+      - name: Deploy verified theme or restore a recorded previous release
+        env:
+          STAGING_DEPLOY_ENABLED: ${{ vars.STAGING_DEPLOY_ENABLED }}
+          STAGING_URL: https://stg.finelevate360.com
+          STAGING_FTPS_HOST: ${{ vars.STAGING_FTPS_HOST }}
+          STAGING_FTPS_USER: ${{ secrets.STAGING_FTPS_USER }}
+          STAGING_FTPS_PASSWORD: ${{ secrets.STAGING_FTPS_PASSWORD }}
+          ROLLBACK_DIRECTORY: ${{ inputs.rollback_directory }}
+          ROLLBACK_COMMIT: ${{ inputs.rollback_commit }}
+        run: |
+          if [ -n "$ROLLBACK_DIRECTORY" ]; then
+            python ci/staging_deploy.py --rollback-directory "$ROLLBACK_DIRECTORY" --commit "$ROLLBACK_COMMIT"
+          else
+            cd artifacts
+            sha256sum --check finelevate-advisory.zip.sha256
+            cd ..
+            python ci/staging_deploy.py --artifact artifacts/finelevate-advisory.zip --commit "$GITHUB_SHA"
+          fi
+      - name: Record deployment trace
+        run: |
+          echo '### Finelevate staging' >> "$GITHUB_STEP_SUMMARY"
+          echo "Source: $GITHUB_SHA" >> "$GITHUB_STEP_SUMMARY"
+          echo 'Target: https://stg.finelevate360.com' >> "$GITHUB_STEP_SUMMARY"
+          echo 'Theme only; no database, uploads or production deployment.' >> "$GITHUB_STEP_SUMMARY"

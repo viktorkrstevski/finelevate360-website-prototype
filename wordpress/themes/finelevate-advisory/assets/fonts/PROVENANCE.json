@@ -1,0 +1,31 @@
+{
+  "license": "SIL Open Font License 1.1",
+  "license_source": "https://raw.githubusercontent.com/JulietaUla/Montserrat/master/OFL.txt",
+  "license_verified_on": "2026-10-21",
+  "files": [
+    {
+      "filename": "Montserrat-Regular.ttf",
+      "original_source_from_preserved_stylesheet": "https://fonts.gstatic.com/s/montserrat/v31/JTUHjIg1_i6t8kCHKm4532VJOt5-QNFgpCtr6Ew-.ttf",
+      "bytes_unmodified": true,
+      "embedded_copyright": "Copyright 2011 The Montserrat Project Authors (https://github.com/JulietaUla/Montserrat)"
+    },
+    {
+      "filename": "Montserrat-Medium.ttf",
+      "original_source_from_preserved_stylesheet": "https://fonts.gstatic.com/s/montserrat/v31/JTUHjIg1_i6t8kCHKm4532VJOt5-QNFgpCtZ6Ew-.ttf",
+      "bytes_unmodified": true,
+      "embedded_copyright": "Copyright 2011 The Montserrat Project Authors (https://github.com/JulietaUla/Montserrat)"
+    },
+    {
+      "filename": "Montserrat-SemiBold.ttf",
+      "original_source_from_preserved_stylesheet": "https://fonts.gstatic.com/s/montserrat/v31/JTUHjIg1_i6t8kCHKm4532VJOt5-QNFgpCu170w-.ttf",
+      "bytes_unmodified": true,
+      "embedded_copyright": "Copyright 2011 The Montserrat Project Authors (https://github.com/JulietaUla/Montserrat)"
+    },
+    {
+      "filename": "Montserrat-Bold.ttf",
+      "original_source_from_preserved_stylesheet": "https://fonts.gstatic.com/s/montserrat/v31/JTUHjIg1_i6t8kCHKm4532VJOt5-QNFgpCuM70w-.ttf",
+      "bytes_unmodified": true,
+      "embedded_copyright": "Copyright 2011 The Montserrat Project Authors (https://github.com/JulietaUla/Montserrat)"
+    }
+  ]
+}

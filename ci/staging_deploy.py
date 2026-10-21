@@ -1,0 +1,168 @@
+"""FTPS theme deployment to a dedicated staging-only chroot; no database writes."""
+import argparse
+from datetime import datetime, timezone
+from ftplib import FTP_TLS, error_perm
+import hashlib
+import io
+import json
+import os
+from pathlib import Path, PurePosixPath
+import re
+import ssl
+import time
+from urllib.request import Request, urlopen
+import zipfile
+
+from staging_package import HOST, SLUG, ALLOWED, REQUIRED, FORBIDDEN
+
+SENTINEL = ".finelevate-staging-target"
+BACKUP = re.compile(r"\.finelevate-rollback-[0-9]{20}-[a-f0-9]{12}")
+
+
+def archive_files(path, expected_commit):
+    files = {}
+    with zipfile.ZipFile(path) as archive:
+        if sum(info.file_size for info in archive.infolist()) > 50 * 1024 * 1024:
+            raise ValueError("Artifact exceeds 50 MiB")
+        for info in archive.infolist():
+            parts = PurePosixPath(info.filename).parts
+            if (len(parts) < 2 or parts[0] != SLUG or ".." in parts or
+                    "\\" in info.filename or info.is_dir() or
+                    ((info.external_attr >> 16) & 0o170000) == 0o120000):
+                raise ValueError("Unsafe artifact path")
+            relative = "/".join(parts[1:])
+            if relative in files or FORBIDDEN.search(relative) or PurePosixPath(relative).suffix.lower() not in ALLOWED:
+                raise ValueError("Unapproved artifact path")
+            files[relative] = archive.read(info)
+    manifest = json.loads(files.pop("release.json"))
+    if (manifest.get("host") != HOST or manifest.get("theme") != SLUG or
+            manifest.get("commit") != expected_commit or
+            not re.fullmatch(r"[a-f0-9]{40}", expected_commit)):
+        raise ValueError("Artifact target or commit mismatch")
+    actual = {name: hashlib.sha256(data).hexdigest() for name, data in files.items()}
+    if manifest.get("files") != actual or not REQUIRED.issubset(files):
+        raise ValueError("Artifact file integrity mismatch")
+    files["release.json"] = (json.dumps(manifest, sort_keys=True, indent=2) + "\n").encode()
+    return files
+
+
+def verify_target(ftp):
+    # The FTP account must be jailed at this staging instance's wp-content/themes.
+    ftp.cwd("/")
+    marker = io.BytesIO()
+    ftp.retrbinary(f"RETR {SENTINEL}", marker.write)
+    if marker.getvalue().decode().strip() != f"https://{HOST}":
+        raise ValueError("Staging chroot sentinel mismatch; no files changed")
+
+
+def exists(ftp, name):
+    try:
+        ftp.cwd(name)
+        ftp.cwd("/")
+        return True
+    except error_perm as error:
+        if not str(error).startswith("550"):
+            raise
+        return False
+
+
+def publish(ftp, incoming, release_id):
+    backup = f".finelevate-rollback-{release_id}"
+    previous = exists(ftp, SLUG)
+    if previous:
+        ftp.rename(SLUG, backup)
+    try:
+        ftp.rename(incoming, SLUG)
+    except Exception:
+        if previous:
+            ftp.rename(backup, SLUG)
+        raise
+    return backup if previous else None
+
+
+def upload(ftp, files, release_id):
+    incoming = f".finelevate-incoming-{release_id}"
+    ftp.mkd(incoming)  # Fail rather than reuse an existing/incomplete release.
+    directories = {incoming}
+    for name, data in sorted(files.items()):
+        relative = PurePosixPath(incoming) / name
+        for parent in reversed(relative.parents):
+            if str(parent) != "." and str(parent) not in directories:
+                ftp.mkd(str(parent))
+                directories.add(str(parent))
+        ftp.storbinary(f"STOR {relative}", io.BytesIO(data))
+        received = io.BytesIO()
+        ftp.retrbinary(f"RETR {relative}", received.write)
+        if received.getvalue() != data:
+            raise ValueError(f"FTPS upload integrity check failed: {name}")
+    return publish(ftp, incoming, release_id)
+
+
+def verify_http(expected_commit):
+    req = Request(f"https://{HOST}/?finelevate_release={expected_commit}", headers={"Cache-Control": "no-cache"})
+    with urlopen(req, timeout=30) as response:
+        if response.url.split("/")[2] != HOST:
+            raise ValueError("Staging redirected to another host")
+        html = response.read(4 * 1024 * 1024).decode("utf-8", errors="replace")
+        robots = response.headers.get("X-Robots-Tag", "").lower()
+        if "noindex" not in robots and not re.search(r'<meta\b(?=[^>]*\bname=["\x27]robots["\x27])(?=[^>]*\bcontent=["\x27][^"\x27]*noindex)', html, re.I):
+            raise ValueError("Staging noindex is missing")
+    with urlopen(f"https://{HOST}/wp-content/themes/{SLUG}/release.json?v={expected_commit}", timeout=30) as response:
+        if response.url.split("/")[2] != HOST:
+            raise ValueError("Release redirected to another host")
+        manifest = json.load(response)
+    if manifest.get("commit") != expected_commit or manifest.get("host") != HOST:
+        raise ValueError("Public release verification mismatch")
+
+
+def main():
+    parser = argparse.ArgumentParser()
+    parser.add_argument("--artifact", type=Path)
+    parser.add_argument("--commit", required=True)
+    parser.add_argument("--rollback-directory")
+    args = parser.parse_args()
+    if os.environ.get("STAGING_DEPLOY_ENABLED") != "true":
+        raise ValueError("Staging deployment is not enabled")
+    if os.environ.get("STAGING_URL") != f"https://{HOST}":
+        raise ValueError("Only the approved staging host may be deployed")
+    if not re.fullmatch(r"[a-f0-9]{40}", args.commit):
+        raise ValueError("A full commit SHA is required")
+    if args.rollback_directory and not BACKUP.fullmatch(args.rollback_directory):
+        raise ValueError("Invalid rollback directory")
+    files = None if args.rollback_directory else archive_files(args.artifact, args.commit)
+    release_id = datetime.now(timezone.utc).strftime("%Y%m%d%H%M%S%f") + "-" + args.commit[:12]
+    context = ssl.create_default_context()
+    with FTP_TLS(context=context, timeout=60) as ftp:
+        ftp.connect(os.environ["STAGING_FTPS_HOST"], 21)
+        ftp.login(os.environ["STAGING_FTPS_USER"], os.environ["STAGING_FTPS_PASSWORD"])
+        ftp.prot_p()  # Encrypt data as well as control; never fall back to plain FTP.
+        verify_target(ftp)
+        if args.rollback_directory:
+            stored = io.BytesIO()
+            ftp.retrbinary(f"RETR {args.rollback_directory}/release.json", stored.write)
+            old = json.loads(stored.getvalue())
+            if old.get("commit") != args.commit or old.get("host") != HOST:
+                raise ValueError("Rollback release does not match requested commit and staging host")
+            backup = publish(ftp, args.rollback_directory, release_id)
+        else:
+            backup = upload(ftp, files, release_id)
+        try:
+            for attempt in range(3):
+                try:
+                    verify_http(args.commit)
+                    break
+                except Exception:
+                    if attempt == 2:
+                        raise
+                    time.sleep(5)
+        except Exception:
+            if backup:
+                ftp.rename(SLUG, f".finelevate-failed-{release_id}")
+                ftp.rename(backup, SLUG)
+                print("Verification failed; the previous theme directory was restored.")
+            raise
+        print(f"Verified https://{HOST} at {args.commit}; previous release: {backup or 'none'}")
+
+
+if __name__ == "__main__":
+    main()

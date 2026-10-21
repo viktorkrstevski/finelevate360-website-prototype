@@ -1,0 +1,332 @@
+{
+  "hero_title": {
+    "value": "A platform driving innovation and accelerating digital transformation in financial services",
+    "label": "Headline",
+    "section": "hero",
+    "type": "text"
+  },
+  "hero_subtitle": {
+    "value": "The Future Is Not Waiting. Build Before It Becomes Obvious.",
+    "label": "Subheading",
+    "section": "hero",
+    "type": "text"
+  },
+  "mission": {
+    "value": "Finelevate brings together exceptional experts and ambitious market leaders to anticipate change, design distinctive strategies, and execute early, precisely, and ahead of everyone else.",
+    "label": "Mission",
+    "section": "hero",
+    "type": "text"
+  },
+  "expertise_heading": {
+    "value": "Transformation demands more than a strategy.",
+    "label": "Section heading",
+    "section": "expertise",
+    "type": "text"
+  },
+  "expertise_1": {
+    "value": "Digital Identity, Trust Services and Onboarding",
+    "label": "Expertise 1",
+    "section": "expertise",
+    "type": "text"
+  },
+  "expertise_2": {
+    "value": "AI, Data and Intelligent Automation",
+    "label": "Expertise 2",
+    "section": "expertise",
+    "type": "text"
+  },
+  "expertise_3": {
+    "value": "Cybersecurity, Regulation and Compliance",
+    "label": "Expertise 3",
+    "section": "expertise",
+    "type": "text"
+  },
+  "expertise_4": {
+    "value": "Digital Strategy and Transformation Management",
+    "label": "Expertise 4",
+    "section": "expertise",
+    "type": "text"
+  },
+  "experts_title": {
+    "value": "Experts team on demand",
+    "label": "Experts Title",
+    "section": "expertise",
+    "type": "text"
+  },
+  "experts_description": {
+    "value": "Access expertise for your next transformation challenge.",
+    "label": "Experts Description",
+    "section": "expertise",
+    "type": "text"
+  },
+  "map_heading": {
+    "value": "Digital capabilities, by country",
+    "label": "Map Heading",
+    "section": "map",
+    "type": "text"
+  },
+  "map_description": {
+    "value": "Digital capability availability across digital channels within financial institutions.",
+    "label": "Map Description",
+    "section": "map",
+    "type": "text"
+  },
+  "map_sector_line": {
+    "value": "Banking · Insurance · Fintech",
+    "label": "Map Sector Line",
+    "section": "map",
+    "type": "text"
+  },
+  "advisory_description": {
+    "value": "Methodological rigor, credibility and relevance across industry and academia.",
+    "label": "Section description",
+    "section": "advisory",
+    "type": "text"
+  },
+  "advisory_1_name": {
+    "value": "Prof. Vladimir Atanasovski, PhD",
+    "label": "Member 1 name",
+    "section": "advisory",
+    "type": "text"
+  },
+  "advisory_1_short_role": {
+    "value": "Telecommunications & information engineering",
+    "label": "Member 1 short role",
+    "section": "advisory",
+    "type": "text"
+  },
+  "advisory_1_organisation": {
+    "value": "FEIT",
+    "label": "Member 1 organisation",
+    "section": "advisory",
+    "type": "text"
+  },
+  "advisory_2_name": {
+    "value": "Filip Simeonov",
+    "label": "Member 2 name",
+    "section": "advisory",
+    "type": "text"
+  },
+  "advisory_2_short_role": {
+    "value": "Cyber security expert",
+    "label": "Member 2 short role",
+    "section": "advisory",
+    "type": "text"
+  },
+  "advisory_2_organisation": {
+    "value": "CEO, Tessa Security",
+    "label": "Member 2 organisation",
+    "section": "advisory",
+    "type": "text"
+  },
+  "advisory_3_name": {
+    "value": "Prof. Ezeni Brzovska, PhD",
+    "label": "Member 3 name",
+    "section": "advisory",
+    "type": "text"
+  },
+  "advisory_3_short_role": {
+    "value": "Economics & product innovation",
+    "label": "Member 3 short role",
+    "section": "advisory",
+    "type": "text"
+  },
+  "advisory_3_organisation": {
+    "value": "Faculty of Economics Skopje",
+    "label": "Member 3 organisation",
+    "section": "advisory",
+    "type": "text"
+  },
+  "partners_description": {
+    "value": "Organisations supporting our mission to accelerate digital transformation in financial services.",
+    "label": "Section description",
+    "section": "partners",
+    "type": "text"
+  },
+  "cooperation_title": {
+    "value": "Finelevate and FEIT signed a cooperation agreement",
+    "label": "Cooperation headline",
+    "section": "partners",
+    "type": "text"
+  },
+  "cooperation_date": {
+    "value": "COOPERATION · 5 JUNE 2026",
+    "label": "Cooperation date",
+    "section": "partners",
+    "type": "text"
+  },
+  "news_title": {
+    "value": "CaSys International Becomes a Gold Sponsor of the Finelevate Program",
+    "label": "News headline",
+    "section": "partners",
+    "type": "text"
+  },
+  "news_date": {
+    "value": "LATEST NEWS · 7 JULY 2026",
+    "label": "News date",
+    "section": "partners",
+    "type": "text"
+  },
+  "summit_title": {
+    "value": "Finelevate Digital Summit 2026",
+    "label": "Summit Title",
+    "section": "summit",
+    "type": "text"
+  },
+  "summit_date": {
+    "value": "16 September 2026",
+    "label": "Summit Date",
+    "section": "summit",
+    "type": "text"
+  },
+  "summit_venue": {
+    "value": "Skopje Marriott Hotel",
+    "label": "Summit Venue",
+    "section": "summit",
+    "type": "text"
+  },
+  "footer_tagline": {
+    "value": "Decision-ready insights for digital transformation in financial services.",
+    "label": "Footer description",
+    "section": "footer",
+    "type": "text"
+  },
+  "contact_label": {
+    "value": "Contact us",
+    "label": "Contact button",
+    "section": "footer",
+    "type": "text"
+  },
+  "contact_title": {
+    "value": "Become a Partner",
+    "label": "Contact modal title",
+    "section": "footer",
+    "type": "text"
+  },
+  "contact_description": {
+    "value": "If your organization strengthens digital transformation outcomes - solutions, trust & assurance, or ecosystem enablement - let`s connect.",
+    "label": "Contact modal description",
+    "section": "footer",
+    "type": "text"
+  },
+  "summit_url": {
+    "value": "https://finelevate360.com/events/the-annual-executive-gathering-for-leaders-shaping-digital-transformation-in-financial-services/",
+    "label": "Summit URL",
+    "section": "links",
+    "type": "url"
+  },
+  "about_url": {
+    "value": "https://finelevate360.com/about-us/",
+    "label": "About URL",
+    "section": "links",
+    "type": "url"
+  },
+  "partners_url": {
+    "value": "https://finelevate360.com/partners/",
+    "label": "Partners URL",
+    "section": "links",
+    "type": "url"
+  },
+  "advisory_url": {
+    "value": "https://finelevate360.com/advisory-board/",
+    "label": "Advisory URL",
+    "section": "links",
+    "type": "url"
+  },
+  "banking_url": {
+    "value": "https://finelevate360.com/banking-capabilities/",
+    "label": "Banking URL",
+    "section": "links",
+    "type": "url"
+  },
+  "insurance_url": {
+    "value": "https://finelevate360.com/insurance/",
+    "label": "Insurance URL",
+    "section": "links",
+    "type": "url"
+  },
+  "fintech_url": {
+    "value": "https://finelevate360.com/fintech/",
+    "label": "Fintech URL",
+    "section": "links",
+    "type": "url"
+  },
+  "news_index_url": {
+    "value": "https://finelevate360.com/news/",
+    "label": "News Index URL",
+    "section": "links",
+    "type": "url"
+  },
+  "news_url": {
+    "value": "https://finelevate360.com/casys-%d0%b5-gold-sponsor-%d0%bd%d0%b0-finelevate-%d0%bf%d1%80%d0%be%d0%b3%d1%80%d0%b0%d0%bc%d0%b0%d1%82%d0%b0/",
+    "label": "News URL",
+    "section": "links",
+    "type": "url"
+  },
+  "cooperation_url": {
+    "value": "https://finelevate360.com/finelevate-and-feit-signed-cooperation-agreement/",
+    "label": "Cooperation URL",
+    "section": "links",
+    "type": "url"
+  },
+  "privacy_url": {
+    "value": "https://finelevate360.com/privacy-policy/",
+    "label": "Privacy URL",
+    "section": "links",
+    "type": "url"
+  },
+  "cookies_url": {
+    "value": "https://finelevate360.com/cookie-policy/",
+    "label": "Cookies URL",
+    "section": "links",
+    "type": "url"
+  },
+  "linkedin_url": {
+    "value": "https://www.linkedin.com/company/110786218/admin/page-posts/published/",
+    "label": "Linkedin URL",
+    "section": "links",
+    "type": "url"
+  },
+  "instagram_url": {
+    "value": "https://www.instagram.com/finelevate360/",
+    "label": "Instagram URL",
+    "section": "links",
+    "type": "url"
+  },
+  "language_en_url": {
+    "value": "https://finelevate360.com/",
+    "label": "Language En URL",
+    "section": "links",
+    "type": "url"
+  },
+  "language_mk_url": {
+    "value": "https://finelevate360.com/mk/home-2/",
+    "label": "Language Mk URL",
+    "section": "links",
+    "type": "url"
+  },
+  "language_sr_url": {
+    "value": "https://finelevate360.com/sr/pocetna/",
+    "label": "Language Sr URL",
+    "section": "links",
+    "type": "url"
+  },
+  "language_hr_url": {
+    "value": "https://finelevate360.com/hr/pocetna-2/",
+    "label": "Language Hr URL",
+    "section": "links",
+    "type": "url"
+  },
+  "language_sl_url": {
+    "value": "https://finelevate360.com/sl/domov/",
+    "label": "Language Sl URL",
+    "section": "links",
+    "type": "url"
+  },
+  "language_me_url": {
+    "value": "https://finelevate360.com/me/pocetna-3/",
+    "label": "Language Me URL",
+    "section": "links",
+    "type": "url"
+  }
+}
