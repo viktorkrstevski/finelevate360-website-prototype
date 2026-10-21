@@ -147,3 +147,18 @@ that hPanel IP and uses the pinned Hostinger name for TLS identity/SNI. It never
 disables certificate validation, changes credentials, or broadens the account.
 Any endpoint migration requires an explicit reviewed code change. The corrected
 preflight requires a new owner review and is not proof of successful login yet.
+
+The corrected owner-approved check also failed at authentication with `530 Login
+incorrect`. No target read or write ran. No further login retry or password reset
+was attempted. Access checks now require the explicit repository opt-in variable
+`STAGING_ACCESS_CHECK_ENABLED=true`, which stays unset until the owner has repaired
+the dedicated staging credential and its protected-environment secret. Regular
+pushes still validate/package. Deployment requires a successful access-check job,
+its own opt-in, and the protected environment review; skipping the access check
+cannot enable deployment. Do not use broader hosting credentials as a workaround.
+
+The local desktop visual check found a scrollbar-width overflow from the deliberate
+hero bleed. Clipping horizontal paint at the main page boundary keeps the image
+at the viewport edge without clipping header dropdowns or introducing a scroll
+container. The fix was checked at 320, 375, 430, 768, 1024 and 1280 viewport widths
+and in the native desktop window with its vertical scrollbar.

@@ -52,9 +52,12 @@ jobs:
   verify-staging-access:
     # Independently approved ongoing staging access, with human environment review.
     # Read-only: does not require or enable STAGING_DEPLOY_ENABLED.
+    # Leave opt-in unset after an authentication rejection until the owner repairs
+    # the dedicated staging credential; unrelated pushes must not retry login.
     if: >-
       github.ref == 'refs/heads/codex/advisory-clarity-staging' &&
-      github.event_name != 'pull_request'
+      github.event_name != 'pull_request' &&
+      vars.STAGING_ACCESS_CHECK_ENABLED == 'true'
     needs: validate-package
     runs-on: ubuntu-latest
     timeout-minutes: 5
@@ -82,7 +85,8 @@ jobs:
     if: >-
       github.ref == 'refs/heads/codex/advisory-clarity-staging' &&
       github.event_name != 'pull_request' &&
-      vars.STAGING_DEPLOY_ENABLED == 'true'
+      vars.STAGING_DEPLOY_ENABLED == 'true' &&
+      needs.verify-staging-access.result == 'success'
     needs: [validate-package, verify-staging-access]
     runs-on: ubuntu-latest
     timeout-minutes: 15
