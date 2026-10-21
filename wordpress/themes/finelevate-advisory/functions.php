@@ -60,7 +60,7 @@ add_filter('pre_wp_mail', function ($result) { return fe_staging() ? false : $re
 add_action('init', function () {
     if (function_exists('pll_register_string')) {
         foreach (fe_defaults() as $key => $setting) {
-            if ($setting['type'] === 'text') { pll_register_string('fe_' . $key, fe_value($key), 'Finelevate homepage', true); }
+            if ($setting['type'] === 'text') { pll_register_string('fe_' . $key, get_theme_mod('fe_' . $key, $setting['value']), 'Finelevate homepage', true); }
         }
     }
 });

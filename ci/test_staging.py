@@ -6,7 +6,7 @@ import unittest
 import zipfile
 
 from staging_package import build, SLUG, check_image_metadata
-from staging_deploy import archive_files, verify_target, publish, upload
+from staging_deploy import archive_files, verify_target, verify_confinement, publish, upload
 
 COMMIT = 'a' * 40
 
@@ -18,6 +18,12 @@ class MemoryFTP:
         self.dirs = {'/', SLUG}
         self.renames = []
         self.fail_publish = False
+
+    def pwd(self):
+        return '/'
+
+    def nlst(self):
+        return list(self.files) + [name for name in self.dirs if name != '/']
 
     def cwd(self, path):
         from ftplib import error_perm
@@ -108,6 +114,32 @@ class StagingReleaseTests(unittest.TestCase):
         ftp.files['.finelevate-staging-target'] = b'https://finelevate360.com'
         with self.assertRaises(ValueError):
             verify_target(ftp)
+        self.assertEqual(ftp.renames, [])
+
+    def test_jailed_root_preflight_does_not_write(self):
+        ftp = MemoryFTP()
+        before = (dict(ftp.files), set(ftp.dirs))
+        verify_target(ftp)
+        verify_confinement(ftp)
+        self.assertEqual((ftp.files, ftp.dirs), before)
+        self.assertEqual(ftp.renames, [])
+
+    def test_broad_root_is_rejected_without_reading_private_files(self):
+        ftp = MemoryFTP()
+        ftp.files['wp-config.php'] = b'private fixture must not be read'
+        with self.assertRaises(ValueError):
+            verify_confinement(ftp)
+        self.assertEqual(ftp.renames, [])
+
+    def test_parent_escape_is_rejected(self):
+        ftp = MemoryFTP()
+        position = ['/']
+        ftp.pwd = lambda: position[0]
+        def cwd(path):
+            position[0] = '/outside' if path == '..' else '/'
+        ftp.cwd = cwd
+        with self.assertRaises(ValueError):
+            verify_confinement(ftp)
         self.assertEqual(ftp.renames, [])
 
     def test_interrupted_swap_restores_previous_theme(self):

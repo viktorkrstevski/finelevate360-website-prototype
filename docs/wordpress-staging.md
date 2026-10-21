@@ -97,3 +97,42 @@ PHP **8.3.35**. The [official PHP advisory](https://www.php.net/archive/2026.php
 lists **8.3.36** as the fixed 8.3 release for CVE-2026-109618 and CVE-2026-109619.
 Hostinger vendor backport status is unverified. No production PHP settings were
 changed, and this observation establishes no compromise.
+
+
+## Provisioning checkpoint — 21 October 2026
+
+A fresh staging WordPress instance and administrator were created after explicit
+owner approval; WordPress noindex is saved. The approved dedicated FTPS account
+is scoped in hPanel to staging's `public_html/wp-content/themes`. Its generated
+credential is stored only in the protected staging environment. The marker was
+saved and read back through the scoped file manager. The verified TLS endpoint
+is pinned in the deploy script; neither certificate validation nor data-channel
+encryption may be disabled.
+
+The separate `verify-staging-access` job waits for the existing owner reviewer.
+It reads the marker, checks the reported root and its listing, and verifies that
+`CWD ..` cannot leave that root. It changes no files and does not enable deployment.
+These checks supplement hPanel's directory restriction; they do not certify the
+hosting provider's underlying isolation implementation. No workflow receives
+production credentials. Deployment also repeats the confinement checks.
+
+Staging currently reports PHP **8.4.26**; production's read-only metadata still
+reports **8.3.35**. Fixed upstream releases include 8.4.27 and 8.3.36. No relevant
+Hostinger backport statement was found in its public sources. No support request
+was sent: provider remediation is unverified, rather than a pending ticket.
+Hostinger's public PHP selector guide describes plan-wide effects, so further
+selector changes require resolving scope before any action. Deployment remains
+disabled; no staging DNS record has been added and staging SSL is unverified.
+
+Chrome's local ZIP chooser failed before selecting a file because extension
+file-URL permission is disabled. No ZIP was submitted or installed, and that
+permission was not changed. The separately authorized CI route can be used after
+readiness checks; it does not require this additional browser permission.
+
+Digital Map desktop/mobile references have been retrieved from the user-provided
+Library files. Their figures and filter outcomes are illustrative, not bank data.
+The production directory plugin source cannot be inspected through the connected
+WPVibe 1.16.5: its read-only wp-content operation explicitly requires a plugin
+update. No production update was attempted. Actual directory integration and
+locale-specific staging content remain unfinished; no speculative records,
+ratings or official bank URLs are bundled.

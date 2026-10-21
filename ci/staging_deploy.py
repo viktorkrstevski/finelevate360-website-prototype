@@ -16,6 +16,7 @@ import zipfile
 from staging_package import HOST, SLUG, ALLOWED, REQUIRED, FORBIDDEN
 
 SENTINEL = ".finelevate-staging-target"
+FTPS_HOST = "srv2071-files.hstgr.io"
 BACKUP = re.compile(r"\.finelevate-rollback-[0-9]{20}-[a-f0-9]{12}")
 
 
@@ -53,6 +54,25 @@ def verify_target(ftp):
     ftp.retrbinary(f"RETR {SENTINEL}", marker.write)
     if marker.getvalue().decode().strip() != f"https://{HOST}":
         raise ValueError("Staging chroot sentinel mismatch; no files changed")
+
+
+def verify_confinement(ftp):
+    """Read-only checks at the approved jail boundary; never read other sites."""
+    ftp.cwd("/")
+    root = ftp.pwd()
+    if root != "/":
+        raise ValueError("FTPS account does not report the expected jailed root")
+    names = {PurePosixPath(name.rstrip("/")).name for name in ftp.nlst()}
+    if SENTINEL not in names or names.intersection({"wp-config.php", "wp-admin", "public_html", "domains", "home"}):
+        raise ValueError("FTPS root is not the approved staging theme directory")
+    try:
+        ftp.cwd("..")
+    except error_perm as error:
+        if not str(error).startswith("550"):
+            raise
+    if ftp.pwd() != root:
+        raise ValueError("FTPS account can leave its approved root")
+    ftp.cwd("/")
 
 
 def exists(ftp, name):
@@ -118,25 +138,34 @@ def verify_http(expected_commit):
 def main():
     parser = argparse.ArgumentParser()
     parser.add_argument("--artifact", type=Path)
-    parser.add_argument("--commit", required=True)
+    parser.add_argument("--commit")
     parser.add_argument("--rollback-directory")
+    parser.add_argument("--check-access", action="store_true", help="Verify TLS, login, marker and confinement without writes")
     args = parser.parse_args()
-    if os.environ.get("STAGING_DEPLOY_ENABLED") != "true":
+    if not args.check_access and os.environ.get("STAGING_DEPLOY_ENABLED") != "true":
         raise ValueError("Staging deployment is not enabled")
     if os.environ.get("STAGING_URL") != f"https://{HOST}":
         raise ValueError("Only the approved staging host may be deployed")
-    if not re.fullmatch(r"[a-f0-9]{40}", args.commit):
+    if os.environ.get("STAGING_FTPS_HOST") != FTPS_HOST:
+        raise ValueError("Only the verified staging FTPS TLS endpoint is permitted")
+    if args.check_access and (args.artifact or args.commit or args.rollback_directory):
+        raise ValueError("Access checks cannot be combined with deployment inputs")
+    if not args.check_access and not re.fullmatch(r"[a-f0-9]{40}", args.commit or ""):
         raise ValueError("A full commit SHA is required")
     if args.rollback_directory and not BACKUP.fullmatch(args.rollback_directory):
         raise ValueError("Invalid rollback directory")
-    files = None if args.rollback_directory else archive_files(args.artifact, args.commit)
-    release_id = datetime.now(timezone.utc).strftime("%Y%m%d%H%M%S%f") + "-" + args.commit[:12]
+    files = None if args.check_access or args.rollback_directory else archive_files(args.artifact, args.commit)
     context = ssl.create_default_context()
     with FTP_TLS(context=context, timeout=60) as ftp:
         ftp.connect(os.environ["STAGING_FTPS_HOST"], 21)
         ftp.login(os.environ["STAGING_FTPS_USER"], os.environ["STAGING_FTPS_PASSWORD"])
         ftp.prot_p()  # Encrypt data as well as control; never fall back to plain FTP.
         verify_target(ftp)
+        verify_confinement(ftp)
+        if args.check_access:
+            print("Staging FTPS TLS, login, marker and jailed-root checks passed. No files changed.")
+            return
+        release_id = datetime.now(timezone.utc).strftime("%Y%m%d%H%M%S%f") + "-" + args.commit[:12]
         if args.rollback_directory:
             stored = io.BytesIO()
             ftp.retrbinary(f"RETR {args.rollback_directory}/release.json", stored.write)
