@@ -283,4 +283,19 @@ metadata/country taxonomy relationships. Acceptable paths are user-provided
 source materials or authorized restoration of normal WPVibe source access.
 Do not extract the same denied source through file-manager/CLI alternatives.
 No production database, mail configuration, customer records or credentials are
-needed. Contact delivery and event registration remain disabled on staging.
+needed. Local inquiry delivery is disabled. Published official ticket/booking links remain external; no submissions or transactions were tested.
+
+## Final hosted verification - 22 October 2026
+
+Installed release: `cfc749663a50f79a54b7990115f1468527f591a9`. The full 53-file
+manifest matches the packaged source, event CSS checksum matches, and all 261
+final-domain routes return 200 with that release, noindex and staging header
+links. English and Macedonian event routes each have one main heading. Local
+contact validation and a mobile language switch retaining country/filter values
+were verified. The final Customizer visual check could not complete because
+Chrome's read-only inspection/navigation timed out; no write was pending.
+
+Live directory integration still requires permitted source materials. Some new
+copy uses editable English fallbacks pending editorial localization. Automatic
+deployment remains disabled due to the unresolved FTPS certificate identity;
+the owner review gate, production and credentials remain unchanged.

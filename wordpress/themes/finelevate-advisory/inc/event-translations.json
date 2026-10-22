@@ -1,0 +1,1180 @@
+{
+  "source": "Published Finelevate Summit frontend translation literals; read-only snapshot 2026-10-22. No script execution or private configuration.",
+  "strings": {
+    "en": {
+      "title": "Finelevate Digital Summit 2026 \u00b7 16 September \u00b7 Skopje Marriott Hotel",
+      "navSummit": "Digital Summit 2026",
+      "navMap": "Digital Map",
+      "navMapBank": "Banking Digital Map",
+      "navMapIns": "Insurance Digital Map",
+      "navMapFin": "Fintech Digital Map",
+      "navPartners": "Partners",
+      "navNews": "News",
+      "navAbout": "About",
+      "navAboutFl": "About Finelevate",
+      "navBoard": "Advisory Board",
+      "navContact": "Contact us",
+      "heroEyebrow": "The annual executive gathering for leaders shaping digital transformation in financial services",
+      "heroLead": "One day, one room: banking, insurance and fintech leaders on AI, trust, payments and the core systems behind the next phase of financial services.",
+      "ctaPass": "Get your pass",
+      "ctaAgenda": "View the agenda",
+      "heroNote": "<strong>Final days to register.</strong> Passes from 6,000 MKD.",
+      "tagline": "The <mark>future</mark> is not waiting.<br><mark>Build</mark> before it becomes obvious.",
+      "cdLabel": "Doors open in",
+      "cdDays": "Days",
+      "cdHours": "Hours",
+      "cdMin": "Min",
+      "cdSec": "Sec",
+      "cdLive": "Happening now",
+      "cdTonight": "Tonight",
+      "cdThanks": "Thank you",
+      "cdLiveAt": "Live at Skopje Marriott",
+      "cdEvening": "Executive Circle evening",
+      "cdOver": "See you at the next summit.",
+      "cdOverSub": "Thank you to every speaker, partner and guest of Finelevate Digital Summit 2026.",
+      "month": "September",
+      "stSessions": "Sessions in one day",
+      "stPanels": "Expert panels",
+      "stSpeakers": "Speakers & panellists",
+      "stPartners": "Partners on board",
+      "aboutEyebrow": "About the event",
+      "aboutTitle": "Where financial services plans its next move",
+      "aboutLead": "Finelevate Digital Summit is the <strong>central annual event</strong> uniting leaders, innovators, technology companies and decision-makers driving the next phase of transformation across <strong>banking, insurance and the broader fintech ecosystem.</strong>",
+      "secBank": "Banking",
+      "secIns": "Insurance",
+      "secFin": "Fintech",
+      "whoTitle": "Who's in the room",
+      "who1": "Leaders",
+      "who2": "Innovators",
+      "who3": "Technology companies",
+      "who4": "Decision-makers",
+      "topicsTitle": "On the agenda",
+      "tp1": "AI in finance",
+      "tp2": "Governed AI",
+      "tp3": "Regulatory reporting",
+      "tp4": "Core modernisation",
+      "tp5": "eID & trust services",
+      "tp6": "Instant payments",
+      "tp7": "Zero trust & cyber resilience",
+      "tp8": "Fraud risk",
+      "tp9": "Data governance",
+      "tp10": "Customer-centric banking",
+      "spkEyebrow": "Speakers",
+      "spkTitle": "Voices on stage",
+      "spkSub": "Keynotes, expert talks and three panels, with leaders from the institutions and technology companies shaping finance in the region.",
+      "spkSwipe": "Swipe to see all speakers",
+      "tagKeynote": "Keynote",
+      "tagTalk": "Talk",
+      "tagPanel": "Panel",
+      "tagModerator": "Moderator",
+      "tagPanellist": "Panellist",
+      "tagConversation": "Conversation",
+      "tagOpening": "Opening",
+      "rDimitriadis": "Closing keynote \u00b7 Trust at Machine Speed",
+      "rMarechkov": "The Age of AI: Reshaping Finance, Business and Society",
+      "rRistov": "AI with No Compliance Trade-off",
+      "rKronevski": "Panel 01 \u00b7 The Foundation of Digital Transformation",
+      "rBuhova": "Modernize the Core, Without Stopping the Bank",
+      "rLenov": "Digital Banking Super App",
+      "rEfremov": "Case Management Platform for Banking Product Origination",
+      "rTomanovic": "STRELA Instant Payments",
+      "rBrzovska": "Panel 02 \u00b7 Digital First, Human Always",
+      "rJoshevski": "Zero Trust, Identity and Cyber Resilience in the AI Era",
+      "rStojanov": "One Data Story: Governed Self-Service Reporting",
+      "rNaumovska": "AI Maturity: From Assessment to Action",
+      "rAtanasovski": "Panel 03 \u00b7 The Trust Layer of Digital Finance",
+      "rPanel": "Panel discussion",
+      "rAndonovski": "Opening address",
+      "orgMinister": "Minister of Digital Transformation",
+      "passEyebrow": "Attend the summit",
+      "passTitle": "Choose your conference pass",
+      "passSub": "Select the experience that best matches your role and networking objectives.",
+      "p1Eyebrow": "Full conference access",
+      "p1Desc": "Full access to the summit programme, expert insights and professional networking.",
+      "f1": "Full-day access to the conference programme",
+      "f2": "Keynote sessions and panel discussions",
+      "f3": "Coffee breaks and networking lunch",
+      "f4": "Access to conference networking opportunities",
+      "f5": "Reserved access to the Executive Circle Area",
+      "f6": "Premium networking with senior leaders",
+      "f7": "Access to the Executive Circle evening event",
+      "p2Eyebrow": "Premium executive experience",
+      "p2Desc": "A premium summit experience created for senior executives, founders and decision-makers.",
+      "buy1": "Purchase Conference Pass",
+      "buy2": "Purchase Leadership Circle Pass",
+      "badge": "Includes evening event",
+      "secure": "Secure checkout via Karti.com.mk, the official ticketing partner.",
+      "cmpCaption": "Compare passes",
+      "cmpWhat": "What's included",
+      "c1": "Full-day conference programme",
+      "c2": "Keynotes & panel discussions",
+      "c3": "Coffee breaks & networking lunch",
+      "c4": "Conference networking",
+      "c5": "Reserved Executive Circle Area",
+      "c6": "Premium networking with senior leaders",
+      "c7": "Executive Circle evening \u00b7 21:00, Distrikt Bar",
+      "agEyebrow": "Programme \u00b7 Wednesday, 16 September",
+      "agTitle": "Agenda",
+      "fAll": "Full day",
+      "fTalks": "Talks",
+      "fPanels": "Panels",
+      "fKeynotes": "Keynotes",
+      "bMorning": "Morning",
+      "bMidday": "Midday",
+      "bAfternoon": "Afternoon",
+      "bEvening": "Evening",
+      "brk1": "Registration, coffee & networking warm-up",
+      "brk2": "Coffee break",
+      "brk3": "Lunch break",
+      "liveChip": "Live now",
+      "agOpening": "Opening Ceremony",
+      "addressBy": "Address by",
+      "pbNextsense": "Powered by Nextsense",
+      "pbCasys": "Powered by CaSys International",
+      "agQA": "An expert conversation and audience Q&A",
+      "orgNaumovska": "Author & AI Transformation Expert, Finelevate",
+      "execTitle": "Executive Circle Party",
+      "execWho": "Exclusive to Leadership Circle Pass holders",
+      "venEyebrow": "Venue & logistics",
+      "venTitle": "See you in Skopje",
+      "venSub": "One venue for the whole day, from morning registration to the Executive Circle evening.",
+      "venAddress": "Plostad Makedonija 7<br>1000 Skopje, North Macedonia",
+      "venMaps": "Open in Maps",
+      "venCal": "Add to calendar",
+      "glance": "Your day at a glance",
+      "tl1": "Registration opens",
+      "tl1s": "Coffee & networking warm-up",
+      "tl2": "Opening ceremony",
+      "tl3": "Coffee break",
+      "tl4": "Networking lunch",
+      "tl5": "Closing keynote",
+      "tl6": "Executive Circle evening",
+      "fDate": "Date",
+      "fDateV": "Wed, 16 Sept 2026",
+      "fDoors": "Doors",
+      "fTickets": "Tickets",
+      "fTicketsV": "From 6,000 MKD",
+      "fLoc": "Location",
+      "fLocV": "Macedonia Square",
+      "faqEyebrow": "Good to know",
+      "faqTitle": "Frequently asked questions",
+      "faqSub": "Everything you need before 16 September. Still unsure which pass is right for you? Compare them side by side.",
+      "cmpBtn": "Compare passes",
+      "q1": "Where can I buy a pass?",
+      "a1": "Passes are sold online through Karti.com.mk. Buy the <a href=\"https://www.karti.com.mk/finelevate-summit-2026.nspx\" target=\"_blank\" rel=\"noopener\">Conference Pass</a> or the <a href=\"https://www.karti.com.mk/finelevate-summit-2026-leadership-circle-pass.nspx\" target=\"_blank\" rel=\"noopener\">Leadership Circle Pass</a>.",
+      "q2": "What's the difference between the two passes?",
+      "a2": "Both include the full-day programme, coffee breaks and lunch. The Leadership Circle Pass adds reserved access to the Executive Circle Area, premium networking with senior leaders, and entry to the Executive Circle evening event.",
+      "q3": "What time should I arrive?",
+      "a3": "Registration, coffee and networking start at 08:30. The opening ceremony begins at 09:00, so give yourself time to check in.",
+      "q4": "Are food and drinks included?",
+      "a4": "Yes. Both passes include the morning coffee break at 11:00 and the networking lunch at 13:35.",
+      "q5": "Who can attend the Executive Circle evening?",
+      "a5": "The Executive Circle party starts at 21:00 at Distrikt Bar, Skopje Marriott Hotel, and is for Leadership Circle Pass holders only.",
+      "q6": "How can my company partner with the summit?",
+      "a6": "Use the <a href=\"#\" class=\"js-partner\">Become a Partner</a> form or write to <a href=\"mailto:contact@finelevate360.com\">contact@finelevate360.com</a>. See who's already involved on the <a href=\"https://finelevate360.com/partners/\">partners page</a>.",
+      "prEyebrow": "Partners",
+      "prTitle": "Powered by the ecosystem",
+      "prSub": "The institutions and technology companies helping shape this year's summit.",
+      "allPartners": "All partners",
+      "mdEyebrow": "Media supporters",
+      "mdTitle": "Amplifying the conversation",
+      "mdSub": "Supporting the conversation around the future of financial services and digital transformation.",
+      "finalSub": "Join the leaders shaping digital transformation in financial services on 16 September at Skopje Marriott Hotel.",
+      "finalSmall": "Tickets via Karti.com.mk",
+      "footTag": "Decision-ready insights for digital transformation in financial services.",
+      "privacy": "Privacy Policy",
+      "cookie": "Cookie Policy",
+      "stkTop": "16 Sept \u00b7 Skopje",
+      "stkMain": "Passes from 6,000 MKD",
+      "stkBtn": "Get your pass",
+      "pfTitle": "Become a Partner",
+      "pfDesc": "If your organization strengthens digital transformation outcomes - solutions, trust & assurance, or ecosystem enablement - let's connect.",
+      "pfName": "Your name",
+      "pfEmail": "Your email",
+      "pfSubject": "Subject",
+      "pfMsg": "Your message",
+      "pfSubmit": "Submit",
+      "pfNote": "Or write to us directly at"
+    },
+    "mk": {
+      "title": "Finelevate Digital Summit 2026 \u00b7 16 \u0441\u0435\u043f\u0442\u0435\u043c\u0432\u0440\u0438 \u00b7 Skopje Marriott Hotel",
+      "navSummit": "Digital Summit 2026",
+      "navMap": "\u0414\u0438\u0433\u0438\u0442\u0430\u043b\u043d\u0430 \u041c\u0430\u043f\u0430",
+      "navMapBank": "\u0414\u0438\u0433\u0438\u0442\u0430\u043b\u043d\u0430 \u041c\u0430\u043f\u0430 \u2013 \u0411\u0430\u043d\u043a\u0438",
+      "navMapIns": "\u0414\u0438\u0433\u0438\u0442\u0430\u043b\u043d\u0430 \u041c\u0430\u043f\u0430 \u2013 \u041e\u0441\u0438\u0433\u0443\u0440\u0443\u0432\u0430\u045a\u0435",
+      "navMapFin": "\u0414\u0438\u0433\u0438\u0442\u0430\u043b\u043d\u0430 \u041c\u0430\u043f\u0430 \u2013 \u0424\u0438\u043d\u0442\u0435\u043a",
+      "navPartners": "\u041f\u0430\u0440\u0442\u043d\u0435\u0440\u0438",
+      "navNews": "\u041d\u043e\u0432\u043e\u0441\u0442\u0438",
+      "navAbout": "\u0417\u0430 \u043d\u0430\u0441",
+      "navAboutFl": "\u0417\u0430 Finelevate",
+      "navBoard": "\u0421\u043e\u0432\u0435\u0442\u043e\u0434\u0430\u0432\u0435\u043d \u043e\u0434\u0431\u043e\u0440",
+      "navContact": "\u041a\u043e\u043d\u0442\u0430\u043a\u0442",
+      "heroEyebrow": "\u0413\u043e\u0434\u0438\u0448\u0435\u043d \u0441\u043e\u0431\u0438\u0440 \u043d\u0430 \u0438\u0437\u0432\u0440\u0448\u043d\u0438 \u043b\u0438\u0434\u0435\u0440\u0438 \u0448\u0442\u043e \u0458\u0430 \u043e\u0431\u043b\u0438\u043a\u0443\u0432\u0430\u0430\u0442 \u0434\u0438\u0433\u0438\u0442\u0430\u043b\u043d\u0430\u0442\u0430 \u0442\u0440\u0430\u043d\u0441\u0444\u043e\u0440\u043c\u0430\u0446\u0438\u0458\u0430 \u0432\u043e \u0444\u0438\u043d\u0430\u043d\u0441\u0438\u0441\u043a\u0438\u0442\u0435 \u0443\u0441\u043b\u0443\u0433\u0438",
+      "heroLead": "\u0415\u0434\u0435\u043d \u0434\u0435\u043d, \u0435\u0434\u043d\u0430 \u0441\u0430\u043b\u0430: \u043b\u0438\u0434\u0435\u0440\u0438 \u043e\u0434 \u0431\u0430\u043d\u043a\u0430\u0440\u0441\u0442\u0432\u043e\u0442\u043e, \u043e\u0441\u0438\u0433\u0443\u0440\u0443\u0432\u0430\u045a\u0435\u0442\u043e \u0438 \u0444\u0438\u043d\u0442\u0435\u043a \u0441\u0435\u043a\u0442\u043e\u0440\u043e\u0442 \u0437\u0430 \u0432\u0435\u0448\u0442\u0430\u0447\u043a\u0430\u0442\u0430 \u0438\u043d\u0442\u0435\u043b\u0438\u0433\u0435\u043d\u0446\u0438\u0458\u0430, \u0434\u043e\u0432\u0435\u0440\u0431\u0430\u0442\u0430, \u043f\u043b\u0430\u045c\u0430\u045a\u0430\u0442\u0430 \u0438 \u043e\u0441\u043d\u043e\u0432\u043d\u0438\u0442\u0435 \u0441\u0438\u0441\u0442\u0435\u043c\u0438 \u0448\u0442\u043e \u0458\u0430 \u0434\u0432\u0438\u0436\u0430\u0442 \u0441\u043b\u0435\u0434\u043d\u0430\u0442\u0430 \u0444\u0430\u0437\u0430 \u043d\u0430 \u0444\u0438\u043d\u0430\u043d\u0441\u0438\u0441\u043a\u0438\u0442\u0435 \u0443\u0441\u043b\u0443\u0433\u0438.",
+      "ctaPass": "\u041a\u0443\u043f\u0435\u0442\u0435 \u0431\u0438\u043b\u0435\u0442",
+      "ctaAgenda": "\u041f\u043e\u0433\u043b\u0435\u0434\u043d\u0435\u0442\u0435 \u0458\u0430 \u0430\u0433\u0435\u043d\u0434\u0430\u0442\u0430",
+      "heroNote": "<strong>\u041f\u043e\u0441\u043b\u0435\u0434\u043d\u0438 \u0434\u0435\u043d\u043e\u0432\u0438 \u0437\u0430 \u0440\u0435\u0433\u0438\u0441\u0442\u0440\u0430\u0446\u0438\u0458\u0430.</strong> \u0411\u0438\u043b\u0435\u0442\u0438 \u043e\u0434 6.000 \u041c\u041a\u0414.",
+      "tagline": "<mark>\u0418\u0434\u043d\u0438\u043d\u0430\u0442\u0430</mark> \u043d\u0435 \u0447\u0435\u043a\u0430.<br><mark>\u0413\u0440\u0430\u0434\u0435\u0442\u0435</mark> \u043f\u0440\u0435\u0434 \u0434\u0430 \u0441\u0442\u0430\u043d\u0435 \u043e\u0447\u0438\u0433\u043b\u0435\u0434\u043d\u043e.",
+      "cdLabel": "\u0412\u0440\u0430\u0442\u0438\u0442\u0435 \u0441\u0435 \u043e\u0442\u0432\u043e\u0440\u0430\u0430\u0442 \u0437\u0430",
+      "cdDays": "\u0414\u0435\u043d\u0430",
+      "cdHours": "\u0427\u0430\u0441\u0430",
+      "cdMin": "\u041c\u0438\u043d",
+      "cdSec": "\u0421\u0435\u043a",
+      "cdLive": "\u0412\u043e \u0442\u0435\u043a",
+      "cdTonight": "\u0412\u0435\u0447\u0435\u0440\u0432\u0430",
+      "cdThanks": "\u0411\u043b\u0430\u0433\u043e\u0434\u0430\u0440\u0438\u043c\u0435",
+      "cdLiveAt": "\u0412\u043e \u0436\u0438\u0432\u043e \u043e\u0434 Skopje Marriott",
+      "cdEvening": "Executive Circle \u0432\u0435\u0447\u0435\u0440",
+      "cdOver": "\u0421\u0435 \u0433\u043b\u0435\u0434\u0430\u043c\u0435 \u043d\u0430 \u0441\u043b\u0435\u0434\u043d\u0438\u043e\u0442 \u0421\u0430\u043c\u0438\u0442.",
+      "cdOverSub": "\u0411\u043b\u0430\u0433\u043e\u0434\u0430\u0440\u043d\u043e\u0441\u0442 \u0434\u043e \u0441\u0438\u0442\u0435 \u0433\u043e\u0432\u043e\u0440\u043d\u0438\u0446\u0438, \u043f\u0430\u0440\u0442\u043d\u0435\u0440\u0438 \u0438 \u0433\u043e\u0441\u0442\u0438 \u043d\u0430 Finelevate Digital Summit 2026.",
+      "month": "\u0421\u0435\u043f\u0442\u0435\u043c\u0432\u0440\u0438",
+      "stSessions": "\u0421\u0435\u0441\u0438\u0438 \u0432\u043e \u0435\u0434\u0435\u043d \u0434\u0435\u043d",
+      "stPanels": "\u0415\u043a\u0441\u043f\u0435\u0440\u0442\u0441\u043a\u0438 \u043f\u0430\u043d\u0435\u043b\u0438",
+      "stSpeakers": "\u0413\u043e\u0432\u043e\u0440\u043d\u0438\u0446\u0438 \u0438 \u043f\u0430\u043d\u0435\u043b\u0438\u0441\u0442\u0438",
+      "stPartners": "\u041f\u0430\u0440\u0442\u043d\u0435\u0440\u0438",
+      "aboutEyebrow": "\u0417\u0430 \u043d\u0430\u0441\u0442\u0430\u043d\u043e\u0442",
+      "aboutTitle": "\u041a\u0430\u0434\u0435 \u0444\u0438\u043d\u0430\u043d\u0441\u0438\u0441\u043a\u0438\u043e\u0442 \u0441\u0435\u043a\u0442\u043e\u0440 \u0433\u043e \u043f\u043b\u0430\u043d\u0438\u0440\u0430 \u0441\u043b\u0435\u0434\u043d\u0438\u043e\u0442 \u0447\u0435\u043a\u043e\u0440",
+      "aboutLead": "Finelevate \u0433\u043e\u0434\u0438\u0448\u043d\u0430\u0442\u0430 \u043a\u043e\u043d\u0444\u0435\u0440\u0435\u043d\u0446\u0438\u0458\u0430 \u0435 <strong>\u0446\u0435\u043d\u0442\u0440\u0430\u043b\u043d\u0438\u043e\u0442 \u0433\u043e\u0434\u0438\u0448\u0435\u043d \u043d\u0430\u0441\u0442\u0430\u043d</strong> \u0448\u0442\u043e \u0433\u0438 \u043e\u0431\u0435\u0434\u0438\u043d\u0443\u0432\u0430 \u043b\u0438\u0434\u0435\u0440\u0438\u0442\u0435, \u0438\u043d\u043e\u0432\u0430\u0442\u043e\u0440\u0438\u0442\u0435, \u0442\u0435\u0445\u043d\u043e\u043b\u043e\u0448\u043a\u0438\u0442\u0435 \u043a\u043e\u043c\u043f\u0430\u043d\u0438\u0438 \u0438 \u043d\u043e\u0441\u0438\u0442\u0435\u043b\u0438\u0442\u0435 \u043d\u0430 \u043e\u0434\u043b\u0443\u043a\u0438 \u043a\u043e\u0438 \u0458\u0430 \u043f\u0440\u0435\u0434\u0432\u043e\u0434\u0430\u0442 \u0441\u043b\u0435\u0434\u043d\u0430\u0442\u0430 \u0444\u0430\u0437\u0430 \u043d\u0430 \u0442\u0440\u0430\u043d\u0441\u0444\u043e\u0440\u043c\u0430\u0446\u0438\u0458\u0430 \u0432\u043e <strong>\u0431\u0430\u043d\u043a\u0430\u0440\u0441\u0442\u0432\u043e\u0442\u043e, \u043e\u0441\u0438\u0433\u0443\u0440\u0443\u0432\u0430\u045a\u0435\u0442\u043e \u0438 \u043f\u043e\u0448\u0438\u0440\u043e\u043a\u0438\u043e\u0442 \u0444\u0438\u043d\u0442\u0435\u043a \u0435\u043a\u043e\u0441\u0438\u0441\u0442\u0435\u043c.</strong>",
+      "secBank": "\u0411\u0430\u043d\u043a\u0430\u0440\u0441\u0442\u0432\u043e",
+      "secIns": "\u041e\u0441\u0438\u0433\u0443\u0440\u0443\u0432\u0430\u045a\u0435",
+      "secFin": "\u0424\u0438\u043d\u0442\u0435\u043a",
+      "whoTitle": "\u041a\u043e\u0458 \u0435 \u0432\u043e \u0441\u0430\u043b\u0430\u0442\u0430",
+      "who1": "\u041b\u0438\u0434\u0435\u0440\u0438",
+      "who2": "\u0418\u043d\u043e\u0432\u0430\u0442\u043e\u0440\u0438",
+      "who3": "\u0422\u0435\u0445\u043d\u043e\u043b\u043e\u0448\u043a\u0438 \u043a\u043e\u043c\u043f\u0430\u043d\u0438\u0438",
+      "who4": "\u041d\u043e\u0441\u0438\u0442\u0435\u043b\u0438 \u043d\u0430 \u043e\u0434\u043b\u0443\u043a\u0438",
+      "topicsTitle": "\u041d\u0430 \u0430\u0433\u0435\u043d\u0434\u0430\u0442\u0430",
+      "tp1": "\u0412\u0418 \u0432\u043e \u0444\u0438\u043d\u0430\u043d\u0441\u0438\u0438\u0442\u0435",
+      "tp2": "\u0423\u043f\u0440\u0430\u0432\u0443\u0432\u0430\u043d\u0430 \u0412\u0418",
+      "tp3": "\u0420\u0435\u0433\u0443\u043b\u0430\u0442\u043e\u0440\u043d\u043e \u0438\u0437\u0432\u0435\u0441\u0442\u0443\u0432\u0430\u045a\u0435",
+      "tp4": "\u041c\u043e\u0434\u0435\u0440\u043d\u0438\u0437\u0430\u0446\u0438\u0458\u0430 \u043d\u0430 core \u0441\u0438\u0441\u0442\u0435\u043c\u0438\u0442\u0435",
+      "tp5": "eID \u0438 \u0443\u0441\u043b\u0443\u0433\u0438 \u0437\u0430 \u0434\u043e\u0432\u0435\u0440\u0431\u0430",
+      "tp6": "\u0418\u043d\u0441\u0442\u0430\u043d\u0442 \u043f\u043b\u0430\u045c\u0430\u045a\u0430",
+      "tp7": "Zero trust \u0438 \u0441\u0430\u0458\u0431\u0435\u0440 \u043e\u0442\u043f\u043e\u0440\u043d\u043e\u0441\u0442",
+      "tp8": "\u0420\u0438\u0437\u0438\u043a \u043e\u0434 \u0438\u0437\u043c\u0430\u043c\u0438",
+      "tp9": "\u0423\u043f\u0440\u0430\u0432\u0443\u0432\u0430\u045a\u0435 \u0441\u043e \u043f\u043e\u0434\u0430\u0442\u043e\u0446\u0438",
+      "tp10": "\u0411\u0430\u043d\u043a\u0430\u0440\u0441\u0442\u0432\u043e \u043d\u0430\u0441\u043e\u0447\u0435\u043d\u043e \u043a\u043e\u043d \u043a\u043b\u0438\u0435\u043d\u0442\u043e\u0442",
+      "spkEyebrow": "\u0413\u043e\u0432\u043e\u0440\u043d\u0438\u0446\u0438",
+      "spkTitle": "\u0413\u043b\u0430\u0441\u043e\u0432\u0438\u0442\u0435 \u043d\u0430 \u0441\u0446\u0435\u043d\u0430\u0442\u0430",
+      "spkSub": "\u0413\u043b\u0430\u0432\u043d\u0438 \u0433\u043e\u0432\u043e\u0440\u0438, \u0441\u0442\u0440\u0443\u0447\u043d\u0438 \u043f\u0440\u0435\u0434\u0430\u0432\u0430\u045a\u0430 \u0438 \u0442\u0440\u0438 \u043f\u0430\u043d\u0435\u043b\u0438, \u0441\u043e \u043b\u0438\u0434\u0435\u0440\u0438 \u043e\u0434 \u0438\u043d\u0441\u0442\u0438\u0442\u0443\u0446\u0438\u0438\u0442\u0435 \u0438 \u0442\u0435\u0445\u043d\u043e\u043b\u043e\u0448\u043a\u0438\u0442\u0435 \u043a\u043e\u043c\u043f\u0430\u043d\u0438\u0438 \u0448\u0442\u043e \u0433\u0438 \u043e\u0431\u043b\u0438\u043a\u0443\u0432\u0430\u0430\u0442 \u0444\u0438\u043d\u0430\u043d\u0441\u0438\u0438\u0442\u0435 \u0432\u043e \u0440\u0435\u0433\u0438\u043e\u043d\u043e\u0442.",
+      "spkSwipe": "\u041f\u043e\u0432\u043b\u0435\u0447\u0435\u0442\u0435 \u0437\u0430 \u0441\u0438\u0442\u0435 \u0433\u043e\u0432\u043e\u0440\u043d\u0438\u0446\u0438",
+      "tagKeynote": "\u0413\u043b\u0430\u0432\u0435\u043d \u0433\u043e\u0432\u043e\u0440",
+      "tagTalk": "\u041f\u0440\u0435\u0434\u0430\u0432\u0430\u045a\u0435",
+      "tagPanel": "\u041f\u0430\u043d\u0435\u043b",
+      "tagModerator": "\u041c\u043e\u0434\u0435\u0440\u0430\u0442\u043e\u0440",
+      "tagPanellist": "\u041f\u0430\u043d\u0435\u043b\u0438\u0441\u0442",
+      "tagConversation": "\u0420\u0430\u0437\u0433\u043e\u0432\u043e\u0440",
+      "tagOpening": "\u041e\u0442\u0432\u043e\u0440\u0430\u045a\u0435",
+      "rDimitriadis": "\u0417\u0430\u0432\u0440\u0448\u0435\u043d \u0433\u043e\u0432\u043e\u0440 \u00b7 Trust at Machine Speed",
+      "rKronevski": "\u041f\u0430\u043d\u0435\u043b 01 \u00b7 \u041e\u0441\u043d\u043e\u0432\u0430\u0442\u0430 \u043d\u0430 \u0434\u0438\u0433\u0438\u0442\u0430\u043b\u043d\u0430\u0442\u0430 \u0442\u0440\u0430\u043d\u0441\u0444\u043e\u0440\u043c\u0430\u0446\u0438\u0458\u0430",
+      "rBrzovska": "\u041f\u0430\u043d\u0435\u043b 02 \u00b7 Digital First, Human Always",
+      "rAtanasovski": "\u041f\u0430\u043d\u0435\u043b 03 \u00b7 \u0421\u043b\u043e\u0458\u043e\u0442 \u043d\u0430 \u0434\u043e\u0432\u0435\u0440\u0431\u0430 \u0432\u043e \u0434\u0438\u0433\u0438\u0442\u0430\u043b\u043d\u0438\u0442\u0435 \u0444\u0438\u043d\u0430\u043d\u0441\u0438\u0438",
+      "rPanel": "\u041f\u0430\u043d\u0435\u043b-\u0434\u0438\u0441\u043a\u0443\u0441\u0438\u0458\u0430",
+      "rAndonovski": "\u041f\u043e\u0437\u0434\u0440\u0430\u0432\u043d\u043e \u043e\u0431\u0440\u0430\u045c\u0430\u045a\u0435",
+      "orgMinister": "\u041c\u0438\u043d\u0438\u0441\u0442\u0435\u0440 \u0437\u0430 \u0434\u0438\u0433\u0438\u0442\u0430\u043b\u043d\u0430 \u0442\u0440\u0430\u043d\u0441\u0444\u043e\u0440\u043c\u0430\u0446\u0438\u0458\u0430",
+      "passEyebrow": "\u041a\u0430\u0440\u0442\u0438",
+      "passTitle": "\u0418\u0437\u0431\u0435\u0440\u0435\u0442\u0435 \u0433\u043e \u0412\u0430\u0448\u0438\u043e\u0442 \u043a\u043e\u043d\u0444\u0435\u0440\u0435\u043d\u0446\u0438\u0441\u043a\u0438 \u043f\u0430\u043a\u0435\u0442",
+      "passSub": "\u0418\u0437\u0431\u0435\u0440\u0435\u0442\u0435 \u0433\u043e \u0438\u0441\u043a\u0443\u0441\u0442\u0432\u043e\u0442\u043e \u0448\u0442\u043e \u043d\u0430\u0458\u043c\u043d\u043e\u0433\u0443 \u043e\u0434\u0433\u043e\u0432\u0430\u0440\u0430 \u043d\u0430 \u0412\u0430\u0448\u0430\u0442\u0430 \u0443\u043b\u043e\u0433\u0430 \u0438 \u0446\u0435\u043b\u0438\u0442\u0435 \u0437\u0430 \u0432\u043c\u0440\u0435\u0436\u0443\u0432\u0430\u045a\u0435.",
+      "p1Eyebrow": "\u0426\u0435\u043b\u043e\u0441\u0435\u043d \u043f\u0440\u0438\u0441\u0442\u0430\u043f \u0434\u043e \u043a\u043e\u043d\u0444\u0435\u0440\u0435\u043d\u0446\u0438\u0458\u0430\u0442\u0430",
+      "p1Desc": "\u0426\u0435\u043b\u043e\u0441\u0435\u043d \u043f\u0440\u0438\u0441\u0442\u0430\u043f \u0434\u043e \u043f\u0440\u043e\u0433\u0440\u0430\u043c\u0430\u0442\u0430 \u043d\u0430 \u0421\u0430\u043c\u0438\u0442\u043e\u0442, \u0441\u0442\u0440\u0443\u0447\u043d\u0438 \u0441\u043e\u0433\u043b\u0435\u0434\u0443\u0432\u0430\u045a\u0430 \u0438 \u043f\u0440\u043e\u0444\u0435\u0441\u0438\u043e\u043d\u0430\u043b\u043d\u043e \u0432\u043c\u0440\u0435\u0436\u0443\u0432\u0430\u045a\u0435.",
+      "f1": "\u0426\u0435\u043b\u043e\u0434\u043d\u0435\u0432\u0435\u043d \u043f\u0440\u0438\u0441\u0442\u0430\u043f \u0434\u043e \u043a\u043e\u043d\u0444\u0435\u0440\u0435\u043d\u0446\u0438\u0441\u043a\u0430\u0442\u0430 \u043f\u0440\u043e\u0433\u0440\u0430\u043c\u0430",
+      "f2": "\u0413\u043b\u0430\u0432\u043d\u0438 \u0433\u043e\u0432\u043e\u0440\u0438 \u0438 \u043f\u0430\u043d\u0435\u043b-\u0434\u0438\u0441\u043a\u0443\u0441\u0438\u0438",
+      "f3": "\u041a\u0430\u0444\u0435-\u043f\u0430\u0443\u0437\u0438 \u0438 \u0440\u0443\u0447\u0435\u043a \u0437\u0430 \u0432\u043c\u0440\u0435\u0436\u0443\u0432\u0430\u045a\u0435",
+      "f4": "\u041f\u0440\u0438\u0441\u0442\u0430\u043f \u0434\u043e \u043c\u043e\u0436\u043d\u043e\u0441\u0442\u0438\u0442\u0435 \u0437\u0430 \u0432\u043c\u0440\u0435\u0436\u0443\u0432\u0430\u045a\u0435 \u043d\u0430 \u043a\u043e\u043d\u0444\u0435\u0440\u0435\u043d\u0446\u0438\u0458\u0430\u0442\u0430",
+      "f5": "\u0420\u0435\u0437\u0435\u0440\u0432\u0438\u0440\u0430\u043d \u043f\u0440\u0438\u0441\u0442\u0430\u043f \u0434\u043e Executive Circle \u0437\u043e\u043d\u0430\u0442\u0430",
+      "f6": "\u041f\u0440\u0435\u043c\u0438\u0443\u043c \u0432\u043c\u0440\u0435\u0436\u0443\u0432\u0430\u045a\u0435 \u0441\u043e \u0432\u0438\u0441\u043e\u043a\u0438 \u0434\u0435\u043b\u043e\u0432\u043d\u0438 \u043b\u0438\u0434\u0435\u0440\u0438",
+      "f7": "\u041f\u0440\u0438\u0441\u0442\u0430\u043f \u0434\u043e \u0432\u0435\u0447\u0435\u0440\u043d\u0438\u043e\u0442 \u043d\u0430\u0441\u0442\u0430\u043d \u043d\u0430 Executive Circle",
+      "p2Eyebrow": "\u041f\u0440\u0435\u043c\u0438\u0443\u043c \u0438\u0441\u043a\u0443\u0441\u0442\u0432\u043e \u0437\u0430 \u0434\u0435\u043b\u043e\u0432\u043d\u0438 \u043b\u0438\u0434\u0435\u0440\u0438",
+      "p2Desc": "\u041f\u0440\u0435\u043c\u0438\u0443\u043c \u0438\u0441\u043a\u0443\u0441\u0442\u0432\u043e \u043d\u0430 \u0421\u0430\u043c\u0438\u0442\u043e\u0442 \u043d\u0430\u043c\u0435\u043d\u0435\u0442\u043e \u0437\u0430 \u0432\u0438\u0441\u043e\u043a\u0438 \u0440\u0430\u043a\u043e\u0432\u043e\u0434\u0438\u0442\u0435\u043b\u0438, \u043e\u0441\u043d\u043e\u0432\u0430\u0447\u0438 \u0438 \u043d\u043e\u0441\u0438\u0442\u0435\u043b\u0438 \u043d\u0430 \u043e\u0434\u043b\u0443\u043a\u0438.",
+      "buy1": "\u041a\u0443\u043f\u0435\u0442\u0435 Conference Pass",
+      "buy2": "\u041a\u0443\u043f\u0435\u0442\u0435 Leadership Circle Pass",
+      "badge": "\u0412\u043a\u043b\u0443\u0447\u0443\u0432\u0430 \u0432\u0435\u0447\u0435\u0440\u0435\u043d \u043d\u0430\u0441\u0442\u0430\u043d",
+      "secure": "\u0411\u0435\u0437\u0431\u0435\u0434\u043d\u043e \u043f\u043b\u0430\u045c\u0430\u045a\u0435 \u043f\u0440\u0435\u043a\u0443 Karti.com.mk, \u043e\u0444\u0438\u0446\u0438\u0458\u0430\u043b\u043d\u0438\u043e\u0442 \u043f\u0430\u0440\u0442\u043d\u0435\u0440 \u0437\u0430 \u0431\u0438\u043b\u0435\u0442\u0438.",
+      "cmpCaption": "\u0421\u043f\u043e\u0440\u0435\u0434\u0431\u0430 \u043d\u0430 \u0431\u0438\u043b\u0435\u0442\u0438\u0442\u0435",
+      "cmpWhat": "\u0428\u0442\u043e \u0435 \u0432\u043a\u043b\u0443\u0447\u0435\u043d\u043e",
+      "c1": "\u0426\u0435\u043b\u043e\u0434\u043d\u0435\u0432\u043d\u0430 \u043a\u043e\u043d\u0444\u0435\u0440\u0435\u043d\u0446\u0438\u0441\u043a\u0430 \u043f\u0440\u043e\u0433\u0440\u0430\u043c\u0430",
+      "c2": "\u0413\u043b\u0430\u0432\u043d\u0438 \u0433\u043e\u0432\u043e\u0440\u0438 \u0438 \u043f\u0430\u043d\u0435\u043b-\u0434\u0438\u0441\u043a\u0443\u0441\u0438\u0438",
+      "c3": "\u041a\u0430\u0444\u0435-\u043f\u0430\u0443\u0437\u0438 \u0438 \u0440\u0443\u0447\u0435\u043a \u0437\u0430 \u0432\u043c\u0440\u0435\u0436\u0443\u0432\u0430\u045a\u0435",
+      "c4": "\u0412\u043c\u0440\u0435\u0436\u0443\u0432\u0430\u045a\u0435 \u043d\u0430 \u043a\u043e\u043d\u0444\u0435\u0440\u0435\u043d\u0446\u0438\u0458\u0430\u0442\u0430",
+      "c5": "\u0420\u0435\u0437\u0435\u0440\u0432\u0438\u0440\u0430\u043d\u0430 Executive Circle \u0437\u043e\u043d\u0430",
+      "c6": "\u041f\u0440\u0435\u043c\u0438\u0443\u043c \u0432\u043c\u0440\u0435\u0436\u0443\u0432\u0430\u045a\u0435 \u0441\u043e \u0432\u0438\u0441\u043e\u043a\u0438 \u043b\u0438\u0434\u0435\u0440\u0438",
+      "c7": "Executive Circle \u0432\u0435\u0447\u0435\u0440 \u00b7 21:00, Distrikt Bar",
+      "agEyebrow": "\u041f\u0440\u043e\u0433\u0440\u0430\u043c\u0430 \u00b7 \u0421\u0440\u0435\u0434\u0430, 16 \u0441\u0435\u043f\u0442\u0435\u043c\u0432\u0440\u0438",
+      "agTitle": "\u0410\u0433\u0435\u043d\u0434\u0430",
+      "fAll": "\u0426\u0435\u043b \u0434\u0435\u043d",
+      "fTalks": "\u041f\u0440\u0435\u0434\u0430\u0432\u0430\u045a\u0430",
+      "fPanels": "\u041f\u0430\u043d\u0435\u043b\u0438",
+      "fKeynotes": "\u0413\u043b\u0430\u0432\u043d\u0438 \u0433\u043e\u0432\u043e\u0440\u0438",
+      "bMorning": "\u041f\u0440\u0435\u0442\u043f\u043b\u0430\u0434\u043d\u0435",
+      "bMidday": "\u041f\u043b\u0430\u0434\u043d\u0435",
+      "bAfternoon": "\u041f\u043e\u043f\u043b\u0430\u0434\u043d\u0435",
+      "bEvening": "\u0412\u0435\u0447\u0435\u0440",
+      "brk1": "\u0420\u0435\u0433\u0438\u0441\u0442\u0440\u0430\u0446\u0438\u0458\u0430, \u043a\u0430\u0444\u0435 \u0438 \u0432\u043c\u0440\u0435\u0436\u0443\u0432\u0430\u045a\u0435",
+      "brk2": "\u041a\u0430\u0444\u0435-\u043f\u0430\u0443\u0437\u0430",
+      "brk3": "\u0420\u0443\u0447\u0435\u043a",
+      "liveChip": "\u0412\u043e \u0436\u0438\u0432\u043e",
+      "agOpening": "\u0421\u0432\u0435\u0447\u0435\u043d\u043e \u043e\u0442\u0432\u043e\u0440\u0430\u045a\u0435",
+      "addressBy": "\u041e\u0431\u0440\u0430\u045c\u0430\u045a\u0435 \u043d\u0430",
+      "pbNextsense": "\u0421\u043e \u043f\u043e\u0434\u0434\u0440\u0448\u043a\u0430 \u043d\u0430 Nextsense",
+      "pbCasys": "\u0421\u043e \u043f\u043e\u0434\u0434\u0440\u0448\u043a\u0430 \u043d\u0430 CaSys International",
+      "agQA": "\u0415\u043a\u0441\u043f\u0435\u0440\u0442\u0441\u043a\u0438 \u0440\u0430\u0437\u0433\u043e\u0432\u043e\u0440 \u0438 \u043f\u0440\u0430\u0448\u0430\u045a\u0430 \u043e\u0434 \u043f\u0443\u0431\u043b\u0438\u043a\u0430\u0442\u0430",
+      "orgNaumovska": "\u0410\u0432\u0442\u043e\u0440\u043a\u0430 \u0438 \u0435\u043a\u0441\u043f\u0435\u0440\u0442 \u0437\u0430 \u0412\u0418 \u0442\u0440\u0430\u043d\u0441\u0444\u043e\u0440\u043c\u0430\u0446\u0438\u0458\u0430, Finelevate",
+      "execTitle": "Executive Circle \u0437\u0430\u0431\u0430\u0432\u0430",
+      "execWho": "\u0415\u043a\u0441\u043a\u043b\u0443\u0437\u0438\u0432\u043d\u043e \u0437\u0430 \u043d\u043e\u0441\u0438\u0442\u0435\u043b\u0438\u0442\u0435 \u043d\u0430 Leadership Circle Pass",
+      "venEyebrow": "\u041b\u043e\u043a\u0430\u0446\u0438\u0458\u0430 \u0438 \u043b\u043e\u0433\u0438\u0441\u0442\u0438\u043a\u0430",
+      "venTitle": "\u0421\u0435 \u0433\u043b\u0435\u0434\u0430\u043c\u0435 \u0432\u043e \u0421\u043a\u043e\u043f\u0458\u0435",
+      "venSub": "\u0415\u0434\u043d\u043e \u043c\u0435\u0441\u0442\u043e \u0437\u0430 \u0446\u0435\u043b\u0438\u043e\u0442 \u0434\u0435\u043d, \u043e\u0434 \u0443\u0442\u0440\u0438\u043d\u0441\u043a\u0430\u0442\u0430 \u0440\u0435\u0433\u0438\u0441\u0442\u0440\u0430\u0446\u0438\u0458\u0430 \u0434\u043e \u0432\u0435\u0447\u0435\u0440\u0442\u0430 \u043d\u0430 Executive Circle.",
+      "venAddress": "\u041f\u043b\u043e\u0448\u0442\u0430\u0434 \u041c\u0430\u043a\u0435\u0434\u043e\u043d\u0438\u0458\u0430 7<br>1000 \u0421\u043a\u043e\u043f\u0458\u0435, \u0421\u0435\u0432\u0435\u0440\u043d\u0430 \u041c\u0430\u043a\u0435\u0434\u043e\u043d\u0438\u0458\u0430",
+      "venMaps": "\u041e\u0442\u0432\u043e\u0440\u0438 \u0432\u043e Maps",
+      "venCal": "\u0414\u043e\u0434\u0430\u0458 \u0432\u043e \u043a\u0430\u043b\u0435\u043d\u0434\u0430\u0440",
+      "glance": "\u0412\u0430\u0448\u0438\u043e\u0442 \u0434\u0435\u043d \u043d\u0430\u043a\u0440\u0430\u0442\u043a\u043e",
+      "tl1": "\u0420\u0435\u0433\u0438\u0441\u0442\u0440\u0430\u0446\u0438\u0458\u0430",
+      "tl1s": "\u041a\u0430\u0444\u0435 \u0438 \u0432\u043c\u0440\u0435\u0436\u0443\u0432\u0430\u045a\u0435",
+      "tl2": "\u0421\u0432\u0435\u0447\u0435\u043d\u043e \u043e\u0442\u0432\u043e\u0440\u0430\u045a\u0435",
+      "tl3": "\u041a\u0430\u0444\u0435-\u043f\u0430\u0443\u0437\u0430",
+      "tl4": "\u0420\u0443\u0447\u0435\u043a \u0437\u0430 \u0432\u043c\u0440\u0435\u0436\u0443\u0432\u0430\u045a\u0435",
+      "tl5": "\u0417\u0430\u0432\u0440\u0448\u0435\u043d \u0433\u043e\u0432\u043e\u0440",
+      "tl6": "Executive Circle \u0432\u0435\u0447\u0435\u0440",
+      "fDate": "\u0414\u0430\u0442\u0443\u043c",
+      "fDateV": "\u0421\u0440\u0435, 16 \u0441\u0435\u043f\u0442. 2026",
+      "fDoors": "\u0412\u0440\u0430\u0442\u0438",
+      "fTickets": "\u0411\u0438\u043b\u0435\u0442\u0438",
+      "fTicketsV": "\u041e\u0434 6.000 \u041c\u041a\u0414",
+      "fLoc": "\u041b\u043e\u043a\u0430\u0446\u0438\u0458\u0430",
+      "fLocV": "\u041f\u043b\u043e\u0448\u0442\u0430\u0434 \u041c\u0430\u043a\u0435\u0434\u043e\u043d\u0438\u0458\u0430",
+      "faqEyebrow": "\u0414\u043e\u0431\u0440\u043e \u0435 \u0434\u0430 \u0441\u0435 \u0437\u043d\u0430\u0435",
+      "faqTitle": "\u041d\u0430\u0458\u0447\u0435\u0441\u0442\u043e \u043f\u043e\u0441\u0442\u0430\u0432\u0443\u0432\u0430\u043d\u0438 \u043f\u0440\u0430\u0448\u0430\u045a\u0430",
+      "faqSub": "\u0421\u00e8 \u0448\u0442\u043e \u0412\u0438 \u0442\u0440\u0435\u0431\u0430 \u043f\u0440\u0435\u0434 16 \u0441\u0435\u043f\u0442\u0435\u043c\u0432\u0440\u0438. \u041d\u0435 \u0441\u0442\u0435 \u0441\u0438\u0433\u0443\u0440\u043d\u0438 \u043a\u043e\u0458 \u0431\u0438\u043b\u0435\u0442 \u0435 \u0437\u0430 \u0412\u0430\u0441? \u0421\u043f\u043e\u0440\u0435\u0434\u0435\u0442\u0435 \u0433\u0438.",
+      "cmpBtn": "\u0421\u043f\u043e\u0440\u0435\u0434\u0438 \u0431\u0438\u043b\u0435\u0442\u0438",
+      "q1": "\u041a\u0430\u0434\u0435 \u043c\u043e\u0436\u0430\u043c \u0434\u0430 \u043a\u0443\u043f\u0430\u043c \u0431\u0438\u043b\u0435\u0442?",
+      "a1": "\u0411\u0438\u043b\u0435\u0442\u0438\u0442\u0435 \u0441\u0435 \u043f\u0440\u043e\u0434\u0430\u0432\u0430\u0430\u0442 \u043e\u043d\u043b\u0430\u0458\u043d \u043f\u0440\u0435\u043a\u0443 Karti.com.mk. \u041a\u0443\u043f\u0435\u0442\u0435 <a href=\"https://www.karti.com.mk/finelevate-summit-2026.nspx\" target=\"_blank\" rel=\"noopener\">Conference Pass</a> \u0438\u043b\u0438 <a href=\"https://www.karti.com.mk/finelevate-summit-2026-leadership-circle-pass.nspx\" target=\"_blank\" rel=\"noopener\">Leadership Circle Pass</a>.",
+      "q2": "\u041a\u043e\u0458\u0430 \u0435 \u0440\u0430\u0437\u043b\u0438\u043a\u0430\u0442\u0430 \u043c\u0435\u0453\u0443 \u0434\u0432\u0430\u0442\u0430 \u0431\u0438\u043b\u0435\u0442\u0438?",
+      "a2": "\u0418 \u0434\u0432\u0430\u0442\u0430 \u0432\u043a\u043b\u0443\u0447\u0443\u0432\u0430\u0430\u0442 \u0446\u0435\u043b\u043e\u0434\u043d\u0435\u0432\u043d\u0430 \u043f\u0440\u043e\u0433\u0440\u0430\u043c\u0430, \u043a\u0430\u0444\u0435-\u043f\u0430\u0443\u0437\u0438 \u0438 \u0440\u0443\u0447\u0435\u043a. Leadership Circle Pass \u0434\u043e\u043f\u043e\u043b\u043d\u0438\u0442\u0435\u043b\u043d\u043e \u043d\u0443\u0434\u0438 \u0440\u0435\u0437\u0435\u0440\u0432\u0438\u0440\u0430\u043d \u043f\u0440\u0438\u0441\u0442\u0430\u043f \u0434\u043e Executive Circle \u0437\u043e\u043d\u0430\u0442\u0430, \u043f\u0440\u0435\u043c\u0438\u0443\u043c \u0432\u043c\u0440\u0435\u0436\u0443\u0432\u0430\u045a\u0435 \u0441\u043e \u0432\u0438\u0441\u043e\u043a\u0438 \u043b\u0438\u0434\u0435\u0440\u0438 \u0438 \u0432\u043b\u0435\u0437 \u043d\u0430 \u0432\u0435\u0447\u0435\u0440\u043d\u0438\u043e\u0442 \u043d\u0430\u0441\u0442\u0430\u043d \u043d\u0430 Executive Circle.",
+      "q3": "\u0412\u043e \u043a\u043e\u043b\u043a\u0443 \u0447\u0430\u0441\u043e\u0442 \u0434\u0430 \u0434\u043e\u0458\u0434\u0430\u043c?",
+      "a3": "\u0420\u0435\u0433\u0438\u0441\u0442\u0440\u0430\u0446\u0438\u0458\u0430\u0442\u0430, \u043a\u0430\u0444\u0435\u0442\u043e \u0438 \u0432\u043c\u0440\u0435\u0436\u0443\u0432\u0430\u045a\u0435\u0442\u043e \u043f\u043e\u0447\u043d\u0443\u0432\u0430\u0430\u0442 \u0432\u043e 08:30. \u0421\u0432\u0435\u0447\u0435\u043d\u043e\u0442\u043e \u043e\u0442\u0432\u043e\u0440\u0430\u045a\u0435 \u0435 \u0432\u043e 09:00, \u043f\u0430 \u043e\u0441\u0442\u0430\u0432\u0435\u0442\u0435 \u0441\u0438 \u0432\u0440\u0435\u043c\u0435 \u0437\u0430 \u043f\u0440\u0438\u0458\u0430\u0432\u0443\u0432\u0430\u045a\u0435.",
+      "q4": "\u0414\u0430\u043b\u0438 \u0445\u0440\u0430\u043d\u0430\u0442\u0430 \u0438 \u043f\u0438\u0458\u0430\u043b\u0430\u0446\u0438\u0442\u0435 \u0441\u0435 \u0432\u043a\u043b\u0443\u0447\u0435\u043d\u0438?",
+      "a4": "\u0414\u0430. \u0418 \u0434\u0432\u0430\u0442\u0430 \u0431\u0438\u043b\u0435\u0442\u0438 \u0432\u043a\u043b\u0443\u0447\u0443\u0432\u0430\u0430\u0442 \u043a\u0430\u0444\u0435-\u043f\u0430\u0443\u0437\u0430 \u0432\u043e 11:00 \u0438 \u0440\u0443\u0447\u0435\u043a \u0437\u0430 \u0432\u043c\u0440\u0435\u0436\u0443\u0432\u0430\u045a\u0435 \u0432\u043e 13:35.",
+      "q5": "\u041a\u043e\u0458 \u043c\u043e\u0436\u0435 \u0434\u0430 \u043f\u0440\u0438\u0441\u0443\u0441\u0442\u0432\u0443\u0432\u0430 \u043d\u0430 Executive Circle \u0432\u0435\u0447\u0435\u0440\u0442\u0430?",
+      "a5": "Executive Circle \u0437\u0430\u0431\u0430\u0432\u0430\u0442\u0430 \u043f\u043e\u0447\u043d\u0443\u0432\u0430 \u0432\u043e 21:00 \u0432\u043e Distrikt Bar, Skopje Marriott Hotel, \u0438 \u0435 \u0441\u0430\u043c\u043e \u0437\u0430 \u043d\u043e\u0441\u0438\u0442\u0435\u043b\u0438\u0442\u0435 \u043d\u0430 Leadership Circle Pass.",
+      "q6": "\u041a\u0430\u043a\u043e \u043c\u043e\u0458\u0430\u0442\u0430 \u043a\u043e\u043c\u043f\u0430\u043d\u0438\u0458\u0430 \u043c\u043e\u0436\u0435 \u0434\u0430 \u0441\u0442\u0430\u043d\u0435 \u043f\u0430\u0440\u0442\u043d\u0435\u0440?",
+      "a6": "\u041a\u043e\u0440\u0438\u0441\u0442\u0435\u0442\u0435 \u0458\u0430 \u0444\u043e\u0440\u043c\u0430\u0442\u0430 <a href=\"#\" class=\"js-partner\">\u0421\u0442\u0430\u043d\u0435\u0442\u0435 \u043f\u0430\u0440\u0442\u043d\u0435\u0440</a> \u0438\u043b\u0438 \u043f\u0438\u0448\u0435\u0442\u0435 \u043d\u0430 <a href=\"mailto:contact@finelevate360.com\">contact@finelevate360.com</a>. \u041f\u043e\u0433\u043b\u0435\u0434\u043d\u0435\u0442\u0435 \u043a\u043e\u0458 \u0435 \u0432\u0435\u045c\u0435 \u0432\u043a\u043b\u0443\u0447\u0435\u043d \u043d\u0430 <a href=\"https://finelevate360.com/partners/\">\u0441\u0442\u0440\u0430\u043d\u0438\u0446\u0430\u0442\u0430 \u0437\u0430 \u043f\u0430\u0440\u0442\u043d\u0435\u0440\u0438</a>.",
+      "prEyebrow": "\u041f\u0430\u0440\u0442\u043d\u0435\u0440\u0438",
+      "prTitle": "\u041f\u043e\u0434\u0434\u0440\u0436\u0430\u043d\u043e \u043e\u0434 \u0435\u043a\u043e\u0441\u0438\u0441\u0442\u0435\u043c\u043e\u0442",
+      "prSub": "\u0418\u043d\u0441\u0442\u0438\u0442\u0443\u0446\u0438\u0438\u0442\u0435 \u0438 \u0442\u0435\u0445\u043d\u043e\u043b\u043e\u0448\u043a\u0438\u0442\u0435 \u043a\u043e\u043c\u043f\u0430\u043d\u0438\u0438 \u0448\u0442\u043e \u0433\u043e \u043e\u0431\u043b\u0438\u043a\u0443\u0432\u0430\u0430\u0442 \u043e\u0432\u043e\u0433\u043e\u0434\u0438\u043d\u0435\u0448\u043d\u0438\u043e\u0442 \u0421\u0430\u043c\u0438\u0442.",
+      "allPartners": "\u0421\u0438\u0442\u0435 \u043f\u0430\u0440\u0442\u043d\u0435\u0440\u0438",
+      "mdEyebrow": "\u041c\u0435\u0434\u0438\u0443\u043c\u0441\u043a\u0438 \u043f\u043e\u0434\u0434\u0440\u0436\u0443\u0432\u0430\u0447\u0438",
+      "mdTitle": "\u0413\u043e \u0437\u0430\u0441\u0438\u043b\u0443\u0432\u0430\u0430\u0442 \u0440\u0430\u0437\u0433\u043e\u0432\u043e\u0440\u043e\u0442",
+      "mdSub": "\u041f\u043e\u0434\u0434\u0440\u0436\u0443\u0432\u0430\u0447\u0438 \u043d\u0430 \u0440\u0430\u0437\u0433\u043e\u0432\u043e\u0440\u043e\u0442 \u0437\u0430 \u0438\u0434\u043d\u0438\u043d\u0430\u0442\u0430 \u043d\u0430 \u0444\u0438\u043d\u0430\u043d\u0441\u0438\u0441\u043a\u0438\u0442\u0435 \u0443\u0441\u043b\u0443\u0433\u0438 \u0438 \u0434\u0438\u0433\u0438\u0442\u0430\u043b\u043d\u0430\u0442\u0430 \u0442\u0440\u0430\u043d\u0441\u0444\u043e\u0440\u043c\u0430\u0446\u0438\u0458\u0430.",
+      "finalSub": "\u041f\u0440\u0438\u043a\u043b\u0443\u0447\u0435\u0442\u0435 \u0441\u0435 \u043d\u0430 \u043b\u0438\u0434\u0435\u0440\u0438\u0442\u0435 \u0448\u0442\u043e \u0458\u0430 \u043e\u0431\u043b\u0438\u043a\u0443\u0432\u0430\u0430\u0442 \u0434\u0438\u0433\u0438\u0442\u0430\u043b\u043d\u0430\u0442\u0430 \u0442\u0440\u0430\u043d\u0441\u0444\u043e\u0440\u043c\u0430\u0446\u0438\u0458\u0430 \u0432\u043e \u0444\u0438\u043d\u0430\u043d\u0441\u0438\u0441\u043a\u0438\u0442\u0435 \u0443\u0441\u043b\u0443\u0433\u0438 \u043d\u0430 16 \u0441\u0435\u043f\u0442\u0435\u043c\u0432\u0440\u0438 \u0432\u043e Skopje Marriott Hotel.",
+      "finalSmall": "\u0411\u0438\u043b\u0435\u0442\u0438 \u043f\u0440\u0435\u043a\u0443 Karti.com.mk",
+      "footTag": "\u041e\u0434\u043b\u0443\u0447\u0443\u0432\u0430\u0447\u043a\u0438 \u0441\u043e\u0433\u043b\u0435\u0434\u0443\u0432\u0430\u045a\u0430 \u0437\u0430 \u0434\u0438\u0433\u0438\u0442\u0430\u043b\u043d\u0430 \u0442\u0440\u0430\u043d\u0441\u0444\u043e\u0440\u043c\u0430\u0446\u0438\u0458\u0430 \u0432\u043e \u0444\u0438\u043d\u0430\u043d\u0441\u0438\u0441\u043a\u0438\u0442\u0435 \u0443\u0441\u043b\u0443\u0433\u0438.",
+      "privacy": "\u041f\u043e\u043b\u0438\u0442\u0438\u043a\u0430 \u0437\u0430 \u043f\u0440\u0438\u0432\u0430\u0442\u043d\u043e\u0441\u0442",
+      "cookie": "\u041f\u043e\u043b\u0438\u0442\u0438\u043a\u0430 \u0437\u0430 \u043a\u043e\u043b\u0430\u0447\u0438\u045a\u0430",
+      "stkTop": "16 \u0441\u0435\u043f\u0442. \u00b7 \u0421\u043a\u043e\u043f\u0458\u0435",
+      "stkMain": "\u0411\u0438\u043b\u0435\u0442\u0438 \u043e\u0434 6.000 \u041c\u041a\u0414",
+      "stkBtn": "\u041a\u0443\u043f\u0438 \u0431\u0438\u043b\u0435\u0442",
+      "pfTitle": "\u0421\u0442\u0430\u043d\u0435\u0442\u0435 \u043f\u0430\u0440\u0442\u043d\u0435\u0440",
+      "pfDesc": "\u0410\u043a\u043e \u0412\u0430\u0448\u0430\u0442\u0430 \u043e\u0440\u0433\u0430\u043d\u0438\u0437\u0430\u0446\u0438\u0458\u0430 \u0433\u0438 \u0437\u0430\u0458\u0430\u043a\u043d\u0443\u0432\u0430 \u0440\u0435\u0437\u0443\u043b\u0442\u0430\u0442\u0438\u0442\u0435 \u043e\u0434 \u0434\u0438\u0433\u0438\u0442\u0430\u043b\u043d\u0430\u0442\u0430 \u0442\u0440\u0430\u043d\u0441\u0444\u043e\u0440\u043c\u0430\u0446\u0438\u0458\u0430 \u2013 \u0440\u0435\u0448\u0435\u043d\u0438\u0458\u0430, \u0434\u043e\u0432\u0435\u0440\u0431\u0430 \u0438 \u0441\u0438\u0433\u0443\u0440\u043d\u043e\u0441\u0442 \u0438\u043b\u0438 \u043f\u043e\u0434\u0434\u0440\u0448\u043a\u0430 \u043d\u0430 \u0435\u043a\u043e\u0441\u0438\u0441\u0442\u0435\u043c\u043e\u0442 \u2013 \u0434\u0430 \u0441\u0435 \u043f\u043e\u0432\u0440\u0437\u0435\u043c\u0435.",
+      "pfName": "\u0412\u0430\u0448\u0435\u0442\u043e \u0438\u043c\u0435",
+      "pfEmail": "\u0412\u0430\u0448\u0430\u0442\u0430 \u0435-\u043f\u043e\u0448\u0442\u0430",
+      "pfSubject": "\u041d\u0430\u0441\u043b\u043e\u0432",
+      "pfMsg": "\u0412\u0430\u0448\u0430\u0442\u0430 \u043f\u043e\u0440\u0430\u043a\u0430",
+      "pfSubmit": "\u0418\u0441\u043f\u0440\u0430\u0442\u0438",
+      "pfNote": "\u0418\u043b\u0438 \u043f\u0438\u0448\u0435\u0442\u0435 \u043d\u0438 \u0434\u0438\u0440\u0435\u043a\u0442\u043d\u043e \u043d\u0430"
+    }
+  },
+  "targets": [
+    {
+      "tag": "a",
+      "key": "navSummit",
+      "html": false,
+      "source_text": "Digital Summit 2026"
+    },
+    {
+      "tag": "a",
+      "key": "navMap",
+      "html": false,
+      "source_text": "Digital Map"
+    },
+    {
+      "tag": "a",
+      "key": "navMapBank",
+      "html": false,
+      "source_text": "Banking Digital Map"
+    },
+    {
+      "tag": "a",
+      "key": "navMapIns",
+      "html": false,
+      "source_text": "Insurance Digital Map"
+    },
+    {
+      "tag": "a",
+      "key": "navMapFin",
+      "html": false,
+      "source_text": "Fintech Digital Map"
+    },
+    {
+      "tag": "a",
+      "key": "navPartners",
+      "html": false,
+      "source_text": "Partners"
+    },
+    {
+      "tag": "a",
+      "key": "navNews",
+      "html": false,
+      "source_text": "News"
+    },
+    {
+      "tag": "a",
+      "key": "navAbout",
+      "html": false,
+      "source_text": "About"
+    },
+    {
+      "tag": "a",
+      "key": "navAboutFl",
+      "html": false,
+      "source_text": "About Finelevate"
+    },
+    {
+      "tag": "a",
+      "key": "navBoard",
+      "html": false,
+      "source_text": "Advisory Board"
+    },
+    {
+      "tag": "span",
+      "key": "navContact",
+      "html": false,
+      "source_text": "Contact us"
+    },
+    {
+      "tag": "p",
+      "key": "heroLead",
+      "html": false,
+      "source_text": "One day, one room: banking, insurance and fintech leaders on AI, trust, payments and the core systems behind the next phase of financial services."
+    },
+    {
+      "tag": "span",
+      "key": "ctaPass",
+      "html": false,
+      "source_text": "Get your pass"
+    },
+    {
+      "tag": "a",
+      "key": "ctaAgenda",
+      "html": false,
+      "source_text": "View the agenda"
+    },
+    {
+      "tag": "p",
+      "key": "heroNote",
+      "html": true,
+      "source_text": "Final days to register. Passes from 6,000 MKD."
+    },
+    {
+      "tag": "p",
+      "key": "tagline",
+      "html": true,
+      "source_text": "The future is not waiting.Build before it becomes obvious."
+    },
+    {
+      "tag": "span",
+      "key": "cdLabel",
+      "html": false,
+      "source_text": "Doors open in"
+    },
+    {
+      "tag": "span",
+      "key": "month",
+      "html": false,
+      "source_text": "September"
+    },
+    {
+      "tag": "span",
+      "key": "stSessions",
+      "html": false,
+      "source_text": "sessions"
+    },
+    {
+      "tag": "span",
+      "key": "stPanels",
+      "html": false,
+      "source_text": "panels"
+    },
+    {
+      "tag": "span",
+      "key": "stSpeakers",
+      "html": false,
+      "source_text": "speakers"
+    },
+    {
+      "tag": "span",
+      "key": "stPartners",
+      "html": false,
+      "source_text": "partners"
+    },
+    {
+      "tag": "span",
+      "key": "aboutEyebrow",
+      "html": false,
+      "source_text": "About the event"
+    },
+    {
+      "tag": "h2",
+      "key": "aboutTitle",
+      "html": false,
+      "source_text": "Where financial services plans its next move"
+    },
+    {
+      "tag": "p",
+      "key": "aboutLead",
+      "html": true,
+      "source_text": "Finelevate Digital Summit is the central annual event uniting leaders, innovators, technology companies and decision-makers driving the next phase of transformation across banking, insurance and the broader fintech ecosystem."
+    },
+    {
+      "tag": "textpath",
+      "key": "secBank",
+      "html": false,
+      "source_text": "Banking"
+    },
+    {
+      "tag": "textpath",
+      "key": "secIns",
+      "html": false,
+      "source_text": "Insurance"
+    },
+    {
+      "tag": "textpath",
+      "key": "secFin",
+      "html": false,
+      "source_text": "Fintech"
+    },
+    {
+      "tag": "text",
+      "key": "navMap",
+      "html": false,
+      "source_text": "Digital Map"
+    },
+    {
+      "tag": "h3",
+      "key": "whoTitle",
+      "html": false,
+      "source_text": "Who\u2019s in the room"
+    },
+    {
+      "tag": "h3",
+      "key": "topicsTitle",
+      "html": false,
+      "source_text": "On the agenda"
+    },
+    {
+      "tag": "span",
+      "key": "tp1",
+      "html": false,
+      "source_text": "AI in finance"
+    },
+    {
+      "tag": "span",
+      "key": "tp3",
+      "html": false,
+      "source_text": "Regulatory reporting"
+    },
+    {
+      "tag": "span",
+      "key": "tp5",
+      "html": false,
+      "source_text": "eID & trust services"
+    },
+    {
+      "tag": "span",
+      "key": "tp4",
+      "html": false,
+      "source_text": "Core modernisation"
+    },
+    {
+      "tag": "span",
+      "key": "tp6",
+      "html": false,
+      "source_text": "Instant payments"
+    },
+    {
+      "tag": "span",
+      "key": "tp10",
+      "html": false,
+      "source_text": "Customer-centric banking"
+    },
+    {
+      "tag": "span",
+      "key": "tp7",
+      "html": false,
+      "source_text": "Zero trust & cyber resilience"
+    },
+    {
+      "tag": "span",
+      "key": "tp9",
+      "html": false,
+      "source_text": "Data governance"
+    },
+    {
+      "tag": "span",
+      "key": "tp8",
+      "html": false,
+      "source_text": "Fraud risk"
+    },
+    {
+      "tag": "span",
+      "key": "tp2",
+      "html": false,
+      "source_text": "Governed AI"
+    },
+    {
+      "tag": "span",
+      "key": "passEyebrow",
+      "html": false,
+      "source_text": "Attend the summit"
+    },
+    {
+      "tag": "h2",
+      "key": "passTitle",
+      "html": false,
+      "source_text": "Choose your conference pass"
+    },
+    {
+      "tag": "p",
+      "key": "passSub",
+      "html": false,
+      "source_text": "Select the experience that best matches your role and networking objectives."
+    },
+    {
+      "tag": "span",
+      "key": "p1Eyebrow",
+      "html": false,
+      "source_text": "Full conference access"
+    },
+    {
+      "tag": "p",
+      "key": "p1Desc",
+      "html": false,
+      "source_text": "Full access to the summit programme, expert insights and professional networking."
+    },
+    {
+      "tag": "span",
+      "key": "f1",
+      "html": false,
+      "source_text": "Full-day access to the conference programme"
+    },
+    {
+      "tag": "span",
+      "key": "f2",
+      "html": false,
+      "source_text": "Keynote sessions and panel discussions"
+    },
+    {
+      "tag": "span",
+      "key": "f3",
+      "html": false,
+      "source_text": "Coffee breaks and networking lunch"
+    },
+    {
+      "tag": "span",
+      "key": "f4",
+      "html": false,
+      "source_text": "Access to conference networking opportunities"
+    },
+    {
+      "tag": "span",
+      "key": "buy1",
+      "html": false,
+      "source_text": "Purchase Conference Pass"
+    },
+    {
+      "tag": "span",
+      "key": "badge",
+      "html": false,
+      "source_text": "Includes evening event"
+    },
+    {
+      "tag": "span",
+      "key": "p2Eyebrow",
+      "html": false,
+      "source_text": "Premium executive experience"
+    },
+    {
+      "tag": "p",
+      "key": "p2Desc",
+      "html": false,
+      "source_text": "A premium summit experience created for senior executives, founders and decision-makers."
+    },
+    {
+      "tag": "span",
+      "key": "f5",
+      "html": false,
+      "source_text": "Reserved access to the Executive Circle Area"
+    },
+    {
+      "tag": "span",
+      "key": "f6",
+      "html": false,
+      "source_text": "Premium networking with senior leaders"
+    },
+    {
+      "tag": "span",
+      "key": "f7",
+      "html": false,
+      "source_text": "Access to the Executive Circle evening event"
+    },
+    {
+      "tag": "span",
+      "key": "buy2",
+      "html": false,
+      "source_text": "Purchase Leadership Circle Pass"
+    },
+    {
+      "tag": "span",
+      "key": "secure",
+      "html": false,
+      "source_text": "Secure checkout via Karti.com.mk, the official ticketing partner."
+    },
+    {
+      "tag": "span",
+      "key": "agEyebrow",
+      "html": false,
+      "source_text": "Programme \u00b7 Wednesday, 16 September"
+    },
+    {
+      "tag": "h2",
+      "key": "agTitle",
+      "html": false,
+      "source_text": "Agenda"
+    },
+    {
+      "tag": "button",
+      "key": "fAll",
+      "html": false,
+      "source_text": "Full day"
+    },
+    {
+      "tag": "button",
+      "key": "fTalks",
+      "html": false,
+      "source_text": "Talks"
+    },
+    {
+      "tag": "button",
+      "key": "fPanels",
+      "html": false,
+      "source_text": "Panels"
+    },
+    {
+      "tag": "button",
+      "key": "fKeynotes",
+      "html": false,
+      "source_text": "Keynotes"
+    },
+    {
+      "tag": "span",
+      "key": "bMorning",
+      "html": false,
+      "source_text": "Morning"
+    },
+    {
+      "tag": "span",
+      "key": "brk1",
+      "html": false,
+      "source_text": "Registration, coffee & networking warm-up"
+    },
+    {
+      "tag": "span",
+      "key": "liveChip",
+      "html": false,
+      "source_text": "Live now"
+    },
+    {
+      "tag": "span",
+      "key": "tagOpening",
+      "html": false,
+      "source_text": "Opening"
+    },
+    {
+      "tag": "span",
+      "key": "agOpening",
+      "html": false,
+      "source_text": "Opening Ceremony"
+    },
+    {
+      "tag": "small",
+      "key": "orgMinister",
+      "html": false,
+      "source_text": "Minister of Digital Transformation, Republic of North Macedonia"
+    },
+    {
+      "tag": "span",
+      "key": "tagTalk",
+      "html": false,
+      "source_text": "Talk"
+    },
+    {
+      "tag": "span",
+      "key": "pbNextsense",
+      "html": false,
+      "source_text": "Powered by Nextsense"
+    },
+    {
+      "tag": "span",
+      "key": "tagModerator",
+      "html": false,
+      "source_text": "Moderator"
+    },
+    {
+      "tag": "span",
+      "key": "brk2",
+      "html": false,
+      "source_text": "Coffee break"
+    },
+    {
+      "tag": "span",
+      "key": "bMidday",
+      "html": false,
+      "source_text": "Midday"
+    },
+    {
+      "tag": "span",
+      "key": "pbCasys",
+      "html": false,
+      "source_text": "Powered by CaSys International"
+    },
+    {
+      "tag": "span",
+      "key": "brk3",
+      "html": false,
+      "source_text": "Lunch break"
+    },
+    {
+      "tag": "span",
+      "key": "bAfternoon",
+      "html": false,
+      "source_text": "Afternoon"
+    },
+    {
+      "tag": "span",
+      "key": "bEvening",
+      "html": false,
+      "source_text": "Evening"
+    },
+    {
+      "tag": "span",
+      "key": "execTitle",
+      "html": false,
+      "source_text": "Executive Circle Party"
+    },
+    {
+      "tag": "span",
+      "key": "execWho",
+      "html": false,
+      "source_text": "Exclusive to Leadership Circle Pass holders"
+    },
+    {
+      "tag": "span",
+      "key": "venEyebrow",
+      "html": false,
+      "source_text": "Venue & logistics"
+    },
+    {
+      "tag": "h2",
+      "key": "venTitle",
+      "html": false,
+      "source_text": "See you in Skopje"
+    },
+    {
+      "tag": "p",
+      "key": "venSub",
+      "html": false,
+      "source_text": "One venue for the whole day, from morning registration to the Executive Circle evening."
+    },
+    {
+      "tag": "address",
+      "key": "venAddress",
+      "html": true,
+      "source_text": "Plostad Makedonija 71000 Skopje, North Macedonia"
+    },
+    {
+      "tag": "span",
+      "key": "venMaps",
+      "html": false,
+      "source_text": "Open in Maps"
+    },
+    {
+      "tag": "span",
+      "key": "venCal",
+      "html": false,
+      "source_text": "Add to calendar"
+    },
+    {
+      "tag": "h3",
+      "key": "glance",
+      "html": false,
+      "source_text": "Your day at a glance"
+    },
+    {
+      "tag": "span",
+      "key": "tl1",
+      "html": false,
+      "source_text": "Registration opens"
+    },
+    {
+      "tag": "span",
+      "key": "tl2",
+      "html": false,
+      "source_text": "Opening ceremony"
+    },
+    {
+      "tag": "span",
+      "key": "tl3",
+      "html": false,
+      "source_text": "Coffee break"
+    },
+    {
+      "tag": "span",
+      "key": "tl4",
+      "html": false,
+      "source_text": "Networking lunch"
+    },
+    {
+      "tag": "span",
+      "key": "tl5",
+      "html": false,
+      "source_text": "Closing keynote"
+    },
+    {
+      "tag": "span",
+      "key": "tl6",
+      "html": false,
+      "source_text": "Executive Circle evening"
+    },
+    {
+      "tag": "span",
+      "key": "faqEyebrow",
+      "html": false,
+      "source_text": "Good to know"
+    },
+    {
+      "tag": "h2",
+      "key": "faqTitle",
+      "html": false,
+      "source_text": "Frequently asked questions"
+    },
+    {
+      "tag": "p",
+      "key": "faqSub",
+      "html": false,
+      "source_text": "Everything you need to know before 16 September."
+    },
+    {
+      "tag": "span",
+      "key": "cmpBtn",
+      "html": false,
+      "source_text": "View the passes"
+    },
+    {
+      "tag": "span",
+      "key": "q1",
+      "html": false,
+      "source_text": "Where can I buy a pass?"
+    },
+    {
+      "tag": "div",
+      "key": "a1",
+      "html": true,
+      "source_text": "Passes are sold online through Karti.com.mk. Buy the Conference Pass or the Leadership Circle Pass."
+    },
+    {
+      "tag": "span",
+      "key": "q2",
+      "html": false,
+      "source_text": "What\u2019s the difference between the two passes?"
+    },
+    {
+      "tag": "div",
+      "key": "a2",
+      "html": false,
+      "source_text": "Both include the full-day programme, coffee breaks and lunch. The Leadership Circle Pass adds reserved access to the Executive Circle Area, premium networking with senior leaders, and entry to the Executive Circle evening event."
+    },
+    {
+      "tag": "span",
+      "key": "q3",
+      "html": false,
+      "source_text": "What time should I arrive?"
+    },
+    {
+      "tag": "div",
+      "key": "a3",
+      "html": false,
+      "source_text": "Registration, coffee and networking start at 08:30. The opening ceremony begins at 09:00, so give yourself time to check in."
+    },
+    {
+      "tag": "span",
+      "key": "q4",
+      "html": false,
+      "source_text": "Are food and drinks included?"
+    },
+    {
+      "tag": "div",
+      "key": "a4",
+      "html": false,
+      "source_text": "Yes. Both passes include the morning coffee break at 11:00 and the networking lunch at 13:35."
+    },
+    {
+      "tag": "span",
+      "key": "q5",
+      "html": false,
+      "source_text": "Who can attend the Executive Circle evening?"
+    },
+    {
+      "tag": "div",
+      "key": "a5",
+      "html": false,
+      "source_text": "The Executive Circle party starts at 21:00 at Distrikt Bar, Skopje Marriott Hotel, and is for Leadership Circle Pass holders only."
+    },
+    {
+      "tag": "span",
+      "key": "q6",
+      "html": false,
+      "source_text": "How can my company partner with the summit?"
+    },
+    {
+      "tag": "div",
+      "key": "a6",
+      "html": true,
+      "source_text": "Use the Become a Partner form or write to contact@finelevate360.com. See who\u2019s already involved on the partners page."
+    },
+    {
+      "tag": "span",
+      "key": "prEyebrow",
+      "html": false,
+      "source_text": "Partners"
+    },
+    {
+      "tag": "h2",
+      "key": "prTitle",
+      "html": false,
+      "source_text": "Powered by the ecosystem"
+    },
+    {
+      "tag": "p",
+      "key": "prSub",
+      "html": false,
+      "source_text": "The institutions and technology companies helping shape this year\u2019s summit."
+    },
+    {
+      "tag": "span",
+      "key": "allPartners",
+      "html": false,
+      "source_text": "All partners"
+    },
+    {
+      "tag": "span",
+      "key": "mdEyebrow",
+      "html": false,
+      "source_text": "Media supporters"
+    },
+    {
+      "tag": "h2",
+      "key": "mdTitle",
+      "html": false,
+      "source_text": "Amplifying the conversation"
+    },
+    {
+      "tag": "p",
+      "key": "mdSub",
+      "html": false,
+      "source_text": "Supporting the conversation around the future of financial services and digital transformation."
+    },
+    {
+      "tag": "h2",
+      "key": "tagline",
+      "html": true,
+      "source_text": "The future is not waiting.Build before it becomes obvious."
+    },
+    {
+      "tag": "p",
+      "key": "finalSub",
+      "html": false,
+      "source_text": "Join the leaders shaping digital transformation in financial services on 16 September at Skopje Marriott Hotel."
+    },
+    {
+      "tag": "small",
+      "key": "finalSmall",
+      "html": false,
+      "source_text": "Tickets via Karti.com.mk"
+    },
+    {
+      "tag": "small",
+      "key": "stkTop",
+      "html": false,
+      "source_text": "16 Sept \u00b7 Skopje"
+    },
+    {
+      "tag": "b",
+      "key": "stkMain",
+      "html": false,
+      "source_text": "Passes from 6,000 MKD"
+    },
+    {
+      "tag": "a",
+      "key": "stkBtn",
+      "html": false,
+      "source_text": "Get your pass"
+    },
+    {
+      "tag": "h2",
+      "key": "pfTitle",
+      "html": false,
+      "source_text": "Become a Partner"
+    },
+    {
+      "tag": "p",
+      "key": "pfDesc",
+      "html": false,
+      "source_text": "If your organization strengthens digital transformation outcomes \u2013 solutions, trust & assurance, or ecosystem enablement \u2013 let\u2019s connect."
+    },
+    {
+      "tag": "label",
+      "key": "pfName",
+      "html": false,
+      "source_text": "Your name"
+    },
+    {
+      "tag": "label",
+      "key": "pfEmail",
+      "html": false,
+      "source_text": "Your email"
+    },
+    {
+      "tag": "label",
+      "key": "pfSubject",
+      "html": false,
+      "source_text": "Subject"
+    },
+    {
+      "tag": "label",
+      "key": "pfMsg",
+      "html": false,
+      "source_text": "Your message"
+    },
+    {
+      "tag": "button",
+      "key": "pfSubmit",
+      "html": false,
+      "source_text": "Submit"
+    },
+    {
+      "tag": "span",
+      "key": "pfNote",
+      "html": false,
+      "source_text": "Or write to us directly at"
+    }
+  ]
+}
