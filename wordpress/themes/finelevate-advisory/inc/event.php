@@ -12,7 +12,7 @@ function fe_event_markup($content) {
     $xpath = new DOMXPath($document);
     $root = $xpath->query('//*[contains(concat(" ", normalize-space(@class), " "), " fl-summit ")]')->item(0);
     if (!$root) { return $content; }
-    foreach (array('site-header', 'site-footer', 'hero-brand', 'sticky-cta', 'pf') as $class) {
+    foreach (array('site-header', 'site-footer', 'hero-brand', 'sticky-cta', 'pf', 'countdown') as $class) {
         $remove = array();
         foreach ($xpath->query('.//*[contains(concat(" ", normalize-space(@class), " "), " ' . $class . ' ")]', $root) as $node) { $remove[] = $node; }
         foreach ($remove as $node) { $node->parentNode->removeChild($node); }
