@@ -138,7 +138,7 @@ function fe_news_archive() {
     echo '<div class="news-grid">';
     while ($posts->have_posts()) {
         $posts->the_post();
-        echo '<article><p class="eyebrow">' . esc_html(get_the_date()) . '</p><h2><a href="' . esc_url(get_permalink()) . '">' . esc_html(get_the_title()) . '</a></h2><p>' . esc_html(wp_trim_words(wp_strip_all_tags(get_the_content()), 45)) . '</p><a class="text-link" href="' . esc_url(get_permalink()) . '">' . esc_html__('Read more', 'finelevate-advisory') . ' →</a></article>';
+        echo '<article><p class="eyebrow">' . esc_html(get_the_date(fe_language() === 'en' ? '' : 'j. n. Y')) . '</p><h2><a href="' . esc_url(get_permalink()) . '">' . esc_html(get_the_title()) . '</a></h2><p>' . esc_html(wp_trim_words(wp_strip_all_tags(get_the_content()), 45)) . '</p><a class="text-link" href="' . esc_url(get_permalink()) . '">' . esc_html__('Read more', 'finelevate-advisory') . ' →</a></article>';
     }
     echo '</div>';
     wp_reset_postdata();

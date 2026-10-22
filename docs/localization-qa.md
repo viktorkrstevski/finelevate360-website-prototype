@@ -6,6 +6,9 @@ and form feedback are translated for MK, SR, HR, SL and ME. Official names,
 brands, venue names and English presentation titles intentionally retained by
 production remain unchanged.
 
+News archive and article dates use the regional numeric format (`7. 7. 2026`)
+outside English, independent of the staging administrator's WordPress locale.
+
 The Macedonian event uses the existing public EN/MK translation table. It is
 read as a strictly parsed literal, without executing the production script.
 Translation happens on the server and accepts WordPress Customizer overrides.
