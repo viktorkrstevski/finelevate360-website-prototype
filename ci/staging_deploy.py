@@ -17,6 +17,7 @@ from staging_package import HOST, SLUG, ALLOWED, REQUIRED, FORBIDDEN
 
 SENTINEL = ".finelevate-staging-target"
 FTPS_HOST = "srv2071-files.hstgr.io"
+FTPS_USER = "u466894776.finelevatestgci"
 # hPanel's FTP endpoint differs from the file-manager hostname's DNS address.
 # Pin the provider-confirmed address while retaining verified TLS identity/SNI.
 FTPS_ADDRESS = "82.198.228.17"
@@ -54,7 +55,13 @@ def verify_target(ftp):
     # The FTP account must be jailed at this staging instance's wp-content/themes.
     ftp.cwd("/")
     marker = io.BytesIO()
-    ftp.retrbinary(f"RETR {SENTINEL}", marker.write)
+    try:
+        ftp.retrbinary(f"RETR {SENTINEL}", marker.write)
+    except error_perm as error:
+        if not str(error).startswith("550"):
+            raise
+        raise ValueError("Staging target marker is not readable at the FTP account root; "
+                         "verify the dedicated account directory. No files changed.") from error
     if marker.getvalue().decode().strip() != f"https://{HOST}":
         raise ValueError("Staging chroot sentinel mismatch; no files changed")
 
@@ -151,6 +158,8 @@ def main():
         raise ValueError("Only the approved staging host may be deployed")
     if os.environ.get("STAGING_FTPS_HOST") != FTPS_HOST:
         raise ValueError("Only the verified staging FTPS TLS endpoint is permitted")
+    if os.environ.get("STAGING_FTPS_USER") != FTPS_USER:
+        raise ValueError("Only the dedicated staging theme-directory FTP account is permitted")
     if args.check_access and (args.artifact or args.commit or args.rollback_directory):
         raise ValueError("Access checks cannot be combined with deployment inputs")
     if not args.check_access and not re.fullmatch(r"[a-f0-9]{40}", args.commit or ""):

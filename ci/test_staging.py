@@ -1,12 +1,14 @@
 import io
 import json
+from ftplib import error_perm
 from pathlib import Path
 import tempfile
 import unittest
+from unittest.mock import patch
 import zipfile
 
 from staging_package import build, SLUG, check_image_metadata
-from staging_deploy import archive_files, verify_target, verify_confinement, publish, upload
+from staging_deploy import archive_files, verify_target, verify_confinement, publish, upload, main
 
 COMMIT = 'a' * 40
 
@@ -113,6 +115,26 @@ class StagingReleaseTests(unittest.TestCase):
         ftp = MemoryFTP()
         ftp.files['.finelevate-staging-target'] = b'https://finelevate360.com'
         with self.assertRaises(ValueError):
+            verify_target(ftp)
+        self.assertEqual(ftp.renames, [])
+
+    def test_wrong_ftp_account_is_rejected_before_connecting(self):
+        environment = {'STAGING_URL': 'https://stg.finelevate360.com',
+                       'STAGING_FTPS_HOST': 'srv2071-files.hstgr.io',
+                       'STAGING_FTPS_USER': 'u466894776.stg.finelevate360.com'}
+        with patch.dict('os.environ', environment, clear=True), \
+                patch('sys.argv', ['staging_deploy.py', '--check-access']), \
+                patch('staging_deploy.FTP_TLS') as connection:
+            with self.assertRaisesRegex(ValueError, 'dedicated staging'):
+                main()
+            connection.assert_not_called()
+
+    def test_missing_marker_remains_a_hard_stop(self):
+        ftp = MemoryFTP()
+        def missing_marker(command, callback):
+            raise error_perm('550 No such file or directory')
+        ftp.retrbinary = missing_marker
+        with self.assertRaisesRegex(ValueError, 'No files changed'):
             verify_target(ftp)
         self.assertEqual(ftp.renames, [])
 
