@@ -31,6 +31,9 @@ or invented translated records are introduced by the theme translation repair.
 
 Some speaker/session titles and business roles inside the published MK event
 remain English in production itself. Those official titles are preserved.
+Generic Summit labels absent from the source translation table (speaker counts,
+panel labels and meeting-space guidance) have separate Macedonian supplements.
+These do not translate official talk titles, pass names, employers or job titles.
 
 ## What route checks establish
 

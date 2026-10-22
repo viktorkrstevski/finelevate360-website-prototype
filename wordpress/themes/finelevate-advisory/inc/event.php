@@ -4,7 +4,15 @@ if (!defined('ABSPATH')) { exit; }
 
 function fe_event_locales() {
     static $data;
-    if (!isset($data)) { $data = json_decode(file_get_contents(__DIR__ . '/event-translations.json'), true); }
+    if (!isset($data)) {
+        $data = json_decode(file_get_contents(__DIR__ . '/event-translations.json'), true);
+        $supplements = json_decode(file_get_contents(__DIR__ . '/event-ui-translations.json'), true);
+        foreach ($supplements as $key => $entry) {
+            $data['strings']['en'][$key] = $entry['en'];
+            $data['strings']['mk'][$key] = $entry['mk'];
+            $data['targets'][] = array('key' => $key, 'tag' => $entry['tag'], 'html' => $entry['html'] ?? false, 'source_text' => $entry['en']);
+        }
+    }
     return $data;
 }
 
