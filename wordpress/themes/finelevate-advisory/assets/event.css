@@ -6,3 +6,4 @@
 /* Inherit the shared brand palette and keep copy legible on the event hero. */
 .content-page .fl-summit{--blue-950:#1a272e;--blue-900:#1a272e;--blue-800:#2a4ab0;--blue-700:#2a4ab0;--blue-600:#2a4ab0;--blue-500:#5b7fe8;--green:#008a62}
 .content-page .fl-summit .tagline,.content-page .fl-summit .tagline p,.content-page .fl-summit .hero .hero-lead,.content-page .fl-summit .final p{color:#fff}
+@media(max-width:480px){.content-page .fl-summit .hero h1{font-size:clamp(1.75rem,8.5vw,2.5rem)}}
