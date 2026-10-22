@@ -1,3 +1,14 @@
 screens/
 *.original
 Thumbs.db
+artifacts/
+__pycache__/
+*.pyc
+node_modules/
+.env
+.env.*
+wp-config.php
+*.sql
+*.sqlite
+*.pem
+*.key

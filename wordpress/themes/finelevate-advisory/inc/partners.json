@@ -1,0 +1,87 @@
+[
+  {
+    "position": 1,
+    "name": "Tessa",
+    "asset": "assets/partners/01_tessa.png"
+  },
+  {
+    "position": 2,
+    "name": "InTec",
+    "asset": "assets/partners/02_intec.png"
+  },
+  {
+    "position": 3,
+    "name": "SAGA MK",
+    "asset": "assets/partners/03_saga_mk.png"
+  },
+  {
+    "position": 4,
+    "name": "Intercert",
+    "asset": "assets/partners/04_intercert.svg"
+  },
+  {
+    "position": 5,
+    "name": "P1",
+    "asset": "assets/partners/05_p1.svg"
+  },
+  {
+    "position": 6,
+    "name": "FEIT",
+    "asset": "assets/partners/06_feit.png"
+  },
+  {
+    "position": 7,
+    "name": "AVENGA",
+    "asset": "assets/partners/07_avenga.png"
+  },
+  {
+    "position": 8,
+    "name": "Cisco",
+    "asset": "assets/partners/08_cisco.png"
+  },
+  {
+    "position": 9,
+    "name": "MASIT",
+    "asset": "assets/partners/09_masit.svg"
+  },
+  {
+    "position": 10,
+    "name": "KIBSTrust",
+    "asset": "assets/partners/10_kibstrust.svg"
+  },
+  {
+    "position": 11,
+    "name": "Macedonia2025",
+    "asset": "assets/partners/11_macedonia2025.webp"
+  },
+  {
+    "position": 12,
+    "name": "GoDigital",
+    "asset": "assets/partners/12_godigital.png"
+  },
+  {
+    "position": 13,
+    "name": "Startup Macedonia",
+    "asset": "assets/partners/13_startup_macedonia.png"
+  },
+  {
+    "position": 14,
+    "name": "CaSys",
+    "asset": "assets/partners/14_casys.png"
+  },
+  {
+    "position": 15,
+    "name": "GDi",
+    "asset": "assets/partners/15_gdi.webp"
+  },
+  {
+    "position": 16,
+    "name": "AXM365",
+    "asset": "assets/partners/16_axm365.png"
+  },
+  {
+    "position": 17,
+    "name": "Inbox",
+    "asset": "assets/partners/17_inbox.png"
+  }
+]

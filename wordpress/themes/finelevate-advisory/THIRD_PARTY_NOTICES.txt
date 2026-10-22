@@ -1,0 +1,18 @@
+ASSET AND LICENSE NOTICES
+
+Montserrat
+The bundled Montserrat Regular, Medium, SemiBold and Bold TTF files are unmodified. Their embedded copyright is: Copyright 2011 The Montserrat Project Authors (https://github.com/JulietaUla/Montserrat).
+Montserrat is distributed under the SIL Open Font License 1.1. The full license, original embedded copyright notice and current official project copyright notice accompany the files in assets/fonts/OFL.txt. Font source CSS and metadata are recorded in assets/fonts/PROVENANCE.json. Do not sell fonts on their own or remove the license when redistributing them.
+Official project: https://github.com/JulietaUla/Montserrat
+Official license: https://raw.githubusercontent.com/JulietaUla/Montserrat/master/OFL.txt
+
+Finelevate and partner marks; authentic photographs
+Marks and photographs remain the property of their respective rightsholders. The supplied public-site originals are included for the authorized Finelevate staging implementation, not licensed for unrelated uses or resale. Preserve authentic geometry, identity and attribution. Do not infer client status, sponsorship relationships or endorsement beyond the preserved source wording. Original source pages and available source-media URLs are in provenance/assets.json.
+
+Conceptual hero
+The skybridge image is generated conceptual editorial imagery. It does not identify an actual Finelevate office, project, team or location. No claim of photographic documentation is intended.
+
+Natural Earth
+Homepage map geometry derives from Natural Earth 1:50m boundaries. Natural Earth data are public domain. The reference uses the attribution “Made with Natural Earth.” The geometry is visual illustration only, not new market coverage or capability evidence.
+Source: https://www.naturalearthdata.com/downloads/50m-cultural-vectors/50m-admin-0-countries-2/
+Terms: https://www.naturalearthdata.com/about/terms-of-use/

@@ -1,0 +1,23 @@
+{
+  "ui_speaker_summary": {"tag":"p", "html":true, "en":"24 speakers from Mastercard, Cisco, KIBS, the National Bank and more.", "mk":"<strong>24 говорници</strong> од Mastercard, Cisco, KIBS, Народната банка и други организации."},
+  "ui_banking_apps": {"tag":"span", "en":"Digital banking apps", "mk":"Апликации за дигитално банкарство"},
+  "ui_agenda_counts": {"tag":"span", "en":"15 sessions · 24 speakers", "mk":"15 сесии · 24 говорници"},
+  "ui_opening_keynote": {"tag":"span", "en":"Opening keynote", "mk":"Воведен главен говор"},
+  "ui_panel_01": {"tag":"span", "en":"Panel 01", "mk":"Панел 01"},
+  "ui_panel_02": {"tag":"span", "en":"Panel 02", "mk":"Панел 02"},
+  "ui_panel_03": {"tag":"span", "en":"Panel 03", "mk":"Панел 03"},
+  "ui_panellists": {"tag":"span", "en":"Panellists", "mk":"Учесници на панелот"},
+  "ui_fireside_chat": {"tag":"span", "en":"Fireside chat", "mk":"Неформален разговор"},
+  "ui_casys_sponsor": {"tag":"span", "en":"Sponsored by CaSys International", "mk":"Со поддршка на CaSys International"},
+  "ui_in_conversation": {"tag":"span", "en":"In conversation", "mk":"Во разговор"},
+  "ui_leadership_pass": {"tag":"a", "en":"Get the Leadership Circle Pass", "mk":"Обезбедете Leadership Circle Pass"},
+  "ui_meeting_eyebrow": {"tag":"span", "en":"Meeting rooms & phone booths", "mk":"Сали за состаноци и телефонски кабини"},
+  "ui_meeting_title": {"tag":"h2", "en":"Need a space for a quick meeting or call?", "mk":"Ви треба простор за краток состанок или повик?"},
+  "ui_meeting_description": {"tag":"p", "en":"Book a meeting room or private phone booth and reserve your preferred time slot during the event.", "mk":"Резервирајте сала за состанок или приватна телефонска кабина во терминот што Ви одговара за време на настанот."},
+  "ui_reserve_space": {"tag":"span", "en":"Reserve a space", "mk":"Резервирајте простор"},
+  "ui_during_summit": {"tag":"span", "en":"During the summit · 16 September", "mk":"За време на Самитот · 16 септември"},
+  "ui_meeting_room": {"tag":"b", "en":"Meeting room", "mk":"Сала за состаноци"},
+  "ui_phone_booth": {"tag":"b", "en":"Private phone booth", "mk":"Приватна телефонска кабина"},
+  "ui_sessions": {"tag":"span", "en":"Sessions", "mk":"Сесии"},
+  "ui_breaks": {"tag":"span", "en":"Breaks & networking", "mk":"Паузи и вмрежување"}
+}
