@@ -65,18 +65,41 @@ add_filter('the_content', function ($content) {
     }, $content);
 }, 20);
 
+function fe_public_record_id($path) {
+    $found = get_posts(array('post_type' => array('page', 'post', 'event', 'finelev360_partner', 'finelev360_advisory'),
+        'post_status' => 'publish', 'numberposts' => -1, 'fields' => 'ids',
+        'meta_key' => '_fe_public_path', 'meta_value' => $path));
+    foreach ($found as $id) {
+        // The standard importer can attach several paths to a title/date match.
+        // Only its original path identifies that record's actual body/language.
+        if (get_post_meta($id, '_fe_public_path', true) === $path) { return $id; }
+    }
+    return 0;
+}
+
+function fe_import_existing_public_record($existing, $post) {
+    if (!fe_staging() || !is_admin() || !current_user_can('import')) { return $existing; }
+    $meta = array();
+    foreach ($post['postmeta'] ?? array() as $entry) { $meta[$entry['key']] = $entry['value']; }
+    $path = $meta['_fe_public_path'] ?? '';
+    $source_id = absint($meta['_fe_public_source_id'] ?? 0);
+    if (!$path || !isset(fe_routes()['routes'][$path]) || fe_routes()['routes'][$path]['source_id'] !== $source_id) { return $existing; }
+    // Preserve the source's normal title and date without conflating translations.
+    // Never update an existing editorial body during a repeated import.
+    return fe_public_record_id($path);
+}
+add_filter('wp_import_existing_post', 'fe_import_existing_public_record', 10, 2);
+
 // Preserve public paths without flattening translated posts or copying production
 // rewrite settings/database. The imported records remain normal editable WP posts.
 add_action('parse_request', function ($request) {
     if (is_admin()) { return; }
     $path = fe_route_path('/' . $request->request);
     if ($path === '/' || !isset(fe_routes()['routes'][$path])) { return; }
-    $found = get_posts(array('post_type' => array('page', 'post', 'event', 'finelev360_partner', 'finelev360_advisory'),
-        'post_status' => 'publish', 'numberposts' => 1, 'fields' => 'ids',
-        'meta_key' => '_fe_public_path', 'meta_value' => $path));
-    if (!$found) { return; }
-    $request->query_vars = array('p' => $found[0], 'post_type' => get_post_type($found[0]));
-    if (get_post_type($found[0]) === 'page') { $request->query_vars = array('page_id' => $found[0]); }
+    $id = fe_public_record_id($path);
+    if (!$id) { return; }
+    $request->query_vars = array('p' => $id, 'post_type' => get_post_type($id));
+    if (get_post_type($id) === 'page') { $request->query_vars = array('page_id' => $id); }
 });
 add_filter('redirect_canonical', function ($redirect) {
     $path = fe_route_path(wp_unslash($_SERVER['REQUEST_URI'] ?? '/'));
