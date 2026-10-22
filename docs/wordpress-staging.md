@@ -95,7 +95,7 @@ actual deployment remain separate checks; passing CI alone does not certify them
 Production metadata was read through WPVibe on 21 October 2026 and reported
 PHP **8.3.35**. The [official PHP advisory](https://www.php.net/archive/2026.php)
 lists **8.3.36** as the fixed 8.3 release for CVE-2026-109618 and CVE-2026-109619.
-Hostinger vendor backport status is unverified. No production PHP settings were
+Hostinger vendor backport status for this server is unverified. No production PHP settings were
 changed, and this observation establishes no compromise.
 
 
@@ -105,9 +105,9 @@ A fresh staging WordPress instance and administrator were created after explicit
 owner approval; WordPress noindex is saved. The approved dedicated FTPS account
 is scoped in hPanel to staging's `public_html/wp-content/themes`. Its generated
 credential is stored only in the protected staging environment. The marker was
-saved and read back through the scoped file manager. The verified TLS endpoint
-is pinned in the deploy script; neither certificate validation nor data-channel
-encryption may be disabled.
+saved and read back through the scoped file manager. The intended FTP endpoint
+is pinned in the deploy script; its certificate does not currently match that
+hostname. Neither certificate validation nor data-channel encryption may be disabled.
 
 The separate `verify-staging-access` job waits for the existing owner reviewer.
 It reads the marker, checks the reported root and its listing, and verifies that
@@ -118,8 +118,10 @@ production credentials. Deployment also repeats the confinement checks.
 
 Staging currently reports PHP **8.4.26**; production's read-only metadata still
 reports **8.3.35**. Fixed upstream releases include 8.4.27 and 8.3.36. No relevant
-Hostinger backport statement was found in its public sources. No support request
-was sent: provider remediation is unverified, rather than a pending ticket.
+Hostinger server-specific backport statement was found. See the later checkpoint
+for the newly published platform-mitigation statement; it does not establish a
+patched runtime on this Business hosting server. No support request is pending,
+and the owner now explicitly prohibits further support contact.
 Hostinger's public PHP selector guide describes plan-wide effects, so further
 selector changes require resolving scope before any action. Deployment remains
 disabled; no staging DNS record has been added and staging SSL is unverified.
@@ -142,11 +144,12 @@ at login with `530 Login incorrect`; no target read or write ran. hPanel then
 confirmed that the FTP service address is **82.198.228.17**, distinct from the
 file-manager hostname's current DNS address. A credential-free AUTH TLS handshake
 to that exact IP validated the certificate against `srv2071-files.hstgr.io` using
-the default trust store and hostname checks. The script now connects only to
-that hPanel IP and uses the pinned Hostinger name for TLS identity/SNI. It never
-disables certificate validation, changes credentials, or broadens the account.
-Any endpoint migration requires an explicit reviewed code change. The corrected
-preflight requires a new owner review and is not proof of successful login yet.
+the default trust store and hostname checks. That historical handshake established
+certificate identity only, not that the file-manager hostname was the intended
+FTP service identity. The current script instead pins the provider/user-configured
+FTP hostname and hPanel IP, with default certificate verification. See the current
+checkpoint below. It never disables certificate validation, changes credentials,
+or broadens the account.
 
 The corrected owner-approved check also failed at authentication with `530 Login
 incorrect`. No target read or write ran. No further login retry or password reset
@@ -162,3 +165,47 @@ hero bleed. Clipping horizontal paint at the main page boundary keeps the image
 at the viewport edge without clipping header dropdowns or introducing a scroll
 container. The fix was checked at 320, 375, 430, 768, 1024 and 1280 viewport widths
 and in the native desktop window with its vertical scrollbar.
+
+## Current transport and runtime checkpoint — 22 October 2026
+
+The intended explicit-FTPS endpoint is `ftp.stg.finelevate360.com:21`, pinned to
+the hPanel FTP address `82.198.228.17`. Cloudflare has its DNS-only A record, with
+no competing AAAA/CNAME. The certificate presented by that service covers
+`*.hstgr.io` / `hstgr.io`, not the configured FTP hostname. Credential-free TLS
+therefore fails hostname validation. No credentials were sent in those checks.
+Do not substitute the file-manager name merely because its wildcard validates,
+use plaintext, or disable hostname/certificate checks. The dedicated username
+guard, staging marker and confinement checks must all pass before CI writes.
+The later username-guarded run failed before networking; there is no current
+successful confinement checkpoint. Both deployment opt-in variables remain unset.
+
+Staging's authenticated WordPress HTTPS admin works through its temporary
+Hostinger domain. The theme ZIP chooser still fails because the Chrome extension
+lacks local-file access. The upload form was reconciled after the failed call:
+zero files selected and Install Now disabled. Nothing was uploaded or installed.
+No extension permission was changed, and no upload approval operation remains
+pending. The ZIP is built from source commit `435076c7b0662eec1f50291f4c57bbdb4eb1e5f7`
+with SHA-256 `44c695a15e2a6d7859eab30026579f735bca1889c481a3c855a95bfbd3c6a575`.
+
+Hostinger's Git wizard reused an existing GitHub authorization and listed the
+correct repository. Its destination control supports a subfolder of public_html,
+but the [current Git documentation](https://docs.hostinger.com/websites/git)
+states that the integration enables automatic deployment on pushes. The wizard
+was left undeployed: directly connecting the source branch would bypass the
+protected staging environment and would deploy the repository root rather than
+the packaged theme. A future artifact-branch solution must retain owner review
+and target only `wp-content/themes/finelevate-advisory`.
+
+Both hPanel PHP Info and WordPress Site Health still report **PHP 8.4.26**.
+Hostinger's [public incident](https://statuspage.hostinger.com/incidents/pj2zs1lx3n9d)
+states that its platform tests found no exposure to CVE-2026-109618/109619 and
+that it added a protective layer. Its completed patch updates currently identify
+Agency infrastructure and cPanel servers; remaining managed-hosting upgrades
+are described as ongoing. This is Business hPanel hosting, so those completed
+updates do not establish this server's patched package or a backport. Deployment
+remains disabled pending the required applicable remediation evidence.
+
+The new navigation redesign is awaiting visual approval and has not been
+implemented. Digital Map integration, translated staging pages, hosted QA and
+the public staging domain's DNS/SSL remain incomplete. Production, mail,
+passwords, account scope and hosting settings were not changed in this check.
