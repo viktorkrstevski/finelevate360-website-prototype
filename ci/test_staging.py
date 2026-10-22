@@ -8,7 +8,7 @@ from unittest.mock import patch
 import zipfile
 
 from staging_package import build, SLUG, check_image_metadata
-from staging_deploy import archive_files, verify_target, verify_confinement, publish, upload, main
+from staging_deploy import archive_files, verify_target, verify_confinement, publish, upload, main, FTPS_HOST
 
 COMMIT = 'a' * 40
 
@@ -120,7 +120,7 @@ class StagingReleaseTests(unittest.TestCase):
 
     def test_wrong_ftp_account_is_rejected_before_connecting(self):
         environment = {'STAGING_URL': 'https://stg.finelevate360.com',
-                       'STAGING_FTPS_HOST': 'srv2071-files.hstgr.io',
+                       'STAGING_FTPS_HOST': FTPS_HOST,
                        'STAGING_FTPS_USER': 'u466894776.stg.finelevate360.com'}
         with patch.dict('os.environ', environment, clear=True), \
                 patch('sys.argv', ['staging_deploy.py', '--check-access']), \

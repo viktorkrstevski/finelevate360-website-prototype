@@ -16,10 +16,13 @@ import zipfile
 from staging_package import HOST, SLUG, ALLOWED, REQUIRED, FORBIDDEN
 
 SENTINEL = ".finelevate-staging-target"
-FTPS_HOST = "srv2071-files.hstgr.io"
+# The staging FTP hostname is exposed by hPanel's additional-account listing
+# and resolves directly to the provider-confirmed FTP IP. Never substitute the
+# separate file-manager hostname to get around a certificate-name mismatch.
+FTPS_HOST = "ftp.stg.finelevate360.com"
 FTPS_USER = "u466894776.finelevatestgci"
-# hPanel's FTP endpoint differs from the file-manager hostname's DNS address.
-# Pin the provider-confirmed address while retaining verified TLS identity/SNI.
+# Pin the provider-confirmed address while requiring the actual staging FTP
+# hostname in the certificate; no plaintext or certificate-exception fallback.
 FTPS_ADDRESS = "82.198.228.17"
 BACKUP = re.compile(r"\.finelevate-rollback-[0-9]{20}-[a-f0-9]{12}")
 
