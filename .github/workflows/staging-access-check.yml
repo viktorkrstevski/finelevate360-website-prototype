@@ -1,0 +1,41 @@
+name: Staging access check
+
+# A deliberate change to this check requests one read-only verification. Ordinary
+# theme/CI pushes do not connect, and no deployment job exists in this workflow.
+on:
+  push:
+    branches: [codex/advisory-clarity-staging]
+    paths: [.github/workflows/staging-access-check.yml]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: staging-access-check
+  cancel-in-progress: false
+
+jobs:
+  verify-staging-access:
+    if: github.ref == 'refs/heads/codex/advisory-clarity-staging'
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    environment:
+      name: staging
+      url: https://stg.finelevate360.com
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065 # v5
+        with:
+          python-version: '3.12'
+      - name: Test account restrictions and deployment safeguards locally
+        run: python -m unittest discover -s ci -p 'test_*.py' -v
+      - name: Verify the dedicated account, TLS, marker and confinement without writes
+        env:
+          STAGING_URL: https://stg.finelevate360.com
+          STAGING_FTPS_HOST: ${{ vars.STAGING_FTPS_HOST }}
+          STAGING_FTPS_USER: ${{ secrets.STAGING_FTPS_USER }}
+          STAGING_FTPS_PASSWORD: ${{ secrets.STAGING_FTPS_PASSWORD }}
+        run: python ci/staging_deploy.py --check-access
