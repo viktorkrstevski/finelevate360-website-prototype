@@ -13,6 +13,11 @@ function fe_defaults() {
 function fe_value($key) {
     $defaults = fe_defaults();
     $value = get_theme_mod('fe_' . $key, isset($defaults[$key]) ? $defaults[$key]['value'] : '');
+    if (isset($defaults[$key]) && $defaults[$key]['type'] === 'url') { return fe_local_url($value); }
+    if (isset($defaults[$key]) && $defaults[$key]['type'] === 'text') {
+        $translations = fe_translations();
+        $value = isset($translations[fe_language()][$key]) ? $translations[fe_language()][$key] : $value;
+    }
     return function_exists('pll__') && isset($defaults[$key]) && $defaults[$key]['type'] === 'text' ? pll__($value) : $value;
 }
 
@@ -24,7 +29,14 @@ function fe_image($key, $fallback) {
 }
 
 function fe_staging() {
-    return strtolower((string) wp_parse_url(home_url('/'), PHP_URL_HOST)) === 'stg.finelevate360.com';
+    return in_array(strtolower((string) wp_parse_url(home_url('/'), PHP_URL_HOST)), array('stg.finelevate360.com', 'powderblue-grasshopper-161876.hostingersite.com'), true);
+}
+
+require get_template_directory() . '/inc/routes.php';
+function fe_translations() {
+    static $strings;
+    if (!isset($strings)) { $strings = json_decode(file_get_contents(__DIR__ . '/inc/translations.json'), true); }
+    return $strings;
 }
 
 add_action('after_setup_theme', function () {
@@ -94,10 +106,10 @@ function fe_navigation($location = 'primary', $suffix = 'desktop') {
         <li><a href="<?php echo esc_url(fe_value('about_url')); ?>"><?php esc_html_e('About Finelevate', 'finelevate-advisory'); ?></a></li>
         <li><a href="<?php echo esc_url(fe_value('advisory_url')); ?>"><?php esc_html_e('Advisory Board', 'finelevate-advisory'); ?></a></li>
       </ul></details></li>
-      <li><details><summary aria-label="<?php esc_attr_e('Choose language', 'finelevate-advisory'); ?>"><?php echo esc_html(function_exists('pll_current_language') ? strtoupper(pll_current_language()) : 'EN'); ?></summary><ul>
+      <li class="language-nav"><details><summary aria-label="<?php esc_attr_e('Choose language', 'finelevate-advisory'); ?>"><?php echo esc_html(strtoupper(fe_language())); ?></summary><ul>
         <?php if (function_exists('pll_the_languages')) { pll_the_languages(array('show_flags' => 0, 'show_names' => 1, 'hide_if_no_translation' => 1)); } else {
             foreach (array('en' => 'EN', 'mk' => 'MK', 'sr' => 'RS', 'hr' => 'HR', 'sl' => 'SL', 'me' => 'ME') as $key => $label) {
-                echo '<li><a hreflang="' . esc_attr($key) . '" href="' . esc_url(fe_value('language_' . $key . '_url')) . '">' . esc_html($label) . '</a></li>';
+                echo '<li><a hreflang="' . esc_attr($key) . '" href="' . esc_url(fe_language_url($key)) . '"' . ($key === fe_language() ? ' aria-current="true"' : '') . '>' . esc_html($label) . '</a></li>';
             }
         } ?>
       </ul></details></li>

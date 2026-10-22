@@ -1,0 +1,1923 @@
+{
+  "schema": 1,
+  "source": "Published public content snapshot, 2026-10-22",
+  "routes": {
+    "/me/o-finelevate-u/": {
+      "source_id": 2076,
+      "type": "page",
+      "locale": "me",
+      "group": "about",
+      "title": "O Finelevate-u"
+    },
+    "/sl/o-finelevate/": {
+      "source_id": 1988,
+      "type": "page",
+      "locale": "sl",
+      "group": "about",
+      "title": "O Finelevate"
+    },
+    "/hr/tko-smo/": {
+      "source_id": 1797,
+      "type": "page",
+      "locale": "hr",
+      "group": "about",
+      "title": "O Finelevateu"
+    },
+    "/sr/ko-smo-mi/": {
+      "source_id": 1794,
+      "type": "page",
+      "locale": "sr",
+      "group": "about",
+      "title": "O Finelevate-u"
+    },
+    "/mk/\u0437\u0430-\u043d\u0430\u0441/": {
+      "source_id": 1785,
+      "type": "page",
+      "locale": "mk",
+      "group": "about",
+      "title": "\u0417\u0430 Finelevate"
+    },
+    "/about-us/": {
+      "source_id": 1763,
+      "type": "page",
+      "locale": "en",
+      "group": "about",
+      "title": "About Finelevate"
+    },
+    "/me/politika-kolacica-2/": {
+      "source_id": 2078,
+      "type": "page",
+      "locale": "me",
+      "group": "cookies",
+      "title": "Politika kola\u010di\u0107a"
+    },
+    "/hr/pravila-o-kolacicima/": {
+      "source_id": 1644,
+      "type": "page",
+      "locale": "hr",
+      "group": "cookies",
+      "title": "Pravila o kola\u010di\u0107ima"
+    },
+    "/sr/politika-kolacica/": {
+      "source_id": 1643,
+      "type": "page",
+      "locale": "sr",
+      "group": "cookies",
+      "title": "Politika kola\u010di\u0107a"
+    },
+    "/mk/\u043f\u043e\u043b\u0438\u0442\u0438\u043a\u0430-\u0437\u0430-\u043a\u043e\u043b\u0430\u0447\u0438\u045a\u0430/": {
+      "source_id": 1626,
+      "type": "page",
+      "locale": "mk",
+      "group": "cookies",
+      "title": "\u041f\u043e\u043b\u0438\u0442\u0438\u043a\u0430 \u0437\u0430 \u043a\u043e\u043b\u0430\u0447\u0438\u045a\u0430"
+    },
+    "/cookie-policy/": {
+      "source_id": 1621,
+      "type": "page",
+      "locale": "en",
+      "group": "cookies",
+      "title": "Cookie Policy"
+    },
+    "/me/politika-privatnosti-2/": {
+      "source_id": 2084,
+      "type": "page",
+      "locale": "me",
+      "group": "privacy",
+      "title": "Politika privatnosti"
+    },
+    "/hr/pravila-privatnosti/": {
+      "source_id": 1616,
+      "type": "page",
+      "locale": "hr",
+      "group": "privacy",
+      "title": "Pravila privatnosti"
+    },
+    "/sr/politika-privatnosti/": {
+      "source_id": 1613,
+      "type": "page",
+      "locale": "sr",
+      "group": "privacy",
+      "title": "Politika privatnosti"
+    },
+    "/mk/\u043f\u043e\u043b\u0438\u0442\u0438\u043a\u0430-\u0437\u0430-\u043f\u0440\u0438\u0432\u0430\u0442\u043d\u043e\u0441\u0442/": {
+      "source_id": 536,
+      "type": "page",
+      "locale": "mk",
+      "group": "privacy",
+      "title": "\u041f\u043e\u043b\u0438\u0442\u0438\u043a\u0430 \u0437\u0430 \u043f\u0440\u0438\u0432\u0430\u0442\u043d\u043e\u0441\u0442"
+    },
+    "/privacy-policy/": {
+      "source_id": 3,
+      "type": "page",
+      "locale": "en",
+      "group": "privacy",
+      "title": "Privacy Policy"
+    },
+    "/mk/\u043a\u043e\u043d\u0444\u0435\u0440\u0435\u043d\u0446\u0438\u0458\u0430-2026/": {
+      "source_id": 789,
+      "type": "page",
+      "locale": "mk",
+      "group": "",
+      "title": "Summit 2026"
+    },
+    "/conference-2026/": {
+      "source_id": 787,
+      "type": "page",
+      "locale": "en",
+      "group": "",
+      "title": "Summit 2026"
+    },
+    "/mk/\u0434\u0438\u0433\u0438\u0442\u0430\u043b\u043d\u0430-\u043c\u0430\u043f\u0430-\u0444\u0438\u043d\u0442\u0435\u043a/": {
+      "source_id": 533,
+      "type": "page",
+      "locale": "mk",
+      "group": "fintech",
+      "title": "\u0414\u0438\u0433\u0438\u0442\u0430\u043b\u043d\u0430 \u041c\u0430\u043f\u0430 \u2013 \u0424\u0438\u043d\u0442\u0435\u043a"
+    },
+    "/fintech/": {
+      "source_id": 407,
+      "type": "page",
+      "locale": "en",
+      "group": "fintech",
+      "title": "Fintech Digital Map"
+    },
+    "/me/digitalna-mapa-banke/": {
+      "source_id": 2074,
+      "type": "page",
+      "locale": "me",
+      "group": "banking",
+      "title": "Digitalna mapa \u2013 Banke"
+    },
+    "/sl/digitalni-zemljevid-banke/": {
+      "source_id": 1974,
+      "type": "page",
+      "locale": "sl",
+      "group": "banking",
+      "title": "Digitalni zemljevid \u2013 Banke"
+    },
+    "/hr/digitalna-mapa/": {
+      "source_id": 1042,
+      "type": "page",
+      "locale": "hr",
+      "group": "banking",
+      "title": "Digitalna mapa \u2013 Banke"
+    },
+    "/sr/digitalna-mapa-2/": {
+      "source_id": 1040,
+      "type": "page",
+      "locale": "sr",
+      "group": "banking",
+      "title": "Digitalna mapa \u2013 Banke"
+    },
+    "/mk/\u0434\u0438\u0433\u0438\u0442\u0430\u043b\u043d\u0430-\u043c\u0430\u043f\u0430-\u0431\u0430\u043d\u043a\u0430\u0440\u0441\u0442\u0432\u043e/": {
+      "source_id": 519,
+      "type": "page",
+      "locale": "mk",
+      "group": "banking",
+      "title": "\u0414\u0438\u0433\u0438\u0442\u0430\u043b\u043d\u0430 \u041c\u0430\u043f\u0430 \u2013 \u0411\u0430\u043d\u043a\u0438"
+    },
+    "/banking-capabilities/": {
+      "source_id": 308,
+      "type": "page",
+      "locale": "en",
+      "group": "banking",
+      "title": "Banking Digital Map"
+    },
+    "/me/vijesti-2/": {
+      "source_id": 2082,
+      "type": "page",
+      "locale": "me",
+      "group": "news_index",
+      "title": "Vijesti"
+    },
+    "/sl/novice/": {
+      "source_id": 1987,
+      "type": "page",
+      "locale": "sl",
+      "group": "news_index",
+      "title": "Novice"
+    },
+    "/hr/vijesti/": {
+      "source_id": 1159,
+      "type": "page",
+      "locale": "hr",
+      "group": "news_index",
+      "title": "Vijesti"
+    },
+    "/sr/vesti/": {
+      "source_id": 1158,
+      "type": "page",
+      "locale": "sr",
+      "group": "news_index",
+      "title": "Vesti"
+    },
+    "/mk/\u043d\u043e\u0432\u043e\u0441\u0442\u0438/": {
+      "source_id": 292,
+      "type": "page",
+      "locale": "mk",
+      "group": "news_index",
+      "title": "\u041d\u043e\u0432\u043e\u0441\u0442\u0438"
+    },
+    "/news/": {
+      "source_id": 265,
+      "type": "page",
+      "locale": "en",
+      "group": "news_index",
+      "title": "News"
+    },
+    "/me/pocetna-3/": {
+      "source_id": 2080,
+      "type": "page",
+      "locale": "me",
+      "group": "home",
+      "title": "Po\u010detna"
+    },
+    "/sl/domov/": {
+      "source_id": 1995,
+      "type": "page",
+      "locale": "sl",
+      "group": "home",
+      "title": "Domov"
+    },
+    "/hr/pocetna-2/": {
+      "source_id": 1037,
+      "type": "page",
+      "locale": "hr",
+      "group": "home",
+      "title": "Po\u010detna"
+    },
+    "/sr/pocetna/": {
+      "source_id": 1031,
+      "type": "page",
+      "locale": "sr",
+      "group": "home",
+      "title": "Po\u010detna"
+    },
+    "/mk/home-2/": {
+      "source_id": 100,
+      "type": "page",
+      "locale": "mk",
+      "group": "home",
+      "title": "\u041f\u043e\u0447\u0435\u0442\u043d\u0430"
+    },
+    "/": {
+      "source_id": 97,
+      "type": "page",
+      "locale": "en",
+      "group": "home",
+      "title": "Home"
+    },
+    "/me/savjetodavni-odbor-2/": {
+      "source_id": 2088,
+      "type": "page",
+      "locale": "me",
+      "group": "advisory",
+      "title": "Savjetodavni odbor"
+    },
+    "/sl/svetovalni-odbor/": {
+      "source_id": 1989,
+      "type": "page",
+      "locale": "sl",
+      "group": "advisory",
+      "title": "Svetovalni odbor"
+    },
+    "/hr/savjetodavni-odbor/": {
+      "source_id": 1148,
+      "type": "page",
+      "locale": "hr",
+      "group": "advisory",
+      "title": "Savjetodavni odbor"
+    },
+    "/sr/savetodavni-odbor/": {
+      "source_id": 1147,
+      "type": "page",
+      "locale": "sr",
+      "group": "advisory",
+      "title": "Savetodavni odbor"
+    },
+    "/mk/advisori/": {
+      "source_id": 330,
+      "type": "page",
+      "locale": "mk",
+      "group": "advisory",
+      "title": "\u0421\u043e\u0432\u0435\u0442\u043e\u0434\u0430\u0432\u0435\u043d \u043e\u0434\u0431\u043e\u0440"
+    },
+    "/advisory-board/": {
+      "source_id": 90,
+      "type": "page",
+      "locale": "en",
+      "group": "advisory",
+      "title": "Advisory Board"
+    },
+    "/me/partneri-i-pokretaci-ekosistema-2/": {
+      "source_id": 2086,
+      "type": "page",
+      "locale": "me",
+      "group": "partners",
+      "title": "Partneri i pokreta\u010di ekosistema"
+    },
+    "/sl/partnerji-in-gonilniki-ekosistema/": {
+      "source_id": 1986,
+      "type": "page",
+      "locale": "sl",
+      "group": "partners",
+      "title": "Partnerji in gonilniki ekosistema"
+    },
+    "/hr/partneri-i-pokretaci-ekosustava/": {
+      "source_id": 1268,
+      "type": "page",
+      "locale": "hr",
+      "group": "partners",
+      "title": "Partneri i pokreta\u010di ekosustava"
+    },
+    "/sr/partneri-i-pokretaci-ekosistema/": {
+      "source_id": 1265,
+      "type": "page",
+      "locale": "sr",
+      "group": "partners",
+      "title": "Partneri i pokreta\u010di ekosistema"
+    },
+    "/mk/partneri/": {
+      "source_id": 561,
+      "type": "page",
+      "locale": "mk",
+      "group": "partners",
+      "title": "\u041f\u0430\u0440\u0442\u043d\u0435\u0440\u0438"
+    },
+    "/partners/": {
+      "source_id": 88,
+      "type": "page",
+      "locale": "en",
+      "group": "partners",
+      "title": "Partners & Ecosystem Enablers"
+    },
+    "/mk/\u043d\u0430\u0433\u0440\u0430\u0434\u0438/": {
+      "source_id": 328,
+      "type": "page",
+      "locale": "mk",
+      "group": "",
+      "title": "\u041d\u0430\u0433\u0440\u0430\u0434\u0438 2026"
+    },
+    "/awards/": {
+      "source_id": 86,
+      "type": "page",
+      "locale": "en",
+      "group": "",
+      "title": "2026 Awards"
+    },
+    "/mk/\u0434\u0438\u0433\u0438\u0442\u0430\u043b\u043d\u0430-\u043c\u0430\u043f\u0430-\u043e\u0441\u0438\u0433\u0443\u0440\u0443\u0432\u0430\u045a\u0435/": {
+      "source_id": 523,
+      "type": "page",
+      "locale": "mk",
+      "group": "insurance",
+      "title": "\u0414\u0438\u0433\u0438\u0442\u0430\u043b\u043d\u0430 \u041c\u0430\u043f\u0430 \u2013 \u041e\u0441\u0438\u0433\u0443\u0440\u0443\u0432\u0430\u045a\u0435"
+    },
+    "/insurance/": {
+      "source_id": 46,
+      "type": "page",
+      "locale": "en",
+      "group": "insurance",
+      "title": "Insurance Digital Map"
+    },
+    "/hr/casys-international-postaje-gold-sponsor-finelevate-programa-2/": {
+      "source_id": 1577,
+      "type": "post",
+      "locale": "hr",
+      "group": "news",
+      "title": "CaSys International postaje Gold Sponsor Finelevate programa"
+    },
+    "/sr/casys-international-postaje-gold-sponsor-finelevate-programa/": {
+      "source_id": 1574,
+      "type": "post",
+      "locale": "sr",
+      "group": "news",
+      "title": "CaSys International postaje Gold Sponsor Finelevate programa"
+    },
+    "/mk/casys-international-\u0441\u0442\u0430\u043d\u0430-gold-partner-\u043d\u0430-finelevate/": {
+      "source_id": 1561,
+      "type": "post",
+      "locale": "mk",
+      "group": "news",
+      "title": "CaSys International \u0441\u0442\u0430\u043d\u0430 Gold Partner \u043d\u0430 Finelevate"
+    },
+    "/casys-\u0435-gold-sponsor-\u043d\u0430-finelevate-\u043f\u0440\u043e\u0433\u0440\u0430\u043c\u0430\u0442\u0430/": {
+      "source_id": 1558,
+      "type": "post",
+      "locale": "en",
+      "group": "news",
+      "title": "CaSys International Becomes a Gold Sponsor of the Finelevate Program"
+    },
+    "/hr/finelevate-najavljuje-finelevate-summit-2026-buducnost-ne-ceka-2/": {
+      "source_id": 1550,
+      "type": "post",
+      "locale": "hr",
+      "group": "",
+      "title": "Finelevate najavljuje Finelevate Summit 2026: Budu\u0107nost ne \u010deka"
+    },
+    "/sr/finelevate-najavljuje-finelevate-summit-2026-buducnost-ne-ceka/": {
+      "source_id": 1547,
+      "type": "post",
+      "locale": "sr",
+      "group": "",
+      "title": "Finelevate najavljuje Finelevate Summit 2026: Budu\u0107nost ne \u010deka"
+    },
+    "/mk/finelevate-\u0433\u043e-\u043d\u0430\u0458\u0430\u0432\u0443\u0432\u0430-finelevate-digital-summit-2026-\u0438\u0434\u043d\u0438\u043d\u0430\u0442\u0430-\u043d\u0435-\u0447\u0435\u043a\u0430/": {
+      "source_id": 1544,
+      "type": "post",
+      "locale": "mk",
+      "group": "",
+      "title": "Finelevate \u0433\u043e \u043d\u0430\u0458\u0430\u0432\u0443\u0432\u0430 Finelevate Digital Summit 2026: \u0418\u0434\u043d\u0438\u043d\u0430\u0442\u0430 \u043d\u0435 \u0447\u0435\u043a\u0430"
+    },
+    "/finelevate-announces-finelevate-digital-summit-2026-the-future-is-not-waiting/": {
+      "source_id": 1538,
+      "type": "post",
+      "locale": "en",
+      "group": "",
+      "title": "Finelevate Announces Finelevate Digital Summit 2026: The Future Is Not Waiting"
+    },
+    "/hr/finelevate-i-macedonia2025-potpisali-memorandum-o-suradnji-za-podrsku-digitalnoj-transformaciji-inovacijama-i-razvoju-makedonskog-gospodarstva/": {
+      "source_id": 1535,
+      "type": "post",
+      "locale": "hr",
+      "group": "",
+      "title": "Finelevate i Macedonia2025 potpisali Memorandum o suradnji za podr\u0161ku digitalnoj transformaciji, inovacijama i razvoju makedonskog gospodarstva"
+    },
+    "/sr/finelevate-i-macedonia2025-potpisali-memorandum-o-saradnji-za-podrsku-digitalnoj-transformaciji-inovacijama-i-razvoju-makedonske-ekonomije/": {
+      "source_id": 1532,
+      "type": "post",
+      "locale": "sr",
+      "group": "",
+      "title": "Finelevate i Macedonia2025 potpisali Memorandum o saradnji za podr\u0161ku digitalnoj transformaciji, inovacijama i razvoju makedonske ekonomije"
+    },
+    "/finelevate-and-macedonia2025-signed-a-memorandum-of-cooperation-to-support-digital-transformation-innovation-and-the-development-of-the-macedonian-economy/": {
+      "source_id": 1529,
+      "type": "post",
+      "locale": "en",
+      "group": "",
+      "title": "Finelevate and Macedonia2025 Signed a Memorandum of Cooperation to Support Digital Transformation, Innovation and the Development of the Macedonian Economy"
+    },
+    "/mk/finelevate-\u0438-macedonia2025-\u043f\u043e\u0442\u043f\u0438\u0448\u0430\u0430-\u043c\u0435\u043c\u043e\u0440\u0430\u043d\u0434\u0443\u043c-\u0437\u0430-\u0441\u043e\u0440\u0430\u0431\u043e\u0442/": {
+      "source_id": 1526,
+      "type": "post",
+      "locale": "mk",
+      "group": "",
+      "title": "Finelevate \u0438 Macedonia2025 \u043f\u043e\u0442\u043f\u0438\u0448\u0430\u0430 \u041c\u0435\u043c\u043e\u0440\u0430\u043d\u0434\u0443\u043c \u0437\u0430 \u0441\u043e\u0440\u0430\u0431\u043e\u0442\u043a\u0430 \u0437\u0430 \u043f\u043e\u0434\u0434\u0440\u0448\u043a\u0430 \u043d\u0430 \u0434\u0438\u0433\u0438\u0442\u0430\u043b\u043d\u0430\u0442\u0430 \u0442\u0440\u0430\u043d\u0441\u0444\u043e\u0440\u043c\u0430\u0446\u0438\u0458\u0430, \u0438\u043d\u043e\u0432\u0430\u0446\u0438\u0438\u0442\u0435 \u0438 \u0440\u0430\u0437\u0432\u043e\u0458\u043e\u0442 \u043d\u0430 \u043c\u0430\u043a\u0435\u0434\u043e\u043d\u0441\u043a\u0430\u0442\u0430 \u0435\u043a\u043e\u043d\u043e\u043c\u0438\u0458\u0430"
+    },
+    "/hr/nextsense-se-pridruzio-programu-finelevate-kao-gold-partner-2/": {
+      "source_id": 1483,
+      "type": "post",
+      "locale": "hr",
+      "group": "",
+      "title": "Nextsense se pridru\u017eio programu Finelevate kao Gold partner"
+    },
+    "/sr/nextsense-se-pridruzio-programu-finelevate-kao-gold-partner/": {
+      "source_id": 1480,
+      "type": "post",
+      "locale": "sr",
+      "group": "",
+      "title": "Nextsense se pridru\u017eio programu Finelevate kao Gold partner"
+    },
+    "/mk/nextsense-\u0441\u0435-\u043f\u0440\u0438\u043a\u043b\u0443\u0447\u0438-\u043a\u043e\u043d-\u043f\u0440\u043e\u0433\u0440\u0430\u043c\u0430\u0442\u0430-\u043d\u0430-finelevate-\u043a\u0430\u043a-2/": {
+      "source_id": 1477,
+      "type": "post",
+      "locale": "mk",
+      "group": "",
+      "title": "Nextsense \u0441\u0435 \u043f\u0440\u0438\u043a\u043b\u0443\u0447\u0438 \u043a\u043e\u043d \u043f\u0440\u043e\u0433\u0440\u0430\u043c\u0430\u0442\u0430 \u043d\u0430 Finelevate \u043a\u0430\u043a\u043e Gold \u043f\u0430\u0440\u0442\u043d\u0435\u0440"
+    },
+    "/nextsense-\u0441\u0435-\u043f\u0440\u0438\u043a\u043b\u0443\u0447\u0438-\u043a\u043e\u043d-\u043f\u0440\u043e\u0433\u0440\u0430\u043c\u0430\u0442\u0430-\u043d\u0430-finelevate-\u043a\u0430\u043a\u043e/": {
+      "source_id": 1474,
+      "type": "post",
+      "locale": "en",
+      "group": "",
+      "title": "Nextsense Joins the Finelevate Programme as a Gold Partner"
+    },
+    "/hr/1516-2/": {
+      "source_id": 1516,
+      "type": "post",
+      "locale": "hr",
+      "group": "",
+      "title": "KIBS je postao Silver partner tvrtke Finelevate"
+    },
+    "/sr/kibs-je-postao-silver-partner-kompanije-finelevate/": {
+      "source_id": 1513,
+      "type": "post",
+      "locale": "sr",
+      "group": "",
+      "title": "KIBS je postao Silver partner kompanije Finelevate"
+    },
+    "/mk/\u043a\u0438\u0431\u0441-\u0441\u0442\u0430\u043d\u0430-silver-\u043f\u0430\u0440\u0442\u043d\u0435\u0440-\u043d\u0430-finelevate/": {
+      "source_id": 1504,
+      "type": "post",
+      "locale": "mk",
+      "group": "",
+      "title": "\u041a\u0418\u0411\u0421 \u0441\u0442\u0430\u043d\u0430 Silver \u043f\u0430\u0440\u0442\u043d\u0435\u0440 \u043d\u0430 Finelevate"
+    },
+    "/\u0434\u043e\u0431\u0440\u0435\u0434\u043e\u0458\u0434\u0435-\u043a\u0438\u0431\u0441-\u0441\u0435-\u043f\u0440\u0438\u043a\u043b\u0443\u0447\u0438-\u043a\u043e\u043d-\u043f\u0440\u043e\u0433\u0440/": {
+      "source_id": 1501,
+      "type": "post",
+      "locale": "en",
+      "group": "",
+      "title": "KIBS Becomes a Silver Partner of Finelevate"
+    },
+    "/mk/finelevate-\u0433\u043e-\u043e\u0431\u0458\u0430\u0432\u0438-\u043f\u0440\u0432\u043e\u0442\u043e-\u0438\u0437\u0434\u0430\u043d\u0438\u0435-\u043d\u0430-digital-compliance-radar/": {
+      "source_id": 1467,
+      "type": "post",
+      "locale": "mk",
+      "group": "",
+      "title": "Digital Compliance Radar \u0418\u0437\u0434\u0430\u043d\u0438\u0435 #1: \u041c\u0430\u043f\u0438\u0440\u0430\u045a\u0435 \u043d\u0430 \u0440\u0435\u0433\u0443\u043b\u0430\u0442\u043e\u0440\u043d\u0438\u0442\u0435 \u0441\u0438\u0433\u043d\u0430\u043b\u0438 \u0448\u0442\u043e \u0458\u0430 \u043e\u0431\u043b\u0438\u043a\u0443\u0432\u0430\u0430\u0442 \u0434\u0438\u0433\u0438\u0442\u0430\u043b\u043d\u0430\u0442\u0430 \u0444\u0438\u043d\u0430\u043d\u0441\u0438\u0441\u043a\u0430 \u0438\u0434\u043d\u0438\u043d\u0430"
+    },
+    "/we-launched-digital-compliance-radar-to-track-regulatory-change-in-financial-services/": {
+      "source_id": 1465,
+      "type": "post",
+      "locale": "en",
+      "group": "",
+      "title": "Digital Compliance Radar Edition #1: Mapping the Regulatory Signals Shaping Digital Finance"
+    },
+    "/hr/finelevate-postaje-clan-masit-a/": {
+      "source_id": 1165,
+      "type": "post",
+      "locale": "hr",
+      "group": "",
+      "title": "Finelevate postaje \u010dlan MASITa"
+    },
+    "/sr/finelevate-postaje-clan-masit-a-2/": {
+      "source_id": 1164,
+      "type": "post",
+      "locale": "sr",
+      "group": "",
+      "title": "Finelevate postaje \u010dlan MASITa"
+    },
+    "/mk/finelevate-\u0441\u0442\u0430\u043d\u0443\u0432\u0430-\u0447\u043b\u0435\u043d\u043a\u0430-\u043d\u0430-\u043c\u0430\u0441\u0438\u0442/": {
+      "source_id": 745,
+      "type": "post",
+      "locale": "mk",
+      "group": "",
+      "title": "Finelevate \u0441\u0442\u0430\u043d\u0443\u0432\u0430 \u0447\u043b\u0435\u043d\u043a\u0430 \u043d\u0430 \u041c\u0410\u0421\u0418\u0422"
+    },
+    "/hello-world-4/": {
+      "source_id": 260,
+      "type": "post",
+      "locale": "en",
+      "group": "",
+      "title": "Finelevate Becomes a Member of MASIT"
+    },
+    "/mk/finelevate-feit-mk/": {
+      "source_id": 1397,
+      "type": "post",
+      "locale": "mk",
+      "group": "cooperation",
+      "title": "Finelevate \u0438 \u0424\u0415\u0418\u0422 \u043f\u043e\u0442\u043f\u0438\u0448\u0430\u0430 \u0434\u043e\u0433\u043e\u0432\u043e\u0440 \u0437\u0430 \u0441\u043e\u0440\u0430\u0431\u043e\u0442\u043a\u0430"
+    },
+    "/finelevate-and-feit-signed-cooperation-agreement/": {
+      "source_id": 1396,
+      "type": "post",
+      "locale": "en",
+      "group": "cooperation",
+      "title": "Finelevate and FEIT signed cooperation agreement"
+    },
+    "/mk/events/\u0433\u043e\u0434\u0438\u0448\u0435\u043d-\u0441\u043e\u0431\u0438\u0440-\u043d\u0430-\u0438\u0437\u0432\u0440\u0448\u043d\u0438-\u043b\u0438\u0434\u0435\u0440\u0438-\u0448\u0442\u043e-\u0458\u0430/": {
+      "source_id": 768,
+      "type": "event",
+      "locale": "mk",
+      "group": "summit",
+      "title": "Finelevate Digital Summit 2026"
+    },
+    "/events/the-annual-executive-gathering-for-leaders-shaping-digital-transformation-in-financial-services/": {
+      "source_id": 255,
+      "type": "event",
+      "locale": "en",
+      "group": "summit",
+      "title": "Finelevate Digital Summit 2026"
+    },
+    "/me/partner/konekt-mk-4/": {
+      "source_id": 2138,
+      "type": "finelev360_partner",
+      "locale": "me",
+      "group": "",
+      "title": "Konekt.mk"
+    },
+    "/sl/partner/konekt-mk-3/": {
+      "source_id": 2027,
+      "type": "finelev360_partner",
+      "locale": "sl",
+      "group": "",
+      "title": "Konekt.mk"
+    },
+    "/partner/konekt-mk-2/": {
+      "source_id": 1878,
+      "type": "finelev360_partner",
+      "locale": "en",
+      "group": "",
+      "title": "Konekt.mk"
+    },
+    "/me/partner/pari-com-mk-4/": {
+      "source_id": 2137,
+      "type": "finelev360_partner",
+      "locale": "me",
+      "group": "",
+      "title": "Pari.com.mk"
+    },
+    "/sl/partner/pari-com-mk-3/": {
+      "source_id": 2026,
+      "type": "finelev360_partner",
+      "locale": "sl",
+      "group": "",
+      "title": "Pari.com.mk"
+    },
+    "/partner/pari-com-mk-2/": {
+      "source_id": 1877,
+      "type": "finelev360_partner",
+      "locale": "en",
+      "group": "",
+      "title": "Pari.com.mk"
+    },
+    "/me/partner/ekonomijaibiznis-mk-4/": {
+      "source_id": 2136,
+      "type": "finelev360_partner",
+      "locale": "me",
+      "group": "",
+      "title": "Ekonomijaibiznis.mk"
+    },
+    "/sl/partner/ekonomijaibiznis-mk-3/": {
+      "source_id": 2025,
+      "type": "finelev360_partner",
+      "locale": "sl",
+      "group": "",
+      "title": "Ekonomijaibiznis.mk"
+    },
+    "/partner/ekonomijaibiznis-mk-2/": {
+      "source_id": 1876,
+      "type": "finelev360_partner",
+      "locale": "en",
+      "group": "",
+      "title": "Ekonomijaibiznis.mk"
+    },
+    "/me/partner/bankarstvo-mk-4/": {
+      "source_id": 2135,
+      "type": "finelev360_partner",
+      "locale": "me",
+      "group": "",
+      "title": "Bankarstvo.mk"
+    },
+    "/sl/partner/bankarstvo-mk-3/": {
+      "source_id": 2024,
+      "type": "finelev360_partner",
+      "locale": "sl",
+      "group": "",
+      "title": "Bankarstvo.mk"
+    },
+    "/partner/bankarstvo-mk-2/": {
+      "source_id": 1875,
+      "type": "finelev360_partner",
+      "locale": "en",
+      "group": "",
+      "title": "Bankarstvo.mk"
+    },
+    "/me/partner/faktor-mk-4/": {
+      "source_id": 2133,
+      "type": "finelev360_partner",
+      "locale": "me",
+      "group": "",
+      "title": "Faktor.mk"
+    },
+    "/sl/partner/faktor-mk-3/": {
+      "source_id": 2022,
+      "type": "finelev360_partner",
+      "locale": "sl",
+      "group": "",
+      "title": "Faktor.mk"
+    },
+    "/partner/faktor-mk-2/": {
+      "source_id": 1874,
+      "type": "finelev360_partner",
+      "locale": "en",
+      "group": "",
+      "title": "Faktor.mk"
+    },
+    "/me/partner/it-mk-4/": {
+      "source_id": 2134,
+      "type": "finelev360_partner",
+      "locale": "me",
+      "group": "",
+      "title": "IT.mk"
+    },
+    "/sl/partner/it-mk-3/": {
+      "source_id": 2023,
+      "type": "finelev360_partner",
+      "locale": "sl",
+      "group": "",
+      "title": "IT.mk"
+    },
+    "/partner/it-mk-2/": {
+      "source_id": 1879,
+      "type": "finelev360_partner",
+      "locale": "en",
+      "group": "",
+      "title": "IT.mk"
+    },
+    "/mk/partner/it-mk/": {
+      "source_id": 1873,
+      "type": "finelev360_partner",
+      "locale": "mk",
+      "group": "",
+      "title": "IT.mk"
+    },
+    "/mk/partner/konekt-mk/": {
+      "source_id": 1872,
+      "type": "finelev360_partner",
+      "locale": "mk",
+      "group": "",
+      "title": "Konekt.mk"
+    },
+    "/mk/partner/pari-com-mk/": {
+      "source_id": 1871,
+      "type": "finelev360_partner",
+      "locale": "mk",
+      "group": "",
+      "title": "Pari.com.mk"
+    },
+    "/mk/partner/ekonomijaibiznis-mk/": {
+      "source_id": 1870,
+      "type": "finelev360_partner",
+      "locale": "mk",
+      "group": "",
+      "title": "Ekonomijaibiznis.mk"
+    },
+    "/mk/partner/bankarstvo-mk/": {
+      "source_id": 1869,
+      "type": "finelev360_partner",
+      "locale": "mk",
+      "group": "",
+      "title": "Bankarstvo.mk"
+    },
+    "/mk/partner/faktor-mk/": {
+      "source_id": 1868,
+      "type": "finelev360_partner",
+      "locale": "mk",
+      "group": "",
+      "title": "Faktor.mk"
+    },
+    "/me/partner/saga-mk-5/": {
+      "source_id": 2110,
+      "type": "finelev360_partner",
+      "locale": "me",
+      "group": "",
+      "title": "SAGA MK"
+    },
+    "/sl/partner/saga-mk-4/": {
+      "source_id": 2007,
+      "type": "finelev360_partner",
+      "locale": "sl",
+      "group": "",
+      "title": "SAGA MK"
+    },
+    "/hr/partner/https-www-linkedin-com-company-saga-mk/": {
+      "source_id": 1757,
+      "type": "finelev360_partner",
+      "locale": "hr",
+      "group": "",
+      "title": "SAGA MK"
+    },
+    "/sr/partner/saga-mk-3/": {
+      "source_id": 1756,
+      "type": "finelev360_partner",
+      "locale": "sr",
+      "group": "",
+      "title": "SAGA MK"
+    },
+    "/mk/partner/saga-mk-2/": {
+      "source_id": 1755,
+      "type": "finelev360_partner",
+      "locale": "mk",
+      "group": "",
+      "title": "SAGA MK"
+    },
+    "/partner/saga-mk/": {
+      "source_id": 1753,
+      "type": "finelev360_partner",
+      "locale": "en",
+      "group": "",
+      "title": "SAGA MK"
+    },
+    "/me/partner/inbox-6/": {
+      "source_id": 2127,
+      "type": "finelev360_partner",
+      "locale": "me",
+      "group": "",
+      "title": "Inbox"
+    },
+    "/sl/partner/inbox-5/": {
+      "source_id": 2016,
+      "type": "finelev360_partner",
+      "locale": "sl",
+      "group": "",
+      "title": "Inbox"
+    },
+    "/hr/partner/inbox-4/": {
+      "source_id": 1732,
+      "type": "finelev360_partner",
+      "locale": "hr",
+      "group": "",
+      "title": "Inbox"
+    },
+    "/sr/partner/inbox-3/": {
+      "source_id": 1731,
+      "type": "finelev360_partner",
+      "locale": "sr",
+      "group": "",
+      "title": "Inbox"
+    },
+    "/mk/partner/inbox-2/": {
+      "source_id": 1730,
+      "type": "finelev360_partner",
+      "locale": "mk",
+      "group": "",
+      "title": "Inbox"
+    },
+    "/partner/inbox/": {
+      "source_id": 1729,
+      "type": "finelev360_partner",
+      "locale": "en",
+      "group": "",
+      "title": "Inbox"
+    },
+    "/me/partner/axm365-6/": {
+      "source_id": 2120,
+      "type": "finelev360_partner",
+      "locale": "me",
+      "group": "",
+      "title": "AXM365"
+    },
+    "/sl/partner/axm365-5/": {
+      "source_id": 2009,
+      "type": "finelev360_partner",
+      "locale": "sl",
+      "group": "",
+      "title": "AXM365"
+    },
+    "/hr/partner/axm365-4/": {
+      "source_id": 1724,
+      "type": "finelev360_partner",
+      "locale": "hr",
+      "group": "",
+      "title": "AXM365"
+    },
+    "/sr/partner/axm365-3/": {
+      "source_id": 1723,
+      "type": "finelev360_partner",
+      "locale": "sr",
+      "group": "",
+      "title": "AXM365"
+    },
+    "/mk/partner/axm365-2/": {
+      "source_id": 1722,
+      "type": "finelev360_partner",
+      "locale": "mk",
+      "group": "",
+      "title": "AXM365"
+    },
+    "/partner/axm365/": {
+      "source_id": 1721,
+      "type": "finelev360_partner",
+      "locale": "en",
+      "group": "",
+      "title": "AXM365"
+    },
+    "/me/partner/intec-system-7/": {
+      "source_id": 2111,
+      "type": "finelev360_partner",
+      "locale": "me",
+      "group": "",
+      "title": "InTec System"
+    },
+    "/me/partner/intec-system-5/": {
+      "source_id": 2102,
+      "type": "finelev360_partner",
+      "locale": "me",
+      "group": "",
+      "title": "InTec System"
+    },
+    "/sl/partner/intec-system-4/": {
+      "source_id": 2003,
+      "type": "finelev360_partner",
+      "locale": "sl",
+      "group": "",
+      "title": "InTec System"
+    },
+    "/hr/partner/intec-system-3/": {
+      "source_id": 1762,
+      "type": "finelev360_partner",
+      "locale": "hr",
+      "group": "",
+      "title": "InTec System"
+    },
+    "/sr/partner/intec-system-2/": {
+      "source_id": 1761,
+      "type": "finelev360_partner",
+      "locale": "sr",
+      "group": "",
+      "title": "InTec System"
+    },
+    "/mk/partner/intec-system/": {
+      "source_id": 1760,
+      "type": "finelev360_partner",
+      "locale": "mk",
+      "group": "",
+      "title": "InTec System"
+    },
+    "/partner/intek-system/": {
+      "source_id": 1597,
+      "type": "finelev360_partner",
+      "locale": "en",
+      "group": "",
+      "title": "InTec System"
+    },
+    "/me/partner/avenga-8/": {
+      "source_id": 2116,
+      "type": "finelev360_partner",
+      "locale": "me",
+      "group": "",
+      "title": "AVENGA"
+    },
+    "/me/partner/avenga-6/": {
+      "source_id": 2108,
+      "type": "finelev360_partner",
+      "locale": "me",
+      "group": "",
+      "title": "AVENGA"
+    },
+    "/sl/partner/avenga-5/": {
+      "source_id": 2006,
+      "type": "finelev360_partner",
+      "locale": "sl",
+      "group": "",
+      "title": "AVENGA"
+    },
+    "/hr/partner/avenga-4/": {
+      "source_id": 1596,
+      "type": "finelev360_partner",
+      "locale": "hr",
+      "group": "",
+      "title": "AVENGA"
+    },
+    "/sr/partner/avenga-3/": {
+      "source_id": 1595,
+      "type": "finelev360_partner",
+      "locale": "sr",
+      "group": "",
+      "title": "AVENGA"
+    },
+    "/mk/partner/avenga-2/": {
+      "source_id": 1594,
+      "type": "finelev360_partner",
+      "locale": "mk",
+      "group": "",
+      "title": "AVENGA"
+    },
+    "/partner/avenga/": {
+      "source_id": 1592,
+      "type": "finelev360_partner",
+      "locale": "en",
+      "group": "",
+      "title": "AVENGA"
+    },
+    "/me/partner/gdi-group-6/": {
+      "source_id": 2125,
+      "type": "finelev360_partner",
+      "locale": "me",
+      "group": "",
+      "title": "GDi GROUP"
+    },
+    "/sl/partner/gdi-group-5/": {
+      "source_id": 2014,
+      "type": "finelev360_partner",
+      "locale": "sl",
+      "group": "",
+      "title": "GDi GROUP"
+    },
+    "/hr/partner/gdi-group-4/": {
+      "source_id": 1591,
+      "type": "finelev360_partner",
+      "locale": "hr",
+      "group": "",
+      "title": "GDi GROUP"
+    },
+    "/sr/partner/gdi-group-3/": {
+      "source_id": 1590,
+      "type": "finelev360_partner",
+      "locale": "sr",
+      "group": "",
+      "title": "GDi GROUP"
+    },
+    "/mk/partner/gdi-group-2/": {
+      "source_id": 1589,
+      "type": "finelev360_partner",
+      "locale": "mk",
+      "group": "",
+      "title": "GDi GROUP"
+    },
+    "/partner/gdi-group/": {
+      "source_id": 1587,
+      "type": "finelev360_partner",
+      "locale": "en",
+      "group": "",
+      "title": "GDi GROUP"
+    },
+    "/me/partner/casys-international-8/": {
+      "source_id": 2114,
+      "type": "finelev360_partner",
+      "locale": "me",
+      "group": "",
+      "title": "CaSys International"
+    },
+    "/me/partner/casys-international-6/": {
+      "source_id": 2106,
+      "type": "finelev360_partner",
+      "locale": "me",
+      "group": "",
+      "title": "CaSys International"
+    },
+    "/sl/partner/casys-international-5/": {
+      "source_id": 2005,
+      "type": "finelev360_partner",
+      "locale": "sl",
+      "group": "",
+      "title": "CaSys International"
+    },
+    "/hr/partner/casys-international-4/": {
+      "source_id": 1453,
+      "type": "finelev360_partner",
+      "locale": "hr",
+      "group": "",
+      "title": "CaSys International"
+    },
+    "/sr/partner/casys-international-3/": {
+      "source_id": 1452,
+      "type": "finelev360_partner",
+      "locale": "sr",
+      "group": "",
+      "title": "CaSys International"
+    },
+    "/mk/partner/casys-international-2/": {
+      "source_id": 1448,
+      "type": "finelev360_partner",
+      "locale": "mk",
+      "group": "",
+      "title": "Casys International"
+    },
+    "/partner/casys-international/": {
+      "source_id": 1447,
+      "type": "finelev360_partner",
+      "locale": "en",
+      "group": "",
+      "title": "CaSys International"
+    },
+    "/me/partner/mastercard-7/": {
+      "source_id": 2101,
+      "type": "finelev360_partner",
+      "locale": "me",
+      "group": "",
+      "title": "Mastercard"
+    },
+    "/me/partner/mastercard-6/": {
+      "source_id": 2090,
+      "type": "finelev360_partner",
+      "locale": "me",
+      "group": "",
+      "title": "Mastercard"
+    },
+    "/sl/partner/mastercard-5/": {
+      "source_id": 2002,
+      "type": "finelev360_partner",
+      "locale": "sl",
+      "group": "",
+      "title": "Mastercard"
+    },
+    "/hr/partner/mastercard-4/": {
+      "source_id": 1438,
+      "type": "finelev360_partner",
+      "locale": "hr",
+      "group": "",
+      "title": "Mastercard"
+    },
+    "/sr/partner/mastercard-2/": {
+      "source_id": 1433,
+      "type": "finelev360_partner",
+      "locale": "sr",
+      "group": "",
+      "title": "Mastercard"
+    },
+    "/mk/partner/mastercard/": {
+      "source_id": 1432,
+      "type": "finelev360_partner",
+      "locale": "mk",
+      "group": "",
+      "title": "Mastercard"
+    },
+    "/partner/mastercard-3/": {
+      "source_id": 1431,
+      "type": "finelev360_partner",
+      "locale": "en",
+      "group": "",
+      "title": "Mastercard"
+    },
+    "/me/partner/godigital-5/": {
+      "source_id": 2129,
+      "type": "finelev360_partner",
+      "locale": "me",
+      "group": "",
+      "title": "GoDigital"
+    },
+    "/sl/partner/godigital-4/": {
+      "source_id": 2018,
+      "type": "finelev360_partner",
+      "locale": "sl",
+      "group": "",
+      "title": "GoDigital"
+    },
+    "/hr/partner/godigital-3/": {
+      "source_id": 1298,
+      "type": "finelev360_partner",
+      "locale": "hr",
+      "group": "",
+      "title": "GoDigital"
+    },
+    "/sr/partner/godigital-2/": {
+      "source_id": 1296,
+      "type": "finelev360_partner",
+      "locale": "sr",
+      "group": "",
+      "title": "GoDigital"
+    },
+    "/mk/partner/\u0433\u043e\u0434\u0438\u0433\u0438\u0442\u0430\u043b/": {
+      "source_id": 786,
+      "type": "finelev360_partner",
+      "locale": "mk",
+      "group": "",
+      "title": "\u0413\u043e\u0414\u0438\u0433\u0438\u0442\u0430\u043b"
+    },
+    "/partner/godigital/": {
+      "source_id": 784,
+      "type": "finelev360_partner",
+      "locale": "en",
+      "group": "",
+      "title": "GoDigital"
+    },
+    "/me/partner/macedonia-2025-3/": {
+      "source_id": 2130,
+      "type": "finelev360_partner",
+      "locale": "me",
+      "group": "",
+      "title": "Macedonia 2025"
+    },
+    "/sl/partner/macedonia-2025-2/": {
+      "source_id": 2019,
+      "type": "finelev360_partner",
+      "locale": "sl",
+      "group": "",
+      "title": "Macedonia 2025"
+    },
+    "/hr/partner/makedonija-2025-2/": {
+      "source_id": 1301,
+      "type": "finelev360_partner",
+      "locale": "hr",
+      "group": "",
+      "title": "Makedonija 2025"
+    },
+    "/sr/partner/makedonija-2025/": {
+      "source_id": 1300,
+      "type": "finelev360_partner",
+      "locale": "sr",
+      "group": "",
+      "title": "Makedonija 2025"
+    },
+    "/mk/partner/\u043c\u0430\u043a\u0435\u0434\u043e\u043d\u0438\u0458\u0430-2025/": {
+      "source_id": 782,
+      "type": "finelev360_partner",
+      "locale": "mk",
+      "group": "",
+      "title": "\u041c\u0430\u043a\u0435\u0434\u043e\u043d\u0438\u0458\u0430 2025"
+    },
+    "/partner/macedonia-2025/": {
+      "source_id": 780,
+      "type": "finelev360_partner",
+      "locale": "en",
+      "group": "",
+      "title": "Macedonia 2025"
+    },
+    "/me/partner/masit-komora-za-informaciono-komunikacione-tehnologije/": {
+      "source_id": 2131,
+      "type": "finelev360_partner",
+      "locale": "me",
+      "group": "",
+      "title": "MASIT \u2013 Komora za informaciono-komunikacione tehnologije"
+    },
+    "/sl/partner/masit-zbornica-za-informacijsko-komunikacijske-tehnologije/": {
+      "source_id": 2020,
+      "type": "finelev360_partner",
+      "locale": "sl",
+      "group": "",
+      "title": "MASIT \u2013 Zbornica za informacijsko-komunikacijske tehnologije"
+    },
+    "/hr/partner/masit-ict-komora-gospodarstva/": {
+      "source_id": 1308,
+      "type": "finelev360_partner",
+      "locale": "hr",
+      "group": "",
+      "title": "MASIT \u2013 ICT komora gospodarstva"
+    },
+    "/sr/partner/masit-ict-komora-privrede/": {
+      "source_id": 1306,
+      "type": "finelev360_partner",
+      "locale": "sr",
+      "group": "",
+      "title": "MASIT \u2013 ICT komora privrede"
+    },
+    "/mk/partner/\u043c\u0430\u0441\u0438\u0442-\u0441\u0442\u043e\u043f\u0430\u043d\u0441\u043a\u0430-\u043a\u043e\u043c\u043e\u0440\u0430-\u0437\u0430-\u0438\u043a\u0442/": {
+      "source_id": 735,
+      "type": "finelev360_partner",
+      "locale": "mk",
+      "group": "",
+      "title": "\u041c\u0410\u0421\u0418\u0422 \u2013 \u0421\u0422\u041e\u041f\u0410\u041d\u0421\u041a\u0410 \u041a\u041e\u041c\u041e\u0420\u0410 \u0417\u0410 \u0418\u041a\u0422"
+    },
+    "/partner/masit-ict-chamber-of-commerce/": {
+      "source_id": 733,
+      "type": "finelev360_partner",
+      "locale": "en",
+      "group": "",
+      "title": "MASIT \u2013 ICT chamber of commerce"
+    },
+    "/me/partner/kibs-6/": {
+      "source_id": 2124,
+      "type": "finelev360_partner",
+      "locale": "me",
+      "group": "",
+      "title": "KIBS"
+    },
+    "/sl/partner/kibs-5/": {
+      "source_id": 2013,
+      "type": "finelev360_partner",
+      "locale": "sl",
+      "group": "",
+      "title": "KIBS"
+    },
+    "/hr/partner/kibs-4/": {
+      "source_id": 1283,
+      "type": "finelev360_partner",
+      "locale": "hr",
+      "group": "",
+      "title": "KIBS"
+    },
+    "/sr/partner/kibs-3/": {
+      "source_id": 1282,
+      "type": "finelev360_partner",
+      "locale": "sr",
+      "group": "",
+      "title": "KIBS"
+    },
+    "/mk/partner/kibs-2/": {
+      "source_id": 369,
+      "type": "finelev360_partner",
+      "locale": "mk",
+      "group": "",
+      "title": "KIBS"
+    },
+    "/partner/kibs/": {
+      "source_id": 345,
+      "type": "finelev360_partner",
+      "locale": "en",
+      "group": "",
+      "title": "KIBS"
+    },
+    "/me/partner/kibstrust-6/": {
+      "source_id": 2126,
+      "type": "finelev360_partner",
+      "locale": "me",
+      "group": "",
+      "title": "KIBSTrust"
+    },
+    "/sl/partner/kibstrust-5/": {
+      "source_id": 2015,
+      "type": "finelev360_partner",
+      "locale": "sl",
+      "group": "",
+      "title": "KIBSTrust"
+    },
+    "/hr/partner/kibstrust-4/": {
+      "source_id": 1287,
+      "type": "finelev360_partner",
+      "locale": "hr",
+      "group": "",
+      "title": "KIBSTrust"
+    },
+    "/sr/partner/kibstrust-3/": {
+      "source_id": 1285,
+      "type": "finelev360_partner",
+      "locale": "sr",
+      "group": "",
+      "title": "KIBSTrust"
+    },
+    "/mk/partner/kibstrust-2/": {
+      "source_id": 370,
+      "type": "finelev360_partner",
+      "locale": "mk",
+      "group": "",
+      "title": "KIBSTrust"
+    },
+    "/partner/kibstrust/": {
+      "source_id": 343,
+      "type": "finelev360_partner",
+      "locale": "en",
+      "group": "",
+      "title": "KIBSTrust"
+    },
+    "/me/partner/cisco-systems-makedonija-2/": {
+      "source_id": 2123,
+      "type": "finelev360_partner",
+      "locale": "me",
+      "group": "",
+      "title": "CISCO Systems Makedonija"
+    },
+    "/sl/partner/cisco-systems-makedonija/": {
+      "source_id": 2012,
+      "type": "finelev360_partner",
+      "locale": "sl",
+      "group": "",
+      "title": "CISCO Systems Makedonija"
+    },
+    "/hr/partner/cisco-systems-macedonia-4/": {
+      "source_id": 1280,
+      "type": "finelev360_partner",
+      "locale": "hr",
+      "group": "",
+      "title": "CISCO Systems Macedonia"
+    },
+    "/sr/partner/cisco-systems-macedonia-3/": {
+      "source_id": 1278,
+      "type": "finelev360_partner",
+      "locale": "sr",
+      "group": "",
+      "title": "CISCO Systems Macedonia"
+    },
+    "/mk/partner/cisco-systems-macedonia-2/": {
+      "source_id": 367,
+      "type": "finelev360_partner",
+      "locale": "mk",
+      "group": "",
+      "title": "CISCO Systems Macedonia"
+    },
+    "/partner/cisco-systems-macedonia/": {
+      "source_id": 341,
+      "type": "finelev360_partner",
+      "locale": "en",
+      "group": "",
+      "title": "CISCO Systems Macedonia"
+    },
+    "/me/partner/nextsense-8/": {
+      "source_id": 2112,
+      "type": "finelev360_partner",
+      "locale": "me",
+      "group": "",
+      "title": "Nextsense"
+    },
+    "/me/partner/nextsense-6/": {
+      "source_id": 2104,
+      "type": "finelev360_partner",
+      "locale": "me",
+      "group": "",
+      "title": "Nextsense"
+    },
+    "/sl/partner/nextsense-5/": {
+      "source_id": 2004,
+      "type": "finelev360_partner",
+      "locale": "sl",
+      "group": "",
+      "title": "Nextsense"
+    },
+    "/hr/partner/nextsense-4/": {
+      "source_id": 1275,
+      "type": "finelev360_partner",
+      "locale": "hr",
+      "group": "",
+      "title": "Nextsense"
+    },
+    "/sr/partner/nextsense-2/": {
+      "source_id": 1274,
+      "type": "finelev360_partner",
+      "locale": "sr",
+      "group": "",
+      "title": "Nextsense"
+    },
+    "/mk/partner/nextsense-3/": {
+      "source_id": 366,
+      "type": "finelev360_partner",
+      "locale": "mk",
+      "group": "",
+      "title": "NEXTSENSE"
+    },
+    "/partner/nextsense/": {
+      "source_id": 337,
+      "type": "finelev360_partner",
+      "locale": "en",
+      "group": "",
+      "title": "Nextsense"
+    },
+    "/me/partner/startup-macedonia-3/": {
+      "source_id": 2132,
+      "type": "finelev360_partner",
+      "locale": "me",
+      "group": "",
+      "title": "Startup Macedonia"
+    },
+    "/sl/partner/startup-macedonia-2/": {
+      "source_id": 2021,
+      "type": "finelev360_partner",
+      "locale": "sl",
+      "group": "",
+      "title": "Startup Macedonia"
+    },
+    "/mk/partner/startup-\u043c\u0430\u043a\u0435\u0434\u043e\u043d\u0438\u0458\u0430/": {
+      "source_id": 373,
+      "type": "finelev360_partner",
+      "locale": "mk",
+      "group": "",
+      "title": "Startup \u041c\u0430\u043a\u0435\u0434\u043e\u043d\u0438\u0458\u0430"
+    },
+    "/partner/startup-macedonia/": {
+      "source_id": 174,
+      "type": "finelev360_partner",
+      "locale": "en",
+      "group": "",
+      "title": "Startup Macedonia"
+    },
+    "/me/partner/fakultet-za-elektrotehniku-i-informacione-tehnologije-skoplje/": {
+      "source_id": 2128,
+      "type": "finelev360_partner",
+      "locale": "me",
+      "group": "",
+      "title": "Fakultet za elektrotehniku i informacione tehnologije \u2013 Skoplje"
+    },
+    "/sl/partner/fakulteta-za-elektrotehniko-in-informacijske-tehnologije-skopje/": {
+      "source_id": 2017,
+      "type": "finelev360_partner",
+      "locale": "sl",
+      "group": "",
+      "title": "Fakulteta za elektrotehniko in informacijske tehnologije \u2013 Skopje"
+    },
+    "/hr/partner/fakultet-elektrotehnike-i-informacijskih-tehnologija-skopje/": {
+      "source_id": 1294,
+      "type": "finelev360_partner",
+      "locale": "hr",
+      "group": "",
+      "title": "Fakultet elektrotehnike i informacijskih tehnologija \u2013 Skopje"
+    },
+    "/sr/partner/fakultet-elektrotehnike-i-informacionih-tehnologija-skoplje/": {
+      "source_id": 1293,
+      "type": "finelev360_partner",
+      "locale": "sr",
+      "group": "",
+      "title": "Fakultet elektrotehnike i informacionih tehnologija \u2013 Skoplje"
+    },
+    "/mk/partner/\u0444\u0430\u043a\u0443\u043b\u0442\u0435\u0442-\u0437\u0430-\u0435\u043b\u0435\u043a\u0442\u0440\u043e\u0442\u0435\u0445\u043d\u0438\u043a\u0430-\u0438-\u0438\u043d\u0444\u043e\u0440\u043c\u0430/": {
+      "source_id": 372,
+      "type": "finelev360_partner",
+      "locale": "mk",
+      "group": "",
+      "title": "\u0424\u0430\u043a\u0443\u043b\u0442\u0435\u0442 \u0437\u0430 \u0435\u043b\u0435\u043a\u0442\u0440\u043e\u0442\u0435\u0445\u043d\u0438\u043a\u0430 \u0438 \u0438\u043d\u0444\u043e\u0440\u043c\u0430\u0446\u0438\u0441\u043a\u0438 \u0442\u0435\u0445\u043d\u043e\u043b\u043e\u0433\u0438\u0438 \u2013 \u0421\u043a\u043e\u043f\u0458\u0435"
+    },
+    "/partner/\u0444\u0435\u0438\u0442/": {
+      "source_id": 173,
+      "type": "finelev360_partner",
+      "locale": "en",
+      "group": "",
+      "title": "Faculty of Electrical Engineering and Information Technologies \u2013 Skopje"
+    },
+    "/me/partner/intercert-6/": {
+      "source_id": 2122,
+      "type": "finelev360_partner",
+      "locale": "me",
+      "group": "",
+      "title": "Intercert"
+    },
+    "/sl/partner/intercert-5/": {
+      "source_id": 2011,
+      "type": "finelev360_partner",
+      "locale": "sl",
+      "group": "",
+      "title": "Intercert"
+    },
+    "/hr/partner/intercert-4/": {
+      "source_id": 1273,
+      "type": "finelev360_partner",
+      "locale": "hr",
+      "group": "",
+      "title": "Intercert"
+    },
+    "/sr/partner/intercert-3/": {
+      "source_id": 1272,
+      "type": "finelev360_partner",
+      "locale": "sr",
+      "group": "",
+      "title": "Intercert"
+    },
+    "/mk/partner/intercert-2/": {
+      "source_id": 368,
+      "type": "finelev360_partner",
+      "locale": "mk",
+      "group": "",
+      "title": "Intercert"
+    },
+    "/partner/intercert/": {
+      "source_id": 172,
+      "type": "finelev360_partner",
+      "locale": "en",
+      "group": "",
+      "title": "Intercert"
+    },
+    "/me/partner/p1-group-6/": {
+      "source_id": 2119,
+      "type": "finelev360_partner",
+      "locale": "me",
+      "group": "",
+      "title": "P1 Group"
+    },
+    "/sl/partner/p1-group-5/": {
+      "source_id": 2008,
+      "type": "finelev360_partner",
+      "locale": "sl",
+      "group": "",
+      "title": "P1 Group"
+    },
+    "/hr/partner/p1-group-4/": {
+      "source_id": 1291,
+      "type": "finelev360_partner",
+      "locale": "hr",
+      "group": "",
+      "title": "P1 Group"
+    },
+    "/sr/partner/p1-group-3/": {
+      "source_id": 1290,
+      "type": "finelev360_partner",
+      "locale": "sr",
+      "group": "",
+      "title": "P1 Group"
+    },
+    "/mk/partner/p1-group-2/": {
+      "source_id": 371,
+      "type": "finelev360_partner",
+      "locale": "mk",
+      "group": "",
+      "title": "P1 Group"
+    },
+    "/partner/p1-group/": {
+      "source_id": 171,
+      "type": "finelev360_partner",
+      "locale": "en",
+      "group": "",
+      "title": "P1 Group"
+    },
+    "/me/partner/tessa-security-6/": {
+      "source_id": 2121,
+      "type": "finelev360_partner",
+      "locale": "me",
+      "group": "",
+      "title": "Tessa Security"
+    },
+    "/sl/partner/tessa-security-5/": {
+      "source_id": 2010,
+      "type": "finelev360_partner",
+      "locale": "sl",
+      "group": "",
+      "title": "Tessa Security"
+    },
+    "/hr/partner/tessa-security-4/": {
+      "source_id": 1142,
+      "type": "finelev360_partner",
+      "locale": "hr",
+      "group": "",
+      "title": "Tessa Security"
+    },
+    "/sr/partner/tessa-security-3/": {
+      "source_id": 1140,
+      "type": "finelev360_partner",
+      "locale": "sr",
+      "group": "",
+      "title": "Tessa Security"
+    },
+    "/mk/partner/tessa-security-2/": {
+      "source_id": 365,
+      "type": "finelev360_partner",
+      "locale": "mk",
+      "group": "",
+      "title": "Tessa Security"
+    },
+    "/partner/tessa-security/": {
+      "source_id": 18,
+      "type": "finelev360_partner",
+      "locale": "en",
+      "group": "",
+      "title": "Tessa Security"
+    },
+    "/me/advisory-member/igor-madzov-5/": {
+      "source_id": 2143,
+      "type": "finelev360_advisory",
+      "locale": "me",
+      "group": "",
+      "title": "Igor Madzov"
+    },
+    "/sl/advisory-member/igor-madzov-4/": {
+      "source_id": 2032,
+      "type": "finelev360_advisory",
+      "locale": "sl",
+      "group": "",
+      "title": "Igor Madzov"
+    },
+    "/hr/advisory-member/igor-madzov-3/": {
+      "source_id": 1259,
+      "type": "finelev360_advisory",
+      "locale": "hr",
+      "group": "",
+      "title": "Igor Madzov"
+    },
+    "/sr/advisory-member/igor-madzov-2/": {
+      "source_id": 1258,
+      "type": "finelev360_advisory",
+      "locale": "sr",
+      "group": "",
+      "title": "Igor Madzov"
+    },
+    "/mk/advisory-member/\u0438\u0433\u043e\u0440-\u043c\u0430\u045f\u043e\u0432/": {
+      "source_id": 398,
+      "type": "finelev360_advisory",
+      "locale": "mk",
+      "group": "",
+      "title": "\u0418\u0433\u043e\u0440 \u041c\u0430\u045f\u043e\u0432"
+    },
+    "/advisory-member/igor-madzov/": {
+      "source_id": 207,
+      "type": "finelev360_advisory",
+      "locale": "en",
+      "group": "",
+      "title": "Igor Madzov"
+    },
+    "/me/advisory-member/vasko-temelkoski-5/": {
+      "source_id": 2142,
+      "type": "finelev360_advisory",
+      "locale": "me",
+      "group": "",
+      "title": "Vasko Temelkoski"
+    },
+    "/sl/advisory-member/vasko-temelkoski-4/": {
+      "source_id": 2031,
+      "type": "finelev360_advisory",
+      "locale": "sl",
+      "group": "",
+      "title": "Vasko Temelkoski"
+    },
+    "/hr/advisory-member/vasko-temelkoski-3/": {
+      "source_id": 1257,
+      "type": "finelev360_advisory",
+      "locale": "hr",
+      "group": "",
+      "title": "Vasko Temelkoski"
+    },
+    "/sr/advisory-member/vasko-temelkoski-2/": {
+      "source_id": 1256,
+      "type": "finelev360_advisory",
+      "locale": "sr",
+      "group": "",
+      "title": "Vasko Temelkoski"
+    },
+    "/mk/advisory-member/\u0432\u0430\u0441\u043a\u043e-\u0442\u0435\u043c\u0435\u043b\u043a\u043e\u0441\u043a\u0438/": {
+      "source_id": 397,
+      "type": "finelev360_advisory",
+      "locale": "mk",
+      "group": "",
+      "title": "\u0412\u0430\u0441\u043a\u043e \u0422\u0435\u043c\u0435\u043b\u043a\u043e\u0441\u043a\u0438"
+    },
+    "/advisory-member/vasko-temelkoski/": {
+      "source_id": 206,
+      "type": "finelev360_advisory",
+      "locale": "en",
+      "group": "",
+      "title": "Vasko Temelkoski"
+    },
+    "/me/advisory-member/prof-ezeni-brzovska-phd-5/": {
+      "source_id": 2140,
+      "type": "finelev360_advisory",
+      "locale": "me",
+      "group": "",
+      "title": "Prof. Ezeni Brzovska, PhD"
+    },
+    "/sl/advisory-member/prof-ezeni-brzovska-phd-4/": {
+      "source_id": 2029,
+      "type": "finelev360_advisory",
+      "locale": "sl",
+      "group": "",
+      "title": "Prof. Ezeni Brzovska, PhD"
+    },
+    "/hr/advisory-member/prof-ezeni-brzovska-phd-3/": {
+      "source_id": 1252,
+      "type": "finelev360_advisory",
+      "locale": "hr",
+      "group": "",
+      "title": "Prof. Ezeni Brzovska, PhD"
+    },
+    "/sr/advisory-member/prof-ezeni-brzovska-phd-2/": {
+      "source_id": 1250,
+      "type": "finelev360_advisory",
+      "locale": "sr",
+      "group": "",
+      "title": "Prof. Ezeni Brzovska, PhD"
+    },
+    "/mk/advisory-member/\u043f\u0440\u043e\u0444-\u0434-\u0440-\u0435\u0436\u0435\u043d\u0438-\u0431\u0440\u0437\u043e\u0432\u0441\u043a\u0430/": {
+      "source_id": 394,
+      "type": "finelev360_advisory",
+      "locale": "mk",
+      "group": "",
+      "title": "\u041f\u0440\u043e\u0444. \u0434-\u0440 \u0415\u0436\u0435\u043d\u0438 \u0411\u0440\u0437\u043e\u0432\u0441\u043a\u0430"
+    },
+    "/advisory-member/prof-ezeni-brzovska-phd/": {
+      "source_id": 205,
+      "type": "finelev360_advisory",
+      "locale": "en",
+      "group": "",
+      "title": "Prof. Ezeni Brzovska, PhD"
+    },
+    "/me/advisory-member/filip-simeonov-5/": {
+      "source_id": 2141,
+      "type": "finelev360_advisory",
+      "locale": "me",
+      "group": "",
+      "title": "Filip Simeonov"
+    },
+    "/sl/advisory-member/filip-simeonov-4/": {
+      "source_id": 2030,
+      "type": "finelev360_advisory",
+      "locale": "sl",
+      "group": "",
+      "title": "Filip Simeonov"
+    },
+    "/hr/advisory-member/filip-simeonov-3/": {
+      "source_id": 1255,
+      "type": "finelev360_advisory",
+      "locale": "hr",
+      "group": "",
+      "title": "Filip Simeonov"
+    },
+    "/sr/advisory-member/filip-simeonov-2/": {
+      "source_id": 1254,
+      "type": "finelev360_advisory",
+      "locale": "sr",
+      "group": "",
+      "title": "Filip Simeonov"
+    },
+    "/mk/advisory-member/\u0444\u0438\u043b\u0438\u043f-\u0441\u0438\u043c\u0435\u043e\u043d\u043e\u0432/": {
+      "source_id": 396,
+      "type": "finelev360_advisory",
+      "locale": "mk",
+      "group": "",
+      "title": "\u0424\u0438\u043b\u0438\u043f \u0421\u0438\u043c\u0435\u043e\u043d\u043e\u0432"
+    },
+    "/advisory-member/filip-simeonov/": {
+      "source_id": 198,
+      "type": "finelev360_advisory",
+      "locale": "en",
+      "group": "",
+      "title": "Filip Simeonov"
+    },
+    "/me/advisory-member/prof-vladimir-atanasovski-phd-2/": {
+      "source_id": 2139,
+      "type": "finelev360_advisory",
+      "locale": "me",
+      "group": "",
+      "title": "Prof. Vladimir Atanasovski, PhD"
+    },
+    "/sl/advisory-member/prof-vladimir-atanasovski-phd/": {
+      "source_id": 2028,
+      "type": "finelev360_advisory",
+      "locale": "sl",
+      "group": "",
+      "title": "Prof. Vladimir Atanasovski, PhD"
+    },
+    "/sr/advisory-member/prof-dr-vladimir-atanasovski-2/": {
+      "source_id": 1157,
+      "type": "finelev360_advisory",
+      "locale": "sr",
+      "group": "",
+      "title": "Prof. dr Vladimir Atanasovski"
+    },
+    "/hr/advisory-member/prof-dr-sc-vladimir-atanasovski/": {
+      "source_id": 1154,
+      "type": "finelev360_advisory",
+      "locale": "hr",
+      "group": "",
+      "title": "Prof. dr. sc. Vladimir Atanasovski"
+    },
+    "/mk/advisory-member/\u043f\u0440\u043e\u0444-\u0434-\u0440-\u0432\u043b\u0430\u0434\u0438\u043c\u0438\u0440-\u0430\u0442\u0430\u043d\u0430\u0441\u043e\u0432\u0441\u043a\u0438/": {
+      "source_id": 374,
+      "type": "finelev360_advisory",
+      "locale": "mk",
+      "group": "",
+      "title": "\u041f\u0440\u043e\u0444. \u0434-\u0440 \u0412\u043b\u0430\u0434\u0438\u043c\u0438\u0440 \u0410\u0442\u0430\u043d\u0430\u0441\u043e\u0432\u0441\u043a\u0438"
+    },
+    "/advisory-member/\u0430\u0430\u0441\u0434/": {
+      "source_id": 22,
+      "type": "finelev360_advisory",
+      "locale": "en",
+      "group": "",
+      "title": "Prof. Vladimir Atanasovski, PhD"
+    }
+  },
+  "groups": {
+    "about": {
+      "me": "/me/o-finelevate-u/",
+      "sl": "/sl/o-finelevate/",
+      "hr": "/hr/tko-smo/",
+      "sr": "/sr/ko-smo-mi/",
+      "mk": "/mk/\u0437\u0430-\u043d\u0430\u0441/",
+      "en": "/about-us/"
+    },
+    "cookies": {
+      "me": "/me/politika-kolacica-2/",
+      "hr": "/hr/pravila-o-kolacicima/",
+      "sr": "/sr/politika-kolacica/",
+      "mk": "/mk/\u043f\u043e\u043b\u0438\u0442\u0438\u043a\u0430-\u0437\u0430-\u043a\u043e\u043b\u0430\u0447\u0438\u045a\u0430/",
+      "en": "/cookie-policy/"
+    },
+    "privacy": {
+      "me": "/me/politika-privatnosti-2/",
+      "hr": "/hr/pravila-privatnosti/",
+      "sr": "/sr/politika-privatnosti/",
+      "mk": "/mk/\u043f\u043e\u043b\u0438\u0442\u0438\u043a\u0430-\u0437\u0430-\u043f\u0440\u0438\u0432\u0430\u0442\u043d\u043e\u0441\u0442/",
+      "en": "/privacy-policy/"
+    },
+    "fintech": {
+      "mk": "/mk/\u0434\u0438\u0433\u0438\u0442\u0430\u043b\u043d\u0430-\u043c\u0430\u043f\u0430-\u0444\u0438\u043d\u0442\u0435\u043a/",
+      "en": "/fintech/"
+    },
+    "banking": {
+      "me": "/me/digitalna-mapa-banke/",
+      "sl": "/sl/digitalni-zemljevid-banke/",
+      "hr": "/hr/digitalna-mapa/",
+      "sr": "/sr/digitalna-mapa-2/",
+      "mk": "/mk/\u0434\u0438\u0433\u0438\u0442\u0430\u043b\u043d\u0430-\u043c\u0430\u043f\u0430-\u0431\u0430\u043d\u043a\u0430\u0440\u0441\u0442\u0432\u043e/",
+      "en": "/banking-capabilities/"
+    },
+    "news_index": {
+      "me": "/me/vijesti-2/",
+      "sl": "/sl/novice/",
+      "hr": "/hr/vijesti/",
+      "sr": "/sr/vesti/",
+      "mk": "/mk/\u043d\u043e\u0432\u043e\u0441\u0442\u0438/",
+      "en": "/news/"
+    },
+    "home": {
+      "me": "/me/pocetna-3/",
+      "sl": "/sl/domov/",
+      "hr": "/hr/pocetna-2/",
+      "sr": "/sr/pocetna/",
+      "mk": "/mk/home-2/",
+      "en": "/"
+    },
+    "advisory": {
+      "me": "/me/savjetodavni-odbor-2/",
+      "sl": "/sl/svetovalni-odbor/",
+      "hr": "/hr/savjetodavni-odbor/",
+      "sr": "/sr/savetodavni-odbor/",
+      "mk": "/mk/advisori/",
+      "en": "/advisory-board/"
+    },
+    "partners": {
+      "me": "/me/partneri-i-pokretaci-ekosistema-2/",
+      "sl": "/sl/partnerji-in-gonilniki-ekosistema/",
+      "hr": "/hr/partneri-i-pokretaci-ekosustava/",
+      "sr": "/sr/partneri-i-pokretaci-ekosistema/",
+      "mk": "/mk/partneri/",
+      "en": "/partners/"
+    },
+    "insurance": {
+      "mk": "/mk/\u0434\u0438\u0433\u0438\u0442\u0430\u043b\u043d\u0430-\u043c\u0430\u043f\u0430-\u043e\u0441\u0438\u0433\u0443\u0440\u0443\u0432\u0430\u045a\u0435/",
+      "en": "/insurance/"
+    },
+    "news": {
+      "hr": "/hr/casys-international-postaje-gold-sponsor-finelevate-programa-2/",
+      "sr": "/sr/casys-international-postaje-gold-sponsor-finelevate-programa/",
+      "mk": "/mk/casys-international-\u0441\u0442\u0430\u043d\u0430-gold-partner-\u043d\u0430-finelevate/",
+      "en": "/casys-\u0435-gold-sponsor-\u043d\u0430-finelevate-\u043f\u0440\u043e\u0433\u0440\u0430\u043c\u0430\u0442\u0430/"
+    },
+    "cooperation": {
+      "mk": "/mk/finelevate-feit-mk/",
+      "en": "/finelevate-and-feit-signed-cooperation-agreement/"
+    },
+    "summit": {
+      "mk": "/mk/events/\u0433\u043e\u0434\u0438\u0448\u0435\u043d-\u0441\u043e\u0431\u0438\u0440-\u043d\u0430-\u0438\u0437\u0432\u0440\u0448\u043d\u0438-\u043b\u0438\u0434\u0435\u0440\u0438-\u0448\u0442\u043e-\u0458\u0430/",
+      "en": "/events/the-annual-executive-gathering-for-leaders-shaping-digital-transformation-in-financial-services/"
+    }
+  },
+  "incomplete": [
+    "directory integration",
+    "submission forms"
+  ]
+}

@@ -6,7 +6,7 @@
 <a class="skip-link" href="#main"><?php esc_html_e('Skip to content', 'finelevate-advisory'); ?></a>
 <header class="site-header">
   <div class="header-inner">
-    <a class="brand" href="<?php echo esc_url(home_url('/')); ?>"><img src="<?php echo esc_url(fe_asset('brand/Finelevate_monochrome_approved.svg')); ?>" width="250" height="48" alt="Finelevate360"></a>
+    <a class="brand" href="<?php echo esc_url(fe_local_url('https://finelevate360.com/')); ?>"><img src="<?php echo esc_url(fe_asset('brand/Finelevate_monochrome_approved.svg')); ?>" width="250" height="48" alt="Finelevate360"></a>
     <nav class="desktop-nav" aria-label="<?php esc_attr_e('Primary navigation', 'finelevate-advisory'); ?>"><?php fe_navigation(); ?></nav>
     <button class="button contact header-contact" data-contact-open><?php echo esc_html(fe_value('contact_label')); ?></button>
     <button class="menu-toggle" data-menu-open aria-haspopup="dialog" aria-controls="mobile-menu"><?php esc_html_e('Menu', 'finelevate-advisory'); ?></button>

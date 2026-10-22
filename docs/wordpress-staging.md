@@ -209,3 +209,39 @@ The new navigation redesign is awaiting visual approval and has not been
 implemented. Digital Map integration, translated staging pages, hosted QA and
 the public staging domain's DNS/SSL remain incomplete. Production, mail,
 passwords, account scope and hosting settings were not changed in this check.
+
+## Current checkpoint - 22 October 2026
+
+The installed theme's 47 files were verified against release
+`435076c7b0662eec1f50291f4c57bbdb4eb1e5f7` before activation. Finelevate Advisory
+is now active on the isolated temporary staging hostname. Browser control was
+restored, and staging PHP Info was freshly verified: PHP 8.4.26, Build Date
+`Oct 21 2026 00:00:00`. Hostinger's 22 October 06:44 UTC incident update confirms
+all managed hosting patched and identifies this build date as a fixed backport.
+No production PHP or plan setting was changed.
+
+Cloudflare now has the authorized DNS-only `stg` A record at `82.198.228.17`,
+verified both in the zone and at its authoritative nameserver. Hostinger's
+Lifetime SSL certificate is still Installing; strict HTTPS has not yet passed.
+The existing temporary HTTPS hostname remains usable. No TLS exception is used.
+
+The user's site-wide consistency report exposed production URLs in fallback
+navigation. The fresh staging site did not yet contain inner pages. The repair
+adds a public-content route manifest, existing language destinations, shared
+header geometry, and a public-only WXR import of 261 published records. Import
+uses the official WordPress importer and maps attribution to the existing
+staging administrator; it must not create production users or copy private meta,
+comments, submissions, credentials or database settings. Public media URLs are
+retained; they are not production admin access.
+
+The imported directory pages contain their original explanatory copy only.
+The live directory plugin, bank records and capability editor have NOT been
+replaced with static scraped filters or illustrative ratings. Access to that
+plugin's source remains restricted by the old connected WPVibe plugin. Its
+integration and the submission forms remain incomplete. The separate Canva
+navigation redesign is still unapproved and is not part of this repair.
+
+CI keeps both deployment/access opt-ins disabled and retains owner review.
+The FTPS certificate identity issue remains unresolved; the authorized manual
+WordPress HTTPS upload path is used without weakening TLS or broadening access.
+Production, mail, credentials and other sites are untouched. No support contact.
