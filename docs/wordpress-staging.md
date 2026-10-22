@@ -245,3 +245,42 @@ CI keeps both deployment/access opt-ins disabled and retains owner review.
 The FTPS certificate identity issue remains unresolved; the authorized manual
 WordPress HTTPS upload path is used without weakening TLS or broadening access.
 Production, mail, credentials and other sites are untouched. No support contact.
+
+## Hosted repair checkpoint - 22 October 2026, 09:35 UTC
+
+Release `09b5bac6de61d81e728aac85512dd0af0b4bc17c` is installed and active.
+The official importer completed the public content migration; a path-based
+matching filter prevents same-title/date translations being conflated. Do not
+repeat the import. Site Title is now Finelevate360.
+
+Hostinger SSL is Active and strict HTTPS works on stg.finelevate360.com. All
+261 routes passed on the temporary hostname. The final-domain sweep found 47
+stale LiteSpeed cached 404s; a cache-miss request returned 200 for the same path.
+The staging-only Purge 404 Error action completed, and two formerly failing
+routes now return 200 without cache-busting. Check the other 45 failures from
+`staging-route-qa-stg.finelevate360.com.json` before declaring full coverage.
+
+Header/content alignment and the mobile menu were verified in the actual
+browser. All locale attributes matched the imported routes. Directory plugin,
+submission-form integration, complete UI translations and further template QA
+remain incomplete. Automatic deployment remains disabled. No production changes.
+
+## Resumed correction release
+
+The post-purge check passed all 47 formerly cached failures on the final custom
+domain. Published navigation and expertise terminology is restored for MK, SR,
+HR, SL and ME. The Customizer now exposes per-language text controls; English
+fallbacks remain clearly identified where published translated copy is absent.
+Public partner/about calls to action use the shared preview contact dialog.
+The imported event body uses its existing published component styles scoped
+inside the shared site template, removes duplicate event chrome and restores
+agenda/pass anchors. No production event scripts or submission endpoints run.
+
+Directory integration remains blocked by the explicit source-read restriction.
+Required materials are the distributable finelevate360-directory plugin and
+its dependent map templates/assets, plus a public-only export of capability
+metadata/country taxonomy relationships. Acceptable paths are user-provided
+source materials or authorized restoration of normal WPVibe source access.
+Do not extract the same denied source through file-manager/CLI alternatives.
+No production database, mail configuration, customer records or credentials are
+needed. Contact delivery and event registration remain disabled on staging.

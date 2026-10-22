@@ -16,7 +16,7 @@ function fe_value($key) {
     if (isset($defaults[$key]) && $defaults[$key]['type'] === 'url') { return fe_local_url($value); }
     if (isset($defaults[$key]) && $defaults[$key]['type'] === 'text') {
         $translations = fe_translations();
-        $value = isset($translations[fe_language()][$key]) ? $translations[fe_language()][$key] : $value;
+        $value = get_theme_mod('fe_' . fe_language() . '_' . $key, isset($translations[fe_language()][$key]) ? $translations[fe_language()][$key] : $value);
     }
     return function_exists('pll__') && isset($defaults[$key]) && $defaults[$key]['type'] === 'text' ? pll__($value) : $value;
 }
@@ -33,11 +33,20 @@ function fe_staging() {
 }
 
 require get_template_directory() . '/inc/routes.php';
+require get_template_directory() . '/inc/event.php';
 function fe_translations() {
     static $strings;
     if (!isset($strings)) { $strings = json_decode(file_get_contents(__DIR__ . '/inc/translations.json'), true); }
     return $strings;
 }
+
+// Preserve the published terminology without changing WordPress admin language.
+add_filter('gettext', function ($translation, $text, $domain) {
+    if ($domain !== 'finelevate-advisory') { return $translation; }
+    static $strings;
+    if (!isset($strings)) { $strings = json_decode(file_get_contents(__DIR__ . '/inc/ui-translations.json'), true); }
+    return $strings[fe_language()][$text] ?? $translation;
+}, 10, 3);
 
 add_action('after_setup_theme', function () {
     load_theme_textdomain('finelevate-advisory', get_template_directory() . '/languages');
@@ -53,6 +62,7 @@ add_action('wp_enqueue_scripts', function () {
     $release = get_template_directory() . '/release.json';
     $version = file_exists($release) ? json_decode(file_get_contents($release), true)['commit'] : wp_get_theme()->get('Version');
     wp_enqueue_style('finelevate-advisory', get_stylesheet_uri(), array(), $version);
+    if (is_singular('event')) { wp_enqueue_style('finelevate-event', fe_asset('event.css'), array('finelevate-advisory'), $version); }
     wp_enqueue_script('finelevate-advisory', fe_asset('site.js'), array(), $version, true);
 });
 
@@ -106,7 +116,7 @@ function fe_navigation($location = 'primary', $suffix = 'desktop') {
         <li><a href="<?php echo esc_url(fe_value('about_url')); ?>"><?php esc_html_e('About Finelevate', 'finelevate-advisory'); ?></a></li>
         <li><a href="<?php echo esc_url(fe_value('advisory_url')); ?>"><?php esc_html_e('Advisory Board', 'finelevate-advisory'); ?></a></li>
       </ul></details></li>
-      <li class="language-nav"><details><summary aria-label="<?php esc_attr_e('Choose language', 'finelevate-advisory'); ?>"><?php echo esc_html(strtoupper(fe_language())); ?></summary><ul>
+      <li class="language-nav"><details><summary aria-label="<?php esc_attr_e('Choose language', 'finelevate-advisory'); ?>"><?php echo esc_html(fe_language() === 'sr' ? 'RS' : strtoupper(fe_language())); ?></summary><ul>
         <?php if (function_exists('pll_the_languages')) { pll_the_languages(array('show_flags' => 0, 'show_names' => 1, 'hide_if_no_translation' => 1)); } else {
             foreach (array('en' => 'EN', 'mk' => 'MK', 'sr' => 'RS', 'hr' => 'HR', 'sl' => 'SL', 'me' => 'ME') as $key => $label) {
                 echo '<li><a hreflang="' . esc_attr($key) . '" href="' . esc_url(fe_language_url($key)) . '"' . ($key === fe_language() ? ' aria-current="true"' : '') . '>' . esc_html($label) . '</a></li>';

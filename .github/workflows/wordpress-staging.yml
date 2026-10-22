@@ -39,7 +39,9 @@ jobs:
       - name: Check browser JavaScript
         run: node --check wordpress/themes/finelevate-advisory/assets/site.js
       - name: Test shared routes and independent language/country selection
-        run: php ci/test_routes.php
+        run: |
+          php ci/test_routes.php
+          php ci/test_event.php
       - name: Test artifact integrity, staging scope and rollback
         run: python -m unittest discover -s ci -p 'test_*.py' -v
       - name: Package theme from this exact commit

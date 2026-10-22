@@ -60,6 +60,7 @@ add_filter('nav_menu_link_attributes', function ($attributes) {
     return $attributes;
 });
 add_filter('the_content', function ($content) {
+    $content = preg_replace('/<a\b[^>]*class=["\'][^"\']*\b(?:f360-pf-trigger|fe-profile__cta|js-partner)[^"\']*["\'][^>]*>(.*?)<\/a>/is', '<button type="button" class="text-link" data-contact-open>$1</button>', $content);
     return preg_replace_callback('/(<a\b[^>]*\bhref=["\'])([^"\']+)(["\'])/i', function ($match) {
         return $match[1] . esc_url(fe_local_url(html_entity_decode($match[2], ENT_QUOTES, 'UTF-8'), false)) . $match[3];
     }, $content);

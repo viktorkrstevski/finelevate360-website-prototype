@@ -10,6 +10,20 @@ add_action('customize_register', function ($customizer) {
         $customizer->add_setting('fe_' . $key, array('default' => $field['value'], 'sanitize_callback' => $field['type'] === 'url' ? 'esc_url_raw' : 'sanitize_textarea_field'));
         $customizer->add_control('fe_' . $key, array('label' => $field['label'], 'section' => 'fe_' . $field['section'], 'type' => $field['type'] === 'url' ? 'url' : 'textarea'));
     }
+    foreach (array('mk' => 'Macedonian', 'sr' => 'Serbian', 'hr' => 'Croatian', 'sl' => 'Slovenian', 'me' => 'Montenegrin') as $language => $label) {
+        $panel = 'fe_translation_' . $language;
+        $customizer->add_panel($panel, array('title' => 'Finelevate - ' . $label, 'priority' => 26));
+        foreach ($sections as $section => $section_label) {
+            if ($section === 'links') { continue; }
+            $customizer->add_section($panel . '_' . $section, array('title' => $section_label, 'panel' => $panel));
+        }
+        foreach (fe_defaults() as $key => $field) {
+            if ($field['type'] !== 'text') { continue; }
+            $setting = 'fe_' . $language . '_' . $key;
+            $customizer->add_setting($setting, array('default' => fe_translations()[$language][$key] ?? $field['value'], 'sanitize_callback' => 'sanitize_textarea_field'));
+            $customizer->add_control($setting, array('label' => $field['label'], 'description' => 'Existing published translation where available; otherwise English fallback until editorial review.', 'section' => $panel . '_' . $field['section'], 'type' => 'textarea'));
+        }
+    }
     foreach (array('hero' => array('hero', 'Conceptual architecture image'), 'cooperation' => array('partners', 'FEIT cooperation photograph'), 'advisory_1' => array('advisory', 'Vladimir Atanasovski portrait'), 'advisory_2' => array('advisory', 'Filip Simeonov portrait'), 'advisory_3' => array('advisory', 'Ezeni Brzovska portrait')) as $key => $field) {
         $customizer->add_setting('fe_image_' . $key, array('sanitize_callback' => 'absint'));
         $customizer->add_control(new WP_Customize_Media_Control($customizer, 'fe_image_' . $key, array('label' => __($field[1], 'finelevate-advisory'), 'section' => 'fe_' . $field[0], 'mime_type' => 'image')));

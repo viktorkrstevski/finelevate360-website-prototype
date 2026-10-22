@@ -1,10 +1,11 @@
 <footer class="site-footer section-shell">
-  <div class="footer-main"><a class="brand" href="<?php echo esc_url(home_url('/')); ?>"><img src="<?php echo esc_url(fe_asset('brand/Finelevate_monochrome_approved.svg')); ?>" width="250" height="48" alt="Finelevate360"></a><p><?php echo esc_html(fe_value('footer_tagline')); ?></p><button class="text-link footer-contact" data-contact-open><?php echo esc_html(fe_value('contact_label')); ?></button></div>
+  <div class="footer-main"><a class="brand" href="<?php echo esc_url(fe_local_url('https://finelevate360.com/')); ?>"><img src="<?php echo esc_url(fe_asset('brand/Finelevate_monochrome_approved.svg')); ?>" width="250" height="48" alt="Finelevate360"></a><p><?php echo esc_html(fe_value('footer_tagline')); ?></p><button class="text-link footer-contact" data-contact-open><?php echo esc_html(fe_value('contact_label')); ?></button></div>
   <nav aria-label="<?php esc_attr_e('Footer links', 'finelevate-advisory'); ?>"><?php fe_navigation('footer'); ?></nav>
 </footer>
 <dialog id="contact-dialog" class="contact-dialog" aria-labelledby="contact-title" aria-describedby="contact-description">
   <div class="dialog-top"><h2 id="contact-title"><?php echo esc_html(fe_value('contact_title')); ?></h2><button class="dialog-close" data-dialog-close aria-label="<?php esc_attr_e('Close', 'finelevate-advisory'); ?>">×</button></div>
   <p id="contact-description"><?php echo esc_html(fe_value('contact_description')); ?></p>
+  <?php if (fe_staging()) { ?><p class="staging-form-note"><?php esc_html_e('Staging preview: inquiries are not sent.', 'finelevate-advisory'); ?></p><?php } ?>
   <form id="partner-form" method="dialog" data-staging-contact>
     <label for="partner-name"><?php esc_html_e('Your name', 'finelevate-advisory'); ?></label><input id="partner-name" name="your-name" autocomplete="name" required maxlength="120">
     <label for="partner-email"><?php esc_html_e('Your email', 'finelevate-advisory'); ?></label><input id="partner-email" name="your-email" type="email" autocomplete="email" required maxlength="254">
