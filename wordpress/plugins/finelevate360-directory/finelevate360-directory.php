@@ -15,7 +15,7 @@ define('FINELEVATE360_DIR_URL',  plugin_dir_url(__FILE__));
 
 require_once FINELEVATE360_DIR_PATH . 'includes/cpt.php';
 // BEGIN HR/SI RESEARCH HELPERS (five-state gated; onboarding aliases across translations)
-/** Five-state research is deliberately restricted to the reviewed HR/SI records. */
+/** Five-state research is restricted to reviewed records; SR/ME additions are staging-only. */
 if (!defined('ABSPATH')) exit;
 
 /** Reversible onboarding consolidation: archived IDs retain their original data.
@@ -208,7 +208,7 @@ function finelevate360_research_legend($market) {
   $labels = finelevate360_research_labels($market);
   $marks = ['yes'=>'DA','partial'=>$market === 'sl' ? 'DELNO' : ($market === 'sr' ? 'DELIM.' : ($market === 'me' ? 'DJELIM.' : 'DJELOM.')),'no'=>'NE','unknown'=>'?','not_applicable'=>'—'];
   $html = '<style>
-/* HR/SI presentation only; the reference-market theme is unchanged. */
+/* Research presentation only; the reference-market theme is unchanged. */
 [data-research-market] .f360-research-summary{margin-top:auto;padding-top:0;font-size:13px;line-height:1.4;color:#315c96;font-weight:600}
 [data-research-market] .f360-research-caption{display:block;font-size:10px;font-weight:400;color:#64748b}
 [data-research-market] .finelevate-filter-map-item-desc{max-width:100%;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
@@ -241,6 +241,7 @@ function finelevate360_research_legend($market) {
 }
 // END HR/SI RESEARCH HELPERS
 require_once FINELEVATE360_DIR_PATH . 'includes/metaboxes.php';
+require_once FINELEVATE360_DIR_PATH . 'includes/regional-evidence.php';
 require_once FINELEVATE360_DIR_PATH . 'includes/shortcodes.php';
 require_once FINELEVATE360_DIR_PATH . 'includes/templates.php';
 require_once FINELEVATE360_DIR_PATH . 'includes/admin-columns.php';

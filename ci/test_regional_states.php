@@ -42,4 +42,58 @@ $map=finelevate360_research_filter_map($rows);
 foreach($rows as $row)same(isset($map[$row['id']]),$row['mobile']==='yes');
 same(finelevate360_research_status('invalid'),'unknown');
 foreach(['sr','me','hr','sl'] as $market)same(count(array_unique(array_intersect_key(finelevate360_research_labels($market),array_flip($states)))),5);
-echo "Regional gates and actual row/filter helpers: $tests assertions passed.\n";
+// Exercise the unchanged native save function after the regional gate is enabled.
+define('FINELEVATE360_CPT_PARTNERS','finelev360_partner');
+define('FINELEVATE360_CPT_ADVISORY','finelev360_advisory');
+function wp_is_post_revision($id) {return false;}
+function current_user_can($cap,$id) {return true;}
+function wp_verify_nonce($nonce,$action) {return $nonce==='valid';}
+function finelevate360_attr_columns() {return array_fill_keys(['mobile','desktop','biznis','privat'],'label');}
+function update_post_meta($id,$key,$value) {global $meta;$meta[$id][$key]=$value;}
+$save_source=file_get_contents(__DIR__.'/../wordpress/plugins/finelevate360-directory/includes/metaboxes.php');
+$save_source=substr($save_source,strpos($save_source,'function finelevate360_save_meta('));
+eval(preg_replace('/\?>\s*$/','',$save_source));
+foreach(['sr'=>2299,'me'=>2487] as $market=>$bank_id) {
+  $attrs=finelevate360_research_attr_ids($market);
+  $expected=[999=>['mobile'=>'historical']];
+  $_POST=['finelevate360_meta_nonce'=>'valid','finelevate360_item_attr_cols'=>[]];
+  foreach($attrs as $i=>$id) {
+    $expected[$id]=[];
+    foreach(['mobile','desktop','biznis','privat'] as $n=>$axis)$expected[$id][$axis]=$states[($i+$n)%5];
+    $_POST['finelevate360_item_attr_cols'][$id]=$expected[$id];
+  }
+  $meta[$bank_id]['_finelevate360_item_attrs']=[999=>['mobile'=>'historical']];
+  $meta[$bank_id]['_finelevate360_item_research']=['private_evidence'=>'unchanged'];
+  $meta[$bank_id]['_unrelated']='preserve';
+  finelevate360_save_meta($bank_id,(object)['post_type'=>FINELEVATE360_CPT_ITEM]);
+  same($meta[$bank_id]['_finelevate360_item_attrs'],$expected);
+  same($meta[$bank_id]['_finelevate360_item_research'],['private_evidence'=>'unchanged']);
+  same($meta[$bank_id]['_unrelated'],'preserve');
+  foreach($attrs as $id) {
+    $row=$expected[$id];
+    $aggregate=in_array('yes',$row,true)?'yes':(in_array('partial',$row,true)?'partial':(in_array('unknown',$row,true)?'unknown':(in_array('no',$row,true)?'no':'not_applicable')));
+    same($meta[$bank_id]['_finelevate360_attr_'.$id],$aggregate);
+  }
+}
+function add_action($name,$callback,$priority=10,$args=1) {}
+require __DIR__.'/../wordpress/plugins/finelevate360-directory/includes/regional-evidence.php';
+function rejects($fn) {global $tests;$tests++;try {$fn();} catch(Throwable $e) {return;} throw new RuntimeException('Expected evidence rejection');}
+foreach(['sr'=>2299,'me'=>2487] as $market=>$bank_id) {
+  $evidence=['schema_version'=>1,'as_of'=>'2026-10-25','bank'=>['bank_key'=>$market.'_fixture','language'=>$market],
+    'cells'=>[],'warnings'=>[],'sources'=>[['source_id'=>'official','url'=>'https://bank.example/feature','title'=>'Official feature']],
+    'publication_binding'=>['bank_post_id'=>$bank_id,'language'=>$market]];
+  foreach(finelevate360_research_attr_ids($market) as $id) {
+    $evidence['cells'][$id]=array_fill_keys(['mobile','desktop','biznis','privat'],[
+      'source_ids'=>['official'],'source_urls'=>['https://bank.example/feature'],'evidence_note'=>'Qualified evidence',
+      'caveat'=>'Eligibility varies','original_record'=>['status'=>'Partial','limitations'=>'Restricted customer segment'],
+    ]);
+  }
+  same(finelevate360_regional_validate_evidence(json_encode($evidence),$bank_id),$evidence);
+  $bad=$evidence;$bad['publication_binding']['bank_post_id']=2065;rejects(fn()=>finelevate360_regional_validate_evidence(json_encode($bad),$bank_id));
+  $bad=$evidence;unset($bad['cells'][array_key_first($bad['cells'])]);rejects(fn()=>finelevate360_regional_validate_evidence(json_encode($bad),$bank_id));
+  $bad=$evidence;$id=array_key_first($bad['cells']);$bad['cells'][$id]['mobile']['source_ids']=['missing'];rejects(fn()=>finelevate360_regional_validate_evidence(json_encode($bad),$bank_id));
+  $bad=$evidence;$bad['cells'][$id]['mobile']['source_urls']=['https://wrong.example/'];rejects(fn()=>finelevate360_regional_validate_evidence(json_encode($bad),$bank_id));
+  $bad=$evidence;$bad['cells'][$id]['mobile']['evidence_note']='';rejects(fn()=>finelevate360_regional_validate_evidence(json_encode($bad),$bank_id));
+  rejects(fn()=>finelevate360_regional_validate_evidence('bad JSON',$bank_id));
+}
+echo "Regional gates, actual row/filter/native save helpers and evidence validation: $tests assertions passed.\n";
