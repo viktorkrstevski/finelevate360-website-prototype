@@ -24,25 +24,92 @@
       status.textContent = status.dataset.message;
     }
   }));
-  const banner = document.querySelector('[data-banner]');
-  if (!banner) return;
-  const track = banner.querySelector('[data-logo-track]');
-  const toggle = banner.querySelector('[data-motion-toggle]');
+  const viewport = document.querySelector('.partner-banner .logo-viewport');
+  if (!viewport) return;
+  const banner = viewport.closest('.banner-inner');
+  const track = viewport.querySelector('.logo-track');
+  const sequence = track.querySelector('.logo-sequence');
   const reduced = window.matchMedia('(prefers-reduced-motion: reduce)');
-  let paused = false;
-  const update = () => {
-    banner.classList.toggle('is-paused', paused);
-    toggle.setAttribute('aria-pressed', String(paused));
-    toggle.textContent = paused ? toggle.dataset.play : toggle.dataset.pause;
-    toggle.hidden = reduced.matches;
+  const help = document.getElementById('partner-motion-help');
+  let copy, frame = 0, cycle = 0, position = 0, applied = viewport.scrollLeft;
+  let lastTime = 0, userPaused = false, pointerDown = false, hovered = false;
+  const updateStatus = () => {
+    if (!help) return;
+    const message = help.dataset[reduced.matches ? 'reduced' : userPaused ? 'paused' : 'enabled'];
+    if (help.textContent !== message) help.textContent = message;
   };
-  toggle.addEventListener('click', () => { paused = !paused; update(); });
-  reduced.addEventListener('change', update);
+  const setUserPaused = value => {
+    userPaused = value;
+    lastTime = 0;
+    updateStatus();
+  };
+  const pauseManual = () => {
+    setUserPaused(true);
+    position = viewport.scrollLeft;
+    lastTime = 0;
+  };
   const measure = () => {
-    const width = track.querySelector('.logo-sequence').getBoundingClientRect().width;
-    track.style.setProperty('--track-duration', `${Math.max(width / 24, 1)}s`);
+    cycle = sequence.getBoundingClientRect().width;
+    position = viewport.scrollLeft;
+    applied = viewport.scrollLeft;
+    lastTime = 0;
   };
-  new ResizeObserver(measure).observe(track.querySelector('.logo-sequence'));
-  measure();
-  update();
+  const tick = now => {
+    const paused = pointerDown || hovered || banner.contains(document.activeElement) || document.hidden || userPaused;
+    if (paused) {
+      lastTime = 0;
+    } else if (cycle) {
+      if (lastTime) {
+        position = (position + Math.min(now - lastTime, 64) * 0.024) % cycle;
+        viewport.scrollLeft = position;
+        applied = viewport.scrollLeft;
+      } else {
+        position = viewport.scrollLeft % cycle;
+      }
+      lastTime = now;
+    }
+    frame = requestAnimationFrame(tick);
+  };
+  const updateMotion = () => {
+    cancelAnimationFrame(frame);
+    lastTime = 0;
+    updateStatus();
+    if (reduced.matches) {
+      viewport.removeAttribute('aria-keyshortcuts');
+      if (copy) copy.remove();
+      copy = null;
+      viewport.scrollLeft = applied = position = 0;
+      return;
+    }
+    viewport.setAttribute('aria-keyshortcuts', 'Space');
+    if (!copy) {
+      copy = sequence.cloneNode(true);
+      copy.setAttribute('aria-hidden', 'true');
+      copy.inert = true;
+      copy.querySelectorAll('img').forEach(img => { img.alt = ''; });
+      track.append(copy);
+    }
+    measure();
+    frame = requestAnimationFrame(tick);
+  };
+  banner.addEventListener('pointerenter', event => { if (event.pointerType !== 'touch') hovered = true; });
+  banner.addEventListener('pointerleave', () => { hovered = false; });
+  viewport.addEventListener('keydown', event => {
+    if (event.key !== ' ' || event.altKey || event.ctrlKey || event.metaKey || reduced.matches) return;
+    event.preventDefault();
+    if (!event.repeat) setUserPaused(!userPaused);
+  });
+  viewport.addEventListener('pointerdown', () => { pointerDown = true; pauseManual(); }, { passive: true });
+  const releasePointer = () => { if (pointerDown) { pointerDown = false; lastTime = 0; } };
+  window.addEventListener('pointerup', releasePointer, { passive: true });
+  window.addEventListener('pointercancel', releasePointer, { passive: true });
+  viewport.addEventListener('wheel', pauseManual, { passive: true });
+  viewport.addEventListener('scroll', () => {
+    // Native touch/scrolling pauses persistently; our own frames do not.
+    if (Math.abs(viewport.scrollLeft - applied) > 1) pauseManual();
+    applied = viewport.scrollLeft;
+  }, { passive: true });
+  reduced.addEventListener('change', updateMotion);
+  new ResizeObserver(measure).observe(sequence);
+  updateMotion();
 })();
