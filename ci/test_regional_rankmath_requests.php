@@ -64,7 +64,13 @@ score_fixture();$r=score_request(2488,$incoming);next_publication_request();$tes
 score_fixture(true);$r=score_request(2488,$incoming+['rank_math_description'=>'intentional SEO text']);next_publication_request();rankmath_rest_callback($r);same($meta[2488]['rank_math_description'],'intentional SEO text');same($meta[2488]['rank_math_seo_score'],'71');
 // Ordinary edits, foreign countries and production retain the original callback behavior.
 foreach([[2488,'https://stg.finelevate360.com/',false],[11,'https://stg.finelevate360.com/',true],[2488,'https://finelevate360.com/',true],[2488,'https://example.com/',true]] as [$id,$host,$marked]){
-  score_fixture();$r=score_request($id,$incoming+['rank_math_description'=>'ordinary']);next_publication_request();$origin=$host;rankmath_rest_callback($r);same($meta[$id]['rank_math_seo_score'],'6');same($meta[$id]['rank_math_description'],'ordinary');
+  // Compare the entire real callback result to its original unfiltered behavior,
+  // including the installed Polylang callback's normal country-dependent effects.
+  score_fixture();$r=score_request($id,$incoming+['rank_math_description'=>'ordinary'],$marked);next_publication_request();$origin=$host;
+  remove_filter('rank_math/filter_metadata','finelevate360_regional_preserve_rankmath_scores',PHP_INT_MAX);rankmath_rest_callback($r);$ordinary_expected=repair_state();
+  score_fixture();$r=score_request($id,$incoming+['rank_math_description'=>'ordinary'],$marked);next_publication_request();$origin=$host;
+  same(finelevate360_regional_preserve_rankmath_scores($r->get_param('meta'),$r),$r->get_param('meta'));
+  rankmath_rest_callback($r);same(repair_state(),$ordinary_expected);
 }
 
 function adriatic_repair_fixture() {
