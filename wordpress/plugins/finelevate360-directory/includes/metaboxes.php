@@ -387,6 +387,8 @@ function finelevate360_save_meta($post_id, $post) {
   }
 
   if ($post->post_type === FINELEVATE360_CPT_ITEM) {
+    // A regional no-op must not rewrite matrix or convenience metadata.
+    if (function_exists('finelevate360_regional_matrix_unchanged') && finelevate360_regional_matrix_unchanged($post_id)) return;
     $ids     = array_values(array_filter(array_map('intval', (array)($_POST['finelevate360_item_attr_ids'] ?? []))));
     $cols_in = is_array($_POST['finelevate360_item_attr_cols'] ?? null) ? $_POST['finelevate360_item_attr_cols'] : [];
     $columns = array_keys(finelevate360_attr_columns());

@@ -49,7 +49,7 @@ function wp_is_post_revision($id) {return false;}
 function current_user_can($cap,$id) {return true;}
 function wp_verify_nonce($nonce,$action) {return $nonce==='valid';}
 function finelevate360_attr_columns() {return array_fill_keys(['mobile','desktop','biznis','privat'],'label');}
-function update_post_meta($id,$key,$value) {global $meta;$meta[$id][$key]=$value;}
+function update_post_meta($id,$key,$value) {global $meta,$writes;$writes[]=[$id,$key];$meta[$id][$key]=$value;}
 $save_source=file_get_contents(__DIR__.'/../wordpress/plugins/finelevate360-directory/includes/metaboxes.php');
 $save_source=substr($save_source,strpos($save_source,'function finelevate360_save_meta('));
 eval(preg_replace('/\?>\s*$/','',$save_source));
@@ -75,7 +75,10 @@ foreach(['sr'=>2299,'me'=>2487] as $market=>$bank_id) {
     same($meta[$bank_id]['_finelevate360_attr_'.$id],$aggregate);
   }
 }
-function add_action($name,$callback,$priority=10,$args=1) {}
+function add_action($name,$callback,$priority=10,$args=1) {global $actions;$actions[$name][$priority][]=[$callback,$args];}
+$native_source=file_get_contents(__DIR__.'/../wordpress/plugins/finelevate360-directory/includes/metaboxes.php');
+preg_match("/add_action\('save_post', 'finelevate360_save_meta', 10, 2\);/",$native_source,$native_registration);
+eval($native_registration[0]);
 require __DIR__.'/../wordpress/plugins/finelevate360-directory/includes/regional-evidence.php';
 function rejects($fn) {global $tests;$tests++;try {$fn();} catch(Throwable $e) {return;} throw new RuntimeException('Expected evidence rejection');}
 foreach(['sr'=>2299,'me'=>2487] as $market=>$bank_id) {
@@ -85,6 +88,7 @@ foreach(['sr'=>2299,'me'=>2487] as $market=>$bank_id) {
   foreach(finelevate360_research_attr_ids($market) as $id) {
     $evidence['cells'][$id]=array_fill_keys(['mobile','desktop','biznis','privat'],[
       'source_ids'=>['official'],'source_urls'=>['https://bank.example/feature'],'evidence_note'=>'Qualified evidence',
+      'publication_status'=>'partial',
       'caveat'=>'Eligibility varies','original_record'=>['status'=>'Partial','limitations'=>'Restricted customer segment'],
     ]);
   }
