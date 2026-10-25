@@ -1,0 +1,201 @@
+# Copyright (C) 2026 Finelevate
+# This file is distributed under the same license as the Finelevate Awards plugin.
+msgid ""
+msgstr ""
+"Project-Id-Version: Finelevate Awards 2.0.0\n"
+"Report-Msgid-Bugs-To: https://www.finelevate360.com\n"
+"POT-Creation-Date: 2026-01-01T00:00:00+00:00\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
+"X-Generator: Loco https://localise.biz/\n"
+"X-Domain: finelevate-awards\n"
+
+#. Plugin Name
+msgid "Finelevate Awards"
+msgstr ""
+
+#. Plugin Description
+msgid "Awards page with metaboxes. Full Loco Translate support."
+msgstr ""
+
+#: includes/class-fa-template.php
+msgid "Finelevate Awards Page"
+msgstr ""
+
+#: includes/class-fa-metaboxes.php
+msgid "🏆 Hero Section"
+msgstr ""
+
+#: includes/class-fa-metaboxes.php
+msgid "🤝 Sponsor"
+msgstr ""
+
+#: includes/class-fa-metaboxes.php
+msgid "🏛 Pillars & Awards"
+msgstr ""
+
+#: includes/class-fa-metaboxes.php
+msgid "🥇 Winners Note"
+msgstr ""
+
+#: includes/class-fa-metaboxes.php
+msgid "📊 Methodology"
+msgstr ""
+
+#: includes/class-fa-metaboxes.php
+msgid "Eyebrow text (e.g. FINELEVATE AWARDS 2026)"
+msgstr ""
+
+#: includes/class-fa-metaboxes.php
+msgid "Main Title"
+msgstr ""
+
+#: includes/class-fa-metaboxes.php
+msgid "Description"
+msgstr ""
+
+#: includes/class-fa-metaboxes.php
+msgid "Note (small text below description)"
+msgstr ""
+
+#: includes/class-fa-metaboxes.php
+msgid "Section label"
+msgstr ""
+
+#: includes/class-fa-metaboxes.php
+msgid "Sponsor text"
+msgstr ""
+
+#: includes/class-fa-metaboxes.php
+msgid "Sponsor Logo URL"
+msgstr ""
+
+#: includes/class-fa-metaboxes.php
+msgid "Choose Image"
+msgstr ""
+
+#: includes/class-fa-metaboxes.php
+msgid "Sponsor"
+msgstr ""
+
+#: includes/class-fa-metaboxes.php
+msgid "Pillar"
+msgstr ""
+
+#: includes/class-fa-metaboxes.php
+msgid "Remove pillar"
+msgstr ""
+
+#: includes/class-fa-metaboxes.php
+msgid "Pillar title"
+msgstr ""
+
+#: includes/class-fa-metaboxes.php
+msgid "Pillar description"
+msgstr ""
+
+#: includes/class-fa-metaboxes.php
+msgid "Badge / icon URL"
+msgstr ""
+
+#: includes/class-fa-metaboxes.php
+msgid "Awards in this pillar:"
+msgstr ""
+
+#: includes/class-fa-metaboxes.php
+msgid "+ Add Award"
+msgstr ""
+
+#: includes/class-fa-metaboxes.php
+msgid "Award"
+msgstr ""
+
+#: includes/class-fa-metaboxes.php
+msgid "Title"
+msgstr ""
+
+#: includes/class-fa-metaboxes.php
+msgid "Winner (company name)"
+msgstr ""
+
+#: includes/class-fa-metaboxes.php
+msgid "Winners note text"
+msgstr ""
+
+#: includes/class-fa-metaboxes.php
+msgid "Section title"
+msgstr ""
+
+#: includes/class-fa-metaboxes.php
+msgid "Subtitle / intro"
+msgstr ""
+
+#: includes/class-fa-metaboxes.php
+msgid "Pipeline steps (shown as progress bar)"
+msgstr ""
+
+#: includes/class-fa-metaboxes.php
+msgid "Step label"
+msgstr ""
+
+#: includes/class-fa-metaboxes.php
+msgid "Methodology blocks"
+msgstr ""
+
+#: includes/class-fa-metaboxes.php
+msgid "Block title"
+msgstr ""
+
+#: includes/class-fa-metaboxes.php
+msgid "Block description"
+msgstr ""
+
+#: includes/class-fa-metaboxes.php
+msgid "Remove block"
+msgstr ""
+
+#: includes/class-fa-metaboxes.php
+msgid "+ Add Step"
+msgstr ""
+
+#: includes/class-fa-metaboxes.php
+msgid "+ Add Block"
+msgstr ""
+
+#: includes/class-fa-metaboxes.php
+msgid "+ Add Pillar"
+msgstr ""
+
+#: includes/class-fa-assets.php
+msgid "Remove this pillar and all its awards?"
+msgstr ""
+
+#: includes/class-fa-assets.php
+msgid "Remove"
+msgstr ""
+
+#: includes/class-fa-assets.php
+msgid "Remove pillar"
+msgstr ""
+
+#: includes/class-fa-assets.php
+msgid "Remove block"
+msgstr ""
+
+#: includes/class-fa-assets.php
+msgid "Choose Sponsor Logo"
+msgstr ""
+
+#: includes/class-fa-assets.php
+msgid "Use this image"
+msgstr ""
+
+#: templates/finelevate-awards-content.php
+msgid "Winner"
+msgstr ""

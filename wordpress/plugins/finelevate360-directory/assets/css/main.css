@@ -1,0 +1,795 @@
+/* ============================================================
+   Finelevate360 Directory Main CSS
+   ============================================================ */
+
+/* ─────────────────────────────────────────────────────────────
+   Hero page
+───────────────────────────────────────────────────────────── */
+
+.finelevate360-hero-page {
+    position: relative;
+    margin: 90px 0 45px 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+.finelevate360-hero-page .finelevate360-hero-page-intro {
+    position: relative;
+    flex: 1 1 45%;
+    max-width: 666px;
+}
+
+.finelevate360-hero-page .finelevate360-hero-page-intro h1 {
+    font-size: 48px;
+    font-weight: 300;
+    line-height: normal;
+    color: var(--text);
+}
+
+.finelevate360-hero-page .finelevate360-hero-page-intro p {
+    font-size: 17px;
+    font-weight: 300;
+    color: var(--text);
+}
+
+.finelevate360-hero-page .finelevate360-hero-page-intro a {
+    position: relative;
+    padding: 15px;
+    display: inline-flex;
+    justify-content: flex-start;
+    align-items: center;
+    color: var(--white);
+    text-decoration: none;
+    background-color: var(--black);
+    border-radius: calc(var(--border-radius));
+    transition: all .3s ease-in-out;
+}
+
+.finelevate360-hero-page .finelevate360-hero-page-intro a:after {
+    position: relative;
+    content: 'arrow_right_alt';
+    margin-left: 5px;
+    display: inline-block;
+    font-family: 'Material Symbols Outlined';
+    font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' -25, 'opsz' 20;
+    font-size: 18px;
+    text-transform: none;
+    line-height: 1;
+    vertical-align: middle;
+    -webkit-font-smoothing: antialiased;
+    transition: transform 0.25s ease;
+    transform: translateX(0);
+}
+
+.finelevate360-hero-page .finelevate360-hero-page-intro a:hover:after {
+    transform: translateX(5px);
+}
+
+.finelevate360-hero-page .finelevate360-hero-page-intro ol {
+    margin: 10px 0 0 0;
+    padding: 0 0 0 15px;
+}
+
+.finelevate360-hero-page .finelevate360-hero-page-intro ol li {
+    padding: 2px 0;
+    color: var(--text);
+}
+
+.finelevate360-hero-page .finelevate360-hero-page-image {
+    position: relative;
+    flex: 1 1 55%;
+    display: flex;
+    justify-content: center;
+}
+
+.finelevate360-hero-page .finelevate360-hero-page-image img {
+    display: block;
+    height: auto;
+}
+
+
+/* ─────────────────────────────────────────────────────────────
+   General card layout
+───────────────────────────────────────────────────────────── */
+
+.finelevate360-container {
+    position: relative;
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 15px;
+}
+
+.finelevate360-container .finelevate360-item {
+    position: relative;
+    padding: 30px 25px;
+    min-height: 340px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    flex-direction: column;
+    overflow: hidden;
+    border: 1px solid var(--border-color);
+    border-radius: calc(var(--border-radius) - 12px);
+    background-color: var(--white);
+    transition: box-shadow .2s, transform .2s;
+}
+
+.finelevate360-container .finelevate360-item:hover {
+    box-shadow: 4px 20px 16px 1px rgb(0 0 0 / 8%);
+    transform: translateY(-2px);
+}
+
+
+/* ─────────────────────────────────────────────────────────────
+   Partner card logo area
+───────────────────────────────────────────────────────────── */
+
+.finelevate360-container .finelevate360-item .finelevate360-item-image {
+    position: relative;
+    width: 100%;
+    height: 64px;
+    min-height: 64px;
+    max-height: 64px;
+    margin: 0 0 20px 0;
+    padding: 0 118px 0 0;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    overflow: hidden;
+    box-sizing: border-box;
+}
+
+.finelevate360-container .finelevate360-item .finelevate360-item-image img,
+.finelevate360-container .finelevate360-item img.finelevate360-item-img {
+    display: block;
+    width: auto !important;
+    height: auto !important;
+    max-width: 100% !important;
+    max-height: 50px !important;
+    object-fit: contain !important;
+    object-position: left center !important;
+    transition: filter 0.4s ease;
+}
+
+.finelevate360-container .finelevate360-item:hover .finelevate360-item-img {
+    filter: grayscale(0%);
+}
+
+
+/* ─────────────────────────────────────────────────────────────
+   Partner badges
+───────────────────────────────────────────────────────────── */
+
+.finelevate360-container .finelevate360-item .finelevate360-item-badge,
+.finelevate360-item-badge {
+    position: absolute;
+    top: 34px;
+    right: 24px;
+    z-index: 5;
+    width: auto;
+    min-width: 78px;
+    max-width: 104px;
+    height: 28px;
+    padding: 0 13px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 999px;
+    font-size: 12px;
+    font-weight: 700;
+    line-height: 1;
+    white-space: nowrap;
+    text-align: center;
+    box-sizing: border-box;
+}
+
+/* Gold / Златен */
+.finelevate360-container .finelevate360-item .finelevate360-item-badge.gold,
+.finelevate360-item-badge.gold {
+    color: #4a3400;
+    background-color: #fff3bf;
+    border: 1px solid #f2d36b;
+}
+
+/* Silver / Сребрен */
+.finelevate360-container .finelevate360-item .finelevate360-item-badge.silver,
+.finelevate360-item-badge.silver {
+    color: #475569;
+    background-color: #f1f5f9;
+    border: 1px solid #cbd5e1;
+}
+
+/* Honorary / Почесен */
+.finelevate360-container .finelevate360-item .finelevate360-item-badge.honorary,
+.finelevate360-item-badge.honorary {
+    color: #1f6fd1;
+    background-color: #eef6ff;
+    border: 1px solid #b8d8ff;
+}
+
+/* Fallback badge style if no badge class is set */
+.finelevate360-container .finelevate360-item .finelevate360-item-badge:not(.gold):not(.silver):not(.honorary),
+.finelevate360-item-badge:not(.gold):not(.silver):not(.honorary) {
+    color: #475569;
+    background-color: #f1f5f9;
+    border: 1px solid #cbd5e1;
+}
+
+
+/* ─────────────────────────────────────────────────────────────
+   Card content
+───────────────────────────────────────────────────────────── */
+
+.finelevate360-container .finelevate360-item .finelevate360-item-content {
+    position: relative;
+    margin-top: 0;
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    color: var(--text);
+}
+
+.finelevate360-container .finelevate360-item .finelevate360-item-content .finelevate360-item-title {
+    position: relative;
+    margin-top: 0;
+    margin-bottom: 8px;
+    font-size: 18px;
+    font-weight: bold;
+    color: var(--text);
+    line-height: 1.25;
+}
+
+.finelevate360-container .finelevate360-item .finelevate360-item-content .finelevate360-item-desc {
+    position: relative;
+    margin: 7px 0 10px;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 1.6;
+    color: var(--text);
+}
+
+.finelevate360-container .finelevate360-item .finelevate360-item-content .finelevate360-item-dots {
+    opacity: .4;
+}
+
+.finelevate360-container .finelevate360-item .finelevate360-item-content .finelevate360-item-info {
+    position: relative;
+    margin-bottom: 8px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+}
+
+.finelevate360-container .finelevate360-item .finelevate360-item-content .finelevate360-item-contact {
+    position: relative;
+    font-size: 13px;
+    line-height: 1.5;
+    color: var(--sky-blue);
+}
+
+
+/* ─────────────────────────────────────────────────────────────
+   Read more button
+───────────────────────────────────────────────────────────── */
+
+.finelevate360-container .finelevate360-item .finelevate360-item-content .finelevate360-read-more {
+    position: relative;
+    margin-top: auto;
+    padding: 0;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--bluey);
+    cursor: pointer;
+    background: none;
+    border: none;
+    transition: color .2s;
+}
+
+.finelevate360-read-more::after {
+    position: relative;
+    content: 'arrow_right_alt';
+    margin-top: 3px;
+    margin-left: 3px;
+    font-family: 'Material Symbols Outlined';
+    font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' -25, 'opsz' 20;
+    font-size: 13px;
+    text-transform: none;
+    line-height: 1;
+    vertical-align: middle;
+    -webkit-font-smoothing: antialiased;
+    transition: transform 0.25s ease;
+    transform: translateX(0);
+}
+
+.finelevate360-read-more:hover::after {
+    transform: translateX(3px);
+}
+
+
+/* ─────────────────────────────────────────────────────────────
+   Advisory cards
+───────────────────────────────────────────────────────────── */
+
+.finelevate360-container.finelevate360-advisory {
+    grid-template-columns: repeat(5, minmax(0, 1fr));
+}
+
+.finelevate360-container.finelevate360-advisory .finelevate360-item {
+    min-height: auto;
+}
+
+.finelevate360-container.finelevate360-advisory .finelevate360-item .finelevate360-item-image {
+    width: auto;
+    height: auto;
+    min-height: 0;
+    max-height: none;
+    margin: 0 auto;
+    padding: 0;
+    overflow: visible;
+}
+
+.finelevate360-container.finelevate360-advisory .finelevate360-item .finelevate360-item-img {
+    min-width: 120px;
+    min-height: 120px;
+    max-width: 120px !important;
+    max-height: 120px !important;
+    border-radius: 100%;
+}
+
+.finelevate360-container.finelevate360-advisory .finelevate360-item .finelevate360-item-content {
+    position: relative;
+    margin-top: 20px;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.finelevate360-container.finelevate360-advisory .finelevate360-item .finelevate360-item-content .finelevate360-item-title {
+    text-align: center;
+}
+
+.finelevate360-container.finelevate360-advisory .finelevate360-item .finelevate360-item-content .finelevate360-item-role {
+    position: relative;
+    margin-top: 15px;
+    font-size: 12px;
+    text-align: center;
+    color: var(--text);
+}
+
+.finelevate360-container.finelevate360-advisory .finelevate360-item .finelevate360-item-content .finelevate360-item-company {
+    position: relative;
+    margin-top: 5px;
+    font-size: 13px;
+    text-align: center;
+    color: var(--green);
+}
+
+.finelevate360-container.finelevate360-advisory .finelevate360-item .finelevate360-item-content .finelevate360-item-desc {
+    margin-top: 20px;
+    text-align: center;
+}
+
+
+/* ─────────────────────────────────────────────────────────────
+   Modal overlay
+───────────────────────────────────────────────────────────── */
+
+.f360-modal {
+    position: fixed;
+    inset: 0;
+    z-index: 9999;
+    background: rgba(0, 0, 0, 0);
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    pointer-events: none;
+    transition: background .35s ease;
+    visibility: hidden;
+}
+
+.f360-modal.is-open {
+    background: rgba(0, 0, 0, .45);
+    pointer-events: all;
+    visibility: visible;
+}
+
+.f360-modal__drawer {
+    position: relative;
+    padding: 28px 28px 40px;
+    width: 100%;
+    max-width: 640px;
+    max-height: 88vh;
+    transform: translateY(100%);
+    transition: transform .4s cubic-bezier(.32, 0, .67, 0);
+    background: #fff;
+    border-radius: 20px 20px 0 0;
+    overflow-y: auto;
+    box-shadow: 0 -8px 40px rgba(0, 0, 0, .15);
+}
+
+.f360-modal.is-open .f360-modal__drawer {
+    transform: translateY(0);
+    transition: transform .4s cubic-bezier(.33, 1, .68, 1);
+}
+
+.f360-modal__drawer::before {
+    content: '';
+    display: block;
+    width: 40px;
+    height: 4px;
+    background: rgba(0, 0, 0, .15);
+    border-radius: 999px;
+    margin: 0 auto 20px;
+}
+
+.f360-modal__close {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    color: var(--text);
+    background-color: rgba(0, 0, 0, .06);
+    border: none;
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    font-size: 14px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background .2s;
+}
+
+.f360-modal__close:hover {
+    color: var(--text);
+    background: rgba(0, 0, 0, .13);
+}
+
+.f360-modal__header {
+    position: relative;
+    margin-bottom: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.f360-modal__header .finelevate360-item-badge {
+    position: relative;
+    top: auto;
+    right: auto;
+}
+
+
+/* ─────────────────────────────────────────────────────────────
+   Modal content
+───────────────────────────────────────────────────────────── */
+
+.f360-modal__thumb {
+    position: relative;
+    margin-bottom: 30px;
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+}
+
+.f360-modal__thumb img {
+    max-height: 38px;
+    height: auto;
+    transition: filter 0.4s ease;
+}
+
+.f360-modal__hero {
+    position: relative;
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    gap: 10px;
+}
+
+.f360-modal__hero .f360-modal__header {
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+}
+
+.f360-modal__hero .f360-modal__header p {
+    margin: 0;
+    font-size: 13px;
+    color: var(--text);
+}
+
+.f360-modal__hero .f360-modal__header .f360-modal__title {
+    margin-bottom: 10px;
+}
+
+.f360-modal__hero .f360-modal__header .f360-modal__company {
+    font-weight: bold;
+}
+
+.f360-modal__hero .f360-modal__header .f360-modal__links {
+    margin-top: 10px;
+}
+
+.f360-modal--advisory .f360-modal__thumb img {
+    max-height: 170px;
+    border-radius: calc(var(--border-radius) - 28px);
+}
+
+.f360-modal__title {
+    position: relative;
+    font-size: 18px;
+    font-weight: bold;
+    color: var(--text);
+    line-height: 1.2;
+}
+
+.f360-modal__text {
+    position: relative;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 1.6;
+    color: var(--text);
+}
+
+.f360-modal__contact {
+    margin-top: 18px;
+    padding: 14px;
+    color: var(--black);
+    background: #f9fafb;
+    border-radius: 10px;
+    border: 1px solid var(--border-color);
+}
+
+.f360-modal__contact-label {
+    position: relative;
+    margin-bottom: 2px;
+    font-size: 12px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: .06em;
+}
+
+.f360-modal__contact-text {
+    position: relative;
+    color: var(--black);
+    font-size: 14px;
+}
+
+.f360-modal__links {
+    position: relative;
+    margin-top: 20px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: stretch;
+    gap: 10px;
+}
+
+.f360-modal__link {
+    position: relative;
+    padding: 6px 10px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 5px;
+    font-size: 12px;
+    font-weight: 600;
+    color: var(--black);
+    border-radius: calc(var(--border-radius));
+    background: #ffffff;
+    border: 1px solid #eaeaea;
+    text-decoration: none;
+    transition: background .2s;
+}
+
+.f360-modal__link:hover {
+    color: var(--black);
+    background: #fbfafa;
+}
+
+
+/* ─────────────────────────────────────────────────────────────
+   Pagination
+───────────────────────────────────────────────────────────── */
+
+.finelevate360-pagination {
+    margin-top: 28px;
+}
+
+
+/* ─────────────────────────────────────────────────────────────
+   Filters
+───────────────────────────────────────────────────────────── */
+
+.finelevate360-filters {
+    margin: 0 0 14px;
+}
+
+.finelevate360-filters__row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    align-items: center;
+}
+
+.finelevate360-filters__select {
+    padding: 6px 10px;
+    border-radius: 8px;
+    border: 1px solid rgba(0, 0, 0, .15);
+    font-size: 14px;
+}
+
+.finelevate360-filters__btn {
+    padding: 6px 14px;
+    border-radius: 8px;
+    border: 1px solid rgba(0, 0, 0, .15);
+    background: #0073aa;
+    color: #fff;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+.finelevate360-filters__btn:hover {
+    background: #005177;
+}
+
+.finelevate360-filters__reset {
+    font-size: 13px;
+    color: #0073aa;
+    text-decoration: none;
+}
+
+.finelevate360-help {
+    font-size: 12px;
+    color: #666;
+}
+
+body.f360-modal-open {
+    overflow: hidden;
+}
+
+
+/* ─────────────────────────────────────────────────────────────
+   Responsive
+───────────────────────────────────────────────────────────── */
+
+@media(max-width: 1240px) {
+    .finelevate360-container {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .finelevate360-container.finelevate360-advisory {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+}
+
+@media(max-width: 991px) {
+    .finelevate360-container {
+        grid-template-columns: repeat(1, minmax(0, 1fr));
+    }
+
+    .finelevate360-hero-page {
+        margin-top: 20px;
+    }
+
+    .finelevate360-hero-page .finelevate360-hero-page-image {
+        display: none;
+    }
+
+    .finelevate360-hero-page .finelevate360-hero-page-intro {
+        flex: 1 1 100%;
+        max-width: 100%;
+    }
+
+    .finelevate360-container.finelevate360-advisory {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+@media(max-width: 600px) {
+    .finelevate360-container .finelevate360-item {
+        min-height: auto;
+        padding: 26px 22px;
+    }
+
+    .finelevate360-container .finelevate360-item .finelevate360-item-image {
+        height: 56px;
+        min-height: 56px;
+        max-height: 56px;
+        padding-right: 98px;
+        margin-bottom: 18px;
+    }
+
+    .finelevate360-container .finelevate360-item .finelevate360-item-image img,
+    .finelevate360-container .finelevate360-item img.finelevate360-item-img {
+        max-height: 42px !important;
+    }
+
+    .finelevate360-container .finelevate360-item .finelevate360-item-badge,
+    .finelevate360-item-badge {
+        top: 28px;
+        right: 22px;
+        min-width: 70px;
+        max-width: 90px;
+        height: 26px;
+        padding: 0 10px;
+        font-size: 11px;
+    }
+
+    .finelevate360-container.finelevate360-advisory {
+        grid-template-columns: repeat(1, minmax(0, 1fr));
+    }
+
+    .finelevate360-container.finelevate360-advisory .finelevate360-item .finelevate360-item-image {
+        width: auto;
+        height: auto;
+        min-height: 0;
+        max-height: none;
+        padding: 0;
+    }
+}
+
+/* ── Homepage hero mobile overflow fix ───────────────────────────── */
+
+html,
+body {
+    max-width: 100%;
+    overflow-x: hidden;
+}
+
+.finelevate-hero,
+.finelevate-hero-container,
+.finelevate-hero-intro {
+    max-width: 100%;
+    overflow-x: hidden;
+}
+
+.finelevate-hero-intro h1 {
+    max-width: 100%;
+    overflow-wrap: anywhere;
+    word-break: break-word;
+    hyphens: auto;
+}
+
+@media (max-width: 600px) {
+    .finelevate-hero-container {
+        overflow-x: hidden !important;
+    }
+
+    .finelevate-hero {
+        max-width: 100% !important;
+        overflow-x: hidden !important;
+    }
+
+    .finelevate-hero-intro {
+        width: 100% !important;
+        max-width: 100% !important;
+        min-width: 0 !important;
+        overflow-x: hidden !important;
+        box-sizing: border-box !important;
+    }
+
+    .finelevate-hero-intro h1 {
+        width: 100% !important;
+        max-width: 100% !important;
+        min-width: 0 !important;
+        font-size: clamp(30px, 8vw, 38px) !important;
+        line-height: 1.13 !important;
+        letter-spacing: -0.025em !important;
+        overflow-wrap: anywhere !important;
+        word-break: break-word !important;
+        hyphens: auto !important;
+        white-space: normal !important;
+        box-sizing: border-box !important;
+    }
+
+    .finelevate-hero-intro h1 strong {
+        overflow-wrap: anywhere !important;
+        word-break: break-word !important;
+        white-space: normal !important;
+    }
+}

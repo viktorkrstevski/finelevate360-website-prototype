@@ -1,0 +1,83 @@
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Finelevate - Title/Text/Image Widget\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-03-12 18:45+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: \n"
+"Language: \n"
+"Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Loco https://localise.biz/\n"
+"X-Loco-Version: 2.8.2; wp-6.9.4; php-8.2.27\n"
+"X-Domain: finelevate-tti-widget"
+
+#: finelevate-title-text-image-widget.php:208
+msgid "Custom CSS class(es):"
+msgstr ""
+
+#. Author of the plugin
+msgid "Finelevate"
+msgstr ""
+
+#. Name of the plugin
+msgid "Finelevate - Title/Text/Image Widget"
+msgstr ""
+
+#: finelevate-title-text-image-widget.php:218
+msgid "Image:"
+msgstr ""
+
+#: finelevate-title-text-image-widget.php:160
+msgid "Link to (Page/Post):"
+msgstr ""
+
+#: finelevate-title-text-image-widget.php:174
+msgid "Pages"
+msgstr ""
+
+#: finelevate-title-text-image-widget.php:187
+msgid "Posts"
+msgstr ""
+
+#: finelevate-title-text-image-widget.php:233
+msgid "Remove"
+msgstr ""
+
+#: finelevate-title-text-image-widget.php:202
+msgid "Select a published page/post. (Shows up to 200 items.)"
+msgstr ""
+
+#: finelevate-title-text-image-widget.php:142
+msgid "Text:"
+msgstr ""
+
+#: finelevate-title-text-image-widget.php:18
+msgid "Title / Text / Image (Custom)"
+msgstr ""
+
+#: finelevate-title-text-image-widget.php:133
+msgid "Title:"
+msgstr ""
+
+#: finelevate-title-text-image-widget.php:231
+msgid "Upload / Select Image"
+msgstr ""
+
+#. Description of the plugin
+msgid ""
+"Widget with Title, Text, Image (media upload), Link, and custom class "
+"injected into before_widget."
+msgstr ""
+
+#: finelevate-title-text-image-widget.php:19
+msgid "Widget with title, text, image upload, link, and custom class."
+msgstr ""
+
+#: finelevate-title-text-image-widget.php:167
+msgid "— No link —"
+msgstr ""

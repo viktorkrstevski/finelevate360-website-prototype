@@ -1,0 +1,322 @@
+.finelevate-awards-wrap {
+	width: 100%;
+}
+
+.finelevate-awards-container {
+	margin: 0 auto;
+}
+
+/* ── HERO ──────────────────────────────────────────────────────────────── */
+.finelevate-awards-hero {
+	padding: 64px 0 48px;
+	text-align: left;
+}
+
+.finelevate-awards-eyebrow {
+	font-size: .75rem;
+	letter-spacing: .18em;
+	text-transform: uppercase;
+	color: var(--green);
+	margin: 0 0 16px;
+	font-weight: 600;
+}
+
+.finelevate-awards-hero__title {
+	font-size: 44px;
+	font-weight: 700;
+	line-height: 1.2;
+	margin: 0 0 20px;
+	color: var(--text);
+}
+
+.finelevate-awards-hero__desc {
+	max-width: 680px;
+	/* margin: 0 auto 20px; */
+	font-size: 1.05rem;
+	line-height: 1.7;
+	color: #444;
+}
+
+.finelevate-awards-hero__note {
+	display: inline-block;
+	background: #cfe2ff;
+	border: 1px solid #9ec5fe;
+	border-radius: 6px;
+	padding: 8px 18px;
+	font-size: .9rem;
+	color: #052c65;
+	margin: 0;
+}
+
+/* ── SPONSOR ───────────────────────────────────────────────────────────── */
+.finelevate-awards-sponsor {
+	background: #f8f9fa;
+	border-top: 1px solid #e9ecef;
+	border-bottom: 1px solid #e9ecef;
+	padding: 28px 0;
+	text-align: center;
+}
+
+.finelevate-awards-sponsor__label {
+	font-size: .7rem;
+	letter-spacing: .14em;
+	text-transform: uppercase;
+	color: #888;
+	margin: 0 0 12px;
+}
+
+.finelevate-awards-sponsor__body {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	gap: 14px;
+	flex-wrap: wrap;
+}
+
+.finelevate-awards-sponsor__logo {
+	max-height: 68px;
+	width: auto;
+}
+
+.finelevate-awards-sponsor__text {
+	color: #555;
+	font-size: 1rem;
+}
+
+/* ── PILLARS ───────────────────────────────────────────────────────────── */
+.finelevate-awards-pillars {
+	padding: 56px 0;
+}
+
+.finelevate-awards-pillar {
+	border: 1px solid #e2e5ea;
+	border-radius: 12px;
+	overflow: hidden;
+	margin-bottom: 48px;
+	background: #fff;
+	box-shadow: 0 2px 8px rgba(0,0,0,.06);
+}
+
+.finelevate-awards-pillar:last-child {
+	margin-bottom: 0;
+}
+
+.finelevate-awards-pillar__header {
+	padding: 36px 40px 28px;
+	border-bottom: 1px solid #e2e5ea;
+	background: #fafbfc;
+}
+
+.finelevate-awards-pillar__badge {
+	height: 120px;
+	width: auto;
+	margin-bottom: 12px;
+	display: block;
+}
+
+.finelevate-awards-pillar__title {
+	font-size: 1.5rem;
+	font-weight: 700;
+	color: #1a1a2e;
+	margin: 0 0 10px;
+}
+
+.finelevate-awards-pillar__desc {
+	font-size: .95rem;
+	color: #555;
+	line-height: 1.65;
+	margin: 0;
+	max-width: 640px;
+}
+
+/* ── AWARDS GRID ───────────────────────────────────────────────────────── */
+.finelevate-awards-pillar__awards {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+}
+
+.finelevate-awards-award {
+	padding: 28px 32px;
+	border-right: 1px solid #e2e5ea;
+	transition: background .2s;
+}
+
+.finelevate-awards-award:last-child {
+	border-right: none;
+}
+
+.finelevate-awards-award:hover {
+	background: #f8f9fc;
+}
+
+.finelevate-awards-award__badge {
+	height: 68px;
+	width: auto;
+	display: block;
+	margin-bottom: 14px;
+}
+
+.finelevate-awards-award__title {
+	font-size: 1.05rem;
+	font-weight: 600;
+	color: #1a1a2e;
+	margin: 0 0 8px;
+}
+
+.finelevate-awards-award__desc {
+	font-size: .88rem;
+	color: #666;
+	line-height: 1.6;
+	margin: 0;
+}
+
+.finelevate-awards-award__winner-box {
+	display: inline-flex;
+	align-items: center;
+	gap: 8px;
+	background-color: #0680FF;
+	border: 1px solid #558bff;
+	border-radius: 6px;
+	padding: 5px 12px;
+	margin-top: 14px;
+}
+
+.finelevate-awards-award__winner-label {
+	font-size: .68rem;
+	text-transform: uppercase;
+	letter-spacing: .1em;
+	color: #fff;
+	font-weight: 700;
+}
+
+.finelevate-awards-award__winner-name {
+	font-size: .9rem;
+	font-weight: 600;
+	color: #fff;
+}
+
+/* ── WINNERS NOTE ──────────────────────────────────────────────────────── */
+.finelevate-awards-winners-note {
+	padding: 0 0 48px;
+	text-align: center;
+}
+
+.finelevate-awards-winners-note p {
+	color: #888;
+	font-style: italic;
+	margin: 0;
+}
+
+/* ── METHODOLOGY ───────────────────────────────────────────────────────── */
+.finelevate-awards-methodology {
+	background: #f8f9fa;
+	border-top: 1px solid #e9ecef;
+	padding: 64px 0 72px;
+}
+
+.finelevate-awards-methodology__title {
+	font-size: 2rem;
+	font-weight: 700;
+	color: #1a1a2e;
+	margin: 0 0 10px;
+	text-align: center;
+}
+
+.finelevate-awards-methodology__sub {
+	text-align: center;
+	color: #555;
+	font-size: 1rem;
+	margin: 0 0 40px;
+}
+
+/* Pipeline */
+.finelevate-awards-pipeline {
+	display: flex;
+	margin-bottom: 48px;
+	border: 1px solid #dde1e7;
+	border-radius: 8px;
+	overflow: hidden;
+	overflow-x: auto;
+}
+
+.finelevate-awards-pipeline__step {
+	flex: 1;
+	min-width: 110px;
+	padding: 16px 14px;
+	text-align: center;
+	font-size: .85rem;
+	font-weight: 500;
+	color: #333;
+	background: #fff;
+	border-right: 1px solid #dde1e7;
+	line-height: 1.35;
+}
+
+.finelevate-awards-pipeline__step:last-child {
+	border-right: none;
+}
+
+/* Methodology blocks */
+.finelevate-awards-meth-blocks {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+	gap: 24px;
+}
+
+.finelevate-awards-meth-block {
+	background: #fff;
+	border: 1px solid #e2e5ea;
+	border-radius: 10px;
+	padding: 28px 28px 24px;
+}
+
+.finelevate-awards-meth-block__title {
+	font-size: 1.05rem;
+	font-weight: 700;
+	color: #1a1a2e;
+	margin: 0 0 10px;
+}
+
+.finelevate-awards-meth-block__desc {
+	font-size: .9rem;
+	color: #555;
+	line-height: 1.65;
+	margin: 0;
+}
+
+/* ── Responsive ────────────────────────────────────────────────────────── */
+@media ( max-width: 768px ) {
+	.finelevate-awards-hero {
+		padding: 40px 0 32px;
+	}
+
+	.finelevate-awards-pillar__header {
+		padding: 24px 20px 20px;
+	}
+
+	.finelevate-awards-pillar__awards {
+		grid-template-columns: 1fr;
+	}
+
+	.finelevate-awards-award {
+		border-right: none;
+		border-bottom: 1px solid #e2e5ea;
+	}
+
+	.finelevate-awards-award:last-child {
+		border-bottom: none;
+	}
+
+	.finelevate-awards-pipeline {
+		flex-direction: column;
+	}
+
+	.finelevate-awards-pipeline__step {
+		border-right: none;
+		border-bottom: 1px solid #dde1e7;
+	}
+
+	.finelevate-awards-pipeline__step:last-child {
+		border-bottom: none;
+	}
+}
