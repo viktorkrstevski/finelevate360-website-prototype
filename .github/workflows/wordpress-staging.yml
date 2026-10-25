@@ -35,7 +35,7 @@ jobs:
         with:
           python-version: "3.12"
       - name: Lint PHP templates
-        run: find wordpress/themes/finelevate-advisory wordpress/migration -name '*.php' -print0 | xargs -0 -n1 php -l
+        run: find wordpress/themes/finelevate-advisory wordpress/migration wordpress/plugins -name '*.php' -print0 | xargs -0 -n1 php -l
       - name: Check browser JavaScript
         run: node --check wordpress/themes/finelevate-advisory/assets/site.js
       - name: Test shared routes and independent language/country selection
@@ -43,6 +43,8 @@ jobs:
           php ci/test_routes.php
           php ci/test_event.php
           php ci/test_directory_data.php
+          php ci/test_migration_guard.php
+          php ci/test_migration_importer.php
       - name: Test artifact integrity, staging scope and rollback
         run: python -m unittest discover -s ci -p 'test_*.py' -v
       - name: Package theme from this exact commit

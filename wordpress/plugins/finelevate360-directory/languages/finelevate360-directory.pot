@@ -1,0 +1,31 @@
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Finelevate360 Directory (Partners, Advisory Board, "
+"Reports)\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-03-18 23:23+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: \n"
+"Language: \n"
+"Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Loco https://localise.biz/\n"
+"X-Loco-Version: 2.8.3; wp-6.9.4; php-8.2.27\n"
+"X-Domain: finelevate360-directory"
+
+#. Description of the plugin
+msgid ""
+"CPTs + meta fields + shortcodes + template overrides + admin columns/search."
+msgstr ""
+
+#. Author of the plugin
+msgid "Finelevate360"
+msgstr ""
+
+#. Name of the plugin
+msgid "Finelevate360 Directory (Partners, Advisory Board, Reports)"
+msgstr ""
