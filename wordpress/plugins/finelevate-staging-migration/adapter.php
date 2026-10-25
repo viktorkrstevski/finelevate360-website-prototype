@@ -20,7 +20,7 @@ add_filter('the_content',function($content){
     if(get_post_type($id)==='finelev360_item'&&function_exists('finelevate360_render_card'))return $content.finelevate360_render_card($id,FINELEVATE360_CPT_ITEM);
     return $content;
 },30);
-add_action('wp_enqueue_scripts',function(){if(get_stylesheet()==='finelevate-advisory'&&is_singular()){wp_enqueue_style('finelevate-migrated-map',plugins_url('assets/map.css',__FILE__),[],'0.3.1');wp_enqueue_script('finelevate-migrated-map',plugins_url('assets/map.js',__FILE__),[],'0.3.1',true);}},30);
+add_action('wp_enqueue_scripts',function(){if(get_stylesheet()==='finelevate-advisory'&&is_singular()){wp_enqueue_style('finelevate-migrated-map',plugins_url('assets/map.css',__FILE__),[],'0.3.2');wp_enqueue_script('finelevate-migrated-map',plugins_url('assets/map.js',__FILE__),[],'0.3.2',true);}},30);
 // Keep language changes independent of selected map filters, translating ID references.
 add_filter('pll_the_language_link',function($url,$slug){
     $filters=array_intersect_key(wp_unslash($_GET),array_flip(['country','country_id','country_slug','f360_cat','f360_col','f360_attr','channel','segment','sector']));

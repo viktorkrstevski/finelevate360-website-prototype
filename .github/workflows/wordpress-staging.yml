@@ -40,6 +40,7 @@ jobs:
         run: |
           node --check wordpress/themes/finelevate-advisory/assets/site.js
           node --check wordpress/plugins/finelevate-staging-migration/assets/map.js
+          node --check ci/test_mobile_filter_drawer.js
       - name: Test shared routes and independent language/country selection
         run: |
           php ci/test_routes.php
