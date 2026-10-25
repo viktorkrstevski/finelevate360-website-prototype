@@ -71,6 +71,7 @@ foreach([[2488,'https://stg.finelevate360.com/',false],[11,'https://stg.fineleva
   score_fixture();$r=score_request($id,$incoming+['rank_math_description'=>'ordinary'],$marked);next_publication_request();$origin=$host;
   same(finelevate360_regional_preserve_rankmath_scores($r->get_param('meta'),$r),$r->get_param('meta'));
   rankmath_rest_callback($r);same(repair_state(),$ordinary_expected);
+  same($meta[$id]['rank_math_seo_score'],'6');same($meta[$id]['rank_math_description'],'ordinary');
 }
 
 function adriatic_repair_fixture() {
