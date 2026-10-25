@@ -42,6 +42,7 @@ jobs:
         run: |
           php ci/test_routes.php
           php ci/test_event.php
+          php ci/test_presentation.php
       - name: Test artifact integrity, staging scope and rollback
         run: python -m unittest discover -s ci -p 'test_*.py' -v
       - name: Package theme from this exact commit

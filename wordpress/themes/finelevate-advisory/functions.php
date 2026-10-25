@@ -34,6 +34,7 @@ function fe_staging() {
 
 require get_template_directory() . '/inc/routes.php';
 require get_template_directory() . '/inc/event.php';
+require get_template_directory() . '/inc/presentation.php';
 function fe_translations() {
     static $strings;
     if (!isset($strings)) { $strings = json_decode(file_get_contents(__DIR__ . '/inc/translations.json'), true); }
