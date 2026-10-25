@@ -30,10 +30,21 @@
   const track = viewport.querySelector('.logo-track');
   const sequence = track.querySelector('.logo-sequence');
   const reduced = window.matchMedia('(prefers-reduced-motion: reduce)');
+  const help = document.getElementById('partner-motion-help');
   let copy, frame = 0, cycle = 0, position = 0, applied = viewport.scrollLeft;
-  let lastTime = 0, resumeAt = 0, pointerDown = false, hovered = false;
+  let lastTime = 0, userPaused = false, pointerDown = false, hovered = false;
+  const updateStatus = () => {
+    if (!help) return;
+    const message = help.dataset[reduced.matches ? 'reduced' : userPaused ? 'paused' : 'enabled'];
+    if (help.textContent !== message) help.textContent = message;
+  };
+  const setUserPaused = value => {
+    userPaused = value;
+    lastTime = 0;
+    updateStatus();
+  };
   const pauseManual = () => {
-    resumeAt = performance.now() + 6000;
+    setUserPaused(true);
     position = viewport.scrollLeft;
     lastTime = 0;
   };
@@ -44,7 +55,7 @@
     lastTime = 0;
   };
   const tick = now => {
-    const paused = pointerDown || hovered || banner.contains(document.activeElement) || document.hidden || now < resumeAt;
+    const paused = pointerDown || hovered || banner.contains(document.activeElement) || document.hidden || userPaused;
     if (paused) {
       lastTime = 0;
     } else if (cycle) {
@@ -62,12 +73,15 @@
   const updateMotion = () => {
     cancelAnimationFrame(frame);
     lastTime = 0;
+    updateStatus();
     if (reduced.matches) {
+      viewport.removeAttribute('aria-keyshortcuts');
       if (copy) copy.remove();
       copy = null;
       viewport.scrollLeft = applied = position = 0;
       return;
     }
+    viewport.setAttribute('aria-keyshortcuts', 'Space');
     if (!copy) {
       copy = sequence.cloneNode(true);
       copy.setAttribute('aria-hidden', 'true');
@@ -80,13 +94,18 @@
   };
   banner.addEventListener('pointerenter', event => { if (event.pointerType !== 'touch') hovered = true; });
   banner.addEventListener('pointerleave', () => { hovered = false; });
+  viewport.addEventListener('keydown', event => {
+    if (event.key !== ' ' || event.altKey || event.ctrlKey || event.metaKey || reduced.matches) return;
+    event.preventDefault();
+    if (!event.repeat) setUserPaused(!userPaused);
+  });
   viewport.addEventListener('pointerdown', () => { pointerDown = true; pauseManual(); }, { passive: true });
-  const releasePointer = () => { if (pointerDown) { pointerDown = false; pauseManual(); } };
+  const releasePointer = () => { if (pointerDown) { pointerDown = false; lastTime = 0; } };
   window.addEventListener('pointerup', releasePointer, { passive: true });
   window.addEventListener('pointercancel', releasePointer, { passive: true });
   viewport.addEventListener('wheel', pauseManual, { passive: true });
   viewport.addEventListener('scroll', () => {
-    // Native scrolling and momentum extend the interruption; our own frames do not.
+    // Native touch/scrolling pauses persistently; our own frames do not.
     if (Math.abs(viewport.scrollLeft - applied) > 1) pauseManual();
     applied = viewport.scrollLeft;
   }, { passive: true });

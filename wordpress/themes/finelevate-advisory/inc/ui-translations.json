@@ -49,7 +49,11 @@
     "Finelevate and FEIT representatives at the signing of their cooperation agreement": "\u041f\u0440\u0435\u0442\u0441\u0442\u0430\u0432\u043d\u0438\u0446\u0438 \u043d\u0430 Finelevate \u0438 \u0424\u0415\u0418\u0422 \u043d\u0430 \u043f\u043e\u0442\u043f\u0438\u0448\u0443\u0432\u0430\u045a\u0435\u0442\u043e \u043d\u0430 \u0434\u043e\u0433\u043e\u0432\u043e\u0440\u043e\u0442 \u0437\u0430 \u0441\u043e\u0440\u0430\u0431\u043e\u0442\u043a\u0430",
     "Regional map highlighting Slovenia, Croatia, Serbia, Montenegro and North Macedonia. Illustration only.": "\u0420\u0435\u0433\u0438\u043e\u043d\u0430\u043b\u043d\u0430 \u043c\u0430\u043f\u0430 \u0441\u043e \u043e\u0437\u043d\u0430\u0447\u0435\u043d\u0438 \u0421\u043b\u043e\u0432\u0435\u043d\u0438\u0458\u0430, \u0425\u0440\u0432\u0430\u0442\u0441\u043a\u0430, \u0421\u0440\u0431\u0438\u0458\u0430, \u0426\u0440\u043d\u0430 \u0413\u043e\u0440\u0430 \u0438 \u0421\u0435\u0432\u0435\u0440\u043d\u0430 \u041c\u0430\u043a\u0435\u0434\u043e\u043d\u0438\u0458\u0430. \u0421\u0430\u043c\u043e \u0438\u043b\u0443\u0441\u0442\u0440\u0430\u0446\u0438\u0458\u0430.",
     "LinkedIn": "LinkedIn",
-    "Instagram": "Instagram"
+    "Instagram": "Instagram",
+    "Motion enabled. Space pauses; touch or scroll pauses until resumed.": "\u0414\u0432\u0438\u0436\u0435\u045a\u0435\u0442\u043e \u0435 \u0432\u043a\u043b\u0443\u0447\u0435\u043d\u043e. Space \u0433\u043e \u043f\u0430\u0443\u0437\u0438\u0440\u0430; \u0434\u043e\u043f\u0438\u0440 \u0438\u043b\u0438 \u043b\u0438\u0437\u0433\u0430\u045a\u0435 \u0433\u043e \u043f\u0430\u0443\u0437\u0438\u0440\u0430 \u0434\u043e \u043f\u0440\u043e\u0434\u043e\u043b\u0436\u0443\u0432\u0430\u045a\u0435.",
+    "Motion paused. Press Space to resume after leaving the banner.": "\u0414\u0432\u0438\u0436\u0435\u045a\u0435\u0442\u043e \u0435 \u043f\u0430\u0443\u0437\u0438\u0440\u0430\u043d\u043e. \u041f\u0440\u0438\u0442\u0438\u0441\u043d\u0435\u0442\u0435 Space \u0437\u0430 \u0434\u0430 \u043f\u0440\u043e\u0434\u043e\u043b\u0436\u0438 \u043e\u0442\u043a\u0430\u043a\u043e \u045c\u0435 \u0433\u043e \u043d\u0430\u043f\u0443\u0448\u0442\u0438\u0442\u0435 \u0431\u0430\u043d\u0435\u0440\u043e\u0442.",
+    "Motion off: reduced motion preference. Scroll to explore partners.": "\u0414\u0432\u0438\u0436\u0435\u045a\u0435\u0442\u043e \u0435 \u0438\u0441\u043a\u043b\u0443\u0447\u0435\u043d\u043e \u043f\u043e\u0440\u0430\u0434\u0438 \u043f\u043e\u0441\u0442\u0430\u0432\u043a\u0430\u0442\u0430 \u0437\u0430 \u043d\u0430\u043c\u0430\u043b\u0435\u043d\u043e \u0434\u0432\u0438\u0436\u0435\u045a\u0435. \u041b\u0438\u0437\u0433\u0430\u0458\u0442\u0435 \u0437\u0430 \u0434\u0430 \u0433\u0438 \u0440\u0430\u0437\u0433\u043b\u0435\u0434\u0430\u0442\u0435 \u043f\u0430\u0440\u0442\u043d\u0435\u0440\u0438\u0442\u0435.",
+    "Scroll to explore partners.": "\u041b\u0438\u0437\u0433\u0430\u0458\u0442\u0435 \u0437\u0430 \u0434\u0430 \u0433\u0438 \u0440\u0430\u0437\u0433\u043b\u0435\u0434\u0430\u0442\u0435 \u043f\u0430\u0440\u0442\u043d\u0435\u0440\u0438\u0442\u0435."
   },
   "sr": {
     "Banking Digital Map": "Digitalna mapa \u2013 Banke",
@@ -101,7 +105,11 @@
     "Regional map highlighting Slovenia, Croatia, Serbia, Montenegro and North Macedonia. Illustration only.": "Regionalna mapa sa ozna\u010denim Slovenijom, Hrvatskom, Srbijom, Crnom Gorom i Severnom Makedonijom. Samo ilustracija.",
     "Digital Summit 2026": "Digital Summit 2026",
     "LinkedIn": "LinkedIn",
-    "Instagram": "Instagram"
+    "Instagram": "Instagram",
+    "Motion enabled. Space pauses; touch or scroll pauses until resumed.": "Kretanje je uklju\u010deno. Space ga pauzira; dodir ili pomeranje ga pauzira do nastavka.",
+    "Motion paused. Press Space to resume after leaving the banner.": "Kretanje je pauzirano. Pritisnite Space da se nastavi kada napustite baner.",
+    "Motion off: reduced motion preference. Scroll to explore partners.": "Kretanje je isklju\u010deno zbog pode\u0161avanja smanjenog kretanja. Pomerajte za pregled partnera.",
+    "Scroll to explore partners.": "Pomerajte za pregled partnera."
   },
   "hr": {
     "Banking Digital Map": "Digitalna mapa \u2013 Banke",
@@ -153,7 +161,11 @@
     "Regional map highlighting Slovenia, Croatia, Serbia, Montenegro and North Macedonia. Illustration only.": "Regionalna karta s ozna\u010denim Slovenijom, Hrvatskom, Srbijom, Crnom Gorom i Sjevernom Makedonijom. Samo ilustracija.",
     "Digital Summit 2026": "Digital Summit 2026",
     "LinkedIn": "LinkedIn",
-    "Instagram": "Instagram"
+    "Instagram": "Instagram",
+    "Motion enabled. Space pauses; touch or scroll pauses until resumed.": "Kretanje je uklju\u010deno. Space ga pauzira; dodir ili pomicanje ga pauzira do nastavka.",
+    "Motion paused. Press Space to resume after leaving the banner.": "Kretanje je pauzirano. Pritisnite Space za nastavak nakon napu\u0161tanja bannera.",
+    "Motion off: reduced motion preference. Scroll to explore partners.": "Kretanje je isklju\u010deno zbog postavke smanjenog kretanja. Pomi\u010dite za pregled partnera.",
+    "Scroll to explore partners.": "Pomi\u010dite za pregled partnera."
   },
   "sl": {
     "Banking Digital Map": "Digitalni zemljevid \u2013 Banke",
@@ -205,7 +217,11 @@
     "Regional map highlighting Slovenia, Croatia, Serbia, Montenegro and North Macedonia. Illustration only.": "Regionalni zemljevid s poudarjenimi Slovenijo, Hrva\u0161ko, Srbijo, \u010crno goro in Severno Makedonijo. Zgolj ilustracija.",
     "Digital Summit 2026": "Digital Summit 2026",
     "LinkedIn": "LinkedIn",
-    "Instagram": "Instagram"
+    "Instagram": "Instagram",
+    "Motion enabled. Space pauses; touch or scroll pauses until resumed.": "Gibanje je vklju\u010deno. Space ga ustavi; dotik ali drsenje ga ustavi do nadaljevanja.",
+    "Motion paused. Press Space to resume after leaving the banner.": "Gibanje je ustavljeno. Pritisnite Space za nadaljevanje po odhodu iz pasice.",
+    "Motion off: reduced motion preference. Scroll to explore partners.": "Gibanje je izklju\u010deno zaradi nastavitve zmanj\u0161anega gibanja. Podrsajte za ogled partnerjev.",
+    "Scroll to explore partners.": "Podrsajte za ogled partnerjev."
   },
   "me": {
     "Banking Digital Map": "Digitalna mapa \u2013 Banke",
@@ -257,6 +273,10 @@
     "Regional map highlighting Slovenia, Croatia, Serbia, Montenegro and North Macedonia. Illustration only.": "Regionalna mapa sa ozna\u010denim Slovenijom, Hrvatskom, Srbijom, Crnom Gorom i Sjevernom Makedonijom. Samo ilustracija.",
     "Digital Summit 2026": "Digital Summit 2026",
     "LinkedIn": "LinkedIn",
-    "Instagram": "Instagram"
+    "Instagram": "Instagram",
+    "Motion enabled. Space pauses; touch or scroll pauses until resumed.": "Kretanje je uklju\u010deno. Space ga pauzira; dodir ili pomjeranje ga pauzira do nastavka.",
+    "Motion paused. Press Space to resume after leaving the banner.": "Kretanje je pauzirano. Pritisnite Space da se nastavi kada napustite baner.",
+    "Motion off: reduced motion preference. Scroll to explore partners.": "Kretanje je isklju\u010deno zbog pode\u0161avanja smanjenog kretanja. Pomjerajte za pregled partnera.",
+    "Scroll to explore partners.": "Pomjerajte za pregled partnera."
   }
 }
