@@ -15,12 +15,12 @@ add_filter('the_content',function($content){
         return '<div class="finelevate-map-page"><div class="finelevate-header-item-count">'.$counts.'</div><div class="finelevate-map-content">'.$content.'</div><section id="finelevate-map-interactive" class="finelevate-map-interactive">'.do_shortcode($shortcode).'</section></div>';
     }
     $intro=fe_migration_listing_intro($content,$id);
-    if($group==='partners'&&shortcode_exists('finelevate360_partners'))return $intro.do_shortcode('[finelevate360_partners count="1000" orderby="menu_order" order="ASC"]');
-    if($group==='advisory'&&shortcode_exists('finelevate360_advisory'))return $intro.do_shortcode('[finelevate360_advisory count="1000" orderby="menu_order" order="ASC"]');
+    if($group==='partners'&&shortcode_exists('finelevate360_partners'))return $intro.'<div class="fe-native-profiles fe-native-profiles--partners">'.do_shortcode('[finelevate360_partners count="1000" orderby="menu_order" order="ASC"]').'</div>';
+    if($group==='advisory'&&shortcode_exists('finelevate360_advisory'))return $intro.'<div class="fe-native-profiles fe-native-profiles--advisory">'.do_shortcode('[finelevate360_advisory count="1000" orderby="menu_order" order="ASC"]').'</div>';
     if(get_post_type($id)==='finelev360_item'&&function_exists('finelevate360_render_card'))return $content.finelevate360_render_card($id,FINELEVATE360_CPT_ITEM);
     return $content;
 },30);
-add_action('wp_enqueue_scripts',function(){if(get_stylesheet()==='finelevate-advisory'&&is_singular()){wp_enqueue_style('finelevate-migrated-map',plugins_url('assets/map.css',__FILE__),[],'0.2.3');wp_enqueue_script('finelevate-migrated-map',plugins_url('assets/map.js',__FILE__),[],'0.2.3',true);}},30);
+add_action('wp_enqueue_scripts',function(){if(get_stylesheet()==='finelevate-advisory'&&is_singular()){wp_enqueue_style('finelevate-migrated-map',plugins_url('assets/map.css',__FILE__),[],'0.3.0');wp_enqueue_script('finelevate-migrated-map',plugins_url('assets/map.js',__FILE__),[],'0.3.0',true);}},30);
 // Keep language changes independent of selected map filters, translating ID references.
 add_filter('pll_the_language_link',function($url,$slug){
     $filters=array_intersect_key(wp_unslash($_GET),array_flip(['country','country_id','country_slug','f360_cat','f360_col','f360_attr','channel','segment','sector']));

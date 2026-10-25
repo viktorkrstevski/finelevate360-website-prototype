@@ -474,3 +474,15 @@
 .finelevate-map-page,.f360-modal{--black:var(--ink,#1a272e);--white:#fff;--border-radius:34px}
 .finelevate-filter-close{border:0;background:transparent;color:#1a272e;min-height:44px}
 @media(max-width:782px){body.admin-bar .finelevate-filter-container .finelevate-filters{top:46px;height:calc(100dvh - 46px)}}
+
+/* Native editable profile cards follow the redesign's responsive grid. */
+.fe-native-profiles>.finelevate-filter-map-container{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:32px;margin-block:32px}
+.fe-native-profiles .finelevate-filter-map-item{min-width:0;margin:0;padding:24px;border:1px solid var(--line,#eaeaea);border-radius:12px;background:#fff}
+.fe-native-profiles .finelevate-filter-map-item-media{height:120px;display:flex;align-items:center}
+.fe-native-profiles .finelevate-filter-map-item-media img{width:100%;max-height:110px;object-fit:contain;object-position:left center}
+.fe-native-profiles--advisory .finelevate-filter-map-item-media{height:210px}
+.fe-native-profiles--advisory .finelevate-filter-map-item-media img{height:210px;width:190px;max-height:210px;object-fit:cover;object-position:top;border-radius:8px}
+.fe-native-profiles .finelevate-filter-map-item-content h3{font-size:21px;line-height:1.25;margin-block:22px 14px}
+.fe-native-profiles .finelevate-filter-map-item-desc{font-size:15px;overflow-wrap:anywhere}
+@media(max-width:1059px){.fe-native-profiles>.finelevate-filter-map-container{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:600px){.fe-native-profiles>.finelevate-filter-map-container{grid-template-columns:1fr;gap:24px}}

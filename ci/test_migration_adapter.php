@@ -23,9 +23,9 @@ function wp_trim_words($text,$count){return implode(' ',array_slice(explode(' ',
 function esc_html($text){return htmlspecialchars($text,ENT_QUOTES,'UTF-8');}
 require __DIR__.'/../wordpress/plugins/finelevate-staging-migration/adapter.php';
 $render=$filters['the_content'];
-if($render('<p>Advisory introduction</p>')!=='<p>Advisory introduction</p><div>Native profile grid</div>')throw new Exception('Missing excerpt fallback or native profiles.');
+if($render('<p>Advisory introduction</p>')!=='<p>Advisory introduction</p><div class="fe-native-profiles fe-native-profiles--advisory"><div>Native profile grid</div></div>')throw new Exception('Missing excerpt fallback or native profiles.');
 $excerpt='Saved introduction';
-if($render('<p>Page content</p>')!=='<p>Saved introduction</p><div>Native profile grid</div>')throw new Exception('Saved excerpt not preserved.');
+if($render('<p>Page content</p>')!=='<p>Saved introduction</p><div class="fe-native-profiles fe-native-profiles--advisory"><div>Native profile grid</div></div>')throw new Exception('Saved excerpt not preserved.');
 if(class_exists('DOMDocument')){
     $html='<div class="finelevate360-hero-page-intro"><p>Full introduction</p><ul><li>Preserved board remit</li></ul></div><div class="finelevate360-container">Old static profiles</div>';
     $out=fe_migration_listing_intro($html,7);

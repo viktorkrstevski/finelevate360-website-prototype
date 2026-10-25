@@ -2,7 +2,7 @@
 /**
  * Plugin Name: Finelevate Staging Migration
  * Description: Staging-only outbound isolation and selective content migration.
- * Version: 0.2.9
+ * Version: 0.3.0
  * Author: Finelevate360
  */
 if (!defined('ABSPATH')) exit;
