@@ -47,6 +47,7 @@ jobs:
           php ci/test_directory_data.php
           php ci/test_migration_guard.php
           php ci/test_migration_importer.php
+          php ci/test_migration_adapter.php
       - name: Test artifact integrity, staging scope and rollback
         run: python -m unittest discover -s ci -p 'test_*.py' -v
       - name: Package theme from this exact commit

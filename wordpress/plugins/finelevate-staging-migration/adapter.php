@@ -14,8 +14,9 @@ add_filter('the_content',function($content){
         foreach([1=>'entity',2=>'functionality'] as $n=>$key){$value=get_post_meta($id,'_page_attr_field'.$n,true);$label=get_post_meta($id,'finelevate_'.$key.'_label_'.$lang,true)?:get_post_meta($id,'finelevate_'.$key.'_label',true);if($value)$counts.='<span><strong>'.wp_kses_post(do_shortcode($value)).'</strong> '.esc_html($label).'</span> ';}
         return '<div class="finelevate-map-page"><div class="finelevate-header-item-count">'.$counts.'</div><div class="finelevate-map-content">'.$content.'</div><section id="finelevate-map-interactive" class="finelevate-map-interactive">'.do_shortcode($shortcode).'</section></div>';
     }
-    if($group==='partners'&&shortcode_exists('finelevate360_partners'))return '<p>'.esc_html(get_the_excerpt()).'</p>'.do_shortcode('[finelevate360_partners count="1000" orderby="menu_order" order="ASC"]');
-    if($group==='advisory'&&shortcode_exists('finelevate360_advisory'))return '<p>'.esc_html(get_the_excerpt()).'</p>'.do_shortcode('[finelevate360_advisory count="1000" orderby="menu_order" order="ASC"]');
+    $excerpt=get_post_field('post_excerpt',$id);if(!$excerpt)$excerpt=wp_trim_words(wp_strip_all_tags(strip_shortcodes($content)),45);
+    if($group==='partners'&&shortcode_exists('finelevate360_partners'))return '<p>'.esc_html($excerpt).'</p>'.do_shortcode('[finelevate360_partners count="1000" orderby="menu_order" order="ASC"]');
+    if($group==='advisory'&&shortcode_exists('finelevate360_advisory'))return '<p>'.esc_html($excerpt).'</p>'.do_shortcode('[finelevate360_advisory count="1000" orderby="menu_order" order="ASC"]');
     if(get_post_type($id)==='finelev360_item'&&function_exists('finelevate360_render_card'))return $content.finelevate360_render_card($id,FINELEVATE360_CPT_ITEM);
     return $content;
 },30);
