@@ -35,12 +35,20 @@ class HeaderBreakpointTests(unittest.TestCase):
 <script>
 const header=document.querySelector('.site-header'),grid=document.querySelector('.header-inner'),menu=document.querySelector('.menu-toggle'),nav=document.querySelector('.desktop-nav'),contact=document.querySelector('.header-contact');
 const box=e=>({left:e.getBoundingClientRect().left,right:e.getBoundingClientRect().right,width:e.getBoundingClientRect().width});
-document.querySelector('#metrics').textContent=JSON.stringify({viewport:innerWidth,client:document.documentElement.clientWidth,scroll:document.documentElement.scrollWidth,header:box(header),grid:box(grid),menu:box(menu),columns:getComputedStyle(grid).gridTemplateColumns.split(' ').length,menuDisplay:getComputedStyle(menu).display,navDisplay:getComputedStyle(nav).display,contactDisplay:getComputedStyle(contact).display});
+parent.postMessage({viewport:innerWidth,client:document.documentElement.clientWidth,scroll:document.documentElement.scrollWidth,header:box(header),grid:box(grid),menu:box(menu),columns:getComputedStyle(grid).gridTemplateColumns.split(' ').length,menuDisplay:getComputedStyle(menu).display,navDisplay:getComputedStyle(nav).display,contactDisplay:getComputedStyle(contact).display}, '*');
 </script></body></html>"""
+        # A frame avoids Chrome's 500px minimum top-level window width while
+        # retaining real viewport media queries and classic scrollbar geometry.
+        fixture = ('<!doctype html><html><body style="margin:0;overflow:hidden">'
+                   '<pre id="metrics"></pre><script>addEventListener("message",e=>{'
+                   'document.querySelector("#metrics").textContent=JSON.stringify(e.data)'
+                   '})</script><iframe style="display:block;width:' + str(width) +
+                   'px;height:900px;border:0" srcdoc="' + html.escape(fixture, quote=True) +
+                   '"></iframe></body></html>')
         with tempfile.TemporaryDirectory(prefix="finelevate-header-") as directory:
             page = Path(directory) / "header.html"
             page.write_text(fixture)
-            result = subprocess.run([self.chrome, "--headless=new", "--no-sandbox", "--disable-gpu", "--no-first-run", "--disable-background-networking", "--user-data-dir=" + directory + "/profile", "--window-size=" + str(width) + ",900", "--dump-dom", page.as_uri()], capture_output=True, text=True, timeout=30)
+            result = subprocess.run([self.chrome, "--headless=new", "--no-sandbox", "--disable-gpu", "--no-first-run", "--disable-background-networking", "--user-data-dir=" + directory + "/profile", "--window-size=" + str(max(width, 500)) + ",900", "--virtual-time-budget=1000", "--dump-dom", page.as_uri()], capture_output=True, text=True, timeout=30)
             self.assertEqual(result.returncode, 0, result.stderr[-1500:])
             match = re.search(r'<pre id="metrics">(.*?)</pre>', result.stdout, re.S)
             self.assertIsNotNone(match, result.stdout[-1500:])
