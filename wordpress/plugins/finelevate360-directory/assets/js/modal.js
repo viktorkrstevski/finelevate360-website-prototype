@@ -20,6 +20,8 @@
 
   var researchLabels = {
     hr: {yes:'Dostupno',no:'Nije dostupno',partial:'Djelomično',unknown:'Nije potvrđeno',not_applicable:'Nije primjenjivo',legend:'Legenda',attribute:'Funkcionalnost',mobile:'Građani App',desktop:'Građani Web',biznis:'Tvrtke App',privat:'Tvrtke Web',partialShort:'DJELOM.'},
+    sr: {yes:'Dostupno',no:'Nije dostupno',partial:'Delimično',unknown:'Nije potvrđeno',not_applicable:'Nije primenljivo',legend:'Legenda',attribute:'Funkcionalnost',mobile:'Građani App',desktop:'Građani Web',biznis:'Privreda App',privat:'Privreda Web',partialShort:'DELIM.'},
+    me: {yes:'Dostupno',no:'Nije dostupno',partial:'Djelimično',unknown:'Nije potvrđeno',not_applicable:'Nije primjenjivo',legend:'Legenda',attribute:'Funkcionalnost',mobile:'Građani App',desktop:'Građani Web',biznis:'Privreda App',privat:'Privreda Web',partialShort:'DJELIM.'},
     sl: {yes:'Na voljo',no:'Ni na voljo',partial:'Delno',unknown:'Ni potrjeno',not_applicable:'Ni relevantno',legend:'Legenda',attribute:'Funkcionalnost',mobile:'Osebno App',desktop:'Osebno Web',biznis:'Podjetja App',privat:'Podjetja Web',partialShort:'DELNO'}
   };
   function researchState(value) {

@@ -41,11 +41,14 @@ jobs:
           node --check wordpress/themes/finelevate-advisory/assets/site.js
           node --check wordpress/plugins/finelevate-staging-migration/assets/map.js
           node --check ci/test_mobile_filter_drawer.js
+          node --check wordpress/plugins/finelevate360-directory/assets/js/modal.js
+          node ci/test_regional_states.js
       - name: Test shared routes and independent language/country selection
         run: |
           php ci/test_routes.php
           php ci/test_event.php
           php ci/test_directory_data.php
+          php ci/test_regional_states.php
           php ci/test_migration_guard.php
           php ci/test_migration_importer.php
           php ci/test_migration_adapter.php
