@@ -1,6 +1,7 @@
 <?php
 $hooks=[];
 define('ABSPATH','/');
+function remove_filter(...$args) {}
 function is_admin(){return false;}
 function home_url($path=''){return 'https://stg.finelevate360.com'.$path;}
 function wp_parse_url($value,$component){return parse_url($value,$component);}

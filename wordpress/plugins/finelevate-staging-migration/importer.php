@@ -120,7 +120,7 @@ function fe_migration_run_batch(&$s,$d) {
     if($phase==='custom') {
         require_once ABSPATH.'wp-admin/includes/plugin.php';
         foreach(['finelevate360-directory/finelevate360-directory.php','events-cpt/events-cpt.php','finelevate-awards/finelevate-awards.php','finelevate-title-text-image-widget/finelevate-title-text-image-widget.php'] as $file) {
-            $slug=dirname($file);fe_migration_copy_tree(__DIR__.'/bundle/plugins/'.$slug,WP_PLUGIN_DIR.'/'.$slug);
+            $slug=dirname($file);fe_migration_copy_tree(__DIR__.'/bundle/plugins/'.$slug,WP_PLUGIN_DIR.'/'.$slug);wp_clean_plugins_cache(false);
             // Skip source activation seed routines; source content is imported explicitly below.
             fe_migration_result(activate_plugin($file,'',false,true));
         }

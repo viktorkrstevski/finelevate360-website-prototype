@@ -13,6 +13,9 @@ register_activation_hook(__FILE__, function () {
     if (!fe_migration_is_staging()) wp_die('This plugin may only be activated on stg.finelevate360.com.');
 });
 if (!fe_migration_is_staging()) return;
+// Use the original HTTPS WordPress.org endpoints; the hosting proxy changes
+// their destination and is intentionally outside the staging integration allowlist.
+remove_filter('pre_http_request','hostinger_use_proxy_services',10);
 if (!defined('DISABLE_WP_CRON')) define('DISABLE_WP_CRON', true);
 if (!defined('WP_ENVIRONMENT_TYPE')) define('WP_ENVIRONMENT_TYPE', 'staging');
 add_filter('pre_wp_mail', '__return_false', PHP_INT_MAX);
