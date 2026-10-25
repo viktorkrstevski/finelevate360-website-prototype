@@ -14,9 +14,9 @@ add_filter('the_content',function($content){
         foreach([1=>'entity',2=>'functionality'] as $n=>$key){$value=get_post_meta($id,'_page_attr_field'.$n,true);$label=get_post_meta($id,'finelevate_'.$key.'_label_'.$lang,true)?:get_post_meta($id,'finelevate_'.$key.'_label',true);if($value)$counts.='<span><strong>'.wp_kses_post(do_shortcode($value)).'</strong> '.esc_html($label).'</span> ';}
         return '<div class="finelevate-map-page"><div class="finelevate-header-item-count">'.$counts.'</div><div class="finelevate-map-content">'.$content.'</div><section id="finelevate-map-interactive" class="finelevate-map-interactive">'.do_shortcode($shortcode).'</section></div>';
     }
-    $excerpt=get_post_field('post_excerpt',$id);if(!$excerpt)$excerpt=wp_trim_words(wp_strip_all_tags(strip_shortcodes($content)),45);
-    if($group==='partners'&&shortcode_exists('finelevate360_partners'))return '<p>'.esc_html($excerpt).'</p>'.do_shortcode('[finelevate360_partners count="1000" orderby="menu_order" order="ASC"]');
-    if($group==='advisory'&&shortcode_exists('finelevate360_advisory'))return '<p>'.esc_html($excerpt).'</p>'.do_shortcode('[finelevate360_advisory count="1000" orderby="menu_order" order="ASC"]');
+    $intro=fe_migration_listing_intro($content,$id);
+    if($group==='partners'&&shortcode_exists('finelevate360_partners'))return $intro.do_shortcode('[finelevate360_partners count="1000" orderby="menu_order" order="ASC"]');
+    if($group==='advisory'&&shortcode_exists('finelevate360_advisory'))return $intro.do_shortcode('[finelevate360_advisory count="1000" orderby="menu_order" order="ASC"]');
     if(get_post_type($id)==='finelev360_item'&&function_exists('finelevate360_render_card'))return $content.finelevate360_render_card($id,FINELEVATE360_CPT_ITEM);
     return $content;
 },30);
@@ -37,3 +37,26 @@ add_action('save_post_page',function($id){if(!isset($_POST['fe_map_nonce'])||!wp
 // Native Polylang synchronisation is retained for common WordPress fields. Localised
 // evidence and source identity fields must never be copied verbatim across languages.
 add_filter('pll_copy_post_metas',function($keys){return array_values(array_filter($keys,function($key){return !preg_match('/^(?:_fe_|_finelevate360_|_event_|_page_attr_|_fa_|finelevate_entity_label|finelevate_functionality_label|finelevate360_bank_order)/',$key);}));},PHP_INT_MAX);
+
+// Preserve the saved listing introduction while replacing the old static cards.
+function fe_migration_listing_intro($content,$id){
+    if(class_exists('DOMDocument')){
+        $previous=libxml_use_internal_errors(true);$doc=new DOMDocument();
+        $doc->loadHTML('<?xml encoding="UTF-8">'.$content);$xpath=new DOMXPath($doc);
+        $nodes=$xpath->query('//*[contains(concat(" ",normalize-space(@class)," ")," finelevate360-hero-page-intro ")]');
+        $intro='';if($nodes&&$nodes->length)foreach($nodes->item(0)->childNodes as $node)$intro.=$doc->saveHTML($node);
+        libxml_clear_errors();libxml_use_internal_errors($previous);
+        if(trim($intro)!=='')return $intro;
+    }
+    $excerpt=get_post_field('post_excerpt',$id);if(!$excerpt)$excerpt=wp_trim_words(wp_strip_all_tags(strip_shortcodes($content)),45);
+    return '<p>'.esc_html($excerpt).'</p>';
+}
+// Some featured-image plugins hide nested thumbnails on singular listing pages.
+// Imported public profile cards still need their mapped attachment images.
+add_filter('post_thumbnail_html',function($html,$id){
+    if(!$html&&get_stylesheet()==='finelevate-advisory'&&in_array(get_post_type($id),['finelev360_partner','finelev360_advisory'],true)){
+        $thumbnail=(int)get_post_meta($id,'_thumbnail_id',true);
+        if($thumbnail)$html=wp_get_attachment_image($thumbnail,'medium',false,['loading'=>'lazy']);
+    }
+    return $html;
+},PHP_INT_MAX,2);
