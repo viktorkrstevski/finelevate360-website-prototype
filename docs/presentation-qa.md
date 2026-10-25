@@ -28,3 +28,11 @@ Use a serialized, file-level patch to the active staging `wp-content/themes/fine
 Remaining: parent coordination before any shared staging write, then actual staging readback/functional verification. A parent message attempt returned `thread not found`; no deployment action was attempted, denied or left uncertain.
 
 Pre-existing data checkpoint for the Directory owner: the Montenegro heading count is 10 while the rendered card/filter count is 11. EN's initial cache served an old theme page with no map; a cache-busted URL returned the current authenticated render. Neither observation was modified by this presentation task.
+
+## Header breakpoint review follow-up
+
+Moved the existing usable-width container fallback after the new viewport-based logo/header grid rules. This keeps the two-column logo/Menu layout when a classic scrollbar makes the usable header narrower than 1060px, even if the viewport itself is wider.
+
+The browser regression test uses the actual complete theme CSS in an isolated header fixture. It checks every viewport width from 1060 through 1075px with a measured 15px classic scrollbar, plus 320/390/1280px with and without that scrollbar. It verifies column count, control visibility, compact right-aligned Menu and no document overflow. A negative control restores the original cascade order and must reproduce the three-column/stretched-Menu defect.
+
+The Mac connection briefly failed before any local edit executed; the unreferenced Git tree prepared through the connector was never committed or applied to the branch. Work resumed locally after reconciling the clean b72531d checkout. No staging write was attempted.

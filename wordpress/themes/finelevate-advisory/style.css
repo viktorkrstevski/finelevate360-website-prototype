@@ -27,7 +27,6 @@ Requires PHP: 7.4
 @media(min-width:1060px) and (max-width:1150px){.header-inner{grid-template-columns:208px minmax(0,1fr) auto;gap:20px}.desktop-nav>.nav-links{gap:16px;font-size:12px}.language-nav{padding-left:14px;margin-left:0}.header-contact{min-width:134px;font-size:15px}}
 @media(max-width:1059px){.header-inner{grid-template-columns:minmax(0,1fr) auto;gap:20px}.desktop-nav,.header-contact{display:none}.menu-toggle{display:block}.menu-dialog .language-nav{border-left:0;margin-left:0;padding-left:0}.menu-dialog .nav-links a,.menu-dialog .nav-links summary{white-space:normal}.menu-dialog .nav-links details>ul{margin-block:6px 16px}.content-page .finelevate360-container,.news-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
 @media(max-width:600px){.content-page .finelevate360-container,.news-grid{grid-template-columns:1fr;gap:24px}.content-page .fe-profile__editorial-grid{grid-template-columns:1fr;gap:10px}.content-page h2{font-size:26px}.content-page .finelevate360-item{padding:20px}.content-page>article>h1{overflow-wrap:anywhere}}
-@container(max-width:1059px){.header-inner{grid-template-columns:minmax(0,1fr) auto;gap:20px}.desktop-nav,.header-contact{display:none}.menu-toggle{display:block}}
 /* Keep the deliberate hero bleed inside the page edge when a scrollbar is present. */
 #main{overflow-x:clip}
 @media(min-width:1400px){.hero-image{margin-right:calc((1168px - 100vw)/2)}}
@@ -41,6 +40,8 @@ Requires PHP: 7.4
 .footer-main .brand{width:205px;max-width:100%}
 @media(min-width:1060px){.header-inner{grid-template-columns:205px minmax(0,1fr) auto}}
 @media(min-width:1060px) and (max-width:1150px){.header-inner{grid-template-columns:172px minmax(0,1fr) auto}.site-header .brand{max-width:172px}}
+/* Usable width, including classic scrollbars, wins over viewport grids. */
+@container(max-width:1059px){.header-inner{grid-template-columns:minmax(0,1fr) auto;gap:20px}.desktop-nav,.header-contact{display:none}.menu-toggle{display:block}}
 .fe-country-flag{display:inline-block;flex-shrink:0;width:18px;aspect-ratio:4/3;overflow:hidden}
 .fe-country-flag img{display:block;width:100%;height:100%;object-fit:contain}
 /* The imported wrapper differs from the old theme's .finelevate-header-item.
