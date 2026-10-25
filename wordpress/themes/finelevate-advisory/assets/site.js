@@ -24,25 +24,4 @@
       status.textContent = status.dataset.message;
     }
   }));
-  const banner = document.querySelector('[data-banner]');
-  if (!banner) return;
-  const track = banner.querySelector('[data-logo-track]');
-  const toggle = banner.querySelector('[data-motion-toggle]');
-  const reduced = window.matchMedia('(prefers-reduced-motion: reduce)');
-  let paused = false;
-  const update = () => {
-    banner.classList.toggle('is-paused', paused);
-    toggle.setAttribute('aria-pressed', String(paused));
-    toggle.textContent = paused ? toggle.dataset.play : toggle.dataset.pause;
-    toggle.hidden = reduced.matches;
-  };
-  toggle.addEventListener('click', () => { paused = !paused; update(); });
-  reduced.addEventListener('change', update);
-  const measure = () => {
-    const width = track.querySelector('.logo-sequence').getBoundingClientRect().width;
-    track.style.setProperty('--track-duration', `${Math.max(width / 24, 1)}s`);
-  };
-  new ResizeObserver(measure).observe(track.querySelector('.logo-sequence'));
-  measure();
-  update();
 })();

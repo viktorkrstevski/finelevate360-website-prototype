@@ -7,15 +7,15 @@
   </section>
 
   <section class="partner-banner section-shell" aria-label="<?php esc_attr_e('Partners and ecosystem enablers', 'finelevate-advisory'); ?>">
-    <div class="banner-inner" data-banner>
+    <div class="banner-inner">
       <img class="fixed-mastercard" src="<?php echo esc_url(fe_asset('partners/mastercard_fixed_colour.png')); ?>" width="100" height="78" alt="Mastercard">
-      <div class="logo-viewport"><div class="logo-track" data-logo-track>
-        <?php $partners = json_decode(file_get_contents(get_template_directory() . '/inc/partners.json'), true); for ($copy = 0; $copy < 2; $copy++) { ?>
-        <ul class="logo-sequence" <?php if ($copy) { echo 'aria-hidden="true"'; } ?>>
-          <?php foreach ($partners as $partner) { ?><li><img src="<?php echo esc_url(fe_asset(preg_replace('/^assets\//', '', $partner['asset']))); ?>" alt="<?php echo $copy ? '' : esc_attr($partner['name']); ?>" width="144" height="54" decoding="async"></li><?php } ?>
-        </ul><?php } ?>
+      <div class="logo-viewport" tabindex="0" role="group" aria-label="<?php esc_attr_e('Partners and ecosystem enablers', 'finelevate-advisory'); ?>"><div class="logo-track">
+        <?php $partners = json_decode(file_get_contents(get_template_directory() . '/inc/partners.json'), true); ?>
+        <ul class="logo-sequence">
+          <?php foreach ($partners as $partner) { ?><li><img src="<?php echo esc_url(fe_asset(preg_replace('/^assets\//', '', $partner['asset']))); ?>" alt="<?php echo esc_attr($partner['name']); ?>" width="144" height="54" decoding="async"></li><?php } ?>
+        </ul>
       </div></div>
-      <div class="banner-controls"><a class="button button-dark" href="<?php echo esc_url(fe_value('partners_url')); ?>"><?php esc_html_e('All partners', 'finelevate-advisory'); ?></a><button class="motion-control" data-motion-toggle aria-pressed="false" data-pause="<?php esc_attr_e('Pause', 'finelevate-advisory'); ?>" data-play="<?php esc_attr_e('Play', 'finelevate-advisory'); ?>"><?php esc_html_e('Pause', 'finelevate-advisory'); ?></button></div>
+      <div class="banner-controls"><a class="button button-dark" href="<?php echo esc_url(fe_value('partners_url')); ?>"><?php esc_html_e('All partners', 'finelevate-advisory'); ?></a></div>
     </div>
   </section>
 
