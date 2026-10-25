@@ -92,10 +92,42 @@ add_action('add_meta_boxes', function ($post_type, $post) {
     $data = finelevate360_research_data($post->ID);
     echo '<p>Protected per-cell sources and caveats, using the existing research schema. Evidence is visible to editors and is not included in the public map payload.</p>';
     echo '<input type="hidden" name="finelevate360_regional_expected_hash" value="'.esc_attr(finelevate360_regional_metadata_hash($post->ID)).'">';
+    echo '<p><label><input type="checkbox" id="finelevate360_regional_preserve_scores" data-post-id="'.(int)$post->ID.'" data-nonce="'.esc_attr(wp_create_nonce('finelevate360_regional_scores_'.$post->ID)).'"> Preserve unrelated SEO scores for this reviewed capability publication</label></p>';
     echo '<label for="finelevate360_regional_evidence_json">Research evidence JSON</label>';
     echo '<textarea id="finelevate360_regional_evidence_json" name="finelevate360_regional_evidence_json" rows="12" style="width:100%">'.esc_textarea($data ? wp_json_encode($data, JSON_PRETTY_PRINT|JSON_UNESCAPED_UNICODE|JSON_UNESCAPED_SLASHES) : '').'</textarea>';
   }, FINELEVATE360_CPT_ITEM, 'normal', 'default');
 }, 10, 2);
+
+add_action('admin_enqueue_scripts', function ($hook) {
+  $id = (int)($_GET['post'] ?? 0);
+  if ($hook !== 'post.php' || !finelevate360_regional_evidence_market($id)
+    || get_post_type($id) !== FINELEVATE360_CPT_ITEM || !current_user_can('edit_post', $id)) return;
+  $path = FINELEVATE360_DIR_PATH.'assets/js/regional-publication.js';
+  wp_enqueue_script('finelevate360-regional-publication', FINELEVATE360_DIR_URL.'assets/js/regional-publication.js', ['wp-api-fetch'], (string)filemtime($path), true);
+});
+
+/** Rank Math's Classic Editor sends this separate REST request before editpost.
+ * The opt-in nonce/hash travels with that request; native-save globals cannot.
+ * Unset only the two scores: empty values would DELETE pre-existing metadata.
+ */
+function finelevate360_regional_preserve_rankmath_scores($meta, $request) {
+  if (!is_object($request) || !method_exists($request, 'get_param')) return $meta;
+  $context = $request->get_param('finelevate360_publication');
+  if ($context === null) return $meta;
+  $id = (int)$request->get_param('objectID');
+  if (!finelevate360_regional_evidence_market($id) || get_post_type($id) !== FINELEVATE360_CPT_ITEM) return $meta;
+  if ($request->get_route() !== '/rankmath/v1/updateMeta' || $request->get_method() !== 'POST'
+    || $request->get_param('objectType') !== 'post' || !current_user_can('edit_post', $id)
+    || !is_array($context) || ($context['post_id'] ?? null) !== $id
+    || !is_string($context['nonce'] ?? null) || !wp_verify_nonce($context['nonce'], 'finelevate360_regional_scores_'.$id)
+    || !is_string($context['expected_hash'] ?? null)
+    || !hash_equals(finelevate360_regional_metadata_hash($id), $context['expected_hash']) || !is_array($meta)) {
+    wp_die('The separate publication request is stale or unauthenticated; no SEO metadata was changed.');
+  }
+  unset($meta['rank_math_seo_score'], $meta['rank_math_contentai_score']);
+  return $meta;
+}
+add_filter('rank_math/filter_metadata', 'finelevate360_regional_preserve_rankmath_scores', PHP_INT_MAX, 2);
 
 // Pure validation is shared by early admin preflight and the native matrix save.
 function finelevate360_regional_editor_payload($post_id) {
@@ -145,8 +177,9 @@ function finelevate360_regional_begin_isolation($post_id, $repair = false) {
   if (!in_array((int)$post_id, $family, true)) wp_die('Regional translation identity is incomplete.');
   foreach ($family as $id) if (get_post_type($id) !== FINELEVATE360_CPT_ITEM) wp_die('Unexpected translated record type.');
   if ($repair) {
-    $expected = [2290,2305,2487]; $actual = $family; sort($actual);
-    if ((int)$post_id !== 2487 || $actual !== $expected || !current_user_can('manage_options')) wp_die('Repair is restricted to the captured Erste translation family.');
+    $families = [2487=>[2290,2305,2487],2488=>[2322,2323,2488]];
+    $expected = $families[(int)$post_id] ?? []; $actual = $family; sort($actual);
+    if (!$expected || $actual !== $expected || !current_user_can('manage_options')) wp_die('Repair is restricted to the captured translation families.');
   }
   $finelevate360_regional_isolation = ['source'=>(int)$post_id,'family'=>$family,'repair'=>(bool)$repair];
 
@@ -220,6 +253,7 @@ add_action('admin_init', function () {
 function finelevate360_regional_repair($json) {
   if (!finelevate360_regional_staging_config('me') || !current_user_can('manage_options') || !is_string($json) || strlen($json)>65536) throw new RuntimeException('Invalid staging repair request.');
   $plan = json_decode($json, true, 32);
+  if (is_array($plan) && ($plan['operation'] ?? '') === 'adriatic-score-additions') return finelevate360_regional_repair_adriatic_scores($plan);
   if (!is_array($plan) || !is_array($plan['records'] ?? null) || count($plan['records'])!==3) throw new RuntimeException('The captured three-record repair plan is required.');
   $ids = array_column($plan['records'], 'id');sort($ids);
   if ($ids !== [2290,2305,2487]) throw new RuntimeException('Repair targets do not match the captured family.');
@@ -271,11 +305,57 @@ function finelevate360_regional_repair($json) {
   }
 }
 
+/** Full captured state, including absence versus empty and all taxonomy IDs. */
+function finelevate360_regional_bank_state_hash($id) {
+  $post = get_post($id); if (!$post) throw new RuntimeException('Captured bank is missing.');
+  $metadata = get_metadata('post', $id); ksort($metadata);
+  $taxonomies = [];
+  foreach (get_post_taxonomies($id) as $tax) {
+    $terms = wp_get_post_terms($id, $tax, ['fields'=>'ids']);
+    if (is_wp_error($terms)) throw new RuntimeException('Could not read captured bank taxonomies.');
+    $terms = array_map('intval', $terms); sort($terms); $taxonomies[$tax] = $terms;
+  }
+  ksort($taxonomies);
+  return hash('sha256', serialize([(array)$post,$metadata,$taxonomies]));
+}
+
+/** Delete only the two known new score rows; no post or term update is issued. */
+function finelevate360_regional_repair_adriatic_scores($plan) {
+  if (!finelevate360_regional_staging_config('me') || !current_user_can('manage_options')
+    || ($plan['id'] ?? null) !== 2488 || ($plan['title'] ?? null) !== 'Adriatic Bank AD Podgorica'
+    || !finelevate360_regional_evidence_market(2488) || get_post(2488)->post_title !== $plan['title']) throw new RuntimeException('Invalid captured Adriatic repair target.');
+  $family = $plan['family_state_hashes'] ?? [];
+  $ids = array_map('intval',array_keys($family));sort($ids);
+  if ($ids !== [2322,2323,2488]) throw new RuntimeException('The exact captured Adriatic family is required.');
+  foreach ($ids as $id) {
+    if (!current_user_can('edit_post',$id) || !is_string($family[$id])
+      || !hash_equals(finelevate360_regional_bank_state_hash($id),$family[$id])) throw new RuntimeException('Captured Adriatic family changed; no repair started.');
+  }
+  $keys = ['rank_math_contentai_score','rank_math_seo_score'];
+  $remove = $plan['remove_metadata'] ?? []; $actual = array_keys($remove);sort($actual);
+  if ($actual !== $keys) throw new RuntimeException('Only the two captured score additions may be removed.');
+  foreach ($remove as $key=>$entry) {
+    if (!is_array($entry) || ($entry['before_absent'] ?? null) !== true || !array_key_exists('expected_value',$entry)
+      || !metadata_exists('post',2488,$key) || get_post_meta(2488,$key,true) !== $entry['expected_value']) throw new RuntimeException('Captured score value/absence mismatch; no repair started.');
+  }
+  $protected = finelevate360_regional_metadata_hash(2488);
+  finelevate360_regional_begin_isolation(2488,true);
+  global $finelevate360_regional_isolation;
+  foreach ($remove as $key=>$entry) {
+    $finelevate360_regional_isolation['repair_delete']=['id'=>2488,'key'=>$key];
+    try {delete_post_meta(2488,$key);} finally {unset($finelevate360_regional_isolation['repair_delete']);}
+    if (metadata_exists('post',2488,$key)) throw new RuntimeException('Score removal failed; inspect current state before retrying.');
+  }
+  if (!hash_equals($protected,finelevate360_regional_metadata_hash(2488))) throw new RuntimeException('Protected Adriatic ratings/evidence changed.');
+}
+
 add_action('admin_menu', function () {
   if (!finelevate360_regional_staging_config('me')) return;
   add_management_page('Regional preservation repair','Regional preservation repair','manage_options','finelevate360-regional-repair',function () {
     if (!current_user_can('manage_options')) wp_die('Administrator access required.');
-    echo '<div class="wrap"><h1>Regional preservation repair</h1><p>Restore only the captured first-save side effects on the three Erste translations. Ratings, evidence and the intended Montenegro category are preserved. The full plan is checked against current values before any write.</p>';
+    echo '<div class="wrap"><h1>Regional preservation repair</h1><p>Restore only the captured Erste side effects or the two new Adriatic score rows. Ratings, evidence, categories and unrelated fields are preserved. The full plan is checked against current values before any write.</p>';
+    $adriatic_hashes=[];foreach([2322,2323,2488] as $id) $adriatic_hashes[$id]=finelevate360_regional_bank_state_hash($id);
+    echo '<p>Current Adriatic family state hashes for the independently captured repair plan:</p><pre id="finelevate360-adriatic-state-hashes">'.esc_html(wp_json_encode($adriatic_hashes)).'</pre>';
     if (($_SERVER['REQUEST_METHOD']??'')==='POST') {
       check_admin_referer('finelevate360_regional_repair');
       try {finelevate360_regional_repair(wp_unslash($_POST['finelevate360_repair_plan']??''));echo '<div class="notice notice-success"><p>Captured side effects restored. Verify the authenticated export before further publication.</p></div>';}

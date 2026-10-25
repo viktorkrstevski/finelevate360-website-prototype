@@ -64,7 +64,7 @@ function wp_update_post($input,$error=false) {
 class PLL_Base {public $model;public $options;public $links;public $sync;}
 class IsolationPostModel {
   public $allowed=true;
-  public function get_translations($id) {return in_array($id,[2487,2290,2305],true)?['me'=>2487,'en'=>2290,'sr'=>2305]:['hr'=>11,'sl'=>12];}
+  public function get_translations($id) {if(in_array($id,[2488,2322,2323],true))return ['me'=>2488,'en'=>2322,'sr'=>2323];return in_array($id,[2487,2290,2305],true)?['me'=>2487,'en'=>2290,'sr'=>2305]:['hr'=>11,'sl'=>12];}
   public function current_user_can_synchronize($id) {return $this->allowed;}
   public function get_language($id) {return array_search($id,$this->get_translations($id),true);}
   public function get_translation($id,$lang) {return $this->get_translations($id)[$lang]??0;}
@@ -89,7 +89,7 @@ function setup_isolation_fixture() {
   $pll->links=new class {public function get_data_from_new_post_translation_request(){return [];}};
   $pll->sync=new PLL_Admin_Sync($pll);$wpdb=new IsolationDB;
   $posts=[];$terms=[];$meta=[];
-  foreach([2487=>88,2290=>86,2305=>87,11=>1,12=>2] as $id=>$order){$posts[$id]=(object)['ID'=>$id,'post_type'=>FINELEVATE360_CPT_ITEM,'menu_order'=>$order,'post_parent'=>0,'post_title'=>'Fixture '.$id,'post_modified'=>'original time'];$terms[$id]['finelev360_cat']=[$id];$meta[$id]=['_thumbnail_id'=>$id,'cookie'=>'keep-'.$id];}
+  foreach([2487=>88,2290=>86,2305=>87,2488=>90,2322=>91,2323=>92,11=>1,12=>2] as $id=>$order){$posts[$id]=(object)['ID'=>$id,'post_type'=>FINELEVATE360_CPT_ITEM,'menu_order'=>$order,'post_parent'=>0,'post_title'=>'Fixture '.$id,'post_modified'=>'original time'];$terms[$id]['finelev360_cat']=[$id];$meta[$id]=['_thumbnail_id'=>$id,'cookie'=>'keep-'.$id];}
 }
 setup_isolation_fixture();
 // Reproduce the original direct-SQL order propagation using the real installed callback.
