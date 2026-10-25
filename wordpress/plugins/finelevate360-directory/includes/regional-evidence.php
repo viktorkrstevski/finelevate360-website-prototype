@@ -127,3 +127,77 @@ add_action('save_post', function ($post_id, $post) {
   // Validation completed before either research metadata field is modified.
   update_post_meta($post_id, '_finelevate360_item_research', wp_slash($data));
 }, 5, 2);
+
+/** Isolate one authorized research request, without changing Polylang options. */
+function finelevate360_regional_begin_isolation($post_id, $repair = false) {
+  global $finelevate360_regional_isolation;
+  if (!finelevate360_regional_evidence_market($post_id) || !current_user_can('edit_post', $post_id)) wp_die('Invalid regional isolation target.');
+  if (!function_exists('PLL') || !function_exists('pll_get_post_translations')
+    || !defined('POLYLANG_VERSION') || POLYLANG_VERSION !== '3.9.1'
+    || (defined('POLYLANG_PRO') && POLYLANG_PRO)) wp_die('The installed synchronization implementation requires review before this save.');
+  $sync = PLL()->sync;
+  if (!is_object($sync) || get_class($sync) !== 'PLL_Admin_Sync'
+    || has_action('pll_save_post', [$sync, 'pll_save_post']) !== 10
+    || has_filter('wp_insert_post_data', [$sync, 'can_sync_post_data']) !== 10
+    || has_filter('wp_insert_post_parent', [$sync, 'can_sync_post_parent']) !== 10) wp_die('Unexpected Polylang synchronization callbacks; no regional save was started.');
+  $family = array_values(array_unique(array_map('intval', pll_get_post_translations($post_id))));
+  if (!in_array((int)$post_id, $family, true)) wp_die('Regional translation identity is incomplete.');
+  foreach ($family as $id) if (get_post_type($id) !== FINELEVATE360_CPT_ITEM) wp_die('Unexpected translated record type.');
+  if ($repair) {
+    $expected = [2290,2305,2487]; $actual = $family; sort($actual);
+    if ((int)$post_id !== 2487 || $actual !== $expected || !current_user_can('manage_options')) wp_die('Repair is restricted to the captured Erste translation family.');
+  }
+  $finelevate360_regional_isolation = ['source'=>(int)$post_id,'family'=>$family,'repair'=>(bool)$repair];
+
+  // Register last, before post.php changes core terms or metadata. Keep active through late SEO saves.
+  $copy_guard = function ($keys, $syncing, $from, $to, $language) {
+    global $finelevate360_regional_isolation;
+    $family = $finelevate360_regional_isolation['family'];
+    return in_array((int)$from, $family, true) || in_array((int)$to, $family, true) ? [] : $keys;
+  };
+  add_filter('pll_copy_post_metas', $copy_guard, PHP_INT_MAX, 5);
+  add_filter('pll_copy_taxonomies', $copy_guard, PHP_INT_MAX, 5);
+  $metadata_guard = function ($check, $id, $key) {
+    global $finelevate360_regional_isolation;
+    $context = $finelevate360_regional_isolation;
+    if (!in_array((int)$id, $context['family'], true)) return $check;
+    if ($context['repair']) {
+      return in_array($key, ['cmplz_hide_cookiebanner','cybocfi_hide_featured_image','rank_math_seo_score','rank_math_contentai_score','_edit_last'], true) ? $check : false;
+    }
+    $allowed = ['_finelevate360_item_attrs','_finelevate360_item_research'];
+    foreach (finelevate360_research_attr_ids(finelevate360_regional_evidence_market($context['source'])) as $attr) $allowed[] = '_finelevate360_attr_'.$attr;
+    return (int)$id === $context['source'] && in_array($key, $allowed, true) ? $check : false;
+  };
+  foreach (['add_post_metadata','update_post_metadata','delete_post_metadata'] as $hook) add_filter($hook, $metadata_guard, PHP_INT_MAX, 3);
+
+  // The installed callback writes fields directly with $wpdb, bypassing wp_insert_post_data.
+  remove_action('pll_save_post', [$sync, 'pll_save_post'], 10);
+  add_action('pll_save_post', function ($id, $post, $translations) use ($sync) {
+    global $finelevate360_regional_isolation;
+    $family = $finelevate360_regional_isolation['family'];
+    if (in_array((int)$id, $family, true)) return;
+    $translations = array_diff($translations, $family);
+    $sync->pll_save_post($id, $post, $translations);
+  }, 10, 3);
+  // Do not return false from the permission filter: that would reverse-sync into the edited record.
+  remove_filter('wp_insert_post_data', [$sync, 'can_sync_post_data'], 10);
+  add_filter('wp_insert_post_data', function ($data, $postarr) use ($sync) {
+    global $finelevate360_regional_isolation;
+    return in_array((int)($postarr['ID'] ?? 0), $finelevate360_regional_isolation['family'], true) ? $data : $sync->can_sync_post_data($data, $postarr);
+  }, 10, 2);
+  remove_filter('wp_insert_post_parent', [$sync, 'can_sync_post_parent'], 10);
+  add_filter('wp_insert_post_parent', function ($parent, $id, $postarr) use ($sync) {
+    global $finelevate360_regional_isolation;
+    return in_array((int)($postarr['ID'] ?? 0), $finelevate360_regional_isolation['family'], true) ? $parent : $sync->can_sync_post_parent($parent, $id, $postarr);
+  }, 10, 3);
+}
+
+add_action('admin_init', function () {
+  if (($_SERVER['REQUEST_METHOD'] ?? '') !== 'POST' || ($_POST['action'] ?? '') !== 'editpost') return;
+  $id = (int)($_POST['post_ID'] ?? 0);
+  if (!finelevate360_regional_evidence_market($id)) return;
+  if (!isset($_POST['finelevate360_meta_nonce'], $_POST['finelevate360_regional_evidence_nonce'])
+    || !wp_verify_nonce($_POST['finelevate360_meta_nonce'], 'finelevate360_save_meta')
+    || !wp_verify_nonce($_POST['finelevate360_regional_evidence_nonce'], 'finelevate360_regional_evidence')) wp_die('An authenticated research editor request is required before changing this regional bank.');
+  finelevate360_regional_begin_isolation($id);
+}, PHP_INT_MAX);
