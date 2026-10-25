@@ -62,7 +62,9 @@ add_action('after_setup_theme', function () {
 add_action('wp_enqueue_scripts', function () {
     $release = get_template_directory() . '/release.json';
     $version = file_exists($release) ? json_decode(file_get_contents($release), true)['commit'] : wp_get_theme()->get('Version');
-    wp_enqueue_style('finelevate-advisory', get_stylesheet_uri(), array(), $version);
+    // File-level theme patches must invalidate CSS without relabelling a full release.
+    $style_version = $version . '-' . substr(hash_file('sha256', get_stylesheet_directory() . '/style.css'), 0, 12);
+    wp_enqueue_style('finelevate-advisory', get_stylesheet_uri(), array(), $style_version);
     if (is_singular('event')) { wp_enqueue_style('finelevate-event', fe_asset('event.css'), array('finelevate-advisory'), $version); }
     wp_enqueue_script('finelevate-advisory', fe_asset('site.js'), array(), $version, true);
 });
