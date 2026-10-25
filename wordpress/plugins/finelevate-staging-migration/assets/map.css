@@ -470,3 +470,7 @@
         color: var(--text);
     }
 }
+/* Supply the former theme variables only to migrated components. */
+.finelevate-map-page,.f360-modal{--black:var(--ink,#1a272e);--white:#fff;--border-radius:34px}
+.finelevate-filter-close{border:0;background:transparent;color:#1a272e;min-height:44px}
+@media(max-width:782px){body.admin-bar .finelevate-filter-container .finelevate-filters{top:46px;height:calc(100dvh - 46px)}}
