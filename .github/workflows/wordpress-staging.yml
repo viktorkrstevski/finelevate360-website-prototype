@@ -37,7 +37,9 @@ jobs:
       - name: Lint PHP templates
         run: find wordpress/themes/finelevate-advisory -name '*.php' -print0 | xargs -0 -n1 php -l
       - name: Check browser JavaScript
-        run: node --check wordpress/themes/finelevate-advisory/assets/site.js
+        run: |
+          node --check wordpress/themes/finelevate-advisory/assets/site.js
+          node ci/test_sponsor_motion.js
       - name: Test shared routes and independent language/country selection
         run: |
           php ci/test_routes.php
