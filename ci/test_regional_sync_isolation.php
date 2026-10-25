@@ -2,6 +2,7 @@
 // Real installed Polylang callbacks, simulated WordPress hooks/storage. No database or network.
 require __DIR__.'/test_regional_save_guard.php';
 define('POLYLANG_VERSION','3.9.1');
+define('FINELEVATE360_TAX_ITEMCAT','finelev360_cat');
 
 function remove_action($hook,$callback,$priority=10) {
   global $actions;$found=false;
@@ -46,6 +47,20 @@ function wp_set_object_terms($id,$values,$tax,$append=false) {global $terms;$ter
 function get_post_taxonomies($id) {return ['finelev360_cat'];}
 function update_object_term_cache($ids,$type) {}
 function update_option($key,$value) {}
+class WP_Error {}
+function is_wp_error($value) {return $value instanceof WP_Error;}
+function metadata_exists($type,$id,$key) {global $meta;return array_key_exists($key,$meta[$id]??[]);}
+function delete_post_meta($id,$key) {return delete_metadata('post',$id,$key);}
+function wp_get_post_terms($id,$tax,$args=[]) {global $terms;return $terms[$id][$tax]??[];}
+function get_term($id,$tax) {return (object)['term_id'=>$id,'slug'=>[83=>'banks-rs',138=>'banke-srbije',132=>'banks-me'][$id]??'other'];}
+function wp_update_post($input,$error=false) {
+  global $posts;$id=$input['ID'];
+  $data=apply_filters('wp_insert_post_data',array_merge((array)$posts[$id],$input,['post_modified'=>'new time']),$input);
+  foreach($data as $key=>$value)$posts[$id]->$key=wp_unslash($value);
+  do_action('save_post',$id,$posts[$id]);
+  foreach(['rank_math_seo_score','cmplz_hide_cookiebanner','cybocfi_hide_featured_image'] as $key)update_post_meta($id,$key,'late unwanted default');
+  do_action('pll_save_post',$id,$posts[$id],pll_get_post_translations($id));return $id;
+}
 class PLL_Base {public $model;public $options;public $links;public $sync;}
 class IsolationPostModel {
   public $allowed=true;
@@ -62,7 +77,7 @@ class IsolationModel {
   public function is_translated_taxonomy($tax) {return true;}
 }
 function PLL() {global $pll;return $pll;}
-function pll_get_post_translations($id) {return PLL()->model->post->get_translations($id);}
+function pll_get_post_translations($id) {global $testFamilyOverride;return $testFamilyOverride??PLL()->model->post->get_translations($id);}
 class IsolationDB {public $posts='posts';public function update($table,$values,$where){global $posts;foreach($values as $key=>$value)$posts[$where['ID']]->$key=$value;}}
 foreach(['sync-metas','sync-post-metas','sync-term-metas','sync-tax','sync','admin-sync'] as $file)require __DIR__.'/fixtures/polylang-3.9.1/'.$file.'.php';
 
@@ -74,7 +89,7 @@ function setup_isolation_fixture() {
   $pll->links=new class {public function get_data_from_new_post_translation_request(){return [];}};
   $pll->sync=new PLL_Admin_Sync($pll);$wpdb=new IsolationDB;
   $posts=[];$terms=[];$meta=[];
-  foreach([2487=>88,2290=>86,2305=>87,11=>1,12=>2] as $id=>$order){$posts[$id]=(object)['ID'=>$id,'post_type'=>FINELEVATE360_CPT_ITEM,'menu_order'=>$order,'post_parent'=>0];$terms[$id]['finelev360_cat']=[$id];$meta[$id]=['_thumbnail_id'=>$id,'cookie'=>'keep-'.$id];}
+  foreach([2487=>88,2290=>86,2305=>87,11=>1,12=>2] as $id=>$order){$posts[$id]=(object)['ID'=>$id,'post_type'=>FINELEVATE360_CPT_ITEM,'menu_order'=>$order,'post_parent'=>0,'post_title'=>'Fixture '.$id,'post_modified'=>'original time'];$terms[$id]['finelev360_cat']=[$id];$meta[$id]=['_thumbnail_id'=>$id,'cookie'=>'keep-'.$id];}
 }
 setup_isolation_fixture();
 // Reproduce the original direct-SQL order propagation using the real installed callback.
@@ -87,6 +102,10 @@ setup_isolation_fixture();
 $next=$baseline;$next_evidence=$evidence;$attr=finelevate360_research_attr_ids('me')[0];edit_cell($next,$next_evidence,$attr,'yes');
 $_POST=request_for(2487,$next,$next_evidence)+['action'=>'editpost','post_ID'=>2487];$_SERVER['REQUEST_METHOD']='POST';
 $family_before=[$meta[2290],$meta[2305],$terms[2290],$terms[2305],(array)$posts[2290],(array)$posts[2305]];
+$valid_request=$_POST;$early_before=serialize([$meta,$terms,$posts]);
+$_POST['finelevate360_regional_expected_hash']=str_repeat('0',64);rejects(fn()=>do_action('admin_init'));same(serialize([$meta,$terms,$posts]),$early_before);
+$_POST=$valid_request;unset($_POST['finelevate360_regional_evidence_nonce']);rejects(fn()=>do_action('admin_init'));same(serialize([$meta,$terms,$posts]),$early_before);
+$_POST=$valid_request;
 do_action('admin_init');
 same($finelevate360_regional_isolation['source'],2487);
 // Guard is already active before core assigns terms or any save_post callback runs.
@@ -114,3 +133,46 @@ do_action('pll_save_post',11,$posts[11],pll_get_post_translations(11));same($pos
 // Context is request-scoped; no option or persistent synchronization setting was edited.
 same($pll->options['sync'],['menu_order','post_meta','taxonomies','_thumbnail_id']);
 echo "Installed Polylang 3.9.1 callbacks with simulated WordPress storage: $tests assertions passed; live verification still required.\n";
+
+function repair_fixture() {
+  global $posts,$terms,$meta;
+  setup_isolation_fixture();$_POST=[];
+  [$matrix,$evidence]=fixture('me',2487);$meta[2487]['_finelevate360_item_attrs']=$matrix;$meta[2487]['_finelevate360_item_research']=$evidence;
+  foreach([2290,2305,2487] as $id){$posts[$id]->menu_order=88;$meta[$id]['cmplz_hide_cookiebanner']='';$meta[$id]['cybocfi_hide_featured_image']='';}
+  $meta[2487]['rank_math_seo_score']='6';$meta[2487]['rank_math_contentai_score']=['keywords'=>'74.51','wordCount'=>'0'];$meta[2487]['_edit_last']='1';
+  $terms[2290]['finelev360_cat']=[29,83];$terms[2305]['finelev360_cat']=[138];$terms[2487]['finelev360_cat']=[132];
+  $rows=[];
+  foreach([2290=>86,2305=>87,2487=>88] as $id=>$restore) {
+    $keys=['cmplz_hide_cookiebanner','cybocfi_hide_featured_image'];if($id===2487)$keys=array_merge($keys,['rank_math_seo_score','rank_math_contentai_score','_edit_last']);
+    $rows[]=['id'=>$id,'title'=>$posts[$id]->post_title,'expected_order'=>88,'restore_order'=>$restore,'expected_terms'=>$terms[$id]['finelev360_cat'],
+      'restore_terms'=>[2290=>[83],2305=>[138],2487=>[132]][$id],'protected_hash'=>finelevate360_regional_metadata_hash($id),
+      'remove_metadata'=>array_intersect_key($meta[$id],array_flip($keys))];
+  }
+  return ['records'=>$rows];
+}
+function repair_state() {global $meta,$terms,$posts;return serialize([$meta,$terms,$posts]);}
+function rejected_repair($plan) {
+  $before=repair_state();rejects(fn()=>finelevate360_regional_repair(json_encode($plan)));same(repair_state(),$before);
+}
+$plan=repair_fixture();$testDeniedCaps=['manage_options'];rejected_repair($plan);$testDeniedCaps=[];
+$state=repair_state();$testDeniedCaps=['manage_options'];rejects(fn()=>finelevate360_regional_begin_isolation(2487,true));same(repair_state(),$state);$testDeniedCaps=[];
+$testFamilyOverride=['me'=>2487,'en'=>2290,'sr'=>2305,'hr'=>11];rejects(fn()=>finelevate360_regional_begin_isolation(2487,true));same(repair_state(),$state);$testFamilyOverride=null;
+$plan=repair_fixture();$bad=$plan;$bad['records'][0]['id']=11;rejected_repair($bad);
+$bad=$plan;$bad['records'][0]['remove_metadata']['_thumbnail_id']=2290;rejected_repair($bad);
+$bad=$plan;$bad['records'][0]['remove_metadata']['cmplz_hide_cookiebanner']='changed';rejected_repair($bad);
+$bad=$plan;$bad['records'][0]['protected_hash']=str_repeat('0',64);rejected_repair($bad);
+$bad=$plan;$bad['records'][0]['restore_terms']=[29];rejected_repair($bad);
+$bad=$plan;unset($meta[2290]['cmplz_hide_cookiebanner']);rejected_repair($bad);
+$plan=repair_fixture();$before_meta=$meta;$before_posts=unserialize(serialize($posts));
+finelevate360_regional_repair(json_encode($plan));
+same($finelevate360_regional_isolation['repair'],true);
+foreach($plan['records'] as $row) {
+  $id=$row['id'];$expected=$before_meta[$id];foreach($row['remove_metadata'] as $key=>$value)unset($expected[$key]);
+  same($meta[$id],$expected);same($terms[$id]['finelev360_cat'],$row['restore_terms']);
+  $expected_post=(array)$before_posts[$id];$expected_post['menu_order']=$row['restore_order'];same((array)$posts[$id],$expected_post);
+}
+same($meta[2487]['_finelevate360_item_attrs'],$before_meta[2487]['_finelevate360_item_attrs']);
+same($meta[2487]['_finelevate360_item_research'],$before_meta[2487]['_finelevate360_item_research']);
+same($meta[2487]['_thumbnail_id'],$before_meta[2487]['_thumbnail_id']);
+rejected_repair($plan); // Captured-value CAS rejects a duplicate operation without repeating writes.
+echo "Actual guarded repair mode, exact restoration, absent metadata, stale-plan rejection and protected ratings: $tests assertions passed (simulated WordPress storage).\n";
