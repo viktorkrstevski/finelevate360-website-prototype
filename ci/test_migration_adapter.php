@@ -34,3 +34,9 @@ if(class_exists('DOMDocument')){
 if($filters['post_thumbnail_html']('',7)!=='<img data-id="42">')throw new Exception('Mapped profile thumbnail missing.');
 if($filters['post_thumbnail_html']('Existing thumbnail',7)!=='Existing thumbnail')throw new Exception('Existing thumbnail replaced.');
 echo "Adapter excerpt, introduction and thumbnail regression checks passed.\n";
+
+foreach(['mk','sr','hr','sl','me'] as $lang){
+ foreach(['Platform','All','Filter by functionality','Apply','Reset','Close','Filter'] as $label)if(fe_migration_map_label($label,$lang)===$label)throw new Exception('Missing localized filter '.$lang.' '.$label);
+ if(!fe_migration_map_unit('entity',$lang)||!fe_migration_map_unit('functionality',$lang))throw new Exception('Missing localized summary unit.');
+}
+echo "Map locale labels and summary units passed.\n";

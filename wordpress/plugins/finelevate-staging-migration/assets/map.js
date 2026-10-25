@@ -13,7 +13,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const close = document.createElement('button');
   close.type = 'button';
   close.className = 'finelevate-filter-close';
-  close.textContent = document.documentElement.lang === 'mk' ? '✕ Затвори' : '✕ Close';
+  close.textContent = '✕ ' + ({mk:'Затвори',sr:'Zatvori',hr:'Zatvori',sl:'Zapri',me:'Zatvori'}[document.documentElement.lang.split('-')[0]] || 'Close');
   panel.prepend(close);
   const toggle = open => {
     panel.classList.toggle('active', open);
