@@ -64,7 +64,7 @@ function wp_update_post($input,$error=false) {
 class PLL_Base {public $model;public $options;public $links;public $sync;}
 class IsolationPostModel {
   public $allowed=true;
-  public function get_translations($id) {if(in_array($id,[2488,2322,2323],true))return ['me'=>2488,'en'=>2322,'sr'=>2323];return in_array($id,[2487,2290,2305],true)?['me'=>2487,'en'=>2290,'sr'=>2305]:['hr'=>11,'sl'=>12];}
+  public function get_translations($id) {global $testFamilyOverride;if(is_array($testFamilyOverride) && in_array($id,$testFamilyOverride,true))return $testFamilyOverride;if(in_array($id,[2488,2322,2323],true))return ['me'=>2488,'en'=>2322,'sr'=>2323];return in_array($id,[2487,2290,2305],true)?['me'=>2487,'en'=>2290,'sr'=>2305]:['hr'=>11,'sl'=>12];}
   public function current_user_can_synchronize($id) {return $this->allowed;}
   public function get_language($id) {return array_search($id,$this->get_translations($id),true);}
   public function get_translation($id,$lang) {return $this->get_translations($id)[$lang]??0;}

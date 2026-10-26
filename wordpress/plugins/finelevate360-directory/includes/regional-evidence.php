@@ -191,10 +191,17 @@ function finelevate360_regional_begin_isolation($post_id, $repair = false) {
   };
   add_filter('pll_copy_post_metas', $copy_guard, PHP_INT_MAX, 5);
   add_filter('pll_copy_taxonomies', $copy_guard, PHP_INT_MAX, 5);
-  $metadata_guard = function ($check, $id, $key, $operation) {
+  $metadata_guard = function ($check, $id, $key, $operation, $value) {
     global $finelevate360_regional_isolation;
     $context = $finelevate360_regional_isolation;
     if (!in_array((int)$id, $context['family'], true)) return $check;
+    if (isset($context['logo_attachment'])) {
+      $integer = is_int($value) || (is_string($value) && ctype_digit($value));
+      return (int)$id === $context['source'] && $key === '_thumbnail_id'
+        && in_array($operation, ['add','update'], true) && $integer
+        && (int)$value === $context['logo_attachment']
+        && !metadata_exists('post', $id, '_thumbnail_id') ? $check : false;
+    }
     if ($context['repair']) {
       $deleting = $context['repair_delete'] ?? [];
       return $operation === 'delete' && ($deleting['id'] ?? null) === (int)$id && ($deleting['key'] ?? null) === $key ? $check : false;
@@ -204,7 +211,7 @@ function finelevate360_regional_begin_isolation($post_id, $repair = false) {
     return (int)$id === $context['source'] && in_array($key, $allowed, true) ? $check : false;
   };
   foreach (['add_post_metadata'=>'add','update_post_metadata'=>'update','delete_post_metadata'=>'delete'] as $hook=>$operation) {
-    add_filter($hook, function ($check, $id, $key) use ($metadata_guard, $operation) { return $metadata_guard($check, $id, $key, $operation); }, PHP_INT_MAX, 3);
+    add_filter($hook, function ($check, $id, $key, $value) use ($metadata_guard, $operation) { return $metadata_guard($check, $id, $key, $operation, $value); }, PHP_INT_MAX, 4);
   }
 
   // The installed callback writes fields directly with $wpdb, bypassing wp_insert_post_data.
@@ -306,9 +313,11 @@ function finelevate360_regional_repair($json) {
 }
 
 /** Full captured state, including absence versus empty and all taxonomy IDs. */
-function finelevate360_regional_bank_state_hash($id) {
+function finelevate360_regional_bank_state_hash($id, $omit_thumbnail = false) {
   $post = get_post($id); if (!$post) throw new RuntimeException('Captured bank is missing.');
-  $metadata = get_metadata('post', $id); ksort($metadata);
+  $metadata = get_metadata('post', $id);
+  if ($omit_thumbnail) unset($metadata['_thumbnail_id']);
+  ksort($metadata);
   $taxonomies = [];
   foreach (get_post_taxonomies($id) as $tax) {
     $terms = wp_get_post_terms($id, $tax, ['fields'=>'ids']);
@@ -349,6 +358,63 @@ function finelevate360_regional_repair_adriatic_scores($plan) {
   if (!hash_equals($protected,finelevate360_regional_metadata_hash(2488))) throw new RuntimeException('Protected Adriatic ratings/evidence changed.');
 }
 
+/** Reviewed staging bank and verified attachment identities only. */
+function finelevate360_regional_logo_bindings() {
+  return [
+    2489 => [2982, 'Crnogorska Komercijalna Banka AD Podgorica', 'ckb.png'],
+    2490 => [2983, 'Hipotekarna banka AD Podgorica', 'hipotekarna.png'],
+    2491 => [2788, 'Zapad banka AD Podgorica', 'zapad-banka-logo.png'],
+    2492 => [2789, 'Prva banka Crne Gore AD Podgorica', 'prva-banka-crne-gore-logo.jpg'],
+    2493 => [2984, 'Lovćen banka AD Podgorica', 'lovcen.png'],
+    2494 => [2986, 'Universal Capital Bank AD Podgorica', 'ucb.png'],
+    2495 => [2985, 'ZIRAAT Bank Montenegro AD Podgorica', 'ziraat.jpg'],
+  ];
+}
+
+function finelevate360_regional_logo_family_hash($source, $omit_source_thumbnail = false) {
+  if (!function_exists('pll_get_post_translations')) throw new RuntimeException('Translation identities unavailable.');
+  $family = array_values(array_unique(array_map('intval', pll_get_post_translations($source))));
+  sort($family);
+  if (!in_array((int)$source, $family, true)) throw new RuntimeException('Incomplete bank translation family.');
+  $states = [];
+  foreach ($family as $id) {
+    if (get_post_type($id) !== FINELEVATE360_CPT_ITEM) throw new RuntimeException('Unexpected linked record type.');
+    $states[$id] = finelevate360_regional_bank_state_hash($id, $omit_source_thumbnail && $id === (int)$source);
+  }
+  return hash('sha256', serialize($states));
+}
+
+/** Native tool POST: one thumbnail addition, without editpost or a Rank Math request. */
+function finelevate360_regional_assign_logo($request) {
+  $id = filter_var($request['finelevate360_logo_bank'] ?? null, FILTER_VALIDATE_INT);
+  $attachment = filter_var($request['finelevate360_logo_attachment'] ?? null, FILTER_VALIDATE_INT);
+  $binding = finelevate360_regional_logo_bindings()[$id] ?? null;
+  if (($_SERVER['REQUEST_METHOD'] ?? '') !== 'POST' || !finelevate360_regional_staging_config('me')
+    || !$binding || !$binding[0] || $attachment !== $binding[0]
+    || !current_user_can('manage_options') || !current_user_can('edit_post', $id)
+    || !is_string($request['finelevate360_logo_nonce'] ?? null)
+    || !wp_verify_nonce($request['finelevate360_logo_nonce'], 'finelevate360_regional_logo_'.$id)
+    || finelevate360_regional_evidence_market($id) !== 'me'
+    || !get_post($id) || get_post($id)->post_title !== $binding[1]) throw new RuntimeException('Invalid or unauthorized staging logo assignment.');
+  $image = get_post($attachment);
+  if (!$image || $image->post_type !== 'attachment' || !wp_attachment_is_image($attachment)
+    || basename((string)get_post_meta($attachment, '_wp_attached_file', true)) !== $binding[2]
+    || !wp_get_attachment_image($attachment, 'thumbnail')) throw new RuntimeException('Mapped attachment is not the verified renderable bank image.');
+  $expected = $request['finelevate360_logo_state'] ?? null;
+  if (metadata_exists('post', $id, '_thumbnail_id') || !is_string($expected)
+    || !hash_equals(finelevate360_regional_logo_family_hash($id), $expected)) throw new RuntimeException('Bank or linked records changed; reopen the logo tool before saving.');
+  finelevate360_regional_begin_isolation($id);
+  global $finelevate360_regional_isolation;
+  $finelevate360_regional_isolation['logo_attachment'] = $attachment;
+  // Core can delete on an invalid image: validation precedes this call, and deletion stays blocked.
+  set_post_thumbnail($id, $attachment);
+  if (!metadata_exists('post', $id, '_thumbnail_id') || (int)get_post_meta($id, '_thumbnail_id', true) !== $attachment)
+    throw new RuntimeException('Logo did not persist; inspect current state before any retry.');
+  if (!hash_equals($expected, finelevate360_regional_logo_family_hash($id, true)))
+    throw new RuntimeException('Unexpected family difference; stop and inspect the authenticated export.');
+  return $attachment;
+}
+
 add_action('admin_menu', function () {
   if (!finelevate360_regional_staging_config('me')) return;
   add_management_page('Regional preservation repair','Regional preservation repair','manage_options','finelevate360-regional-repair',function () {
@@ -356,10 +422,20 @@ add_action('admin_menu', function () {
     echo '<div class="wrap"><h1>Regional preservation repair</h1><p>Restore only the captured Erste side effects or the two new Adriatic score rows. Ratings, evidence, categories and unrelated fields are preserved. The full plan is checked against current values before any write.</p>';
     $adriatic_hashes=[];foreach([2322,2323,2488] as $id) $adriatic_hashes[$id]=finelevate360_regional_bank_state_hash($id);
     echo '<p>Current Adriatic family state hashes for the independently captured repair plan:</p><pre id="finelevate360-adriatic-state-hashes">'.esc_html(wp_json_encode($adriatic_hashes)).'</pre>';
-    if (($_SERVER['REQUEST_METHOD']??'')==='POST') {
+    if (($_SERVER['REQUEST_METHOD']??'')==='POST' && isset($_POST['finelevate360_logo_bank'])) {
+      try {finelevate360_regional_assign_logo(wp_unslash($_POST));echo '<div class="notice notice-success"><p>Mapped bank logo persisted. Verify the authenticated export and rendered map.</p></div>';}
+      catch(Throwable $error) {echo '<div class="notice notice-error"><p>Stopped: '.esc_html($error->getMessage()).'</p></div>';}
+    } elseif (($_SERVER['REQUEST_METHOD']??'')==='POST') {
       check_admin_referer('finelevate360_regional_repair');
       try {finelevate360_regional_repair(wp_unslash($_POST['finelevate360_repair_plan']??''));echo '<div class="notice notice-success"><p>Captured side effects restored. Verify the authenticated export before further publication.</p></div>';}
       catch(Throwable $error) {echo '<div class="notice notice-error"><p>Stopped: '.esc_html($error->getMessage()).'</p></div>';}
+    }
+    echo '<h2>Approved Montenegro bank logos</h2><p>Each action adds only its verified image to a bank that still has no featured-image metadata. Capability data and linked records are checked and preserved.</p>';
+    foreach (finelevate360_regional_logo_bindings() as $id=>$binding) {
+      echo '<form method="post"><p>'.esc_html($binding[1]).' ';
+      if (!$binding[0] || metadata_exists('post',$id,'_thumbnail_id')) {echo '<span>Unavailable: upload verification pending or image already assigned.</span></p></form>';continue;}
+      wp_nonce_field('finelevate360_regional_logo_'.$id,'finelevate360_logo_nonce');
+      echo '<input type="hidden" name="finelevate360_logo_bank" value="'.(int)$id.'"><input type="hidden" name="finelevate360_logo_attachment" value="'.(int)$binding[0].'"><input type="hidden" name="finelevate360_logo_state" value="'.esc_attr(finelevate360_regional_logo_family_hash($id)).'"><button class="button" type="submit">Assign verified logo</button></p></form>';
     }
     echo '<form method="post">';wp_nonce_field('finelevate360_regional_repair');
     echo '<label for="finelevate360_repair_plan">Verified repair plan JSON</label><textarea id="finelevate360_repair_plan" name="finelevate360_repair_plan" rows="12" style="display:block;width:100%"></textarea><p><button class="button button-primary" type="submit">Restore captured side effects</button></p></form></div>';

@@ -47,7 +47,7 @@ define('FINELEVATE360_CPT_PARTNERS','finelev360_partner');
 define('FINELEVATE360_CPT_ADVISORY','finelev360_advisory');
 function wp_is_post_revision($id) {return false;}
 function current_user_can($cap,$id=0) {global $testDeniedCaps;return !in_array($cap,$testDeniedCaps??[],true);}
-function wp_verify_nonce($nonce,$action) {return $nonce==='valid';}
+function wp_verify_nonce($nonce,$action) {global $testExpectedNonceAction;return $nonce==='valid' && (!isset($testExpectedNonceAction) || $testExpectedNonceAction===$action);}
 function finelevate360_attr_columns() {return array_fill_keys(['mobile','desktop','biznis','privat'],'label');}
 function update_post_meta($id,$key,$value) {if(function_exists('regional_test_update_meta'))return regional_test_update_meta($id,$key,$value);global $meta,$writes;$writes[]=[$id,$key];$meta[$id][$key]=$value;}
 $save_source=file_get_contents(__DIR__.'/../wordpress/plugins/finelevate360-directory/includes/metaboxes.php');

@@ -51,10 +51,10 @@ jobs:
           php ci/test_event.php
           php ci/test_directory_data.php
           php ci/test_regional_states.php
-          php ci/test_regional_asset_version.php
           php ci/test_regional_save_guard.php
           php ci/test_regional_sync_isolation.php
           php ci/test_regional_rankmath_requests.php
+          php ci/test_regional_logos.php
           php ci/test_migration_guard.php
           php ci/test_migration_importer.php
           php ci/test_migration_adapter.php
