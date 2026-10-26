@@ -15,7 +15,7 @@ define('FINELEVATE360_DIR_URL',  plugin_dir_url(__FILE__));
 
 require_once FINELEVATE360_DIR_PATH . 'includes/cpt.php';
 // BEGIN HR/SI RESEARCH HELPERS (five-state gated; onboarding aliases across translations)
-/** Five-state research is deliberately restricted to the reviewed HR/SI records. */
+/** Five-state research is restricted to reviewed records; SR/ME additions are staging-only. */
 if (!defined('ABSPATH')) exit;
 
 /** Reversible onboarding consolidation: archived IDs retain their original data.
@@ -48,7 +48,20 @@ function finelevate360_canonical_attribute_filters($ids) {
   }, $ids)));
 }
 
+/** Reviewed destination IDs apply only to this staging origin, including localized home URLs. */
+function finelevate360_regional_staging_config($market) {
+  $origin = wp_parse_url(home_url('/'));
+  if (!is_array($origin) || strtolower($origin['scheme'] ?? '') !== 'https'
+    || strtolower($origin['host'] ?? '') !== 'stg.finelevate360.com'
+    || (isset($origin['port']) && $origin['port'] !== 443)
+    || isset($origin['user']) || isset($origin['pass'])) return [];
+  $config = ['sr'=>['items'=>[2299,2300,2301,2302,2304,2303,2311,2305,2313,2306,2307,2315,2308,2319,2317,2321,2323,2325,2309],'attributes'=>[2366,2368,2370,2372,2374,2376,2378,2380,2382,2384,2386,2388,2390,2392,2394,2396,2398,2400,2402,2404,2406,2408,2410,2412,2414,2416],'path'=>'/sr/digitalna-mapa-2/'],'me'=>['items'=>[2489,2485,2490,2487,2491,2493,2492,2488,2494,2486,2495],'attributes'=>[2459,2460,2461,2462,2463,2464,2465,2466,2467,2468,2469,2470,2471,2472,2473,2474,2475,2476,2477,2478,2479,2480,2481,2482,2483,2484],'path'=>'/me/digitalna-mapa-banke/']];
+  return $config[$market] ?? [];
+}
+
 function finelevate360_research_ids($market) {
+  $regional = finelevate360_regional_staging_config($market);
+  if ($regional) return $regional['items'];
   $ids = [
     'hr' => [1007,1010,1064,1067,1070,1072,1075,1079,1082,1087,1090,1093,1096,1101,1104,1107,1110,1113,1116,2164],
     'sl' => [1952,1954,1956,1958,1960,1962,1964,1965,1967,1968,1970,1972],
@@ -58,7 +71,7 @@ function finelevate360_research_ids($market) {
 }
 
 function finelevate360_research_market($post_id) {
-  foreach (['hr','sl'] as $market) {
+  foreach (['hr','sl','sr','me'] as $market) {
     if (in_array((int)$post_id, finelevate360_research_ids($market), true) && get_post_type($post_id) === FINELEVATE360_CPT_ITEM) return $market;
   }
   return '';
@@ -66,11 +79,17 @@ function finelevate360_research_market($post_id) {
 
 function finelevate360_research_page_market() {
   $id = (int)get_queried_object_id();
+  foreach (['sr','me'] as $market) {
+    $regional = finelevate360_regional_staging_config($market);
+    if ($regional && get_post_meta($id, '_fe_public_path', true) === $regional['path']) return $market;
+  }
   $pages = finelevate360_migration_rule('pages', ['hr'=>1042,'sl'=>1974]);
   return $id === ($pages['hr'] ?? 0) ? 'hr' : ($id === ($pages['sl'] ?? 0) ? 'sl' : '');
 }
 
 function finelevate360_research_attr_ids($market) {
+  $regional = finelevate360_regional_staging_config($market);
+  if ($regional) return $regional['attributes'];
   $ids = $market === 'sl' ? range(1925,1951) : ($market === 'hr' ? [1122,1188,1190,1192,1194,1197,1200,1204,1206,1208,1210,1212,1214,1216,1219,1221,1224,1227,1229,1231,1233,1237,1239,1241,1243,1246,1248] : []);
   $mapped = finelevate360_migration_rule('attributes', ['hr'=>$market === 'hr' ? $ids : [],'sl'=>$market === 'sl' ? $ids : []]);
   $ids = $mapped[$market] ?? [];
@@ -82,6 +101,15 @@ function finelevate360_research_status($value) {
 }
 
 function finelevate360_research_labels($market) {
+  if (in_array($market, ['sr','me'], true) && finelevate360_regional_staging_config($market)) {
+    $sr = $market === 'sr';
+    return [
+      'yes'=>'Dostupno','no'=>'Nije dostupno','partial'=>$sr ? 'Delimično' : 'Djelimično',
+      'unknown'=>'Nije potvrđeno','not_applicable'=>$sr ? 'Nije primenljivo' : 'Nije primjenjivo',
+      'confirmed'=>'Potvrđena dostupnost','coverage'=>'Pokrivenost dokazima','legend'=>'Legenda',
+      'explanation'=>'Filtri prikazuju samo potvrđenu punu dostupnost. Djelimično znači ograničen obim; pročitajte pojašnjenje. Nije potvrđeno ne znači da usluga nije dostupna. Nije primjenjivo označava dokumentovanu neprimjenjivost. Pokrivenost broji statuse potkrijepljene dokazima; to nije ocjena digitalne zrelosti.',
+    ];
+  }
   return $market === 'sl' ? [
     'yes'=>'Na voljo','no'=>'Ni na voljo','partial'=>'Delno','unknown'=>'Ni potrjeno','not_applicable'=>'Ni relevantno',
     'confirmed'=>'Potrjena razpoložljivost','coverage'=>'Pokritost z dokazi','legend'=>'Legenda',
@@ -178,9 +206,9 @@ function finelevate360_research_summary($post_id) {
 
 function finelevate360_research_legend($market) {
   $labels = finelevate360_research_labels($market);
-  $marks = ['yes'=>'DA','partial'=>$market === 'sl' ? 'DELNO' : 'DJELOM.','no'=>'NE','unknown'=>'?','not_applicable'=>'—'];
+  $marks = ['yes'=>'DA','partial'=>$market === 'sl' ? 'DELNO' : ($market === 'sr' ? 'DELIM.' : ($market === 'me' ? 'DJELIM.' : 'DJELOM.')),'no'=>'NE','unknown'=>'?','not_applicable'=>'—'];
   $html = '<style>
-/* HR/SI presentation only; the reference-market theme is unchanged. */
+/* Research presentation only; the reference-market theme is unchanged. */
 [data-research-market] .f360-research-summary{margin-top:auto;padding-top:0;font-size:13px;line-height:1.4;color:#315c96;font-weight:600}
 [data-research-market] .f360-research-caption{display:block;font-size:10px;font-weight:400;color:#64748b}
 [data-research-market] .finelevate-filter-map-item-desc{max-width:100%;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
@@ -213,6 +241,7 @@ function finelevate360_research_legend($market) {
 }
 // END HR/SI RESEARCH HELPERS
 require_once FINELEVATE360_DIR_PATH . 'includes/metaboxes.php';
+require_once FINELEVATE360_DIR_PATH . 'includes/regional-evidence.php';
 require_once FINELEVATE360_DIR_PATH . 'includes/shortcodes.php';
 require_once FINELEVATE360_DIR_PATH . 'includes/templates.php';
 require_once FINELEVATE360_DIR_PATH . 'includes/admin-columns.php';
@@ -253,7 +282,7 @@ add_action('wp_enqueue_scripts', function () {
     'finelevate360-modal',
     FINELEVATE360_DIR_URL . 'assets/js/modal.js',
     [],
-    '1.0.9',
+    '1.0.10-staging-regional',
     true
   );
 
