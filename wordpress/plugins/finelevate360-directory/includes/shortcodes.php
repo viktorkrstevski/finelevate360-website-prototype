@@ -16,7 +16,7 @@ function finelevate360_modal_enqueue() {
     'finelevate360-modal',
     plugin_dir_url( dirname( __FILE__ ) ) . 'assets/js/modal.js',
     [],
-    finelevate360_research_page_market() ? '1.0.10-hr-si-20261020-visual3' : (defined('FINELEVATE360_VERSION') ? FINELEVATE360_VERSION : '1.0.0'),
+    finelevate360_research_page_market() ? '1.0.10-regional-' . substr(hash_file('sha256', dirname(__DIR__) . '/assets/js/modal.js'), 0, 12) : (defined('FINELEVATE360_VERSION') ? FINELEVATE360_VERSION : '1.0.0'),
     true
   );
   wp_localize_script( 'finelevate360-modal', 'f360i18n', finelevate360_i18n() );
