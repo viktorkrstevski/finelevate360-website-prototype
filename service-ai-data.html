@@ -2,185 +2,144 @@
 <html lang="en">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>AI & Data advisory for financial institutions | Finelevate360</title>
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>AI, Data and Intelligent Automation | Finelevate360</title>
 <meta name="description" content="AI readiness, roadmap, EU AI Act governance and partner-delivered quick wins for banks, insurers and fintechs.">
-<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=Noto+Serif+Display:ital,wght@0,300..600;1,300..600&family=Onest:wght@300..700&display=swap" rel="stylesheet">
+<meta name="robots" content="noindex,nofollow">
+<link rel="icon" href="assets/stg/brand/Finelevate_monochrome_approved.svg">
+<link rel="preload" href="assets/stg/fonts/Montserrat-Medium.ttf" as="font" type="font/ttf" crossorigin>
 <link rel="stylesheet" href="assets/site.css">
-<style>
-.jump{position:sticky;top:76px;z-index:40;background:rgba(255,255,255,.96);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
-.jump .wrap{display:flex;gap:30px;overflow-x:auto;height:54px;align-items:center}
-.jump a{font:500 12.5px var(--mono);letter-spacing:.06em;text-transform:uppercase;text-decoration:none;color:var(--muted);white-space:nowrap}.jump a:hover{color:var(--ink)}
-.ledger{border-top:1px solid var(--line-strong)}
-.lrow{display:grid;grid-template-columns:80px 1.2fr 1.6fr .9fr;gap:24px;padding:26px 0;border-bottom:1px solid var(--line);align-items:baseline}
-.lrow .n{font:500 13px var(--mono);color:var(--muted)}
-.lrow h3{font-family:var(--display);font-size:clamp(22px,2.2vw,30px);line-height:1.15;letter-spacing:-.01em}
-.lrow p{color:#33424A;font-size:15.5px}
-.lrow .f{font:500 12px var(--mono);letter-spacing:.05em;text-transform:uppercase;color:var(--azure-ink);text-align:right}
-@media (max-width:860px){.lrow{grid-template-columns:44px 1fr}.lrow p,.lrow .f{grid-column:2;text-align:left}}
-.three{display:grid;grid-template-columns:repeat(3,1fr);border-top:1px solid var(--line-strong)}
-.three>div{padding:28px 26px 0 0}.three>div+div{padding-left:26px;border-left:1px solid var(--line)}
-.three h3{font-family:var(--display);font-size:28px;margin-top:12px;letter-spacing:-.01em}.three p{color:#33424A;margin-top:10px;font-size:15.5px}
-.three .rec{background:var(--ink);color:#fff;padding:28px!important;border-left:none!important}.three .rec p{color:rgba(255,255,255,.8)}.three .rec .mono{color:var(--azure-l)}
-@media (max-width:860px){.three{grid-template-columns:1fr}.three>div+div{padding-left:0;border-left:none;border-top:1px solid var(--line)}}
-.split2{display:grid;grid-template-columns:1fr 1fr;border-top:1px solid var(--line-strong)}
-.split2>div{padding:28px 28px 0 0}.split2>div+div{padding-left:28px;border-left:1px solid var(--line)}
-.split2 ul{list-style:none;margin:16px 0 0;padding:0}.split2 li{padding:12px 0;border-bottom:1px solid var(--line);font-size:16px}
-@media (max-width:760px){.split2{grid-template-columns:1fr}.split2>div+div{padding-left:0;border-left:none}}
-details.faq{border-bottom:1px solid var(--line)}details.faq summary{list-style:none;cursor:pointer;display:flex;justify-content:space-between;gap:20px;padding:24px 0;font-family:var(--display);font-size:24px;letter-spacing:-.01em}
-details.faq summary::-webkit-details-marker{display:none}details.faq summary::after{content:"+";font:300 30px var(--sans)}details.faq[open] summary::after{content:"−"}
-details.faq p{padding:0 0 24px;max-width:70ch;color:#33424A}
-.role-grid{display:grid;grid-template-columns:repeat(4,1fr);border-top:1px solid var(--line-strong)}
-.role{padding:24px 20px 26px 0;border-bottom:1px solid var(--line)}.role:not(:nth-child(4n+1)){padding-left:20px;border-left:1px solid var(--line)}
-.role .ini{width:52px;height:52px;background:var(--bone);display:grid;place-items:center;font-family:var(--display);font-size:20px;margin-bottom:14px}
-.role h4{font-size:16px;font-weight:600;line-height:1.3}.role p{font-size:14px;color:var(--muted);margin-top:6px}
-@media (max-width:900px){.role-grid{grid-template-columns:1fr 1fr}.role:not(:nth-child(4n+1)){padding-left:0;border-left:none}.role:nth-child(even){padding-left:20px;border-left:1px solid var(--line)}}
-.srcs{font:500 11px var(--mono);letter-spacing:.04em;color:var(--muted);margin-top:22px;line-height:1.6}
-.photo-hero{position:relative;margin:0}.photo-hero img{width:100%;aspect-ratio:4/5;object-fit:cover}
-</style>
+
 </head>
 <body>
 <a class="skip" href="#main">Skip to content</a>
 <button class="pm-toggle" type="button">Show PM notes</button>
-<!-- FLAGSHIP STRIP -->
 <div class="flag" role="region" aria-label="Finelevate Digital Summit">
-  <div class="wrap">
-    <div class="left"><img src="assets/brand/fds-compact-finelevate360.svg" alt=""><span><a href="summit/index.html">Finelevate Digital Summit 2026 — relive the story <span aria-hidden="true">↗</span></a><span class="sep">/</span><a href="summit/index.html#2027">2027 · Save the date</a></span></div>
-    <button class="x" type="button" aria-label="Close">×</button>
-  </div>
+  <div class="wrap"><div class="left"><span class="live" aria-hidden="true"></span><span><a href="summit/index.html">Finelevate Digital Summit 2026 — relive the story <span aria-hidden="true">→</span></a><span class="sep">/</span><a href="summit/index.html#y2027">2027 · Register your interest</a></span></div><button class="x" type="button" aria-label="Close">×</button></div>
 </div>
-
-<!-- HEADER + MEGA MENU -->
 <header class="hdr">
   <div class="wrap">
-    <a class="logo" href="index.html" aria-label="Finelevate360 — home"><img src="assets/brand/finelevate-logo.svg" alt="Finelevate360"><svg class="ring" viewBox="0 0 22 22" aria-hidden="true"><circle class="bg" cx="11" cy="11" r="9"/><circle class="fg" cx="11" cy="11" r="9"/></svg></a>
+    <a class="logo" href="index.html" aria-label="Finelevate360 — home"><img src="assets/stg/brand/Finelevate_monochrome_approved.svg" alt="Finelevate360" width="190" height="36"><svg class="ring" viewBox="0 0 22 22" aria-hidden="true"><circle class="bg" cx="11" cy="11" r="9"/><circle class="fg" cx="11" cy="11" r="9"/></svg></a>
     <ul class="nav" role="list">
-      <li><button type="button" aria-haspopup="true">Consulting <span class="caret">▾</span></button>
+      <li><button type="button" aria-haspopup="true" aria-current="page">Consulting <span class="caret">▾</span></button>
         <div class="mega"><div class="wrap">
-          <div><h6>Services</h6><a href="services.html#strategy">Strategy &amp; Transformation</a><a href="service-ai-data.html">AI &amp; Data</a><a href="services.html#digital">Digital Products &amp; CX</a><a href="services.html#compliance">Compliance &amp; Governance</a><a href="services.html#architecture">Architecture &amp; Engineering</a><a href="services.html#microsoft">Microsoft Solutions &amp; Automation</a><a href="services.html#delivery">Project &amp; Program Delivery</a></div>
+          <div><h6>Expertise</h6><a href="services.html#identity">Digital Identity, Trust &amp; Onboarding</a><a href="service-ai-data.html">AI, Data &amp; Intelligent Automation</a><a href="services.html#cyber">Cybersecurity, Regulation &amp; Compliance</a><a href="services.html#strategy">Digital Strategy &amp; Transformation</a><a href="services.html#capabilities">All seven disciplines</a></div>
           <div><h6>Industries</h6><a href="industry-banking.html">Banking</a><a href="services.html#industries">Insurance</a><a href="services.html#industries">Payments &amp; Fintech</a><a href="services.html#industries">Public sector</a></div>
-          <div><h6>How we work</h6><a href="services.html#approach">Our approach</a><a href="services.html#start">Ways to start</a><a href="about.html#experts">Our experts</a><a href="index.html#contact">Talk to us</a></div>
+          <div><h6>How we work</h6><a href="services.html#approach">Our approach</a><a href="services.html#start">Ways to start</a><a href="services.html#experts">Our experts</a><a href="#contact-dialog" data-contact-topic="consulting">Talk to an advisor</a></div>
           <div class="feat"><h6>Free tool</h6><p class="h4" style="margin:0">AI readiness assessment</p><p>Ten minutes. Your level, strengths and next steps — on screen, immediately.</p><a class="tl" href="assessment.html">Start the assessment <span class="ar">→</span></a></div>
+        </div></div></li>
+      <li><button type="button" aria-haspopup="true">Digital Map <span class="caret">▾</span></button>
+        <div class="mega"><div class="wrap">
+          <div><h6>Digital Map</h6><a href="https://stg.finelevate360.com/digital-map-choose-a-country/">Choose a country</a><a href="https://stg.finelevate360.com/banking-capabilities/">Banking Digital Map</a><a href="https://stg.finelevate360.com/insurance/">Insurance Digital Map</a><a href="https://stg.finelevate360.com/fintech/">Fintech Digital Map</a></div>
+          <div><h6>Coverage</h6><a href="https://stg.finelevate360.com/digital-map-choose-a-country/">North Macedonia · Serbia · Croatia</a><a href="https://stg.finelevate360.com/digital-map-choose-a-country/">Montenegro · Slovenia</a></div>
+          <div></div>
+          <div class="feat"><h6>Flagship research</h6><p class="h4" style="margin:0">Digital capabilities, by country</p><p>Digital capability availability across digital channels within financial institutions.</p><a class="tl" href="https://stg.finelevate360.com/banking-capabilities/">Explore Digital Map <span class="ar">→</span></a></div>
         </div></div></li>
       <li><button type="button" aria-haspopup="true">Insights <span class="caret">▾</span></button>
         <div class="mega"><div class="wrap">
-          <div><h6>Read</h6><a href="insights.html">All insights</a><a href="insights.html#articles">Articles</a><a href="insights.html#reports">Reports</a><a href="about.html#news">News</a></div>
-          <div><h6>Digital Maps</h6><a href="insights.html#maps">Banking Digital Map</a><a href="insights.html#maps">Insurance Digital Map</a><a href="insights.html#maps">Fintech Digital Map</a></div>
-          <div><h6>Coming in December</h6><a href="insights.html#reports">State of AI Readiness 2026</a></div>
-          <div class="feat"><h6>Summit recap</h6><p class="h4" style="margin:0">The 2026 Rewind</p><p>What we heard in Skopje — the ideas, the people and the next steps.</p><a class="tl" href="insights.html#articles">Read the recap <span class="ar">→</span></a></div>
+          <div><h6>Read</h6><a href="insights.html">All insights</a><a href="insights.html#articles">Articles</a><a href="insights.html#reports">Reports</a><a href="news/index.html">News</a></div>
+          <div><h6>Research</h6><a href="news/digital-compliance-radar.html">Digital Compliance Radar #1</a><a href="insights.html#reports">State of AI Readiness 2026</a></div>
+          <div><h6>Latest news</h6><a href="news/casys-gold-sponsor.html">CaSys becomes Gold Sponsor</a><a href="news/macedonia2025-memorandum.html">Memorandum with Macedonia2025</a><a href="news/nextsense-gold-partner.html">Nextsense joins as Gold Partner</a></div>
+          <div class="feat"><h6>Summit recap</h6><p class="h4" style="margin:0">The 2026 story</p><p>What we heard in Skopje — the ideas, the people and the next steps.</p><a class="tl" href="summit/index.html">Relive the day <span class="ar">→</span></a></div>
         </div></div></li>
-      <li><a href="summit/index.html" class="flagship"><img src="assets/brand/fds-compact-finelevate360.svg" alt="">Summit</a></li>
+      <li><a href="summit/index.html"><span class="dot" aria-hidden="true"></span>Digital Summit</a></li>
       <li><button type="button" aria-haspopup="true">About <span class="caret">▾</span></button>
         <div class="mega"><div class="wrap">
-          <div><h6>Finelevate360</h6><a href="about.html">Who we are</a><a href="about.html#experts">Our experts</a><a href="about.html#board">Advisory Board</a></div>
-          <div><h6>Ecosystem</h6><a href="about.html#partners">Partners &amp; ecosystem enablers</a><a href="summit/index.html#awards">Awards 2026</a><a href="about.html#news">News</a></div>
-          <div><h6>Languages</h6><a href="#">English</a><a href="#">Македонски</a><a href="#">Srpski · Hrvatski · Crnogorski · Slovenščina</a></div>
-          <div class="feat"><h6>Contact</h6><p class="h4" style="margin:0">Skopje, North Macedonia</p><p>We reply within one working day.</p><a class="tl" href="index.html#contact">Talk to us <span class="ar">→</span></a></div>
+          <div><h6>Finelevate</h6><a href="about.html">Who we are</a><a href="about.html#leadership">Leadership</a><a href="about.html#board">Advisory Board</a><a href="services.html#experts">Our experts</a></div>
+          <div><h6>Ecosystem</h6><a href="about.html#partners">Partners &amp; ecosystem enablers</a><a href="news/index.html">News</a></div>
+          <div><h6>Get involved</h6><a href="#contact-dialog" data-contact-topic="partner">Become a partner</a><a href="summit/index.html#y2027">Summit 2027</a></div>
+          <div class="feat"><h6>Contact</h6><p class="h4" style="margin:0">Skopje, North Macedonia</p><p>contact@finelevate360.com — we reply within one working day.</p><a class="tl" href="#contact-dialog">Contact us <span class="ar">→</span></a></div>
         </div></div></li>
     </ul>
-    <div class="hdr-cta"><span class="langsw" role="group" aria-label="Language"><a href="#" aria-current="true" lang="en">EN</a><a href="#" lang="mk">МК</a></span><a class="btn" href="#contact">Talk to us <span class="ar">→</span></a><button class="burger" type="button">Menu</button></div>
+    <div class="hdr-cta">
+      <details class="lang-dd"><summary><img src="assets/stg/flags/en.svg" alt="" width="18" height="12">En</summary><ul><li><a href="index.html" aria-current="true"><img src="assets/stg/flags/en.svg" alt="" width="18" height="12">English</a></li><li><a href="#" aria-disabled="true" title="Language version follows in production"><img src="assets/stg/flags/mk.svg" alt="" width="18" height="12">Македонски</a></li><li><a href="#" aria-disabled="true" title="Language version follows in production"><img src="assets/stg/flags/sr.svg" alt="" width="18" height="12">Srpski</a></li><li><a href="#" aria-disabled="true" title="Language version follows in production"><img src="assets/stg/flags/hr.svg" alt="" width="18" height="12">Hrvatski</a></li><li><a href="#" aria-disabled="true" title="Language version follows in production"><img src="assets/stg/flags/sl.svg" alt="" width="18" height="12">Slovenščina</a></li><li><a href="#" aria-disabled="true" title="Language version follows in production"><img src="assets/stg/flags/me.svg" alt="" width="18" height="12">Crnogorski</a></li></ul></details>
+      <button class="btn green" type="button" data-contact-open>Contact us</button>
+      <button class="burger" type="button" data-menu-open aria-haspopup="dialog" aria-controls="mobile-menu">Menu</button>
+    </div>
   </div>
 </header>
+<dialog id="mobile-menu" class="menu-dialog" aria-labelledby="mm-title">
+  <div class="dialog-top"><h2 id="mm-title">Menu</h2><button class="dialog-close" data-dialog-close aria-label="Close menu">×</button></div>
+  <nav aria-label="Mobile navigation"><a href="services.html">Consulting</a><div class="sub"><a href="service-ai-data.html">AI, Data &amp; Intelligent Automation</a><a href="industry-banking.html">Banking</a><a href="assessment.html">AI readiness assessment</a></div><a href="https://stg.finelevate360.com/digital-map-choose-a-country/">Digital Map</a><a href="insights.html">Insights</a><a href="news/index.html">News</a><a href="summit/index.html">Digital Summit</a><a href="about.html">About</a><a href="about.html#board">Advisory Board</a><a href="about.html#partners">Partners</a></nav>
+  <p style="margin-top:20px"><button class="btn green" type="button" data-contact-open>Contact us</button></p>
+</dialog>
 <main id="main">
 
-<section class="hero">
-  <div class="wrap g12">
-    <div class="c-6">
-      <div class="idx rv"><b>AI &amp; Data</b> Consulting · Service 02</div>
-      <h1 class="d1" style="font-size:clamp(42px,6vw,92px)"><span class="line-mask"><span>AI that reaches</span></span><span class="line-mask"><span>production —</span></span><span class="line-mask"><span>and passes <em>review.</em></span></span></h1>
-      <p class="lede rv">We assess readiness, pick the use cases worth the risk, design the governance and specify the first quick wins. Vetted partners from our ecosystem build — we stay accountable for the result.</p>
-      <div class="actions rv"><a class="btn" href="assessment.html">Take the readiness check <span class="ar">→</span></a><a class="btn ghost" href="index.html#contact">Talk to an AI advisor</a></div>
-    </div>
-    <div class="c-5 s-8"><figure class="photo-hero clip"><img src="https://res.cloudinary.com/dneuiole5/image/upload/w_900,h_1125,c_fill,q_auto,f_auto/fds/ygmkuzcf2gjejl7xir1e" alt="A speaker presenting on AI and compliance at the summit"></figure><p class="cap">Fig. 01 — “AI with No Compliance Trade-off”, Skopje 2026</p></div>
-  </div>
-</section>
+<section class="hero"><div class="wrap g12">
+  <div class="c-6"><div class="idx rv"><b>AI, Data &amp; Intelligent Automation</b> Consulting</div><h1 class="d1" style="font-size:clamp(40px,5.6vw,84px)"><span class="line-mask"><span>AI that reaches</span></span><span class="line-mask"><span>production — and</span></span><span class="line-mask"><span>passes <em>review.</em></span></span></h1>
+    <p class="lede rv">We assess readiness, pick the use cases worth the risk, design the governance and specify the first quick wins. Vetted partners from our ecosystem build — we stay accountable for the result.</p>
+    <div class="actions rv"><a class="btn green" href="assessment.html">Take the readiness check <span class="ar">→</span></a><button class="btn ghost" type="button" data-contact-open data-topic="consulting">Talk to an AI advisor</button></div></div>
+  <div class="c-5 s-8"><figure class="photo-hero clip"><img src="https://res.cloudinary.com/dneuiole5/image/upload/w_900,h_1125,c_fill,g_auto,q_auto,f_auto/fds/ygmkuzcf2gjejl7xir1e" alt="A speaker presenting on AI and compliance at the summit"></figure><p class="cap">“AI with No Compliance Trade-off” · Skopje 2026</p></div>
+</div></section>
 <nav class="jump" aria-label="On this page"><div class="wrap"><a href="#problem">The challenge</a><a href="#offer">Our offer</a><a href="#partners">Partners</a><a href="#regulation">Regulation</a><a href="#check">Readiness check</a><a href="#people">Experts</a></div></nav>
-
-<section class="sec" id="problem">
-  <div class="wrap">
-    <div class="head g12"><div class="c-12"><div class="idx rv">The challenge</div></div><div class="c-8"><h2 class="d2 rv">Most institutions do not lack AI ideas. They lack a way to production.</h2></div></div>
-    <div class="ledger">
-      <div class="lrow rv"><span class="n">01</span><h3>Readiness</h3><p>Data that is owned, findable and good enough — and an honest view of where you stand before investing.</p><span class="f">Diagnose</span></div>
-      <div class="lrow rv"><span class="n">02</span><h3>Priorities</h3><p>The few use cases worth the risk and the spend, sequenced so quick wins come first.</p><span class="f">Prioritise</span></div>
-      <div class="lrow rv"><span class="n">03</span><h3>Governance</h3><p>Controls that let AI pass the risk committee, the auditor and the supervisor — designed in from the start.</p><span class="f">Govern</span></div>
-    </div>
+<section class="sec" id="problem"><div class="wrap">
+  <div class="head g12"><div class="c-12"><div class="idx rv">The challenge</div></div><div class="c-9"><h2 class="d2 rv">Most institutions do not lack AI ideas. They lack a way to <em>production.</em></h2></div></div>
+  <div class="qgrid"><div class="qcard rv"><span class="kicker">Diagnose</span><h3>Readiness</h3><p>Data that is owned, findable and good enough — and an honest view of where you stand before investing.</p></div><div class="qcard rv"><span class="kicker">Prioritise</span><h3>Priorities</h3><p>The few use cases worth the risk and the spend, sequenced so quick wins come first.</p></div><div class="qcard rv"><span class="kicker">Govern</span><h3>Governance</h3><p>Controls that let AI pass the risk committee, the auditor and the supervisor — designed in from the start.</p></div></div>
+</div></section>
+<section class="sec bone" id="offer"><div class="wrap">
+  <div class="head g12"><div class="c-12"><div class="idx rv">Our offer</div></div><div class="c-7"><h2 class="d2 rv">A clear ladder of engagements.</h2></div><div class="c-4 s-9"><p class="lede rv" style="margin-top:22px">Each step stands on its own and leads to the next. Most institutions begin with the diagnostic.</p></div></div>
+  <div class="ladder rv">
+    <div><span class="kicker" style="color:var(--green-l)">Start here</span><h3>AI Readiness Diagnostic</h3><p>An honest, board-ready verdict across strategy, data, governance, skills and technology — including early detection of data gaps.</p><span class="badge">Fixed fee · 3–4 weeks</span></div>
+    <div><h3>AI Value &amp; Roadmap</h3><p>A prioritised, sequenced use-case roadmap tied to business value and regulatory exposure.</p><span class="badge">Fixed fee · 4–6 weeks</span></div>
+    <div><h3>AI Governance Framework</h3><p>EU AI Act classification and controls, DORA alignment, model-risk management — owned by you, recognised by your regulator.</p><span class="badge">Fixed fee or phased</span></div>
+    <div><h3>Quick-Win Design &amp; Partner Orchestration</h3><p>We specify the first solutions to a build-ready standard, select and manage the delivery partner, and assure the build.</p><span class="badge">Design + orchestration</span></div>
+    <div><h3>Standing AI Advisory</h3><p>Board-level counsel, governance oversight, adoption support and value tracking as your AI estate grows.</p><span class="badge">Monthly</span></div>
   </div>
-</section>
-
-<section class="sec bone" id="offer">
-  <div class="wrap">
-    <div class="head g12"><div class="c-12"><div class="idx rv">Our offer</div></div><div class="c-7"><h2 class="d2 rv">A clear ladder of engagements.</h2></div><div class="c-4 s-9"><p class="lede rv" style="margin-top:22px">Each step stands on its own and leads to the next. Most institutions begin with the diagnostic.</p></div></div>
-    <div class="ledger">
-      <div class="lrow rv"><span class="n">01</span><h3>AI Readiness Diagnostic</h3><p>An honest, board-ready verdict across strategy, data, governance, skills and technology — including early detection of data gaps.</p><span class="f">Fixed fee · 3–4 weeks</span></div>
-      <div class="lrow rv"><span class="n">02</span><h3>AI Value &amp; Roadmap</h3><p>A prioritised, sequenced use-case roadmap tied to business value and regulatory exposure.</p><span class="f">Fixed fee · 4–6 weeks</span></div>
-      <div class="lrow rv"><span class="n">03</span><h3>AI Governance Framework</h3><p>EU AI Act classification and controls, DORA alignment, model-risk management — owned by you, recognised by your regulator.</p><span class="f">Fixed fee or phased</span></div>
-      <div class="lrow rv"><span class="n">04</span><h3>Quick-Win Design &amp; Partner Orchestration</h3><p>We specify the first solutions to a build-ready standard, select and manage the delivery partner, and assure the build.</p><span class="f">Design fee + orchestration</span></div>
-      <div class="lrow rv"><span class="n">05</span><h3>Standing AI Advisory</h3><p>Board-level counsel, governance oversight, adoption support and value tracking as your AI estate grows.</p><span class="f">Monthly</span></div>
-    </div>
-  </div>
-</section>
-
-<section class="sec" id="partners">
-  <div class="wrap">
-    <div class="head g12"><div class="c-12"><div class="idx rv">How we work with partners</div></div><div class="c-8"><h2 class="d2 rv">You get the judgment and the governance. Partners bring the build.</h2></div></div>
-    <div class="split2 rv">
-      <div><span class="mono" style="color:var(--azure-ink)">Finelevate360</span><ul><li>Readiness diagnosis and data-maturity detection</li><li>Use-case prioritisation and roadmap</li><li>EU AI Act, DORA and model-risk governance</li><li>Solution design, briefs and business cases</li><li>Partner selection, orchestration and quality assurance</li></ul></div>
-      <div><span class="mono" style="color:var(--green)">Vetted partners, under our oversight</span><ul><li>Data engineering, integration and pipelines</li><li>Platform and model build</li><li>Application support and maintenance</li><li>Run-time operations and service levels</li><li>Specialist capabilities, on demand</li></ul></div>
-    </div>
-    <p class="lede rv" style="margin-top:34px;max-width:70ch">One accountable advisor, the best-fit builder for each job, and a budget spent on outcomes — not on an open-ended data clean-up.</p>
-  </div>
-</section>
-
-<section class="sec bone" id="regulation">
-  <div class="wrap g12">
-    <div class="c-5"><div class="idx rv">Regulation</div><h2 class="d2 rv" style="margin-top:22px">The rules are now part of the design brief.</h2></div>
-    <div class="c-6 s-7" style="border-top:1px solid var(--line-strong)">
-      <div class="lrow rv" style="grid-template-columns:1fr"><h3>EU AI Act</h3><p>AI systems that assess the creditworthiness of natural persons are high-risk. Following the Digital Omnibus on AI (political agreement, May 2026), these obligations are scheduled to apply from 2 December 2027.</p></div>
-      <div class="lrow rv" style="grid-template-columns:1fr"><h3>DORA</h3><p>AI providers and platforms fall under ICT-risk, testing and third-party requirements for financial entities.</p></div>
-      <div class="lrow rv" style="grid-template-columns:1fr"><h3>EBA loan origination guidelines</h3><p>Automated credit models must be explainable, governed and monitored through the life of the loan.</p></div>
-      <p class="srcs">Sources: EU AI Act, Annex III; Digital Omnibus on AI (Council of the EU / European Parliament, 2026); Regulation (EU) 2022/2554 (DORA); EBA/GL/2020/06. Advisory content — not legal advice.</p>
-    </div>
-  </div>
-</section>
-
-<section class="sec petrol on-dark grain ai" id="check">
-  <div class="wrap g12">
-    <div class="c-5"><div class="idx rv">Free tool</div><h2 class="d2 rv" style="margin-top:22px">Start with an honest read.</h2><p class="lede rv" style="margin-top:22px">Ten minutes, six dimensions, an instant result and actions for this week, this quarter and this year.</p><div style="margin-top:30px" class="rv"><a class="btn" href="assessment.html">Start the assessment <span class="ar">→</span></a></div></div>
-    <div class="c-6 s-7"><div class="ai-card rv"><span class="sample">Sample result</span><div class="top"><svg class="ai-ring" viewBox="0 0 132 132" aria-hidden="true"><circle class="bg" cx="66" cy="66" r="56"/><circle class="fg" cx="66" cy="66" r="56" stroke-dasharray="351.9" stroke-dashoffset="351.9" data-off="179.5"/><text x="66" y="77" text-anchor="middle">49%</text></svg><div><span class="lvl">Level 3 · Defined</span><p class="d3" style="font-size:26px;margin-top:12px">Real foundations, real gaps.</p></div></div>
-      <div class="bars"><div class="bar"><div class="row"><b>Strategy &amp; leadership</b><span>89%</span></div><div class="t"><div class="f" data-w="89"></div></div></div><div class="bar"><div class="row"><b>Data &amp; governance</b><span>17%</span></div><div class="t"><div class="f" data-w="17"></div></div></div><div class="bar"><div class="row"><b>Risk, compliance &amp; trust</b><span>33%</span></div><div class="t"><div class="f" data-w="33"></div></div></div></div></div></div>
-  </div>
-</section>
-
-<section class="sec" id="people">
-  <div class="wrap">
-    <div class="head g12"><div class="c-12"><div class="idx rv">Experts</div></div><div class="c-7"><h2 class="d2 rv">The people behind the advice.</h2></div></div>
-    <div class="role-grid"><div class="role rv"><span class="ini">SC</span><h4>Senior Compliance &amp; Regulatory Expert</h4><p>Regulatory analysis, controls, policies and evidence.</p></div><div class="role rv"><span class="ini">AI</span><h4>AI Strategy &amp; Transformation Expert</h4><p>AI strategy, operating model, use-case priorities, responsible AI.</p></div><div class="role rv"><span class="ini">DS</span><h4>Senior Data Scientist / AI Engineer</h4><p>ML, NLP and generative AI — from features to validated models.</p></div><div class="role rv"><span class="ini">AD</span><h4>AI &amp; Data Consultant</h4><p>Microsoft AI adoption, Copilot, data readiness and grounding.</p></div></div>
-    <span class="ph-note">Named portraits and short bios once consented</span>
-  </div>
-</section>
-
-<section class="sec dark on-dark grain" id="contact">
-  <div class="wrap g12" style="align-items:end">
-    <div class="c-7"><div class="idx">Contact</div><h2 class="d2" style="margin-top:22px">Put AI into production — with confidence.</h2></div>
-    <div class="c-4 s-9"><p class="lede">Thirty minutes with a senior advisor who knows regulated finance. We reply within one working day.</p>
-      <div style="display:flex;gap:12px;flex-wrap:wrap;margin-top:28px"><a class="btn" href="index.html#contact">Talk to us <span class="ar">→</span></a><a class="btn ghost" href="assessment.html">AI readiness check</a></div></div>
-  </div>
-</section>
+</div></section>
+<section class="sec" id="partners"><div class="wrap">
+  <div class="head g12"><div class="c-12"><div class="idx rv">How we work with partners</div></div><div class="c-9"><h2 class="d2 rv">You get the judgment and the governance. Partners bring the <em>build.</em></h2></div></div>
+  <div class="split2 rv"><div><span class="kicker">Finelevate360</span><ul><li>Readiness diagnosis and data-maturity detection</li><li>Use-case prioritisation and roadmap</li><li>EU AI Act, DORA and model-risk governance</li><li>Solution design, briefs and business cases</li><li>Partner selection, orchestration and quality assurance</li></ul></div><div class="alt"><span class="kicker g">Vetted partners, under our oversight</span><ul><li>Data engineering, integration and pipelines</li><li>Platform and model build</li><li>Application support and maintenance</li><li>Run-time operations and service levels</li><li>Specialist capabilities, on demand</li></ul></div></div>
+  <p class="lede rv" style="margin-top:34px;max-width:70ch">One accountable advisor, the best-fit builder for each job, and a budget spent on outcomes — not on an open-ended data clean-up.</p>
+</div></section>
+<section class="sec bone" id="regulation"><div class="wrap g12">
+  <div class="c-5"><div class="idx rv">Regulation</div><h2 class="d2 rv" style="margin-top:22px">The rules are now part of the design brief.</h2><p class="lede rv" style="margin-top:20px">Our <a class="tl" href="news/digital-compliance-radar.html">Digital Compliance Radar</a> tracks the signals as they emerge.</p></div>
+  <div class="c-6 s-7"><div class="rules rv"><div><h3>EU AI Act</h3><p>AI systems that assess the creditworthiness of natural persons are high-risk. Following the Digital Omnibus on AI (political agreement, May 2026), these obligations are scheduled to apply from 2 December 2027.</p></div><div><h3>DORA</h3><p>AI providers and platforms fall under ICT-risk, testing and third-party requirements for financial entities.</p></div><div><h3>EBA loan origination guidelines</h3><p>Automated credit models must be explainable, governed and monitored through the life of the loan.</p></div></div>
+    <p class="srcs">Sources: EU AI Act, Annex III; Digital Omnibus on AI (Council of the EU / European Parliament, 2026); Regulation (EU) 2022/2554 (DORA); EBA/GL/2020/06. Advisory content — not legal advice.</p></div>
+</div></section>
+<section class="sec petrol on-dark grain ai" id="check"><div class="wrap g12">
+  <div class="c-5"><div class="idx rv">Free tool</div><h2 class="d2 rv" style="margin-top:22px">Start with an honest read.</h2><p class="lede rv" style="margin-top:22px">An honest, ten-minute read for banks, insurers, payment institutions and companies. Your result appears on screen immediately — no sign-up.</p>
+    <ul class="ticks rv"><li><b>✓</b>Six dimensions, from strategy and data to the EU AI Act</li><li><b>✓</b>Your level, strengths and priorities, instantly</li><li><b>✓</b>Actions for this week, this quarter and this year</li><li><b>✓</b>Peer comparison from December</li></ul>
+    <div style="margin-top:34px" class="rv"><a class="btn green" href="assessment.html">Start the assessment <span class="ar">→</span></a></div></div>
+  <div class="c-6 s-7"><div class="ai-card rv"><span class="sample">Sample result</span><div class="top"><svg class="ai-ring" viewBox="0 0 132 132" aria-hidden="true"><circle class="bg" cx="66" cy="66" r="56"/><circle class="fg" cx="66" cy="66" r="56" stroke-dasharray="351.9" stroke-dashoffset="351.9" data-off="179.5"/><text x="66" y="77" text-anchor="middle">49%</text></svg><div><span class="lvl">Level 3 · Defined</span><p class="d3" style="font-size:24px;margin-top:12px">Real foundations, real gaps.</p><p class="muted" style="font-size:15px;margin-top:6px">Strongest in strategy. Start with data governance.</p></div></div>
+    <div class="bars"><div class="bar"><div class="row"><b>Strategy &amp; leadership</b><span>89%</span></div><div class="t"><div class="f" data-w="89"></div></div></div><div class="bar"><div class="row"><b>Data &amp; governance</b><span>17%</span></div><div class="t"><div class="f" data-w="17"></div></div></div><div class="bar"><div class="row"><b>Risk, compliance &amp; trust</b><span>33%</span></div><div class="t"><div class="f" data-w="33"></div></div></div><div class="bar"><div class="row"><b>People &amp; skills</b><span>56%</span></div><div class="t"><div class="f" data-w="56"></div></div></div></div></div></div>
+</div></section>
+<section class="sec dark on-dark grain" id="people"><div class="wrap">
+  <div class="head g12"><div class="c-12"><div class="idx rv">Experts</div></div><div class="c-7"><h2 class="d2 rv">The people behind the advice.</h2></div></div>
+  <div class="groups rv"><div><h3>AI &amp; data</h3><ul><li><b>AI Strategy &amp; Transformation Expert</b><span>AI strategy, operating model, responsible AI.</span></li><li><b>Senior Data Scientist / AI Engineer</b><span>ML, NLP and generative AI, validated.</span></li><li><b>AI &amp; Data Consultant</b><span>Copilot, data readiness and grounding.</span></li><li><b>Data Architect</b><span>Data models, integration and governance.</span></li></ul></div><div><h3>Regulation</h3><ul><li><b>Senior Compliance &amp; Regulatory Expert</b><span>Regulatory analysis, controls and evidence.</span></li></ul></div></div>
+</div></section>
+<section class="sec tight cta-photo on-dark"><img src="https://res.cloudinary.com/dneuiole5/image/upload/w_1800,h_900,c_fill,q_auto,f_auto/fds/ygmkuzcf2gjejl7xir1e" alt="" loading="lazy"><div class="wrap g12" style="align-items:end">
+  <div class="c-7"><div class="idx">Contact</div><h2 class="d2" style="margin-top:22px">Put AI into production — with <em>confidence.</em></h2></div>
+  <div class="c-4 s-9"><p class="lede">Thirty minutes with a senior advisor who knows regulated finance. We reply within one working day.</p>
+  <div style="display:flex;gap:12px;flex-wrap:wrap;margin-top:28px"><button class="btn green" type="button" data-contact-open data-topic="consulting">Contact us <span class="ar">→</span></button><a class="btn ghost" href="assessment.html">AI readiness check</a></div></div></div></section>
 </main>
 <footer class="foot">
   <div class="wrap">
-    <p class="big">Advice that moves finance <em style="font-style:italic;color:var(--azure-l)">forward.</em></p>
+    <img class="brand-w" src="assets/stg/brand/Finelevate_monochrome_approved.svg" alt="Finelevate360">
+    <p class="big">Advice that moves finance <em>forward.</em></p>
     <div class="cols">
       <div><h6>Consulting</h6><a href="services.html">All services</a><a href="service-ai-data.html">AI &amp; Data</a><a href="services.html#approach">Approach</a><a href="services.html#start">Ways to start</a><a href="assessment.html">AI readiness assessment</a></div>
       <div><h6>Industries</h6><a href="industry-banking.html">Banking</a><a href="services.html#industries">Insurance</a><a href="services.html#industries">Payments &amp; Fintech</a><a href="services.html#industries">Public sector</a></div>
-      <div><h6>Insights</h6><a href="insights.html">Articles &amp; reports</a><a href="insights.html#maps">Banking Digital Map</a><a href="insights.html#maps">Insurance Digital Map</a><a href="insights.html#maps">Fintech Digital Map</a></div>
-      <div><h6>Summit</h6><a href="summit/index.html">The 2026 story</a><a href="summit/index.html#speakers">Speakers</a><a href="summit/index.html#awards">Awards 2026</a><a href="summit/index.html#2027">2027 edition</a></div>
-      <div><h6>About</h6><a href="about.html">Who we are</a><a href="about.html#board">Advisory Board</a><a href="about.html#partners">Partners</a><a href="about.html#news">News</a><a href="index.html#contact">Contact</a></div>
+      <div><h6>Insights</h6><a href="insights.html">Articles &amp; reports</a><a href="news/index.html">News</a><a href="https://stg.finelevate360.com/banking-capabilities/">Banking Digital Map</a><a href="https://stg.finelevate360.com/insurance/">Insurance Digital Map</a><a href="https://stg.finelevate360.com/fintech/">Fintech Digital Map</a></div>
+      <div><h6>Digital Summit</h6><a href="summit/index.html">The 2026 story</a><a href="summit/index.html#agenda">Agenda</a><a href="summit/index.html#speakers">Speakers</a><a href="summit/index.html#y2027">2027 edition</a></div>
+      <div><h6>About</h6><a href="about.html">Who we are</a><a href="about.html#board">Advisory Board</a><a href="about.html#partners">Partners</a><a href="#contact-dialog">Contact</a></div>
     </div>
-    <div class="legal"><span>© 2026 Finelevate360 · Skopje, North Macedonia</span><span>Privacy · Cookies · EN · MK · SR · HR · ME · SL</span></div>
+    <div class="legal"><span>© 2026 Finelevate360 · Skopje, North Macedonia · contact@finelevate360.com</span><span><a href="#">Privacy Policy</a><a href="#">Cookie Policy</a><a href="https://www.linkedin.com/company/110786218/" target="_blank" rel="noopener">LinkedIn</a><a href="https://www.instagram.com/finelevate360/" target="_blank" rel="noopener">Instagram</a></span></div>
   </div>
 </footer>
+<dialog id="contact-dialog" class="contact-dialog" aria-labelledby="contact-title">
+  <div class="dialog-top"><h2 id="contact-title">Talk to Finelevate360</h2><button class="dialog-close" data-dialog-close aria-label="Close">×</button></div>
+  <p style="margin-bottom:14px">Tell us about your challenge or partnership idea — a senior advisor replies within one working day.</p>
+  <p class="proto-note">Prototype preview: inquiries are not sent.</p>
+  <form method="dialog" data-staging-contact>
+    <label for="c-topic">I am interested in</label><select id="c-topic"><option value="consulting">A consulting engagement</option><option value="assessment">The AI readiness assessment</option><option value="partner">Becoming a partner</option><option value="summit">Finelevate Digital Summit</option><option value="other">Something else</option></select>
+    <label for="c-name">Your name</label><input id="c-name" autocomplete="name" required maxlength="120">
+    <label for="c-email">Work email</label><input id="c-email" type="email" autocomplete="email" required maxlength="254">
+    <label for="c-org">Organisation</label><input id="c-org" autocomplete="organization" maxlength="200">
+    <label for="c-msg">Your message</label><textarea id="c-msg" rows="4" required maxlength="5000"></textarea>
+    <button class="btn green" type="submit">Send <span class="ar">→</span></button>
+    <p class="form-status" role="status" data-form-status data-message="Thank you — the form is valid. This prototype does not send inquiries."></p>
+  </form>
+</dialog>
 <script src="assets/site.js"></script>
 </body>
 </html>

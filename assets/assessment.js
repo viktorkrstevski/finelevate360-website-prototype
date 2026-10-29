@@ -152,9 +152,9 @@
 
   function ring(p) {
     var r = 66, c = 2 * Math.PI * r, off = c * (1 - p / 100);
-    return '<svg class="a-ring" viewBox="0 0 160 160" aria-hidden="true"><defs><linearGradient id="ag" x1="0" x2="1"><stop offset="0" stop-color="#149FE3"/><stop offset="1" stop-color="#008A62"/></linearGradient></defs>' +
-      '<circle cx="80" cy="80" r="' + r + '" fill="none" stroke="#EFEBE3" stroke-width="14"/><circle class="a-arc" cx="80" cy="80" r="' + r + '" fill="none" stroke="url(#ag)" stroke-width="14" stroke-linecap="round" stroke-dasharray="' + c + '" stroke-dashoffset="' + c + '" data-off="' + off + '" transform="rotate(-90 80 80)"/>' +
-      '<text x="80" y="88" text-anchor="middle" font-family="Montserrat" font-weight="700" font-size="34" fill="#0F1E26">' + p + "%</text></svg>";
+    return '<svg class="a-ring" viewBox="0 0 160 160" aria-hidden="true"><defs><linearGradient id="ag" x1="0" x2="1"><stop offset="0" stop-color="#2a4ab0"/><stop offset="1" stop-color="#008A62"/></linearGradient></defs>' +
+      '<circle cx="80" cy="80" r="' + r + '" fill="none" stroke="#eaeaea" stroke-width="14"/><circle class="a-arc" cx="80" cy="80" r="' + r + '" fill="none" stroke="url(#ag)" stroke-width="14" stroke-linecap="round" stroke-dasharray="' + c + '" stroke-dashoffset="' + c + '" data-off="' + off + '" transform="rotate(-90 80 80)"/>' +
+      '<text x="80" y="88" text-anchor="middle" font-family="Montserrat" font-weight="700" font-size="34" fill="#1a272e">' + p + "%</text></svg>";
   }
 
   function vResult() {

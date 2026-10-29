@@ -1,33 +1,31 @@
-# Finelevate360 website — Prototype v2
+# Finelevate360 website — Prototype v4
 
-Clickable prototype of the revised finelevate360.com: **consulting first, with the Finelevate Digital Summit as the annual flagship.**
+The **Prototype v2 design and text** (editorial hero with photo collage, capability accordion, photo industry tiles, the 360° approach, the AI readiness section, the Summit band with a speaker reel, editorial insights, a dark contact section and the big footer). Only the **staging brand** is applied on top: the approved monochrome logo and Montserrat from stg.finelevate360.com, in the staging blue and green.
 
-**Open it:** double-click `Open prototype.bat`, or open `start.html`. It needs an internet connection for photos and fonts.
+**Live:** https://finelevate360-prototype.netlify.app (hidden from search engines)
+**Open locally:** double-click `Open prototype.bat`, or open `start.html`.
+
+## What changed from v3
+- **Home** follows the v2 design and text, improved; it is no longer a copy of the staging home page.
+- **Consulting and About** are redesigned with photo tiles for the four expertise areas, statement sections, experts grouped by what they solve, and partner levels. Row numbering is removed.
+- **News, Advisory Board and the Summit now live inside the site.**
+  - `news/`: all eight staging news stories, with full text and images.
+  - `about.html#board`: all five Advisory Board members, with full profiles.
+  - `summit/`: the full 2026 recap and a local 2027 calendar file.
+- **Digital Map is unchanged.** The map block and all map links go to the staging Digital Map pages.
 
 ## Pages
-| Page | What it shows |
-|---|---|
-| `index.html` | Home: consulting capabilities, industries, approach, AI readiness, the Summit band, insights, people, contact |
-| `services.html` | All consulting services, ways to start, 14 expert roles, FAQ |
-| `service-ai-data.html` | Template for every service page |
-| `industry-banking.html` | Template for every industry page (sourced market figures) |
-| `assessment.html` | The working AI readiness assessment |
-| `insights.html` | Digital Maps, the State of AI Readiness 2026 report, articles, newsletter |
-| `about.html` | Platform, leadership, experts, Advisory Board, partners, news |
-| `summit/index.html` | Finelevate Digital Summit 2026 story, 24 speakers, programme, photo gallery, partners, awards, 2027 sign-up |
+`index.html` · `services.html` · `service-ai-data.html` · `industry-banking.html` · `assessment.html` · `insights.html` · `about.html` · `news/index.html` (+ 8 stories) · `summit/index.html` · `start.html`
 
-Use **Show PM notes** (bottom left) on any page to see the implementation notes.
+## Decisions applied (29 Oct 2026)
+- The 2027 summit date is confirmed as 22 September 2027.
+- There were no awards in 2026, so the Awards section and its links are removed.
+- Expert portraits will not be shown. Experts appear by role only.
+- The Nextsense logo is the official file from nextsense.com, saved as `assets/stg/partners/18_nextsense.svg`.
 
-## Still to provide (marked in yellow on the pages)
-- Viktor's portrait and confirmed biography.
-- Expert portraits, with each person's consent.
-- Advisory Board members.
-- Awards winners and categories.
-- Session times and recordings for the programme.
+## Still to provide (yellow notes; "Show PM notes" bottom left)
+- Viktor's biography wording.
 - Article authors.
-- Partner logos and confirmed sponsor tiers.
+- The Digital Compliance Radar PDF.
 
-## Notes
-- All forms are prototypes: nothing is sent. In production they connect to Brevo and CF7.
-- Production build: the custom WordPress theme `finelevate`. See `../Finelevate360 - Website Revision & AI Readiness Follow-up - Product Plan v2.docx`.
-- Design rationale: `../Research/Design research (2026-10-15).md`.
+All forms are prototypes: nothing is sent.

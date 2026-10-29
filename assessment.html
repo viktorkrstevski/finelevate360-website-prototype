@@ -2,165 +2,163 @@
 <html lang="en">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Free AI Readiness Assessment for Financial Institutions | Finelevate360</title>
 <meta name="description" content="Ten minutes. An honest read on your AI readiness and EU AI Act exposure — with one clear next step.">
-<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=Noto+Serif+Display:ital,wght@0,300..600;1,300..600&family=Onest:wght@300..700&display=swap" rel="stylesheet">
+<meta name="robots" content="noindex,nofollow">
+<link rel="icon" href="assets/stg/brand/Finelevate_monochrome_approved.svg">
+<link rel="preload" href="assets/stg/fonts/Montserrat-Medium.ttf" as="font" type="font/ttf" crossorigin>
 <link rel="stylesheet" href="assets/site.css">
 <style>
-  /* assessment v2 — editorial skin for the tested engine (assets/assessment.js) */
-  .eyebrow{font:500 12.5px var(--mono);letter-spacing:.08em;text-transform:uppercase;color:var(--azure-ink)}
-  .eyebrow.green{color:var(--green)}
-  .h2{font-family:var(--display);font-weight:400;font-size:clamp(34px,4vw,56px);line-height:1.05;letter-spacing:-.02em}
-  .h3{font-family:var(--display);font-weight:400;font-size:28px;letter-spacing:-.01em}
-  .band{display:inline-block;font:500 12px var(--mono);letter-spacing:.06em;text-transform:uppercase;background:var(--bone);padding:7px 10px}
-  .a-shell{padding:clamp(48px,6vw,88px) 0 clamp(80px,9vw,120px)}
-  .a-top{display:grid;grid-template-columns:repeat(12,1fr);column-gap:var(--g);margin-bottom:42px}
-  .a-top .idx{grid-column:1/-1;margin-bottom:26px}
-  .a-wrap{max-width:1040px}
-  .a-intro{display:grid;grid-template-columns:7fr 5fr;gap:var(--g);align-items:start}
-  @media (max-width:860px){.a-intro{grid-template-columns:1fr}}
-  .a-actions{display:flex;gap:14px;flex-wrap:wrap;margin-top:34px}
-  .a-privacy{font-size:14.5px;color:var(--muted);margin-top:26px;line-height:1.6;border-top:1px solid var(--line);padding-top:18px;max-width:60ch}
-  .a-dims{border-top:1px solid var(--line-strong)}
-  .a-dims ol{list-style:none;margin:0;padding:0;counter-reset:d}
-  .a-dims li{padding:16px 0;border-bottom:1px solid var(--line);display:grid;grid-template-columns:1fr;gap:4px}
-  .a-dims li b{font-family:var(--display);font-weight:400;font-size:21px}
-  .a-dims li span{font-size:14.5px;color:var(--muted)}
-  .a-card{border-top:1px solid var(--line-strong);position:relative}
-  .a-prog{height:3px;background:var(--bone-2)}.a-prog i{display:block;height:100%;background:var(--azure);transition:width .4s var(--ease)}
-  .a-body{padding:36px 0 0}
-  .a-step{font:500 12.5px var(--mono);letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
-  .a-q{font-family:var(--display);font-weight:400;font-size:clamp(28px,3.2vw,44px);line-height:1.12;letter-spacing:-.015em;margin-top:14px;max-width:26ch;outline:none}
-  .a-cheer{font-family:var(--display);font-style:italic;font-size:22px;color:var(--azure-ink);margin-bottom:12px}
-  .a-opts{display:grid;gap:0;margin-top:34px;border-top:1px solid var(--line)}
-  .a-opt{display:grid;grid-template-columns:56px 1fr;align-items:center;gap:6px;text-align:left;background:transparent;border:none;border-bottom:1px solid var(--line);padding:18px 8px 18px 0;cursor:pointer;font:inherit;color:var(--ink);transition:background .2s,padding .25s var(--ease)}
-  .a-opt:hover{background:var(--bone);padding-left:10px}
-  .a-opt.sel{background:var(--ink);color:#fff;padding-left:14px}
-  .a-opt b{display:block;font-weight:600;font-size:17px}.a-opt small{display:block;font-size:14px;color:var(--muted)}
-  .a-opt.sel small{color:rgba(255,255,255,.7)}
-  .a-key{font:500 13px var(--mono);color:var(--muted)}
-  .a-opt.sel .a-key{color:var(--azure-l)}
-  .a-ns b{font-style:italic;font-family:var(--display);font-weight:400;font-size:19px}
-  .a-nav{display:flex;justify-content:space-between;align-items:center;margin-top:28px;gap:12px;flex-wrap:wrap}
-  .a-link{background:none;border:none;font:500 13px var(--mono);letter-spacing:.06em;text-transform:uppercase;color:var(--muted);cursor:pointer;padding:8px 0}
-  .a-link:hover{color:var(--ink)}
-  .a-form{display:grid;grid-template-columns:1fr 1fr;gap:22px 24px;margin-top:30px}
-  .a-form .a-nav,.a-form .a-consent,.a-form .a-privacy{grid-column:1/-1}
-  @media (max-width:640px){.a-form{grid-template-columns:1fr}}
-  .a-field span{display:block;font:500 11.5px var(--mono);letter-spacing:.06em;text-transform:uppercase;color:var(--muted);margin-bottom:8px}
-  .a-field select,.a-field input{width:100%;font:400 17px var(--sans);padding:10px 0 12px;border:none;border-bottom:1px solid var(--line-strong);background:transparent;color:var(--ink);border-radius:0}
-  .a-field select:focus,.a-field input:focus{outline:none;border-bottom-color:var(--azure-ink)}
-  .a-hp{position:absolute;left:-9999px}
-  .a-consent{border:none;border-top:1px solid var(--line);padding:16px 0 0;margin:0;display:grid;gap:12px}
-  .a-consent legend{font:500 11.5px var(--mono);letter-spacing:.06em;text-transform:uppercase;color:var(--muted);padding:0 0 10px}
-  .a-consent label{display:flex;gap:12px;align-items:flex-start;font-size:15.5px}
-  .a-consent input{margin-top:5px;accent-color:var(--ink)}
-  .a-consent small{color:var(--muted)}
-  .a-res-top{display:grid;grid-template-columns:190px 1fr;gap:34px;align-items:center;margin-top:22px}
-  @media (max-width:640px){.a-res-top{grid-template-columns:1fr}}
-  .a-ring{width:190px;height:190px}
-  .a-ring text{font-family:var(--display)!important;font-weight:400!important}
-  .a-flag{margin-top:22px;border-left:3px solid #D9A93A;background:#FFF8E6;padding:12px 16px;font-size:15px}
-  .a-plan{margin-top:40px;padding-top:28px;border-top:1px solid var(--line-strong)}
-  .a-plan-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:0;margin-top:20px}
-  @media (max-width:760px){.a-plan-grid{grid-template-columns:1fr}}
-  .a-plan-col{padding:0 22px 0 0}.a-plan-col+.a-plan-col{padding-left:22px;border-left:1px solid var(--line)}
-  .a-plan-col ul{margin:12px 0 0;padding-left:18px;font-size:15px;color:#33424A;display:grid;gap:8px}
-  .a-peer{margin-top:28px;background:var(--bone);padding:18px 20px;font-size:15.5px}
-  .a-cta-row{display:flex;gap:14px;flex-wrap:wrap;align-items:center;margin-top:30px}
-  .a-thanks{max-width:720px}
-  .a-tick{display:block;font-family:var(--display);font-size:64px;line-height:1;color:var(--green)}
-  .a-advisor{display:grid;grid-template-columns:72px 1fr auto;gap:18px;align-items:center;margin:34px 0 18px;padding:22px 0;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
-  @media (max-width:640px){.a-advisor{grid-template-columns:1fr}}
-  .a-advisor b{display:block;font-size:17px}.a-advisor .muted{font-size:14.5px}
-  .a-av{width:72px;height:72px;background:var(--azure);color:#fff;display:grid;place-items:center;font-family:var(--display);font-size:26px}
-  .a-proto{font:500 11.5px var(--mono);letter-spacing:.04em;color:#7A5600;background:#FFF3D1;border:1px dashed #D9A93A;padding:6px 10px;display:inline-block;margin-bottom:12px}
-  .how{display:grid;grid-template-columns:repeat(3,1fr);border-top:1px solid var(--line-strong)}
-  @media (max-width:860px){.how{grid-template-columns:1fr}}
-  .how>div{padding:26px 24px 0 0}.how>div+div{padding-left:24px;border-left:1px solid var(--line)}
-  .how b{display:block;font-family:var(--display);font-weight:400;font-size:24px;margin-bottom:8px}
-  .how p{font-size:15.5px;color:var(--muted)}
-</style>
+.a-shell{padding-block:56px 80px}
+.a-wrap{max-width:1040px;margin-inline:auto}
+.eyebrow.green{color:var(--green)}
+.h2{font-size:38px;font-weight:400;line-height:1.15}.h3{font-size:24px;font-weight:400}
+.band{display:inline-block;font-size:11px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;background:var(--pale);color:var(--blue);padding:6px 10px;border-radius:20px}
+.lede{font-size:19px;line-height:1.45;color:var(--text);margin-top:14px}
+.btn{display:inline-flex;align-items:center;gap:.4em;justify-content:center;min-height:50px;padding:12px 27px;border-radius:100px;border:1px solid transparent;background:var(--green);color:#fff;font-size:15px;font-weight:700;cursor:pointer;text-decoration:none}
+.btn:hover{text-decoration:none;filter:brightness(.94)}
+.btn.ghost{background:#fff;color:var(--text);border-color:var(--line);border-radius:12px}
+.a-intro{display:grid;grid-template-columns:7fr 5fr;gap:44px;align-items:start}
+.a-actions{display:flex;gap:14px;flex-wrap:wrap;margin-top:30px}
+.a-privacy{font-size:14.5px;color:var(--muted);margin-top:24px;line-height:1.6;border-top:1px solid var(--line);padding-top:16px;max-width:60ch}
+.a-dims{background:#fff;border:1px solid var(--line);border-radius:var(--radius);padding:8px 22px}
+.a-dims ol{list-style:none;margin:0;padding:0}
+.a-dims li{padding:14px 0;border-bottom:1px solid var(--line);display:grid;gap:4px}.a-dims li:last-child{border-bottom:0}
+.a-dims li b{font-size:16px}.a-dims li span{font-size:14px;color:var(--muted)}
+.a-card{background:#fff;border:1px solid var(--line);border-radius:20px;overflow:hidden}
+.a-prog{height:4px;background:var(--line)}.a-prog i{display:block;height:100%;background:var(--blue);transition:width .4s ease}
+.a-body{padding:34px 36px 36px}
+.a-step{font-size:12px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--blue)}
+.a-q{font-size:30px;line-height:1.2;margin-top:12px;max-width:30ch;outline:none;font-weight:400}
+.a-cheer{font-size:18px;font-weight:600;color:var(--green);margin-bottom:10px}
+.a-opts{display:grid;gap:10px;margin-top:28px}
+.a-opt{display:grid;grid-template-columns:44px 1fr;align-items:center;gap:6px;text-align:left;background:#fff;border:1px solid var(--line);border-radius:12px;padding:14px 16px;cursor:pointer;color:var(--ink);transition:border-color .2s,background .2s}
+.a-opt:hover{border-color:var(--blue);background:var(--pale)}
+.a-opt.sel{background:var(--blue);border-color:var(--blue);color:#fff}
+.a-opt b{display:block;font-size:16px}.a-opt small{display:block;font-size:14px;color:var(--muted)}.a-opt.sel small{color:rgba(255,255,255,.8)}
+.a-key{width:30px;height:30px;border-radius:50%;background:var(--pale);color:var(--blue);display:grid;place-items:center;font-size:13px;font-weight:700}
+.a-opt.sel .a-key{background:#fff}
+.a-ns b{font-style:italic}
+.a-nav{display:flex;justify-content:space-between;align-items:center;margin-top:24px;gap:12px;flex-wrap:wrap}
+.a-link{background:none;border:none;font-size:14px;font-weight:700;color:var(--blue);cursor:pointer;padding:8px 0}
+.a-form{display:grid;grid-template-columns:1fr 1fr;gap:18px 22px;margin-top:26px}
+.a-form .a-nav,.a-form .a-consent,.a-form .a-privacy{grid-column:1/-1}
+.a-field span{display:block;font-size:14px;font-weight:600;margin-bottom:6px}
+.a-field select,.a-field input{width:100%;font-size:16px;padding:10px;border:1px solid #b6bdc4;border-radius:6px;background:#fff;color:var(--ink)}
+.a-hp{position:absolute;left:-9999px}
+.a-consent{border:none;border-top:1px solid var(--line);padding:16px 0 0;margin:0;display:grid;gap:12px}
+.a-consent legend{font-size:14px;font-weight:600;padding:0 0 8px}
+.a-consent label{display:flex;gap:12px;align-items:flex-start;font-size:15.5px}
+.a-consent input{margin-top:5px;accent-color:var(--blue)}
+.a-res-top{display:grid;grid-template-columns:180px 1fr;gap:30px;align-items:center;margin-top:20px}
+.a-ring{width:180px;height:180px}
+.a-flag{margin-top:20px;border-left:3px solid #d9a93a;background:#fff8e6;padding:12px 16px;font-size:15px;border-radius:6px}
+.a-plan{margin-top:34px;padding-top:24px;border-top:1px solid var(--line)}
+.a-plan-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:16px}
+.a-plan-col{background:var(--pale);border-radius:12px;padding:18px}
+.a-plan-col ul{margin:10px 0 0;padding-left:18px;font-size:15px;color:var(--text);display:grid;gap:8px}
+.a-peer{margin-top:24px;background:#f5f7fa;border-radius:12px;padding:16px 18px;font-size:15.5px}
+.a-cta-row{display:flex;gap:14px;flex-wrap:wrap;align-items:center;margin-top:28px}
+.a-thanks{max-width:720px}
+.a-tick{display:grid;place-items:center;width:64px;height:64px;border-radius:50%;background:#e3f4ee;font-size:34px;color:var(--green)}
+.a-advisor{display:grid;grid-template-columns:64px 1fr auto;gap:18px;align-items:center;margin:30px 0 16px;padding:20px;border:1px solid var(--line);border-radius:12px}
+.a-advisor b{display:block;font-size:17px}
+.a-av{width:64px;height:64px;border-radius:50%;background:var(--blue);color:#fff;display:grid;place-items:center;font-size:20px;font-weight:700}
+.a-proto{font-size:12px;font-weight:600;color:#7a5600;background:#fff3d1;border:1px dashed #d9a93a;border-radius:6px;padding:6px 10px;display:inline-block;margin-bottom:12px}
+.bars{margin-top:18px}
+@media(max-width:899px){.a-intro,.a-form,.a-res-top,.a-plan-grid,.a-advisor{grid-template-columns:1fr}.a-body{padding:24px 18px}.a-q{font-size:24px}.h2{font-size:28px}}
+.a-shell{padding-top:48px}.btn{border-radius:100px}.h2{font-weight:500;letter-spacing:-.02em}.a-q{font-weight:500;letter-spacing:-.015em}</style>
 </head>
 <body>
 <a class="skip" href="#main">Skip to content</a>
 <button class="pm-toggle" type="button">Show PM notes</button>
-
-<!-- FLAGSHIP STRIP -->
 <div class="flag" role="region" aria-label="Finelevate Digital Summit">
-  <div class="wrap">
-    <div class="left"><img src="assets/brand/fds-compact-finelevate360.svg" alt=""><span><a href="summit/index.html">Finelevate Digital Summit 2026 — relive the story <span aria-hidden="true">↗</span></a><span class="sep">/</span><a href="summit/index.html#2027">2027 · Save the date</a></span></div>
-    <button class="x" type="button" aria-label="Close">×</button>
-  </div>
+  <div class="wrap"><div class="left"><span class="live" aria-hidden="true"></span><span><a href="summit/index.html">Finelevate Digital Summit 2026 — relive the story <span aria-hidden="true">→</span></a><span class="sep">/</span><a href="summit/index.html#y2027">2027 · Register your interest</a></span></div><button class="x" type="button" aria-label="Close">×</button></div>
 </div>
-
-<!-- HEADER + MEGA MENU -->
 <header class="hdr">
   <div class="wrap">
-    <a class="logo" href="index.html" aria-label="Finelevate360 — home"><img src="assets/brand/finelevate-logo.svg" alt="Finelevate360"><svg class="ring" viewBox="0 0 22 22" aria-hidden="true"><circle class="bg" cx="11" cy="11" r="9"/><circle class="fg" cx="11" cy="11" r="9"/></svg></a>
+    <a class="logo" href="index.html" aria-label="Finelevate360 — home"><img src="assets/stg/brand/Finelevate_monochrome_approved.svg" alt="Finelevate360" width="190" height="36"><svg class="ring" viewBox="0 0 22 22" aria-hidden="true"><circle class="bg" cx="11" cy="11" r="9"/><circle class="fg" cx="11" cy="11" r="9"/></svg></a>
     <ul class="nav" role="list">
-      <li><button type="button" aria-haspopup="true">Consulting <span class="caret">▾</span></button>
+      <li><button type="button" aria-haspopup="true" aria-current="page">Consulting <span class="caret">▾</span></button>
         <div class="mega"><div class="wrap">
-          <div><h6>Services</h6><a href="services.html#strategy">Strategy &amp; Transformation</a><a href="service-ai-data.html">AI &amp; Data</a><a href="services.html#digital">Digital Products &amp; CX</a><a href="services.html#compliance">Compliance &amp; Governance</a><a href="services.html#architecture">Architecture &amp; Engineering</a><a href="services.html#microsoft">Microsoft Solutions &amp; Automation</a><a href="services.html#delivery">Project &amp; Program Delivery</a></div>
+          <div><h6>Expertise</h6><a href="services.html#identity">Digital Identity, Trust &amp; Onboarding</a><a href="service-ai-data.html">AI, Data &amp; Intelligent Automation</a><a href="services.html#cyber">Cybersecurity, Regulation &amp; Compliance</a><a href="services.html#strategy">Digital Strategy &amp; Transformation</a><a href="services.html#capabilities">All seven disciplines</a></div>
           <div><h6>Industries</h6><a href="industry-banking.html">Banking</a><a href="services.html#industries">Insurance</a><a href="services.html#industries">Payments &amp; Fintech</a><a href="services.html#industries">Public sector</a></div>
-          <div><h6>How we work</h6><a href="services.html#approach">Our approach</a><a href="services.html#start">Ways to start</a><a href="about.html#experts">Our experts</a><a href="index.html#contact">Talk to us</a></div>
+          <div><h6>How we work</h6><a href="services.html#approach">Our approach</a><a href="services.html#start">Ways to start</a><a href="services.html#experts">Our experts</a><a href="#contact-dialog" data-contact-topic="consulting">Talk to an advisor</a></div>
           <div class="feat"><h6>Free tool</h6><p class="h4" style="margin:0">AI readiness assessment</p><p>Ten minutes. Your level, strengths and next steps — on screen, immediately.</p><a class="tl" href="assessment.html">Start the assessment <span class="ar">→</span></a></div>
+        </div></div></li>
+      <li><button type="button" aria-haspopup="true">Digital Map <span class="caret">▾</span></button>
+        <div class="mega"><div class="wrap">
+          <div><h6>Digital Map</h6><a href="https://stg.finelevate360.com/digital-map-choose-a-country/">Choose a country</a><a href="https://stg.finelevate360.com/banking-capabilities/">Banking Digital Map</a><a href="https://stg.finelevate360.com/insurance/">Insurance Digital Map</a><a href="https://stg.finelevate360.com/fintech/">Fintech Digital Map</a></div>
+          <div><h6>Coverage</h6><a href="https://stg.finelevate360.com/digital-map-choose-a-country/">North Macedonia · Serbia · Croatia</a><a href="https://stg.finelevate360.com/digital-map-choose-a-country/">Montenegro · Slovenia</a></div>
+          <div></div>
+          <div class="feat"><h6>Flagship research</h6><p class="h4" style="margin:0">Digital capabilities, by country</p><p>Digital capability availability across digital channels within financial institutions.</p><a class="tl" href="https://stg.finelevate360.com/banking-capabilities/">Explore Digital Map <span class="ar">→</span></a></div>
         </div></div></li>
       <li><button type="button" aria-haspopup="true">Insights <span class="caret">▾</span></button>
         <div class="mega"><div class="wrap">
-          <div><h6>Read</h6><a href="insights.html">All insights</a><a href="insights.html#articles">Articles</a><a href="insights.html#reports">Reports</a><a href="about.html#news">News</a></div>
-          <div><h6>Digital Maps</h6><a href="insights.html#maps">Banking Digital Map</a><a href="insights.html#maps">Insurance Digital Map</a><a href="insights.html#maps">Fintech Digital Map</a></div>
-          <div><h6>Coming in December</h6><a href="insights.html#reports">State of AI Readiness 2026</a></div>
-          <div class="feat"><h6>Summit recap</h6><p class="h4" style="margin:0">The 2026 Rewind</p><p>What we heard in Skopje — the ideas, the people and the next steps.</p><a class="tl" href="insights.html#articles">Read the recap <span class="ar">→</span></a></div>
+          <div><h6>Read</h6><a href="insights.html">All insights</a><a href="insights.html#articles">Articles</a><a href="insights.html#reports">Reports</a><a href="news/index.html">News</a></div>
+          <div><h6>Research</h6><a href="news/digital-compliance-radar.html">Digital Compliance Radar #1</a><a href="insights.html#reports">State of AI Readiness 2026</a></div>
+          <div><h6>Latest news</h6><a href="news/casys-gold-sponsor.html">CaSys becomes Gold Sponsor</a><a href="news/macedonia2025-memorandum.html">Memorandum with Macedonia2025</a><a href="news/nextsense-gold-partner.html">Nextsense joins as Gold Partner</a></div>
+          <div class="feat"><h6>Summit recap</h6><p class="h4" style="margin:0">The 2026 story</p><p>What we heard in Skopje — the ideas, the people and the next steps.</p><a class="tl" href="summit/index.html">Relive the day <span class="ar">→</span></a></div>
         </div></div></li>
-      <li><a href="summit/index.html" class="flagship"><img src="assets/brand/fds-compact-finelevate360.svg" alt="">Summit</a></li>
+      <li><a href="summit/index.html"><span class="dot" aria-hidden="true"></span>Digital Summit</a></li>
       <li><button type="button" aria-haspopup="true">About <span class="caret">▾</span></button>
         <div class="mega"><div class="wrap">
-          <div><h6>Finelevate360</h6><a href="about.html">Who we are</a><a href="about.html#experts">Our experts</a><a href="about.html#board">Advisory Board</a></div>
-          <div><h6>Ecosystem</h6><a href="about.html#partners">Partners &amp; ecosystem enablers</a><a href="summit/index.html#awards">Awards 2026</a><a href="about.html#news">News</a></div>
-          <div><h6>Languages</h6><a href="#">English</a><a href="#">Македонски</a><a href="#">Srpski · Hrvatski · Crnogorski · Slovenščina</a></div>
-          <div class="feat"><h6>Contact</h6><p class="h4" style="margin:0">Skopje, North Macedonia</p><p>We reply within one working day.</p><a class="tl" href="index.html#contact">Talk to us <span class="ar">→</span></a></div>
+          <div><h6>Finelevate</h6><a href="about.html">Who we are</a><a href="about.html#leadership">Leadership</a><a href="about.html#board">Advisory Board</a><a href="services.html#experts">Our experts</a></div>
+          <div><h6>Ecosystem</h6><a href="about.html#partners">Partners &amp; ecosystem enablers</a><a href="news/index.html">News</a></div>
+          <div><h6>Get involved</h6><a href="#contact-dialog" data-contact-topic="partner">Become a partner</a><a href="summit/index.html#y2027">Summit 2027</a></div>
+          <div class="feat"><h6>Contact</h6><p class="h4" style="margin:0">Skopje, North Macedonia</p><p>contact@finelevate360.com — we reply within one working day.</p><a class="tl" href="#contact-dialog">Contact us <span class="ar">→</span></a></div>
         </div></div></li>
     </ul>
-    <div class="hdr-cta"><span class="langsw" role="group" aria-label="Language"><a href="#" aria-current="true" lang="en">EN</a><a href="#" lang="mk">МК</a></span><a class="btn" href="index.html#contact">Talk to us <span class="ar">→</span></a><button class="burger" type="button">Menu</button></div>
+    <div class="hdr-cta">
+      <details class="lang-dd"><summary><img src="assets/stg/flags/en.svg" alt="" width="18" height="12">En</summary><ul><li><a href="index.html" aria-current="true"><img src="assets/stg/flags/en.svg" alt="" width="18" height="12">English</a></li><li><a href="#" aria-disabled="true" title="Language version follows in production"><img src="assets/stg/flags/mk.svg" alt="" width="18" height="12">Македонски</a></li><li><a href="#" aria-disabled="true" title="Language version follows in production"><img src="assets/stg/flags/sr.svg" alt="" width="18" height="12">Srpski</a></li><li><a href="#" aria-disabled="true" title="Language version follows in production"><img src="assets/stg/flags/hr.svg" alt="" width="18" height="12">Hrvatski</a></li><li><a href="#" aria-disabled="true" title="Language version follows in production"><img src="assets/stg/flags/sl.svg" alt="" width="18" height="12">Slovenščina</a></li><li><a href="#" aria-disabled="true" title="Language version follows in production"><img src="assets/stg/flags/me.svg" alt="" width="18" height="12">Crnogorski</a></li></ul></details>
+      <button class="btn green" type="button" data-contact-open>Contact us</button>
+      <button class="burger" type="button" data-menu-open aria-haspopup="dialog" aria-controls="mobile-menu">Menu</button>
+    </div>
   </div>
 </header>
-
+<dialog id="mobile-menu" class="menu-dialog" aria-labelledby="mm-title">
+  <div class="dialog-top"><h2 id="mm-title">Menu</h2><button class="dialog-close" data-dialog-close aria-label="Close menu">×</button></div>
+  <nav aria-label="Mobile navigation"><a href="services.html">Consulting</a><div class="sub"><a href="service-ai-data.html">AI, Data &amp; Intelligent Automation</a><a href="industry-banking.html">Banking</a><a href="assessment.html">AI readiness assessment</a></div><a href="https://stg.finelevate360.com/digital-map-choose-a-country/">Digital Map</a><a href="insights.html">Insights</a><a href="news/index.html">News</a><a href="summit/index.html">Digital Summit</a><a href="about.html">About</a><a href="about.html#board">Advisory Board</a><a href="about.html#partners">Partners</a></nav>
+  <p style="margin-top:20px"><button class="btn green" type="button" data-contact-open>Contact us</button></p>
+</dialog>
 <main id="main">
-  <section class="a-shell">
-    <div class="wrap a-wrap">
-      <div class="a-top"><div class="idx"><b>AI readiness</b> assessment · free · about 10 minutes</div></div>
-      <div id="assess" aria-live="polite"></div>
-      <p class="pm"><b>Same tested engine, new skin:</b> profile → adaptive questions (21 for financial institutions, 20 for companies) → ungated result with level and actions → email only for the detailed report (three consents) → advisor card. Ledger-style answer rows, serif questions, mono metadata. Demo states: #demo-question, #demo-result, #demo-report, #demo-thanks.</p>
-    </div>
-  </section>
-  <section class="sec bone" id="how">
-    <div class="wrap">
-      <div class="head g12"><div class="c-12"><div class="idx">How we score</div></div><div class="c-7"><h2 class="d2">Transparent by design.</h2></div></div>
-      <div class="how">
-        <div><b>Each answer counts</b><p>Not started 0 · Exploring 1 · In progress 2 · Established 3. “Not sure” counts as 0 and is shown to you separately.</p></div>
-        <div><b>Six dimensions</b><p>Each dimension is scored out of 100; your overall score is the average — no dimension can hide behind another.</p></div>
-        <div><b>Five levels</b><p>Initial · Developing · Defined · Advanced · Leading (thresholds 25 / 45 / 65 / 85). Your actions come from your two lowest dimensions.</p></div>
-      </div>
-    </div>
-  </section>
-</main>
 
+<section class="a-shell"><div class="wrap a-wrap"><div class="idx" style="margin-bottom:28px"><b>AI readiness</b> assessment · free · about 10 minutes</div><div id="assess" aria-live="polite"></div>
+  <p class="pm">Same tested engine: profile → adaptive questions (21 for financial institutions, 20 for companies) → ungated result → email only for the detailed report (three consents). Demo states: #demo-question, #demo-result, #demo-report, #demo-thanks.</p></div></section>
+<section class="sec bone" id="how"><div class="wrap">
+  <div class="head g12"><div class="c-12"><div class="idx">How we score</div></div><div class="c-7"><h2 class="d2">Transparent by <em>design.</em></h2></div></div>
+  <div class="three"><div><h3>Each answer counts</h3><p>Not started 0 · Exploring 1 · In progress 2 · Established 3. “Not sure” counts as 0 and is shown to you separately.</p></div><div><h3>Six dimensions</h3><p>Each dimension is scored out of 100; your overall score is the average — no dimension can hide behind another.</p></div><div><h3>Five levels</h3><p>Initial · Developing · Defined · Advanced · Leading (thresholds 25 / 45 / 65 / 85). Your actions come from your two lowest dimensions.</p></div></div>
+</div></section>
+</main>
 <footer class="foot">
   <div class="wrap">
-    <p class="big">Advice that moves finance <em style="font-style:italic;color:var(--azure-l)">forward.</em></p>
+    <img class="brand-w" src="assets/stg/brand/Finelevate_monochrome_approved.svg" alt="Finelevate360">
+    <p class="big">Advice that moves finance <em>forward.</em></p>
     <div class="cols">
       <div><h6>Consulting</h6><a href="services.html">All services</a><a href="service-ai-data.html">AI &amp; Data</a><a href="services.html#approach">Approach</a><a href="services.html#start">Ways to start</a><a href="assessment.html">AI readiness assessment</a></div>
       <div><h6>Industries</h6><a href="industry-banking.html">Banking</a><a href="services.html#industries">Insurance</a><a href="services.html#industries">Payments &amp; Fintech</a><a href="services.html#industries">Public sector</a></div>
-      <div><h6>Insights</h6><a href="insights.html">Articles &amp; reports</a><a href="insights.html#maps">Banking Digital Map</a><a href="insights.html#maps">Insurance Digital Map</a><a href="insights.html#maps">Fintech Digital Map</a></div>
-      <div><h6>Summit</h6><a href="summit/index.html">The 2026 story</a><a href="summit/index.html#speakers">Speakers</a><a href="summit/index.html#awards">Awards 2026</a><a href="summit/index.html#2027">2027 edition</a></div>
-      <div><h6>About</h6><a href="about.html">Who we are</a><a href="about.html#board">Advisory Board</a><a href="about.html#partners">Partners</a><a href="about.html#news">News</a><a href="index.html#contact">Contact</a></div>
+      <div><h6>Insights</h6><a href="insights.html">Articles &amp; reports</a><a href="news/index.html">News</a><a href="https://stg.finelevate360.com/banking-capabilities/">Banking Digital Map</a><a href="https://stg.finelevate360.com/insurance/">Insurance Digital Map</a><a href="https://stg.finelevate360.com/fintech/">Fintech Digital Map</a></div>
+      <div><h6>Digital Summit</h6><a href="summit/index.html">The 2026 story</a><a href="summit/index.html#agenda">Agenda</a><a href="summit/index.html#speakers">Speakers</a><a href="summit/index.html#y2027">2027 edition</a></div>
+      <div><h6>About</h6><a href="about.html">Who we are</a><a href="about.html#board">Advisory Board</a><a href="about.html#partners">Partners</a><a href="#contact-dialog">Contact</a></div>
     </div>
-    <div class="legal"><span>© 2026 Finelevate360 · Skopje, North Macedonia</span><span>Privacy · Cookies · EN · MK · SR · HR · ME · SL</span></div>
+    <div class="legal"><span>© 2026 Finelevate360 · Skopje, North Macedonia · contact@finelevate360.com</span><span><a href="#">Privacy Policy</a><a href="#">Cookie Policy</a><a href="https://www.linkedin.com/company/110786218/" target="_blank" rel="noopener">LinkedIn</a><a href="https://www.instagram.com/finelevate360/" target="_blank" rel="noopener">Instagram</a></span></div>
   </div>
 </footer>
+<dialog id="contact-dialog" class="contact-dialog" aria-labelledby="contact-title">
+  <div class="dialog-top"><h2 id="contact-title">Talk to Finelevate360</h2><button class="dialog-close" data-dialog-close aria-label="Close">×</button></div>
+  <p style="margin-bottom:14px">Tell us about your challenge or partnership idea — a senior advisor replies within one working day.</p>
+  <p class="proto-note">Prototype preview: inquiries are not sent.</p>
+  <form method="dialog" data-staging-contact>
+    <label for="c-topic">I am interested in</label><select id="c-topic"><option value="consulting">A consulting engagement</option><option value="assessment">The AI readiness assessment</option><option value="partner">Becoming a partner</option><option value="summit">Finelevate Digital Summit</option><option value="other">Something else</option></select>
+    <label for="c-name">Your name</label><input id="c-name" autocomplete="name" required maxlength="120">
+    <label for="c-email">Work email</label><input id="c-email" type="email" autocomplete="email" required maxlength="254">
+    <label for="c-org">Organisation</label><input id="c-org" autocomplete="organization" maxlength="200">
+    <label for="c-msg">Your message</label><textarea id="c-msg" rows="4" required maxlength="5000"></textarea>
+    <button class="btn green" type="submit">Send <span class="ar">→</span></button>
+    <p class="form-status" role="status" data-form-status data-message="Thank you — the form is valid. This prototype does not send inquiries."></p>
+  </form>
+</dialog>
 <script src="assets/site.js"></script>
 <script src="assets/assessment.js"></script>
 </body>

@@ -1,3 +1,119 @@
+(() => {
+  'use strict';
+  const contact = document.getElementById('contact-dialog');
+  const menu = document.getElementById('mobile-menu');
+  const openDialog = (dialog) => {
+    document.querySelectorAll('dialog[open]').forEach(open => open.close());
+    if (dialog) dialog.showModal();
+  };
+  document.querySelectorAll('[data-contact-open]').forEach(button => button.addEventListener('click', () => openDialog(contact)));
+  document.querySelectorAll('[data-menu-open]').forEach(button => button.addEventListener('click', () => openDialog(menu)));
+  document.querySelectorAll('[data-dialog-close]').forEach(button => button.addEventListener('click', () => button.closest('dialog').close()));
+  document.querySelectorAll('dialog').forEach(dialog => {
+    dialog.addEventListener('click', event => {
+      if (event.target === dialog) {
+        const rect = dialog.getBoundingClientRect();
+        if (event.clientX < rect.left || event.clientX > rect.right || event.clientY < rect.top || event.clientY > rect.bottom) dialog.close();
+      }
+    });
+  });
+  document.querySelectorAll('[data-staging-contact]').forEach(form => form.addEventListener('submit', event => {
+    event.preventDefault();
+    if (form.reportValidity()) {
+      const status = form.querySelector('[data-form-status]');
+      status.textContent = status.dataset.message;
+    }
+  }));
+  const viewport = document.querySelector('.partner-banner .logo-viewport');
+  if (!viewport) return;
+  const banner = viewport.closest('.banner-inner');
+  const track = viewport.querySelector('.logo-track');
+  const sequence = track.querySelector('.logo-sequence');
+  const reduced = window.matchMedia('(prefers-reduced-motion: reduce)');
+  const help = document.getElementById('partner-motion-help');
+  let copy, frame = 0, cycle = 0, position = 0, applied = viewport.scrollLeft;
+  let lastTime = 0, userPaused = false, pointerDown = false, hovered = false;
+  const updateStatus = () => {
+    if (!help) return;
+    const message = help.dataset[reduced.matches ? 'reduced' : userPaused ? 'paused' : 'enabled'];
+    if (help.textContent !== message) help.textContent = message;
+  };
+  const setUserPaused = value => {
+    userPaused = value;
+    lastTime = 0;
+    updateStatus();
+  };
+  const pauseManual = () => {
+    setUserPaused(true);
+    position = viewport.scrollLeft;
+    lastTime = 0;
+  };
+  const measure = () => {
+    cycle = sequence.getBoundingClientRect().width;
+    position = viewport.scrollLeft;
+    applied = viewport.scrollLeft;
+    lastTime = 0;
+  };
+  const tick = now => {
+    const paused = pointerDown || hovered || banner.contains(document.activeElement) || document.hidden || userPaused;
+    if (paused) {
+      lastTime = 0;
+    } else if (cycle) {
+      if (lastTime) {
+        position = (position + Math.min(now - lastTime, 64) * 0.024) % cycle;
+        viewport.scrollLeft = position;
+        applied = viewport.scrollLeft;
+      } else {
+        position = viewport.scrollLeft % cycle;
+      }
+      lastTime = now;
+    }
+    frame = requestAnimationFrame(tick);
+  };
+  const updateMotion = () => {
+    cancelAnimationFrame(frame);
+    lastTime = 0;
+    updateStatus();
+    if (reduced.matches) {
+      viewport.removeAttribute('aria-keyshortcuts');
+      if (copy) copy.remove();
+      copy = null;
+      viewport.scrollLeft = applied = position = 0;
+      return;
+    }
+    viewport.setAttribute('aria-keyshortcuts', 'Space');
+    if (!copy) {
+      copy = sequence.cloneNode(true);
+      copy.setAttribute('aria-hidden', 'true');
+      copy.inert = true;
+      copy.querySelectorAll('img').forEach(img => { img.alt = ''; });
+      track.append(copy);
+    }
+    measure();
+    frame = requestAnimationFrame(tick);
+  };
+  banner.addEventListener('pointerenter', event => { if (event.pointerType !== 'touch') hovered = true; });
+  banner.addEventListener('pointerleave', () => { hovered = false; });
+  viewport.addEventListener('keydown', event => {
+    if (event.key !== ' ' || event.altKey || event.ctrlKey || event.metaKey || reduced.matches) return;
+    event.preventDefault();
+    if (!event.repeat) setUserPaused(!userPaused);
+  });
+  viewport.addEventListener('pointerdown', () => { pointerDown = true; pauseManual(); }, { passive: true });
+  const releasePointer = () => { if (pointerDown) { pointerDown = false; lastTime = 0; } };
+  window.addEventListener('pointerup', releasePointer, { passive: true });
+  window.addEventListener('pointercancel', releasePointer, { passive: true });
+  viewport.addEventListener('wheel', pauseManual, { passive: true });
+  viewport.addEventListener('scroll', () => {
+    // Native touch/scrolling pauses persistently; our own frames do not.
+    if (Math.abs(viewport.scrollLeft - applied) > 1) pauseManual();
+    applied = viewport.scrollLeft;
+  }, { passive: true });
+  reduced.addEventListener('change', updateMotion);
+  new ResizeObserver(measure).observe(sequence);
+  updateMotion();
+})();
+
 /* Finelevate360 — site interactions v2 (dependency-free; WordPress-ready).
    Motion is purposeful and limited: reveals, 360° scroll ring, count-ups, capability accordion, heat-map fill,
    speaker reel drag, gentle parallax on the flagship band. Everything is disabled under prefers-reduced-motion. */
@@ -109,4 +225,56 @@
 
   /* demo: open first capability */
   var first = $(".cap-row[data-open]"); if (first) $(".cap-btn", first).click();
+})();
+
+/* Prototype v4 extras: contact topics, profiles, chips, prototype forms, speaker preview, photo viewer. */
+(function () {
+  'use strict';
+  var contact = document.getElementById('contact-dialog');
+  function openContact(topic) {
+    if (!contact) return;
+    document.querySelectorAll('dialog[open]').forEach(function (d) { d.close(); });
+    if (topic) { var s = contact.querySelector('select'); if (s) s.value = topic; }
+    contact.showModal();
+  }
+  document.addEventListener('click', function (e) {
+    var a = e.target.closest('a[href$="#contact-dialog"],[data-contact-topic]');
+    if (a) { e.preventDefault(); openContact(a.getAttribute('data-contact-topic')); return; }
+    var b = e.target.closest('[data-contact-open][data-topic]');
+    if (b && contact) { var s = contact.querySelector('select'); if (s) s.value = b.getAttribute('data-topic'); }
+    var p = e.target.closest('[data-bio]');
+    if (p) { var d = document.getElementById(p.getAttribute('data-bio')); if (d) { document.querySelectorAll('dialog[open]').forEach(function (x) { x.close(); }); d.showModal(); } }
+    var dd = document.querySelector('.lang-dd[open]'); if (dd && !e.target.closest('.lang-dd')) dd.removeAttribute('open');
+  });
+  document.querySelectorAll('[data-chips]').forEach(function (g) {
+    var single = g.hasAttribute('data-single');
+    g.querySelectorAll('.chip').forEach(function (c) { c.addEventListener('click', function () {
+      if (single) g.querySelectorAll('.chip').forEach(function (x) { x.setAttribute('aria-pressed', 'false'); });
+      c.setAttribute('aria-pressed', single ? 'true' : String(c.getAttribute('aria-pressed') !== 'true'));
+    }); });
+  });
+  document.querySelectorAll('form[data-proto]').forEach(function (f) { f.addEventListener('submit', function (e) { e.preventDefault(); if (!f.reportValidity()) return; var ok = f.querySelector('.ok'); if (ok) ok.hidden = false; }); });
+  // speaker index: portrait preview on hover / keyboard focus
+  var prev = document.querySelector('.spk-prev');
+  if (prev) document.querySelectorAll('.spk-row').forEach(function (r) {
+    function show() {
+      document.querySelectorAll('.spk-row.on').forEach(function (x) { x.classList.remove('on'); }); r.classList.add('on');
+      var i = prev.querySelector('img'); i.src = r.getAttribute('data-img'); i.alt = r.getAttribute('data-name');
+      prev.querySelector('b').textContent = r.getAttribute('data-name'); prev.querySelector('small').textContent = r.getAttribute('data-role');
+    }
+    r.addEventListener('mouseenter', show); r.addEventListener('focus', show);
+  });
+  // photo viewer
+  var lb = document.querySelector('.lb');
+  if (lb) {
+    var items = [].slice.call(document.querySelectorAll('.gal button')), i = 0, last = null, li = lb.querySelector('img'), lc = lb.querySelector('.cap');
+    function set(k) { i = (k + items.length) % items.length; li.src = items[i].getAttribute('data-full'); li.alt = items[i].querySelector('img').alt; lc.textContent = items[i].querySelector('.cap').textContent; }
+    function open(k) { last = document.activeElement; set(k); lb.classList.add('open'); lb.querySelector('.c').focus(); }
+    function close() { lb.classList.remove('open'); if (last) last.focus(); }
+    items.forEach(function (b, k) { b.addEventListener('click', function () { open(k); }); });
+    lb.querySelector('.c').addEventListener('click', close);
+    lb.querySelector('.p').addEventListener('click', function () { set(i - 1); });
+    lb.querySelector('.nx').addEventListener('click', function () { set(i + 1); });
+    document.addEventListener('keydown', function (e) { if (!lb.classList.contains('open')) return; if (e.key === 'Escape') close(); if (e.key === 'ArrowLeft') set(i - 1); if (e.key === 'ArrowRight') set(i + 1); });
+  }
 })();

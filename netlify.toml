@@ -1,9 +1,13 @@
 [build]
   publish = "."
 
-# Static prototype — no build step. Home: index.html; map of all pages: start.html.
-# Kept out of search engines until the revised site is approved and goes live on finelevate360.com.
+# Static prototype. Kept out of search engines until approved.
 [[headers]]
   for = "/*"
   [headers.values]
     X-Robots-Tag = "noindex, nofollow"
+
+[[headers]]
+  for = "/summit/*.ics"
+  [headers.values]
+    Content-Type = "text/calendar; charset=utf-8"

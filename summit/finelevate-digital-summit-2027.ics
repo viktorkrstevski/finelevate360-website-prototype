@@ -1,0 +1,14 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Finelevate360//Digital Summit//EN
+CALSCALE:GREGORIAN
+BEGIN:VEVENT
+UID:finelevate-digital-summit-2027@finelevate360.com
+DTSTAMP:20260923T000000Z
+DTSTART;VALUE=DATE:20270922
+DTEND;VALUE=DATE:20270923
+SUMMARY:Finelevate Digital Summit 2027
+DESCRIPTION:The next Finelevate Digital Summit. Programme and venue details to follow.
+URL:https://finelevate360.com/
+END:VEVENT
+END:VCALENDAR
